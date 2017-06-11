@@ -12,7 +12,7 @@ public class ImageManager {
 	private static HashMap<String, BufferedImage> masterList = new HashMap<String, BufferedImage>();
 	
 	public static void init () {
-		masterList.putAll(loadAllImages("src/game/resources"));
+		masterList.putAll(loadAllImages("src/resources"));
 	}
 	
 	public static HashMap<String, BufferedImage> loadAllImages (String path) {

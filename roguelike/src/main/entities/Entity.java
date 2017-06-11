@@ -9,7 +9,7 @@ public class Entity {
 	private String name = "";
 	private int x;
 	private int y;
-	private char symbol = ';';
+	protected String sprite = null;
 	
 	public Entity(){
 		setMaxhp(0);
@@ -17,16 +17,14 @@ public class Entity {
 		setName("");
 		setX(0);
 		setY(0);
-		setSymbol(' ');
 	}
 	
-	public Entity(String n, int h, int px, int py, char s){
+	public Entity(String n, int h, int px, int py){
 		setName(n);
 		setMaxhp(h);
 		setHp(h);
 		setX(px);
 		setY(py);
-		setSymbol(s);
 	}
 	
 	public String getName() {
@@ -77,12 +75,8 @@ public class Entity {
 		this.y += y;
 	}
 
-	public char getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(char symbol) {
-		this.symbol = symbol;
+	public String getSprite() {
+		return sprite;
 	}
 	
 	public void move(EnumDirection dir) {

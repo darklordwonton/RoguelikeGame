@@ -11,6 +11,9 @@ public class Globals {
 	public static final int MAX_CREATURES = 10;
 	public static final int FLOOR_SIZE = 10;
 	
+	//Image Names
+	public static final String PLAYER_SPRITE = "player.jpg";
+	
 	//Global Variables
 	public static String message = "";
 	public static int currentFloor = 0;

@@ -1,13 +1,13 @@
 package main.tiles;
 
 public abstract class Tile {
-	protected char symbol = '\0';
+	protected String sprite = null;
 	protected boolean wall = false;
 	
 	public Tile() {}
 	
-	public char getSymbol(){
-		return symbol;
+	public String getSprite(){
+		return sprite;
 	}
 
 	public boolean isWall() {

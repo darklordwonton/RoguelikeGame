@@ -4,7 +4,7 @@ import main.entities.Entity;
 import main.util.Globals;
 
 public class Draw {
-	public static void drawEverything(){
+	/*public static void drawEverything(){
 		mapFloor();
 		playerInfo();
 	}
@@ -14,6 +14,13 @@ public class Draw {
 			for (int e = 0; e < Globals.FLOOR_SIZE; e++){
 				boolean drawn = false;
 				for (Entity entity : Globals.entities){
+					if (entity.getX() == e && entity.getY() == i && !drawn){
+						System.out.print(entity.getSymbol());
+						drawn = true;
+					}
+				}
+				if (!drawn){
+					Entity entity = Globals.player;
 					if (entity.getX() == e && entity.getY() == i && !drawn){
 						System.out.print(entity.getSymbol());
 						drawn = true;
@@ -38,5 +45,5 @@ public class Draw {
 		System.out.println(Globals.message);
 		System.out.print("Command: ");
 		//rework to use swing
-	}
+	}*/
 }
