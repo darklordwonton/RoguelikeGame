@@ -1,0 +1,8 @@
+package main.tiles;
+
+public class TileBlank extends Tile {
+	
+	private char symbol = ' ';
+	private boolean wall = false;
+	
+}

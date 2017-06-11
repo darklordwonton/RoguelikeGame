@@ -1,0 +1,13 @@
+package main.dungeon;
+
+import main.tiles.Tile;
+
+public class Map {
+	private Tile[][] tiles = null;
+	private int height = 0;
+	private int width = 0;	
+	
+	public Map (int h, int w) {
+		
+	}
+}

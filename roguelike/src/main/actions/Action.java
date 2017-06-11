@@ -1,26 +1,29 @@
 package main.actions;
 
+import main.entities.Entity;
+import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Action {
-	public static void command(char action, int identifier){
+	public static void command(char action, Entity e){
 		switch(action){
-		case '^': move(identifier, 8);
+		case '^': e.move(EnumDirection.UP);
 		  break;
 				  
-		case '>': move(identifier, 6);
+		case '>': e.move(EnumDirection.RIGHT);
 		  break;
 		  
-		case 'v': move(identifier, 2);
+		case 'v': e.move(EnumDirection.DOWN);
 		  break;
 		  
-		case '<': move(identifier, 4);
+		case '<': e.move(EnumDirection.LEFT);
 		  break;
 		  
 		}
 	}
 	
-	public static void move (int identifier, int direction){
+	//Replacing this with a method in the entity class
+	/*public static void move (int identifier, int direction){
 		int targX = Globals.entities[identifier].getX();
 		int targY = Globals.entities[identifier].getY();
 		boolean moves = true;
@@ -59,5 +62,5 @@ public class Action {
 				Globals.message = "All clear";
 			}
 		}
-	}
+	}*/
 }

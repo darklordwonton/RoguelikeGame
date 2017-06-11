@@ -1,5 +1,8 @@
 package main.entities;
 
+import main.util.EnumDirection;
+import main.util.Globals;
+
 public class Entity {
 	private int maxhp = 0;
 	private int hp = 0;
@@ -58,12 +61,20 @@ public class Entity {
 		this.x = x;
 	}
 
+	public void changeX(int x) {
+		this.x += x;
+	}
+	
 	public int getY() {
 		return y;
 	}
 
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public void changeY(int y) {
+		this.y += y;
 	}
 
 	public char getSymbol() {
@@ -72,5 +83,16 @@ public class Entity {
 
 	public void setSymbol(char symbol) {
 		this.symbol = symbol;
+	}
+	
+	public void move(EnumDirection dir) {
+		changeX(dir.getX());
+		if (Globals.maps.get(Globals.currentFloor).getTile(x, y).isWall()) {
+			changeX(-dir.getX());
+		}
+		changeY(dir.getY());
+		if (Globals.maps.get(Globals.currentFloor).getTile(x, y).isWall()) {
+			changeY(-dir.getY());
+		}
 	}
 }

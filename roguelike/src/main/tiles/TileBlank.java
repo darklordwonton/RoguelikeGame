@@ -1,0 +1,10 @@
+package main.tiles;
+
+public class TileBlank extends Tile {
+	
+	public TileBlank() {
+		symbol = ' ';
+		wall = false;
+	}
+	
+}

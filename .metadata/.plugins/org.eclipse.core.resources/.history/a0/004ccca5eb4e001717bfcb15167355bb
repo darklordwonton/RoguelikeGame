@@ -1,0 +1,5 @@
+package main.dungeon;
+
+public class Map {
+	private Tile[][] tiles = null;
+}
