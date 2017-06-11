@@ -1,5 +1,8 @@
 package main.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import main.dungeon.Map;
 import main.entities.Entity;
 
@@ -10,9 +13,10 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int currentCreatures = 0;
+	public static int currentFloor = 0;
 	
 	//Global Arrays
-	public static Entity[] entities = new Entity[MAX_CREATURES];
-	public static Map[][] map = new Map[FLOOR_SIZE][FLOOR_SIZE];
+	public static Entity player = null;
+	public static List<Entity> entities = new ArrayList<Entity>();
+	public static List<Map> maps = new ArrayList<Map>();
 }

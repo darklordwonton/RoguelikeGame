@@ -1,42 +1,25 @@
 package main.dungeon;
 
-public class Map {
-	private char symbol = ' ';
-	private int type = 0;
-	private boolean wall = false;
-	
-	public Map (){
-		symbol = ' ';
-		type = 0;
-		setWall(false);
-	}
-	
-	public Map (int t){
-		setType (t);
-	}
-	
-	public void setType(int t){
-		type = t;
-		switch (type){
-			case 1: symbol = '.';
-					setWall(false);
-					break;
+import main.tiles.Tile;
+import main.tiles.TileBlank;
 
-			case 2: symbol = '#';
-					setWall(true);
-					break;
+public class Map {
+	private Tile[][] tiles = null;
+	private int height = 0;
+	private int width = 0;	
+	
+	public Map (int h, int w) {
+		height = h;
+		width = w;
+		tiles = new Tile[h][w];
+		for (int i = 0; i < h; i++) {
+			for (int e = 0; e < w; e++) {
+				tiles[i][e] = new TileBlank();
+			}
 		}
 	}
 	
-	public char getSymbol(){
-		return symbol;
-	}
-
-	public boolean isWall() {
-		return wall;
-	}
-
-	public void setWall(boolean wall) {
-		this.wall = wall;
+	public Tile getTile (int x, int y) {
+		return tiles[x][y];
 	}
 }

@@ -1,0 +1,16 @@
+package main.tiles;
+
+public abstract class Tile {
+	private char symbol = '\0';
+	private boolean wall = false;
+	
+	public Tile() {}
+	
+	public char getSymbol(){
+		return symbol;
+	}
+
+	public boolean isWall() {
+		return wall;
+	}
+}
