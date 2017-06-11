@@ -1,6 +1,9 @@
 package main.entities.ai;
 
 public class AI {
+	private int intelligence = 0;
+	private int anger = 0;
+	
 	public static char Creature(int identifier){
 		char command = 'v';
 		int option = (int)(Math.random() * 4);
