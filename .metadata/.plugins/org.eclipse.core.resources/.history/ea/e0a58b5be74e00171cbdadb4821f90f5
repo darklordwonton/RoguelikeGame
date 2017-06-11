@@ -11,6 +11,7 @@ public class Initializer {
 			}
 		}
 		
+		//Test
 		//0 is always reserved for the player. Other creatures go in later slots
 		Globals.entities[0] = new Entity("Player", 10, 5, 5, '@');
 		Globals.currentCreatures++;
