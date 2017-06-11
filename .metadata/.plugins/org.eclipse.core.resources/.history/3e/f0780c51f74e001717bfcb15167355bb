@@ -6,18 +6,19 @@ import main.util.Globals;
 
 public class Action {
 	
+	
 	public static void command(int action, Entity e){
 		switch(action){
-		case Globals.UP_KEY: e.move(EnumDirection.UP);
+		case '^': e.move(EnumDirection.UP);
 		  break;
 				  
-		case Globals.RIGHT_KEY: e.move(EnumDirection.RIGHT);
+		case '>': e.move(EnumDirection.RIGHT);
 		  break;
 		  
-		case Globals.DOWN_KEY: e.move(EnumDirection.DOWN);
+		case 'v': e.move(EnumDirection.DOWN);
 		  break;
 		  
-		case Globals.LEFT_KEY: e.move(EnumDirection.LEFT);
+		case '<': e.move(EnumDirection.LEFT);
 		  break;
 		  
 		}

@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="main.tiles.TileBlank"/>
+<fullyQualifiedTypeName name="main.util.EnumDirection"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.dungeon.Map"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.tiles.Tile"/>
+<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
+<fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
+<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+<fullyQualifiedTypeName name="main.actions.Action"/>
+</qualifiedTypeNameHistroy>

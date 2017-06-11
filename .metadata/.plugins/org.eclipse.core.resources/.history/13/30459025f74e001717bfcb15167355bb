@@ -1,6 +1,5 @@
 package main.util;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +13,6 @@ public class Globals {
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
-	
-	//Keys
-	public static final int UP_KEY = KeyEvent.VK_UP;
-	public static final int DOWN_KEY = KeyEvent.VK_DOWN;
-	public static final int LEFT_KEY = KeyEvent.VK_LEFT;
-	public static final int RIGHT_KEY = KeyEvent.VK_RIGHT;
 	
 	//Global Variables
 	public static String message = "";

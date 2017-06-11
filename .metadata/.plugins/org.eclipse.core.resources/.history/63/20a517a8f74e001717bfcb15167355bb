@@ -49,7 +49,7 @@ public class MainRenderer {
 			
 			if (entities != null) {
 				for (Entity e : entities) {
-					g.drawImage(ImageManager.getImage(e.getSprite()), e.getX() * 60, WINDOW_HEIGHT - e.getY() * 60, 60, 60, null);
+					g.drawImage(ImageManager.getImage(e.getSprite()), e.getX() * 60, e.getY() * 60, 60, 60, null);
 				}
 			}
 			

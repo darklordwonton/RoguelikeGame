@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import main.actions.Action;
-import main.rendering.MainRenderer;
 
 public class ControlManager {
 
@@ -17,7 +16,6 @@ public class ControlManager {
 	
 	public static void keyDown(int key) {
 		Action.command(key, Globals.player);
-		MainRenderer.drawMap(Globals.maps.get(Globals.currentFloor));
 		keysDown.add(key);
 	}
 	
