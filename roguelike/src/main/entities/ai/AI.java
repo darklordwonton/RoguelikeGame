@@ -1,27 +1,27 @@
 package main.entities.ai;
 
-public class AI {
-	private int intelligence = 0;
-	private int anger = 0;
-	
-	public static char Creature(int identifier){
-		char command = 'v';
-		int option = (int)(Math.random() * 4);
-		switch(option){
-			case 0: command = '^';
-			break;
-				  
-			case 1: command = '>';
-			break;
-		  
-			case 2: command = '<';
-			break;
-		  
-			case 3: command = 'v';
-			break;
-		}
-		
+import java.util.ArrayList;
+import java.util.List;
 
-		return command;
+public class AI {
+	private int intel;
+	private int anger;
+	private List<Integer> targets = new ArrayList<Integer>();
+	private char choice;
+	
+	public AI(){
+		intel = 0;
+		anger = 0;
+		choice = 'w';
+	}
+	
+	public AI(int i, int a, char c){
+		intel = i;
+		anger = a;
+		choice = c;
+	}
+	
+	public static void whatToDo(){
+		if 
 	}
 }

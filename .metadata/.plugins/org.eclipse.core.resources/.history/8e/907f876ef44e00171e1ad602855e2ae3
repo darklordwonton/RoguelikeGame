@@ -1,0 +1,21 @@
+package main.entities.ai;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AI {
+	private int intel = 0;
+	private int anger = 0;
+	private List<Integer> targets = new ArrayList<Integer>();
+	private char choice = 'w';
+	
+	public whatToDo(){
+		intel
+	}
+	
+	public static void whatToDo(){
+		if (anger > 10){
+			
+		}
+	}
+}
