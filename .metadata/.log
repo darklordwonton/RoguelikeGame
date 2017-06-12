@@ -499,6 +499,9 @@ org.eclipse.epp.logging.aeri.core.util.Logs$LogTraceException
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-06-12 11:28:19.914
 !MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 '
+<<<<<<< HEAD
+!SESSION 2017-06-12 12:56:14.830 -----------------------------------------------
+=======
 =======
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
 	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:80)
@@ -509,10 +512,29 @@ org.eclipse.epp.logging.aeri.core.util.Logs$LogTraceException
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 >>>>>>> Stashed changes
 !SESSION 2017-06-12 11:39:20.669 -----------------------------------------------
+>>>>>>> origin/master
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+<<<<<<< HEAD
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-06-12 12:56:23.457
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-06-12 12:56:31.881
+!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+'
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2017-06-12 12:56:33.597
+!MESSAGE The Eclipse Git-hosted URI 'http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.setup' is blocked for direct access.
+Please open a Bugzilla to add it to an official Oomph catalog.
+For initial testing, use the file system local version of the resource.
+Alternatively, run the setup archiver application as follows:
+  /Applications/Eclipse.app/Contents/MacOS/eclipse -application org.eclipse.oomph.setup.core.SetupArchiver -consoleLog -noSplash -uris http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.setup
+=======
 Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 
@@ -596,6 +618,7 @@ java.lang.Exception
 
 !ENTRY org.eclipse.core.net 1 0 2017-06-12 11:39:47.030
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.jdt.ui 4 10001 2017-06-12 13:06:48.258
 !MESSAGE Internal Error
@@ -640,3 +663,6 @@ Java Model Exception: Java Model Status [AI(int, int, int, int) [in AI [in [Work
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:165)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-06-12 13:15:07.451
 !MESSAGE AI(int, int, int, int) [in AI [in [Working copy] AI.java [in main.entities.ai [in src [in roguelike]]]]] does not exist
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master

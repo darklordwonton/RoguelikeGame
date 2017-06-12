@@ -4,17 +4,16 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Entity {
-	protected int maxhp = 0;
+	protected Stats stats = null;
 	protected int hp = 0;
+	protected int mp = 0;
 	protected String name = "";
 	protected int x;
 	protected int y;
 	protected String sprite = null;
 	
-	public Entity(String n, int h, int px, int py){
+	public Entity(String n, int px, int py){
 		setName(n);
-		setMaxhp(h);
-		setHp(h);
 		setX(px);
 		setY(py);
 	}
@@ -33,16 +32,8 @@ public class Entity {
 
 	public void setHp(int hp) {
 		this.hp = hp;
-	}	
-
-	public int getMaxhp() {
-		return maxhp;
 	}
-
-	public void setMaxhp(int maxhp) {
-		this.maxhp = maxhp;
-	}
-
+	
 	public int getX() {
 		return x;
 	}
@@ -69,6 +60,10 @@ public class Entity {
 
 	public String getSprite() {
 		return sprite;
+	}
+	
+	public Stats getStats() {
+		return stats;
 	}
 	
 	public void move(EnumDirection dir) {

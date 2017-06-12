@@ -4,9 +4,16 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class EntityPlayer extends Entity {
-	public EntityPlayer(String n, int h, int px, int py){
-		super(n,h,px,py);
+	public EntityPlayer(String n, int px, int py){
+		super(n,px,py);
 		sprite = Globals.PLAYER_SPRITE;
+		stats = new Stats((int) (3 + Math.random() * 15), 
+				(int) (3 + Math.random() * 15), 
+				(int) (3 + Math.random() * 15), 
+				(int) (3 + Math.random() * 15), 
+				(int) (3 + Math.random() * 15), 
+				(int) (3 + Math.random() * 15), 
+				1);
 	}
 	
 	public void move(EnumDirection dir) {

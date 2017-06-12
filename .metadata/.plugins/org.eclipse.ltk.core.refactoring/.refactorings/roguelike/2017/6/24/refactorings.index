@@ -1,4 +1,13 @@
 1497216041520	Move compilation unit
 1497216073409	Delete element
 1497224394517	Delete element
+<<<<<<< HEAD
 1497286899967	Encapsulate field 'inte'
+=======
+1497287719341	Encapsulate field 'hp'
+1497287727215	Encapsulate field 'mp'
+1497287731520	Encapsulate field 'buf'
+1497287737706	Encapsulate field 'tuf'
+1497287742220	Encapsulate field 'wit'
+1497287746996	Encapsulate field 'snk'
+>>>>>>> origin/master
