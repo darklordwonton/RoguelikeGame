@@ -17,7 +17,7 @@ public class ControlManager {
 	
 	public static void keyDown(int key) {
 		Action.command(key, Globals.player);
-		MainRenderer.drawMap(Globals.maps.get(Globals.currentFloor));
+		MainRenderer.drawFloor(Globals.floors.get(Globals.currentFloor));
 		keysDown.add(key);
 	}
 	

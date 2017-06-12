@@ -1,14 +1,13 @@
 package main.util;
 
-import main.dungeon.Map;
-import main.entities.Entity;
+import main.dungeon.Floor;
 import main.entities.EntityPlayer;
+import main.tiles.EnumFloor;
 
 public class Initializer {
 	public static void start(){
-		Globals.maps.add(new Map(Globals.FLOOR_SIZE, Globals.FLOOR_SIZE));
-		
+		Globals.floors.add(new Floor(Globals.FLOOR_SIZE, Globals.FLOOR_SIZE, EnumFloor.GRAY_BRICK));
 		Globals.player = new EntityPlayer("Player", 10, 5, 5);
-		Globals.maps.get(0).addEntity(Globals.player);
+		Globals.floors.get(0).addEntity(Globals.player);
 	}
 }

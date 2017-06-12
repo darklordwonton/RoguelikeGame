@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import main.dungeon.Map;
+import main.dungeon.Floor;
 import main.entities.Entity;
 import main.filemanager.ImageManager;
 import main.tiles.Tile;
@@ -35,6 +35,24 @@ public class MainRenderer {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
+			
+			Tile[][] tiles = MainRenderer.tiles;
+			Entity[] entities = MainRenderer.entities;
+			
+			if (tiles != null) {
+				for (int i = 0; i < tiles.length; i++) {
+					for (int e = 0; e < tiles[0].length; e++) {
+						g.drawImage(ImageManager.getImage(tiles[i][e].getSprite()), i * 60, e * 60, 60, 60, null);
+					}
+				}
+			}
+			
+			if (entities != null) {
+				for (Entity e : entities) {
+					g.drawImage(ImageManager.getImage(e.getSprite()), e.getX() * 60, WINDOW_HEIGHT - e.getY() * 60, 60, 60, null);
+				}
+			}
+			
 		}
 	};
 	private static JPanel guiPane = new JPanel() {
@@ -44,8 +62,8 @@ public class MainRenderer {
 		}
 	};
 	
-	private static Tile[][] tiles = null;
-	private static Entity[] entities = null;
+	public static Tile[][] tiles = null;
+	public static Entity[] entities = null;
 	
 	public static void init() {
 		
@@ -78,10 +96,10 @@ public class MainRenderer {
 		
 	}
 	
-	public static void drawMap(Map map) {
+	public static void drawMap(Floor map) {
 		tiles = map.getTileMap();
 		entities = map.getEntities();
-		mapPane.paintComponents(frame.getGraphics());
+		frame.repaint();
 	}
 	
 }

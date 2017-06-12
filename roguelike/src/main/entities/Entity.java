@@ -11,14 +11,6 @@ public class Entity {
 	private int y;
 	protected String sprite = null;
 	
-	public Entity(){
-		setMaxhp(0);
-		setHp(0);
-		setName("");
-		setX(0);
-		setY(0);
-	}
-	
 	public Entity(String n, int h, int px, int py){
 		setName(n);
 		setMaxhp(h);
@@ -81,11 +73,11 @@ public class Entity {
 	
 	public void move(EnumDirection dir) {
 		changeX(dir.getX());
-		if (Globals.maps.get(Globals.currentFloor).getTile(x, y).isWall()) {
+		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
 			changeX(-dir.getX());
 		}
 		changeY(dir.getY());
-		if (Globals.maps.get(Globals.currentFloor).getTile(x, y).isWall()) {
+		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
 			changeY(-dir.getY());
 		}
 	}

@@ -4,22 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import main.dungeon.Map;
+import main.dungeon.Floor;
 import main.entities.Entity;
 import main.filemanager.ImageManager;
 import main.tiles.Tile;
@@ -96,7 +89,7 @@ public class MainRenderer {
 		
 	}
 	
-	public static void drawMap(Map map) {
+	public static void drawFloor(Floor map) {
 		tiles = map.getTileMap();
 		entities = map.getEntities();
 		frame.repaint();

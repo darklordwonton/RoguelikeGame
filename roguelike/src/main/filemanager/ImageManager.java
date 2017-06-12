@@ -10,9 +10,13 @@ import javax.imageio.ImageIO;
 public class ImageManager {
 	
 	private static HashMap<String, BufferedImage> masterList = new HashMap<String, BufferedImage>();
+	private static HashMap<String, BufferedImage> tiles = new HashMap<String, BufferedImage>();
+	private static HashMap<String, BufferedImage> entities = new HashMap<String, BufferedImage>();
 	
 	public static void init () {
 		masterList.putAll(loadAllImages("src/resources"));
+		tiles.putAll(loadAllImages("src/resources/tiles"));
+		entities.putAll(loadAllImages("src/resources/entities"));
 	}
 	
 	public static HashMap<String, BufferedImage> loadAllImages (String path) {
@@ -46,6 +50,14 @@ public class ImageManager {
 	
 	public static BufferedImage getImage (String image) {
 		return masterList.get(image);
+	}
+	
+	public static BufferedImage getTileSprite (String image) {
+		return tiles.get(image);
+	}
+	
+	public static BufferedImage getEntitySprite (String image) {
+		return entities.get(image);
 	}
 	
 }
