@@ -12,9 +12,9 @@ public class Initializer {
 		Globals.player = new EntityPlayer("You", 4, 4);
 		Globals.scrollX = 0;
 		Globals.scrollY = -1;
-		Globals.currentFloor.addEntity(Globals.player);
+		Globals.floors.get(0).addEntity(Globals.player);
 		ImageManager.init();
 		MainRenderer.init();
-		MainRenderer.drawFloor(Globals.currentFloor);
+		MainRenderer.init();
 	}
 }

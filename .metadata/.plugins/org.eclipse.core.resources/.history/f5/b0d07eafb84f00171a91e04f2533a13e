@@ -15,6 +15,6 @@ public class Initializer {
 		Globals.currentFloor.addEntity(Globals.player);
 		ImageManager.init();
 		MainRenderer.init();
-		MainRenderer.drawFloor(Globals.currentFloor);
+		MainRenderer.init();
 	}
 }

@@ -42,14 +42,14 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int floorNumber = 0;
+	public static int currentFloor = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
-	public static Floor currentFloor = null;
+	public static List<Floor> floors = new ArrayList<Floor>();
 	
 	//mob stat constants
 	public static final int PATHETIC_STAT = -1;

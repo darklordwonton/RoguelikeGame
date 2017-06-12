@@ -42,7 +42,7 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int floorNumber = 0;
+	public static int currentFloor = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
 	

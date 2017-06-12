@@ -16,6 +16,9 @@ public class Main {
 		
 		Initializer.start();
 
+		while(true){
+			MainRenderer.drawFloor(Globals.floors.get(Globals.currentFloor));
+		}
 	}
 	
 	
