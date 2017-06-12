@@ -75,6 +75,7 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
+//		we should do an if else, not move in then move back - evan
 		changeX(dir.getX());
 		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
 			changeX(-dir.getX());
