@@ -50,6 +50,8 @@ public class Stats {
 		innateWit += change;
 		innateSnk += change;
 		this.level = level;
+		System.out.println(innateHp + innateMp + innateBuf
+		+ innateTuf + innateWit + innateSnk);
 		calculateStats();
 	}
 	
