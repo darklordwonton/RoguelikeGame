@@ -8,7 +8,7 @@ public class AI {
 	private static int anger = 0;
 	private static int bravery = 0;
 	private static int inte = 0;
-	private static Entity entity = null;
+	private static int entity = null;
 	private static int targetX = -1;
 	private static int targetY = -1;
 	
