@@ -1,0 +1,15 @@
+package main.entities;
+
+public class Stats {
+	private int innateHp = 0;
+	private int innateStr = 0;
+	private int innateTuf = 0;
+	private int innateWit = 0;
+	private int innateSnk = 0;
+	
+	private int hp = 0; //Health points
+	private int str = 0; //Strength
+	private int tuf = 0; //Toughness
+	private int wit = 0;
+	private int snk = 0;
+}

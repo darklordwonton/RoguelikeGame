@@ -1,0 +1,8 @@
+package main.entities;
+
+public class Stats {
+	private int innateHp = 0;
+	private int innateStr = 0;
+	private int innateHide = 0;
+	private int innateWit = 0;
+}

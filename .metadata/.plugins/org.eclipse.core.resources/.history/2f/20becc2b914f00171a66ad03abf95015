@@ -1,0 +1,19 @@
+package main.entities;
+
+public class Stats {
+	private int innateStr = 0;
+	private int innateTuf = 0;
+	private int innateWit = 0;
+	private int innateSnk = 0;
+	
+	private int hp = 0; //Health points
+	private int mp = 0; //Mana points
+	private int str = 0; //Strength - physical damage and range
+	private int tuf = 0; //Toughness - physical damage resistance
+	private int wit = 0; //Wit - magic offense
+	private int snk = 0; //Snark - magic defense
+	
+	private int xp = 0;
+	private int level = 0;
+	private int xpCoefficent = 0;
+}
