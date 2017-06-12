@@ -50,4 +50,15 @@ public class Globals {
 	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
 	public static List<Floor> floors = new ArrayList<Floor>();
+	
+	//mob stat constants
+	public static final int patheticStat = -1;
+	public static final int vLowStat = 1;
+	public static final int lowStat = 2;
+	public static final int midStat = 3;
+	public static final int highStat = 4;
+	public static final int vHighStat = 5;	
+	public static final int godStat = 10;
+	
+	
 }
