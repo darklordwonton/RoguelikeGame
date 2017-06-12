@@ -4,7 +4,7 @@ public abstract class Tile {
 	protected String sprite = null;
 	protected boolean wall = false;
 	
-	protected Tile() {}
+	private Tile() {}
 	
 	public String getSprite(){
 		return sprite;
