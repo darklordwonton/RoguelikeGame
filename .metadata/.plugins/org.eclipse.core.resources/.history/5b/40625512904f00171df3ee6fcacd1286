@@ -17,5 +17,5 @@ public class AI {
 		inte = i;
 	}
 	
-	public static char turn
+	
 }
