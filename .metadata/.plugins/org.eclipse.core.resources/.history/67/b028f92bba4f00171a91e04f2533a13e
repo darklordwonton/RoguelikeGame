@@ -1,7 +1,5 @@
 package main.entities;
 
-import java.util.Random;
-
 public class Stats {
 	private int innateHp = 0;
 	private int innateMp = 0;
@@ -19,7 +17,6 @@ public class Stats {
 	
 	private int level = 0;
 	
-	//Set stats specifically
 	public Stats(int health, int mana, int buffness, int toughness, int wit, int snark, int level) {
 		innateHp = health;
 		innateMp = mana;
@@ -31,26 +28,8 @@ public class Stats {
 		calculateStats();
 	}
 	
-	//Set stats randomly, use this mostly
 	public Stats(int magnitude, int level) {
-		Random rand = new Random();
-		innateHp = rand.nextInt(magnitude / 3);
-		innateMp = rand.nextInt(magnitude / 3);
-		innateBuf = rand.nextInt(magnitude / 3);
-		innateTuf = rand.nextInt(magnitude / 3);
-		innateWit = rand.nextInt(magnitude / 3);
-		innateSnk = rand.nextInt(magnitude / 3);
-		int total = innateHp + innateMp + innateBuf
-				+ innateTuf + innateWit + innateSnk;
-		int change = (magnitude - total) / 6;
-		innateHp += change;
-		innateMp += change;
-		innateBuf += change;
-		innateTuf += change;
-		innateWit += change;
-		innateSnk += change;
-		this.level = level;
-		calculateStats();
+		
 	}
 	
 	public void calculateStats() {

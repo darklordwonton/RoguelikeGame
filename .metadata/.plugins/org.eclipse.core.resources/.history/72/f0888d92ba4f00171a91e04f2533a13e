@@ -19,7 +19,6 @@ public class Stats {
 	
 	private int level = 0;
 	
-	//Set stats specifically
 	public Stats(int health, int mana, int buffness, int toughness, int wit, int snark, int level) {
 		innateHp = health;
 		innateMp = mana;
@@ -31,7 +30,6 @@ public class Stats {
 		calculateStats();
 	}
 	
-	//Set stats randomly, use this mostly
 	public Stats(int magnitude, int level) {
 		Random rand = new Random();
 		innateHp = rand.nextInt(magnitude / 3);
@@ -43,14 +41,6 @@ public class Stats {
 		int total = innateHp + innateMp + innateBuf
 				+ innateTuf + innateWit + innateSnk;
 		int change = (magnitude - total) / 6;
-		innateHp += change;
-		innateMp += change;
-		innateBuf += change;
-		innateTuf += change;
-		innateWit += change;
-		innateSnk += change;
-		this.level = level;
-		calculateStats();
 	}
 	
 	public void calculateStats() {

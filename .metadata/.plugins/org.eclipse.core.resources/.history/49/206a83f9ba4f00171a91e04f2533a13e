@@ -31,7 +31,7 @@ public class Stats {
 		calculateStats();
 	}
 	
-	//Set stats randomly, use this mostly
+	//Set stats randomly
 	public Stats(int magnitude, int level) {
 		Random rand = new Random();
 		innateHp = rand.nextInt(magnitude / 3);
@@ -49,7 +49,6 @@ public class Stats {
 		innateTuf += change;
 		innateWit += change;
 		innateSnk += change;
-		this.level = level;
 		calculateStats();
 	}
 	
