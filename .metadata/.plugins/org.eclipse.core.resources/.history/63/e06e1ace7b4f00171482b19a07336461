@@ -1,0 +1,10 @@
+package main.tiles;
+
+public class TileFloor extends Tile {
+	
+	public TileFloor(EnumTheme t) {
+		sprite = "empty.jpg";
+		wall = false;
+	}
+	
+}

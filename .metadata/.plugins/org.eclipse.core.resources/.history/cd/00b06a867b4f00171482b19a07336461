@@ -1,0 +1,5 @@
+package main.tiles;
+
+public enum EnumTheme {
+	CAVE, GRAY_BRICK, VOLCANO
+}
