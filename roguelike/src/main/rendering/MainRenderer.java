@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import main.dungeon.Floor;
 import main.entities.Entity;
 import main.filemanager.ImageManager;
+import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.util.ControlManager;
 import main.util.Globals;
@@ -30,6 +31,9 @@ public class MainRenderer {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
+			
+			g.setColor(Globals.BG_COLORS.get(theme));
+			g.fillRect(0, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 			
 			if (tiles != null) {
 				for (int i = 0; i < tiles.length; i++) {
@@ -58,8 +62,9 @@ public class MainRenderer {
 		}
 	};
 	
-	public static Tile[][] tiles = null;
-	public static Entity[] entities = null;
+	private static Tile[][] tiles = null;
+	private static Entity[] entities = null;
+	private static EnumTheme theme = null;
 	
 	public static void init() {
 		
@@ -95,6 +100,7 @@ public class MainRenderer {
 	}
 	
 	public static void drawFloor(Floor map) {
+		theme = map.getTheme();
 		tiles = map.getTileMap();
 		entities = map.getEntities();
 		frame.repaint();

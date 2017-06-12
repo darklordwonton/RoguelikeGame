@@ -15,4 +15,6 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="main.tiles.EnumFloor"/>
 <fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
 </qualifiedTypeNameHistroy>

@@ -42,8 +42,4 @@ public class Floor {
 	public Entity[] getEntities(){
 		return entities.toArray(new Entity[entities.size()]);
 	}
-	
-	public EnumTheme getTheme() {
-		return theme;
-	}
 }

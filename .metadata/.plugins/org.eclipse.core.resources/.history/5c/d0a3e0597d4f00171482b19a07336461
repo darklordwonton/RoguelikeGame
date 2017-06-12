@@ -28,10 +28,6 @@ public class Globals {
 	
 	//Colors
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
-	static {
-		BG_COLORS.put(EnumTheme.CAVE, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK, Color.DARK_GRAY);
-	};
 	
 	//Keys
 	public static final int UP_KEY = KeyEvent.VK_UP;

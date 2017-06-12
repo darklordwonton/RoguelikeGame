@@ -1,6 +1,5 @@
 package main.util;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,13 +23,6 @@ public class Globals {
 		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_floor.jpg");
 		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_floor.jpg");
 		FLOOR_SPRITES.put(EnumTheme.VOLCANO, "volcano_floor.jpg");
-	};
-	
-	//Colors
-	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
-	static {
-		BG_COLORS.put(EnumTheme.CAVE, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK, Color.DARK_GRAY);
 	};
 	
 	//Keys
