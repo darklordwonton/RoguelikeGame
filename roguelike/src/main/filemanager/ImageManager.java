@@ -15,8 +15,8 @@ public class ImageManager {
 	
 	public static void init () {
 		masterList.putAll(loadAllImages("src/resources"));
-		//tiles.putAll(loadAllImages("src/resources/tiles"));
-		//entities.putAll(loadAllImages("src/resources/entities"));
+		tiles.putAll(loadAllImages("src/resources/tiles"));
+		entities.putAll(loadAllImages("src/resources/entities"));
 	}
 	
 	public static HashMap<String, BufferedImage> loadAllImages (String path) {
