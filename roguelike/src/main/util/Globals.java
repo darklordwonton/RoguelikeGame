@@ -49,7 +49,9 @@ public class Globals {
 	//Global Arrays
 	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
+	public static int floorNum = 0;
 	public static Floor currentFloor = null;
+	
 	
 	//mob stat constants
 	public static final int PATHETIC_STAT = -1;

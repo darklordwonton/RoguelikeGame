@@ -166,5 +166,9 @@ public class Stats {
 	public void setSnk(int snk) {
 		this.snk = snk;
 	}
+
+	public void average(Stats ideal) {
+		
+	}
 	
 }

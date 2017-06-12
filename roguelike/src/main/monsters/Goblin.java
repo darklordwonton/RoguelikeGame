@@ -11,11 +11,13 @@ public class Goblin extends Entity{
 							Globals.MID_STAT, 
 							Globals.MID_STAT, 
 							Globals.MID_STAT, 
-							0); //globals.currentFloor
+							Globals.floorNum);
 	
 	Goblin(String n, int px, int py){
 		super(n, px, py);
-		
+			Stats stats = new Stats (Globals.floorNum*15, Globals.floorNum);
+			stats.average(ideal);
+			
 	}
 
 }
