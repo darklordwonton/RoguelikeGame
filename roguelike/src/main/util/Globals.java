@@ -8,20 +8,21 @@ import java.util.Map;
 
 import main.dungeon.Floor;
 import main.entities.Entity;
-import main.tiles.EnumFloor;
+import main.tiles.EnumTheme;
 
 public class Globals {
 	//Config Variables
 	public static final int MAX_CREATURES = 10;
-	public static final int FLOOR_SIZE = 10;
+	public static final int FLOOR_SIZE = 9;
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
-	public static final Map<EnumFloor, String> FLOOR_SPRITES = new HashMap<EnumFloor, String>();
+	public static final Map<EnumTheme, String> FLOOR_SPRITES = new HashMap<EnumTheme, String>();
 	static {
-		FLOOR_SPRITES.put(EnumFloor.GRAY_BRICK, "gray_bricks_floor.jpg");
-		FLOOR_SPRITES.put(EnumFloor.STONE, "stone_floor.jpg");
-		FLOOR_SPRITES.put(EnumFloor.VOLCANO, "volcano_floor.jpg");
+		FLOOR_SPRITES.put(EnumTheme.CAVE, "cave_floor.jpg");
+		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_floor.jpg");
+		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_floor.jpg");
+		FLOOR_SPRITES.put(EnumTheme.VOLCANO, "volcano_floor.jpg");
 	};
 	
 	//Keys

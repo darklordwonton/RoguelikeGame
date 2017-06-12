@@ -1,0 +1,15 @@
+package main.util;
+
+import main.dungeon.Floor;
+import main.entities.EntityPlayer;
+import main.tiles.EnumTheme;
+
+public class Initializer {
+	public static void start(){
+		Globals.floors.add(new Floor(Globals.FLOOR_SIZE, Globals.FLOOR_SIZE, EnumTheme.GRAY_BRICK));
+		Globals.player = new EntityPlayer("Player", 10, 5, 5);
+		Globals.scrollX = 1;
+		Globals.scrollY = 0;
+		Globals.floors.get(0).addEntity(Globals.player);
+	}
+}

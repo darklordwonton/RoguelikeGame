@@ -4,11 +4,11 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Entity {
-	private int maxhp = 0;
-	private int hp = 0;
-	private String name = "";
-	private int x;
-	private int y;
+	protected int maxhp = 0;
+	protected int hp = 0;
+	protected String name = "";
+	protected int x;
+	protected int y;
 	protected String sprite = null;
 	
 	public Entity(String n, int h, int px, int py){

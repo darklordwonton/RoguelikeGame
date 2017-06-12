@@ -17,32 +17,31 @@ import main.entities.Entity;
 import main.filemanager.ImageManager;
 import main.tiles.Tile;
 import main.util.ControlManager;
+import main.util.Globals;
 
 public class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
-	public static final int WINDOW_WIDTH = 800;
-	public static final int WINDOW_HEIGHT = 600;
+	public static final int WINDOW_WIDTH = 832;
+	public static final int WINDOW_HEIGHT = 576;
+	public static final int TILE_SIZE = WINDOW_HEIGHT / 9;
 	private static JFrame frame = new JFrame("Game");
 	private static JPanel mapPane = new JPanel() {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			
-			Tile[][] tiles = MainRenderer.tiles;
-			Entity[] entities = MainRenderer.entities;
-			
 			if (tiles != null) {
 				for (int i = 0; i < tiles.length; i++) {
 					for (int e = 0; e < tiles[0].length; e++) {
-						g.drawImage(ImageManager.getImage(tiles[i][e].getSprite()), i * 60, e * 60, 60, 60, null);
+						g.drawImage(ImageManager.getTileSprite(tiles[i][e].getSprite()), (i - Globals.scrollX) * TILE_SIZE, WINDOW_HEIGHT - (e - Globals.scrollY) * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 					}
 				}
 			}
 			
 			if (entities != null) {
 				for (Entity e : entities) {
-					g.drawImage(ImageManager.getImage(e.getSprite()), e.getX() * 60, WINDOW_HEIGHT - e.getY() * 60, 60, 60, null);
+					g.drawImage(ImageManager.getEntitySprite(e.getSprite()), (e.getX() - Globals.scrollX) * TILE_SIZE, WINDOW_HEIGHT - (e.getY() - Globals.scrollY) * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 				}
 			}
 			
@@ -52,6 +51,10 @@ public class MainRenderer {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
+			
+			g.setColor(Color.BLACK);
+			g.fillRect(0, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
+			g.fillRect(WINDOW_WIDTH - 2 * TILE_SIZE, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
 		}
 	};
 	
@@ -60,7 +63,7 @@ public class MainRenderer {
 	
 	public static void init() {
 		
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 /*Extra bit because windows are weird*/);
 		frame.setVisible(true);
 		frame.setBackground(Color.WHITE);
 		frame.addWindowListener(new WindowAdapter() {
@@ -84,8 +87,10 @@ public class MainRenderer {
 			}
 		});
 		
-		frame.setContentPane(mapPane);
-		mapPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		frame.getContentPane().add(mapPane);
+		frame.getContentPane().add(guiPane);
+		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
+		guiPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 	}
 	

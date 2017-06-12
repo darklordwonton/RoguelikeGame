@@ -1,0 +1,22 @@
+package main.entities;
+
+import main.util.EnumDirection;
+import main.util.Globals;
+
+public class EntityPlayer extends Entity {
+	public EntityPlayer(String n, int h, int px, int py){
+		super(n,h,px,py);
+		sprite = Globals.PLAYER_SPRITE;
+	}
+	
+	public void move(EnumDirection dir) {
+		changeX(dir.getX());
+		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
+			changeX(-dir.getX());
+		}
+		changeY(dir.getY());
+		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
+			changeY(-dir.getY());
+		}
+	}
+}
