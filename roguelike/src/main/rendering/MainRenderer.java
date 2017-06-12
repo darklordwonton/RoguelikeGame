@@ -2,6 +2,7 @@ package main.rendering;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -14,6 +15,7 @@ import javax.swing.JPanel;
 
 import main.dungeon.Floor;
 import main.entities.Entity;
+import main.entities.EntityPlayer;
 import main.filemanager.ImageManager;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
@@ -59,6 +61,26 @@ public class MainRenderer {
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
 			g.fillRect(WINDOW_WIDTH - 2 * TILE_SIZE, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
+			g.setFont(new Font("Papyrus", 0, 25));
+			g.setColor(Color.WHITE);
+			
+			EntityPlayer player = Globals.player;
+			
+			g.drawString("HP: " + player.getHp(), 5, 25);
+			g.drawString("MP: " + player.getHp(), 5, TILE_SIZE + 25);
+			g.drawString("TUF: " + player.getStats().getTuf(), 5, 3 * TILE_SIZE - 25);
+			g.drawString("BUF: " + player.getStats().getBuf(), 5, 3 * TILE_SIZE);
+			g.drawString("WIT: " + player.getStats().getWit(), 5, 3 * TILE_SIZE + 25);
+			g.drawString("SNK: " + player.getStats().getSnk(), 5, 3 * TILE_SIZE + 50);
+			
+			g.setColor(Color.GRAY);
+			g.fillRect(5, TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
+			g.fillRect(5, 3 * TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
+			if (player.getHp() != 0 && player.getStats().getHp() / player.getHp() >= 4)
+				g.setColor(Color.RED);
+			else
+				g.setColor(Color.GREEN);
+			
 		}
 	};
 	
@@ -69,8 +91,6 @@ public class MainRenderer {
 	public static void init() {
 		
 		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 /*Extra bit because windows are weird*/);
-		frame.setVisible(true);
-		frame.setBackground(Color.WHITE);
 		frame.addWindowListener(new WindowAdapter() {
 	         public void windowClosing(WindowEvent event){
 	             System.exit(0);
@@ -96,7 +116,7 @@ public class MainRenderer {
 		frame.getContentPane().add(guiPane);
 		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 		guiPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		
+		frame.setVisible(true);
 	}
 	
 	public static void drawFloor(Floor map) {

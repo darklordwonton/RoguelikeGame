@@ -9,6 +9,7 @@ import java.util.Map;
 
 import main.dungeon.Floor;
 import main.entities.Entity;
+import main.entities.EntityPlayer;
 import main.tiles.EnumTheme;
 
 public class Globals {
@@ -46,7 +47,7 @@ public class Globals {
 	public static int scrollY = 0;
 	
 	//Global Arrays
-	public static Entity player = null;
+	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
 	public static List<Floor> floors = new ArrayList<Floor>();
 }

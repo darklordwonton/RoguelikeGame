@@ -34,6 +34,14 @@ public class Entity {
 		this.hp = hp;
 	}
 	
+	public int getMp() {
+		return mp;
+	}
+
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+	
 	public int getX() {
 		return x;
 	}
