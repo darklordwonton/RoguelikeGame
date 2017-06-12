@@ -62,7 +62,7 @@ public class Globals {
 	
 	
 	//mob stat constants
-	public static final int PATHETIC_STAT = -1;
+	public static final int PATHETIC_STAT = 0;
 	public static final int VERY_LOW_STAT = 1;
 	public static final int LOW_STAT = 2;
 	public static final int MID_STAT = 3;
