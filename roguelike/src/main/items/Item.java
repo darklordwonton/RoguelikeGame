@@ -4,12 +4,7 @@ public class Item {
 	protected String name = "";
 	protected int value = 0;
 	
-	public Item(){
-		name = "";
-		value = 0;
-	}
-	
-	public Item(String n, int v){
+	protected Item(String n, int v){
 		name = n;
 		value = v;
 	}

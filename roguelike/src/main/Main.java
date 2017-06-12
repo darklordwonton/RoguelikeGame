@@ -15,11 +15,7 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 		
 		Initializer.start();
-		MainRenderer.init();
-		ImageManager.init();
-		while(true){
-			MainRenderer.drawFloor(Globals.floors.get(Globals.currentFloor));
-		}
+
 	}
 	
 	

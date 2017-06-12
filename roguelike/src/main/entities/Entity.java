@@ -34,6 +34,14 @@ public class Entity {
 		this.hp = hp;
 	}
 	
+	public int getMp() {
+		return mp;
+	}
+
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+	
 	public int getX() {
 		return x;
 	}
@@ -68,11 +76,11 @@ public class Entity {
 	
 	public void move(EnumDirection dir) {
 		changeX(dir.getX());
-		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
+		if (Globals.currentFloor.getTile(x, y).isWall()) {
 			changeX(-dir.getX());
 		}
 		changeY(dir.getY());
-		if (Globals.floors.get(Globals.currentFloor).getTile(x, y).isWall()) {
+		if (Globals.currentFloor.getTile(x, y).isWall()) {
 			changeY(-dir.getY());
 		}
 	}

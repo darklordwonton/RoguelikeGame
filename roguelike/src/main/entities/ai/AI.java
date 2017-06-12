@@ -1,5 +1,6 @@
 package main.entities.ai;
 
+import main.entities.Entity;
 import main.util.EnumDirection;
 import main.util.Globals;
 
@@ -7,24 +8,15 @@ public class AI {
 	private static int anger = 0;
 	private static int bravery = 0;
 	private static int inte = 0;
-	private static int id = 0;
+	private static Entity entity = null;
 	private static int targetX = -1;
 	private static int targetY = -1;
 	
-	public AI(){
-		anger = 0;
-		bravery = 0;
-		inte = 0;
-		id = 0;
-		targetX = -1;
-		targetY = -1;
-	}
-	
-	public AI(int a, int b, int i, int ID){
+	public AI(int a, int b, int i, Entity e){
 		anger = a;
 		bravery = b;
 		inte = i;
-		id = ID;
+		entity = e;
 		targetX = -1;
 		targetY = -1;
 	}
@@ -39,10 +31,10 @@ public class AI {
 		
 		return action;
 	}
-	
+
 	public static char stupidMove(){
-		int ownX = Globals.entities.get(id).getX();
-		int ownY = Globals.entities.get(id).getY();
+		int ownX = entity.getX();
+		int ownY = entity.getY();
 		boolean moved = false;
 		char move = ' ';
 		
@@ -94,4 +86,5 @@ public class AI {
 		}
 		return move;
 	}
+
 }

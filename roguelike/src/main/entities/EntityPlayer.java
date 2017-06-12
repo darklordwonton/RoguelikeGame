@@ -7,13 +7,9 @@ public class EntityPlayer extends Entity {
 	public EntityPlayer(String n, int px, int py){
 		super(n,px,py);
 		sprite = Globals.PLAYER_SPRITE;
-		stats = new Stats((int) (3 + Math.random() * 15), 
-				(int) (3 + Math.random() * 15), 
-				(int) (3 + Math.random() * 15), 
-				(int) (3 + Math.random() * 15), 
-				(int) (3 + Math.random() * 15), 
-				(int) (3 + Math.random() * 15), 
-				1);
+		stats = new Stats(200, 1);
+		hp = stats.getHp();
+		mp = stats.getMp();
 	}
 	
 	public void move(EnumDirection dir) {

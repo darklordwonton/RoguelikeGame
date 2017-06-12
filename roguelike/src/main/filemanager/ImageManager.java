@@ -9,12 +9,10 @@ import javax.imageio.ImageIO;
 
 public class ImageManager {
 	
-	private static HashMap<String, BufferedImage> masterList = new HashMap<String, BufferedImage>();
 	private static HashMap<String, BufferedImage> tiles = new HashMap<String, BufferedImage>();
 	private static HashMap<String, BufferedImage> entities = new HashMap<String, BufferedImage>();
 	
 	public static void init () {
-		masterList.putAll(loadAllImages("src/resources"));
 		tiles.putAll(loadAllImages("src/resources/tiles"));
 		entities.putAll(loadAllImages("src/resources/entities"));
 	}
@@ -48,11 +46,7 @@ public class ImageManager {
 		return ret;
 	}
 	
-	public static BufferedImage getImage (String image) {
-		return masterList.get(image);
-	}
-	
-	public static BufferedImage getTileSprite (String image) {
+	public static BufferedImage getTileTexture (String image) {
 		return tiles.get(image);
 	}
 	
