@@ -2,8 +2,6 @@ package main.util;
 
 import main.dungeon.Floor;
 import main.entities.EntityPlayer;
-import main.filemanager.ImageManager;
-import main.rendering.MainRenderer;
 import main.tiles.EnumTheme;
 
 public class Initializer {
@@ -13,7 +11,5 @@ public class Initializer {
 		Globals.scrollX = 0;
 		Globals.scrollY = -1;
 		Globals.floors.get(0).addEntity(Globals.player);
-		MainRenderer.init();
-		ImageManager.init();
 	}
 }

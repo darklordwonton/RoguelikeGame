@@ -13,9 +13,7 @@ public class EntityPlayer extends Entity {
 				(int) (3 + Math.random() * 15), 
 				(int) (3 + Math.random() * 15), 
 				(int) (3 + Math.random() * 15), 
-				1); //I'm going to make this suck less
-		hp = stats.getHp();
-		mp = stats.getMp();
+				1);
 	}
 	
 	public void move(EnumDirection dir) {

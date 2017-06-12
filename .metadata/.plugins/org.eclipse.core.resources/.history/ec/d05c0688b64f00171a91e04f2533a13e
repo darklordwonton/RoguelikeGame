@@ -39,7 +39,10 @@ public class AI {
 		
 		return action;
 	}
-
+	
+<<<<<<< HEAD
+	//public static char turn
+=======
 	public static char stupidMove(){
 		int ownX = Globals.entities.get(id).getX();
 		int ownY = Globals.entities.get(id).getY();

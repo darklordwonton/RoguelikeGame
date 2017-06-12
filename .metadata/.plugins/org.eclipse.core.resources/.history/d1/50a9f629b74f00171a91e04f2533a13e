@@ -46,7 +46,11 @@ public class ImageManager {
 		return ret;
 	}
 	
-	public static BufferedImage getTileTexture (String image) {
+	public static BufferedImage getImage (String image) {
+		return masterList.get(image);
+	}
+	
+	public static BufferedImage getTileSprite (String image) {
 		return tiles.get(image);
 	}
 	

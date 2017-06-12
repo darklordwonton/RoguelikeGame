@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="main.tiles.Tile"/>
 <fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
 <fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
-<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 <fullyQualifiedTypeName name="main.actions.Action"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -17,4 +16,6 @@
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
 </qualifiedTypeNameHistroy>

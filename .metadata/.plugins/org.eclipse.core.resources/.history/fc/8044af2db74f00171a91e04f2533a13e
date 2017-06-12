@@ -40,7 +40,7 @@ public class MainRenderer {
 			if (tiles != null) {
 				for (int i = 0; i < tiles.length; i++) {
 					for (int e = 0; e < tiles[0].length; e++) {
-						g.drawImage(ImageManager.getTileTexture(tiles[i][e].getSprite()), (i - Globals.scrollX) * TILE_SIZE, WINDOW_HEIGHT - (e - Globals.scrollY) * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
+						g.drawImage(ImageManager.getTileSprite(tiles[i][e].getSprite()), (i - Globals.scrollX) * TILE_SIZE, WINDOW_HEIGHT - (e - Globals.scrollY) * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 					}
 				}
 			}
