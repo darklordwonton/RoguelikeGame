@@ -52,13 +52,13 @@ public class Globals {
 	public static List<Floor> floors = new ArrayList<Floor>();
 	
 	//mob stat constants
-	public static final int PATHETIC_STAT = -1;
-	public static final int VERY_LOW_STAT = 1;
-	public static final int LOW_STAT = 2;
-	public static final int MID_STAT = 3;
-	public static final int HIGH_STAT = 4;
-	public static final int VERY_HIGH_STAT = 5;	
-	public static final int GOD_STAT = 10;
+	public static final int patheticStat = -1;
+	public static final int vLowStat = 1;
+	public static final int lowStat = 2;
+	public static final int midStat = 3;
+	public static final int highStat = 4;
+	public static final int vHighStat = 5;	
+	public static final int godStat = 10;
 	
 	
 }
