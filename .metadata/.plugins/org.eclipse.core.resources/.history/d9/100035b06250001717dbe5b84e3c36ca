@@ -47,12 +47,12 @@ public class Globals {
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_floor_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_1, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_2, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_3, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_4, "gray_brick_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_1, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_2, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_3, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_4, "stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "stairs.jpg");
 	};
 	
 	//Colors

@@ -52,7 +52,7 @@ public class Globals {
 		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_3, "gray_brick_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_4, "gray_brick_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "stairs.jpg");
 	};
 	
 	//Colors
