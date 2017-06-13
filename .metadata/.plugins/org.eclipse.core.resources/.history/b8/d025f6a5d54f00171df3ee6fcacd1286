@@ -25,7 +25,7 @@ public class Floor {
 		width = w;
 		theme = t;
 		tiles = new Tile[h][w];		
-		rooms = new Room[Globals.ROOMS_PER_FLOOR];
+		rooms = new Room[4];
 		boolean[][] filled = new boolean[h][w];
 		
 		tiles = new Tile[h][w];
