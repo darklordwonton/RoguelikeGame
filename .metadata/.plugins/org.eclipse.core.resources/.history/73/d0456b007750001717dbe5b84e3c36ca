@@ -18,7 +18,7 @@ public class Floor {
 	private int width = 0;
 	private EnumTheme theme = null;
 	
-	public Floor (int h, int w, EnumTheme t) {
+	public Floor (int h, int w, EnumTheme t, int stairsX, int stairsY) {
 		height = h;
 		width = w;
 		theme = t;
@@ -26,28 +26,18 @@ public class Floor {
 		rooms = new Room[Globals.ROOMS_PER_FLOOR];
 		
 		tiles = new Tile[h][w];
+		Globals.floorNum++;
 		
 		rooms[0] = new Room(0,0);
 		
-<<<<<<< HEAD
-		tiles[stairsX][stairsY] = new TileStairs(t, stairsX, stairsY);
+		tiles[stairsX][stairsY] = new TileStairs(t);
 		
 		for (int i = 0; i <= stairsX; i++){
-			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t, i, Globals.MIN_ROOM_SIZE);
-		}
-
-		for (int i = 1; i < stairsY; i++){
-			tiles[stairsX][i] = new TileFloor(t, stairsX, i);
-=======
-		tiles[Globals.stairsX][Globals.stairsY] = new TileStairs(t);
-		
-		for (int i = 0; i <= Globals.stairsX; i++){
 			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t);
 		}
 
-		for (int i = 1; i < Globals.stairsY; i++){
-			tiles[Globals.stairsX][i] = new TileFloor(t);
->>>>>>> origin/master
+		for (int i = 1; i < stairsY; i++){
+			tiles[stairsX][i] = new TileFloor(t);
 		}
 		
 		for (int i = 1; i < rooms.length; i++){
@@ -61,13 +51,8 @@ public class Floor {
 			
 			for (int e = 0; e < rooms[i].getSizeX(); e++){
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
-<<<<<<< HEAD
 					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
-						tiles[x + e][y + r] = new TileFloor(t, x + e, y + r);
-=======
-					if (!rooms[i].isWall(e, r) && (x + e != Globals.stairsX || y + r != Globals.stairsY)){
 						tiles[x + e][y + r] = new TileFloor(t);
->>>>>>> origin/master
 					}
 				}
 			}
@@ -76,7 +61,7 @@ public class Floor {
 		for (int i = 0; i < h; i++) {
 			for (int e = 0; e < w; e++) {
 				if (tiles[i][e] == null){
-					tiles [i][e]= new TileWall(t, i, e);
+					tiles [i][e]= new TileWall(t);
 				}
 			}
 		}
@@ -102,10 +87,6 @@ public class Floor {
 	
 	public EnumTheme getTheme() {
 		return theme;
-	}
-	
-	public void destroyTile (int x, int y) {
-		tiles[x][y] = new TileFloor(theme, x, y);
 	}
 	
 }
