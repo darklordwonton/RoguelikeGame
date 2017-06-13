@@ -1,0 +1,11 @@
+package main.tiles;
+
+public class TileBreakable extends TileWall {
+	
+	ModifierChart modifier = Globals.DEFAULT_WALL_MODIFIER;
+	
+	public TileBreakable(EnumTheme t) {
+		super(t);
+	}
+
+}

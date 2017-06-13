@@ -1,0 +1,11 @@
+package main.tiles;
+
+public class TileBreakable extends TileWall {
+	
+	
+	
+	public TileBreakable(EnumTheme t) {
+		super(t);
+	}
+
+}

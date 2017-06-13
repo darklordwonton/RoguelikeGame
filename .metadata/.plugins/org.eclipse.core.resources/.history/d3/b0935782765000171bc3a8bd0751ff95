@@ -1,0 +1,5 @@
+package main.tiles;
+
+public class TileBreakable extends TileWall {
+
+}

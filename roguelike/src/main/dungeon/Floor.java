@@ -29,14 +29,17 @@ public class Floor {
 		
 		rooms[0] = new Room(0,0);
 		
-		tiles[Globals.stairsX][Globals.stairsY] = new TileStairs(t);
+		int stairsX = Globals.stairsX;
+		int stairsY = Globals.stairsY;
 		
-		for (int i = 0; i <= Globals.stairsX; i++){
-			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t);
+		tiles[stairsX][stairsY] = new TileStairs(t, stairsX, stairsY);
+		
+		for (int i = 0; i <= stairsX; i++) {
+			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t, i, Globals.MIN_ROOM_SIZE);
 		}
 
-		for (int i = 1; i < Globals.stairsY; i++){
-			tiles[Globals.stairsX][i] = new TileFloor(t);
+		for (int i = 1; i < stairsY; i++) {
+			tiles[stairsX][i] = new TileFloor(t, stairsX, i);
 		}
 		
 		for (int i = 1; i < rooms.length; i++){
@@ -50,8 +53,8 @@ public class Floor {
 			
 			for (int e = 0; e < rooms[i].getSizeX(); e++){
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
-					if (!rooms[i].isWall(e, r) && (x + e != Globals.stairsX || y + r != Globals.stairsY)){
-						tiles[x + e][y + r] = new TileFloor(t);
+					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
+						tiles[x + e][y + r] = new TileFloor(t, x + e, y + r);
 					}
 				}
 			}
@@ -60,7 +63,7 @@ public class Floor {
 		for (int i = 0; i < h; i++) {
 			for (int e = 0; e < w; e++) {
 				if (tiles[i][e] == null){
-					tiles [i][e]= new TileWall(t);
+					tiles [i][e]= new TileWall(t, i, e);
 				}
 			}
 		}
@@ -86,6 +89,10 @@ public class Floor {
 	
 	public EnumTheme getTheme() {
 		return theme;
+	}
+	
+	public void destroyTile (int x, int y) {
+		tiles[x][y] = new TileFloor(theme, x, y);
 	}
 	
 }

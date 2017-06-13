@@ -1,0 +1,14 @@
+package main.attacks;
+
+import java.util.Set;
+
+public abstract class Attack {
+
+	private int damage = 0;
+	private Set<EnumAttackType> types = null;
+	
+	public Attack()
+	
+	
+	
+}
