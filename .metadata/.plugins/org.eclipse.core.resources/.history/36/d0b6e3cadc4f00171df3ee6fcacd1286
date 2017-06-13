@@ -9,7 +9,7 @@ import main.tiles.EnumTheme;
 public class Initializer {
 	public static void start(){
 		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE, Globals.FLOOR_SIZE, EnumTheme.CAVE);
-		Globals.player = new EntityPlayer("You", 0, 0);
+		Globals.player = new EntityPlayer("You", 4, 4);
 		Globals.scrollX = 0;
 		Globals.scrollY = -1;
 		Globals.currentFloor.addEntity(Globals.player);

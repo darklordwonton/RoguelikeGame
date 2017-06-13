@@ -11,7 +11,7 @@ public class TileFloor extends Tile {
 		stairs = s;
 	}
 	
-	public boolean getStairs(){
+	public getStairs(){
 		return stairs;
 	}
 }

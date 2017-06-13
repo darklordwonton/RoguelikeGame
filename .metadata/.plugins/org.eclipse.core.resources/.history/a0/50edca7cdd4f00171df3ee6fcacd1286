@@ -40,19 +40,11 @@ public class Floor {
 		
 		rooms[0] = new Room(0,0);
 		
-		for (int i = 0; i <= stairsX; i++){
-			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t, false);
-			filled[i][Globals.MIN_ROOM_SIZE - 1] = true;
-		}
-
-		for (int i = 1; i < stairsY; i++){
-			tiles [stairsX][i] = new TileFloor(t, false);
-			filled[stairsX][i] = true;
-		}
-		
 		for (int i = 1; i < rooms.length; i++){
 			rooms[i] = new Room((int)(Math.random() * (Globals.FLOOR_SIZE - Globals.MAX_ROOM_SIZE)), (int)(Math.random() * (Globals.FLOOR_SIZE - Globals.MAX_ROOM_SIZE)));
 		}
+		
+		
 		
 		for (int i = 0; i < rooms.length; i++){
 			rooms[i].basicRoom();
@@ -61,7 +53,7 @@ public class Floor {
 			
 			for (int e = 0; e < rooms[i].getSizeX(); e++){
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
-					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
+					if (!rooms[i].isWall(e, r)){
 						tiles[x + e][y + r] = new TileFloor(t, false);
 						filled[x + e][y + r] = true;
 					}
