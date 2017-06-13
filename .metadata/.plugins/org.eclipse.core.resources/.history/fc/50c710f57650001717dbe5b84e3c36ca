@@ -1,6 +1,5 @@
 package main.tiles;
 
-import main.dungeon.Generator;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.util.Globals;
@@ -14,7 +13,7 @@ public class TileStairs extends Tile {
 	
 	public void onStep(Entity e) {
 		if (e instanceof EntityPlayer) {
-			Generator.newFloor(0, 0, 0);
+			//Do stair things
 		}
 	}
 	

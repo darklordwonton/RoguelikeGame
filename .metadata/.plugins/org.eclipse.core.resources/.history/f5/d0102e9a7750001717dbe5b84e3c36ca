@@ -81,7 +81,5 @@ public class Entity {
 		if (!(y == 0 && dir.getY() == -1) && !(y == Globals.FLOOR_SIZE && dir.getY() == 1) && !Globals.currentFloor.getTile(x, y + dir.getY()).isWall()) {
 			changeY(dir.getY());
 		}
-		
-		Globals.currentFloor.getTile(x, y).onStep(Globals.player);
 	}
 }

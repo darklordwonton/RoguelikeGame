@@ -11,7 +11,7 @@ public class Generator {
 		Globals.stairsY = 15;
 		
 		
-		int theme = (int)(Math.random() * 5);
+		int theme = (int)(Math.random() * 4);
 		switch(theme){
 		case 0: 		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE, Globals.FLOOR_SIZE, EnumTheme.CAVE);
 		break;
