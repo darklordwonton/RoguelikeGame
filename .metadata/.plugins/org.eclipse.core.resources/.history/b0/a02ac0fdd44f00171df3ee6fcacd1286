@@ -15,9 +15,7 @@ import main.tiles.EnumTheme;
 public class Globals {
 	//Config Variables
 	public static final int MAX_CREATURES = 10;
-	public static final int FLOOR_SIZE = 20;
-	public static final int MAX_ROOM_SIZE = 5;
-	public static final int MIN_ROOM_SIZE = 2;
+	public static final int FLOOR_SIZE = 9;
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";

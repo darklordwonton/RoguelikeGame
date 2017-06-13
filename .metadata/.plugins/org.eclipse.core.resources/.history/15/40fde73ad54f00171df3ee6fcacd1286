@@ -39,7 +39,7 @@ public class Floor {
 		rooms[0] = new Room(3,3);
 		
 		for (int i = 1; i < rooms.length; i++){
-			rooms[i] = new Room((int)(Math.random() * (Globals.FLOOR_SIZE - Globals.MAX_ROOM_SIZE)), (int)(Math.random() * (Globals.FLOOR_SIZE - Globals.MAX_ROOM_SIZE)));
+			rooms[i] = new Room((int)(Math.random() * 5), (int)(Math.random() * 5));
 		}
 		
 		for (int i = 0; i < rooms.length; i++){
