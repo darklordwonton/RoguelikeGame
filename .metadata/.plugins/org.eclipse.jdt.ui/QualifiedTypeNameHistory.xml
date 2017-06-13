@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="main.entities.Entity"/>
-<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
-<fullyQualifiedTypeName name="main.tiles.TileStairs"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="main.dungeon.Generator"/>
 </qualifiedTypeNameHistroy>
