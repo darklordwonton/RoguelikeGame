@@ -13,8 +13,8 @@ public class ImageManager {
 	private static HashMap<String, BufferedImage> entities = new HashMap<String, BufferedImage>();
 	
 	public static void init () {
-		tiles.putAll(loadAllImages("src/resources/tiles"));
-		entities.putAll(loadAllImages("src/resources/entities"));
+		tiles.putAll(loadAllImages("roguelike/src/resources/tiles"));
+		entities.putAll(loadAllImages("roguelike/src/resources/entities"));
 	}
 	
 	public static HashMap<String, BufferedImage> loadAllImages (String path) {
