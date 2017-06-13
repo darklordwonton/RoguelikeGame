@@ -75,10 +75,10 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
-		if (!Globals.currentFloor.getTile(x + dir.getX(), y).isWall()) {
+		if (!(x == 0 && dir.getX() == -1) && !(x == Globals.FLOOR_SIZE && dir.getX() == 1) && !Globals.currentFloor.getTile(x + dir.getX(), y).isWall()) {
 			changeX(dir.getX());
 		}
-		if (!Globals.currentFloor.getTile(x, y + dir.getY()).isWall()) {
+		if (!(y == 0 && dir.getY() == -1) && !(y == Globals.FLOOR_SIZE && dir.getY() == 1) && !Globals.currentFloor.getTile(x, y + dir.getY()).isWall()) {
 			changeY(dir.getY());
 		}
 	}

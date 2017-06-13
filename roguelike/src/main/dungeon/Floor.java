@@ -2,14 +2,11 @@ package main.dungeon;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import main.entities.Entity;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.tiles.TileFloor;
-
 import main.tiles.TileWall;
-
 import main.util.Globals;
 
 public class Floor {
@@ -18,9 +15,9 @@ public class Floor {
 	private Room[] rooms = null;
 	private int height = 0;
 	private int width = 0;
-	private EnumTheme theme = null;
+	private EnumTheme[] theme = null;
 	
-	public Floor (int h, int w, EnumTheme t, int stairsX, int stairsY) {
+	public Floor (int h, int w, EnumTheme[] t, int stairsX, int stairsY) {
 		height = h;
 		width = w;
 		theme = t;
@@ -40,16 +37,18 @@ public class Floor {
 		
 		rooms[0] = new Room(0,0);
 		
-		tiles[stairsX][stairsY] = new TileFloor(t, true);
+		tiles[stairsX][stairsY] = new TileFloor(t[0], true);
 		filled[stairsX][stairsY] = true;
 		
 		for (int i = 0; i <= stairsX; i++){
-			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t, false);
+			int chance = (int)(Math.random() * 4);
+			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[chance], false);
 			filled[i][Globals.MIN_ROOM_SIZE - 1] = true;
 		}
 
 		for (int i = 1; i < stairsY; i++){
-			tiles [stairsX][i] = new TileFloor(t, false);
+			int chance = (int)(Math.random() * 4);
+			tiles [stairsX][i] = new TileFloor(t[chance], false);
 			filled[stairsX][i] = true;
 		}
 		
@@ -65,7 +64,8 @@ public class Floor {
 			for (int e = 0; e < rooms[i].getSizeX(); e++){
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
 					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
-						tiles[x + e][y + r] = new TileFloor(t, false);
+						int chance = (int)(Math.random() * 4);
+						tiles[x + e][y + r] = new TileFloor(t[chance], false);
 						filled[x + e][y + r] = true;
 					}
 				}
@@ -75,7 +75,7 @@ public class Floor {
 		for (int i = 0; i < h; i++) {
 			for (int e = 0; e < w; e++) {
 				if (!filled[i][e]){
-					tiles [i][e]= new TileWall(t);
+					tiles [i][e]= new TileWall(t[0]);
 					filled[i][e] = true;
 				}
 			}
@@ -100,7 +100,7 @@ public class Floor {
 		return entities.toArray(new Entity[entities.size()]);
 	}
 	
-	public EnumTheme getTheme() {
+	public EnumTheme[] getTheme() {
 		return theme;
 	}
 	
