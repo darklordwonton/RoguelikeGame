@@ -75,13 +75,11 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
-		changeX(dir.getX());
-		if (Globals.currentFloor.getTile(x, y).isWall()) {
-			changeX(-dir.getX());
+		if (!Globals.currentFloor.getTile(x + dir.getX(), y).isWall()) {
+			changeX(dir.getX());
 		}
-		changeY(dir.getY());
-		if (Globals.currentFloor.getTile(x, y).isWall()) {
-			changeY(-dir.getY());
+		if (!Globals.currentFloor.getTile(x, y + dir.getY()).isWall()) {
+			changeY(dir.getY());
 		}
 	}
 }
