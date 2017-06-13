@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="main.dungeon.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.tiles.Tile"/>
 <fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
 <fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
@@ -18,4 +17,6 @@
 <fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
 <fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>
