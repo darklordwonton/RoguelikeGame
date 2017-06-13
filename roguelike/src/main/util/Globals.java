@@ -27,6 +27,14 @@ public class Globals {
 		FLOOR_SPRITES.put(EnumTheme.VOLCANO, "volcano_floor.jpg");
 	};
 	
+	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
+	static {
+		WALL_SPRITES.put(EnumTheme.CAVE, "solid_black.jpg");
+		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "solid_black.jpg");
+		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "solid_black.jpg");
+		WALL_SPRITES.put(EnumTheme.VOLCANO, "solid_black.jpg");
+	};
+	
 	//Colors
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
 	static {

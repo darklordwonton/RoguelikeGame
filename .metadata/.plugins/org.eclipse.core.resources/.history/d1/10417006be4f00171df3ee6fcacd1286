@@ -1,0 +1,7 @@
+package main.dungeon;
+
+public class Room {
+	protected int x = 0;
+	protected int y = 0;
+	protected 
+}

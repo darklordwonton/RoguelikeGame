@@ -1,0 +1,40 @@
+package main.dungeon;
+
+public class Room {
+	protected int x = 0;
+	protected int y = 0;
+	protected boolean[][] wall;
+	
+	public Room (){
+		x = 1;
+		y = 1;
+		wall = new boolean [x][y];
+	}
+	
+	public Room(int a, int b){
+		x = a;
+		y = b;
+		wall = new boolean [x][y];
+	}
+	
+	public void basicRoom(){
+		for (int i = 0; i < y; i++){
+			for (int e = 0; e < x; e++){
+				wall[e][i] = false;
+			}
+		}
+	}
+	
+	public boolean[][] wallLayout (){
+		return wall;
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
+	}
+	
+}
