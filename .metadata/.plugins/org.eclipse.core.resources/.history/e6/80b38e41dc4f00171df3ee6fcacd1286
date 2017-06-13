@@ -27,8 +27,6 @@ public class Floor {
 		tiles = new Tile[h][w];		
 		rooms = new Room[Globals.ROOMS_PER_FLOOR];
 		boolean[][] filled = new boolean[h][w];
-		int stairsX = (int)(Math.random() * Globals.FLOOR_SIZE) + 1;
-		int stairsY = (int)(Math.random() * Globals.FLOOR_SIZE) + 1;
 		
 		tiles = new Tile[h][w];
 		Globals.floorNum++;
@@ -58,6 +56,12 @@ public class Floor {
 				}
 			}
 		}
+		
+		for (int i = 0, i < Globals.MAX_ROOM_SIZE; i++){
+			
+		}
+		
+		
 		
 		for (int i = 0; i < h; i++) {
 			for (int e = 0; e < w; e++) {

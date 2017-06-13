@@ -3,9 +3,9 @@ package main.tiles;
 import main.util.Globals;
 
 public class TileFloor extends Tile {
-	protected boolean stairs = false;
+	protected int stairs = 0;
 	
-	public TileFloor(EnumTheme t, boolean s) {
+	public TileFloor(EnumTheme t, int s) {
 		sprite = Globals.FLOOR_SPRITES.get(t);
 		wall = false;
 		stairs = s;
