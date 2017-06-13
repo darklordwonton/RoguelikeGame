@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import main.attacks.EnumAttackType;
 import main.dungeon.Floor;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
@@ -19,6 +20,15 @@ public class Globals {
 	public static final int MAX_ROOM_SIZE = 5;
 	public static final int MIN_ROOM_SIZE = 2;
 	public static final int ROOMS_PER_FLOOR = 15;
+	
+	//Wall Modifier Charts
+	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
+	static {
+		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.SHARP, 0.5f);
+		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.SMASH, 2f);
+		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.FIRE, 0.5f);
+		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.EXPLOSION, 5f);
+	}
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";

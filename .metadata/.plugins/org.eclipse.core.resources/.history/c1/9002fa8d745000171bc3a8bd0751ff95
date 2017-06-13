@@ -1,0 +1,7 @@
+package main.attacks;
+
+public class Attack {
+
+	private int damage = 0;
+	
+}

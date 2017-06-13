@@ -1,0 +1,6 @@
+package main.attacks;
+
+public class ModifierChart {
+	//Exists purely to make weaknesses & resistances super easy to program
+	
+}

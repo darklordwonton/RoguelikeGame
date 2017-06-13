@@ -1,0 +1,10 @@
+package main.attacks;
+
+public class Attack {
+
+	private int damage = 0;
+	private Set<EnumAttackType> types = null;
+	
+	
+	
+}

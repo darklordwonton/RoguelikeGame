@@ -6,7 +6,8 @@ import main.util.Globals;
 
 public class TileStairs extends Tile {
 	
-	public TileStairs(EnumTheme t) {
+	public TileStairs(EnumTheme t, int x, int y) {
+		super(x, y);
 		sprite = Globals.STAIRS_SPRITES.get(t);
 		wall = false;
 	}
@@ -14,6 +15,7 @@ public class TileStairs extends Tile {
 	public void onStep(Entity e) {
 		if (e instanceof EntityPlayer) {
 			//Do stair things
+			System.out.println("Next floor");
 		}
 	}
 	
