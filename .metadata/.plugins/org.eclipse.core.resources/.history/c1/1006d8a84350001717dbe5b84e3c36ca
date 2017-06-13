@@ -1,0 +1,10 @@
+package main.dungeon;
+
+import main.entities.Entity;
+import main.util.Globals;
+
+public class Generator {
+	public static void newFloor (int spawnX, int spawnY, int stairsX, int stairsY, int creatureCount){
+		
+	}
+}

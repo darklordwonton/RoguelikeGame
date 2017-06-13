@@ -18,7 +18,7 @@ public class Globals {
 	public static final int FLOOR_SIZE = 20;
 	public static final int MAX_ROOM_SIZE = 5;
 	public static final int MIN_ROOM_SIZE = 2;
-	public static final int ROOMS_PER_FLOOR = 10;
+	public static final int ROOMS_PER_FLOOR = 15;
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
@@ -32,10 +32,18 @@ public class Globals {
 	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
 	static {
-		WALL_SPRITES.put(EnumTheme.CAVE, "solid_black.jpg");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "solid_black.jpg");
-		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "solid_black.jpg");
-		WALL_SPRITES.put(EnumTheme.VOLCANO, "solid_black.jpg");
+		WALL_SPRITES.put(EnumTheme.CAVE, "solid_black.png");
+		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "solid_black.png");
+		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "solid_black.png");
+		WALL_SPRITES.put(EnumTheme.VOLCANO, "solid_black.png");
+	};
+	
+	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
+	static {
+		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_floor_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "stairs.jpg");
 	};
 	
 	//Colors
