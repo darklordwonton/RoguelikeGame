@@ -180,7 +180,6 @@ public class Stats {
 		wit /= 2;
 		snk += s.getSnk();
 		snk /= 2;
-		calculateStats();
 	}
 	
 }

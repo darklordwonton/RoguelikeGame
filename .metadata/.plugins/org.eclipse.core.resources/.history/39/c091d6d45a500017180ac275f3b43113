@@ -167,20 +167,8 @@ public class Stats {
 		this.snk = snk;
 	}
 
-	public void average(Stats s) {
-		hp += s.getHp();
-		hp /= 2;
-		mp += s.getMp();
-		mp /= 2;
-		buf += s.getBuf();
-		buf /= 2;
-		tuf += s.getTuf();
-		tuf /= 2;
-		wit += s.getWit();
-		wit /= 2;
-		snk += s.getSnk();
-		snk /= 2;
-		calculateStats();
+	public void average(Stats ideal) {
+		
 	}
 	
 }

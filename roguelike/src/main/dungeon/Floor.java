@@ -41,14 +41,25 @@ public class Floor {
 		filled[stairsX][stairsY] = true;
 		
 		for (int i = 0; i <= stairsX; i++){
-			int chance = (int)(Math.random() * 4);
-			tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[chance], false);
+			if(t[0] == EnumTheme.CAVE){
+				tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[0], false);
+			}
+			else if(t[0] == EnumTheme.GRAY_BRICK_1){
+				int chance = (int)(Math.random() * 4);
+				tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[chance], false);
+			}
 			filled[i][Globals.MIN_ROOM_SIZE - 1] = true;
 		}
 
 		for (int i = 1; i < stairsY; i++){
-			int chance = (int)(Math.random() * 4);
-			tiles [stairsX][i] = new TileFloor(t[chance], false);
+			if(t[0] == EnumTheme.CAVE){
+				tiles [stairsX][i] = new TileFloor(t[0], false);
+			}
+			else if(t[0] == EnumTheme.GRAY_BRICK_1){
+				int chance = (int)(Math.random() * 4);
+				tiles [stairsX][i] = new TileFloor(t[chance], false);
+				
+			}
 			filled[stairsX][i] = true;
 		}
 		
@@ -64,8 +75,13 @@ public class Floor {
 			for (int e = 0; e < rooms[i].getSizeX(); e++){
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
 					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
-						int chance = (int)(Math.random() * 4);
-						tiles[x + e][y + r] = new TileFloor(t[chance], false);
+						if(t[0] == EnumTheme.CAVE){
+							tiles[x + e][y + r] = new TileFloor(t[0], false);
+						}
+						else if(t[0] == EnumTheme.GRAY_BRICK_1){
+							int chance = (int)(Math.random() * 4);
+							tiles[x + e][y + r] = new TileFloor(t[chance], false);
+						}
 						filled[x + e][y + r] = true;
 					}
 				}
