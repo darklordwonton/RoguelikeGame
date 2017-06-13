@@ -18,13 +18,15 @@ public class Room {
 	}
 	
 	public void basicRoom(){
-		sizeX = Globals.MIN_ROOM_SIZE + (int)(Math.random() * (Globals.MAX_ROOM_SIZE - Globals.MIN_ROOM_SIZE + 1));
-		if (x + sizeX > Globals.FLOOR_SIZE - 1) {
+		if (x + sizeX > Globals.FLOOR_SIZE - 1){
+			sizeX = Globals.MIN_ROOM_SIZE + (int)(Math.random() * (Globals.MAX_ROOM_SIZE - Globals.MIN_ROOM_SIZE + 1));
+		}else {
 			sizeX = Globals.FLOOR_SIZE - 1 - x;
 		}
 		
-		sizeY = Globals.MIN_ROOM_SIZE + (int)(Math.random() * (Globals.MAX_ROOM_SIZE - Globals.MIN_ROOM_SIZE + 1));
 		if (y + sizeY > Globals.FLOOR_SIZE - 1){
+			sizeY = Globals.MIN_ROOM_SIZE + (int)(Math.random() * (Globals.MAX_ROOM_SIZE - Globals.MIN_ROOM_SIZE + 1));
+		}else {
 			sizeY = Globals.FLOOR_SIZE - 1 - y;
 		}
 		

@@ -48,7 +48,7 @@ public class Floor {
 			}
 
 			for (int i = 1; i < stairsY; i++) {
-				tiles[i][stairsY] = new TileFloor(t, i, stairsY);
+				tiles[i][stairsY] = new TileFloor(t, stairsX, i);
 			}
 		}
 		
