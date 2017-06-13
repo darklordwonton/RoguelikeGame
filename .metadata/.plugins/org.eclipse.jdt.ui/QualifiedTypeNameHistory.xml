@@ -1,28 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="main.tiles.TileBlank"/>
-<fullyQualifiedTypeName name="main.util.EnumDirection"/>
-<fullyQualifiedTypeName name="main.dungeon.Map"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="main.tiles.Tile"/>
-<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
-<fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
-<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
-<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
-<fullyQualifiedTypeName name="main.actions.Action"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="main.tiles.EnumFloor"/>
-<fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
-<<<<<<< HEAD
-<fullyQualifiedTypeName name="main.tiles.TileWall"/>
-<fullyQualifiedTypeName name="main.util.Globals"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
-=======
-<fullyQualifiedTypeName name="java.awt.Font"/>
-<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
-<fullyQualifiedTypeName name="main.entities.Entity"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
->>>>>>> origin/master
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>
