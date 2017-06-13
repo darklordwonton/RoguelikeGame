@@ -24,6 +24,8 @@ public class Floor {
 		tiles = new Tile[h][w];		
 		rooms = new Room[Globals.ROOMS_PER_FLOOR];
 		boolean[][] filled = new boolean[h][w];
+		//int stairsX = (int)(Math.random() * Globals.FLOOR_SIZE) + 1;
+		//int stairsY = (int)(Math.random() * Globals.FLOOR_SIZE) + 1;
 		
 		tiles = new Tile[h][w];
 		Globals.floorNum++;
@@ -41,13 +43,10 @@ public class Floor {
 		for (int i = 0; i <= stairsX; i++){
 			if(t[0] == EnumTheme.CAVE){
 				tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[0], false);
-				
-			} else if(t[0] == EnumTheme.GRAY_BRICK_1){
+			}
+			else if(t[0] == EnumTheme.GRAY_BRICK_1){
 				int chance = (int)(Math.random() * 4);
 				tiles [i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[chance], false);
-				
-			} else if(t[0] == EnumTheme.VOLCANO){
-				tiles[i][Globals.MIN_ROOM_SIZE - 1] = new TileFloor(t[0], false);
 			}
 			filled[i][Globals.MIN_ROOM_SIZE - 1] = true;
 		}
@@ -55,13 +54,11 @@ public class Floor {
 		for (int i = 1; i < stairsY; i++){
 			if(t[0] == EnumTheme.CAVE){
 				tiles [stairsX][i] = new TileFloor(t[0], false);
-				
-			} else if(t[0] == EnumTheme.GRAY_BRICK_1){
+			}
+			else if(t[0] == EnumTheme.GRAY_BRICK_1){
 				int chance = (int)(Math.random() * 4);
 				tiles [stairsX][i] = new TileFloor(t[chance], false);
 				
-			} else if(t[0] == EnumTheme.VOLCANO){
-				tiles[stairsX][i] = new TileFloor(t[0], false);
 			}
 			filled[stairsX][i] = true;
 		}
@@ -80,13 +77,10 @@ public class Floor {
 					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
 						if(t[0] == EnumTheme.CAVE){
 							tiles[x + e][y + r] = new TileFloor(t[0], false);
-							
-						}else if(t[0] == EnumTheme.GRAY_BRICK_1){
+						}
+						else if(t[0] == EnumTheme.GRAY_BRICK_1){
 							int chance = (int)(Math.random() * 4);
 							tiles[x + e][y + r] = new TileFloor(t[chance], false);
-							
-						} else if(t[0] == EnumTheme.VOLCANO){
-							tiles[x + e][y + r] = new TileFloor(t[0], false);
 						}
 						filled[x + e][y + r] = true;
 					}
