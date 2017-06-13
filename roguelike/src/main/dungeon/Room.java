@@ -9,17 +9,10 @@ public class Room {
 	protected int sizeY = 0;
 	protected boolean[][] wall;
 	
-	public Room (){
-		x = 1;
-		y = 1;
-		wall = new boolean [x][y];
-		sizeX = 1;
-		sizeY = 1;
-	}
-	
 	public Room(int a, int b){
 		x = a;
 		y = b;
+		wall = new boolean [x][y];
 	}
 	
 	public void basicRoom(){

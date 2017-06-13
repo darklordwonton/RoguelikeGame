@@ -1,0 +1,12 @@
+package main.tiles;
+
+import main.util.Globals;
+
+public class TileStairs extends Tile {
+	
+	public TileStairs(EnumTheme t) {
+		sprite = Globals.STAIRS_SPRITES.get(t);
+		wall = false;
+	}
+	
+}

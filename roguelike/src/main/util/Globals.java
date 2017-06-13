@@ -22,24 +22,22 @@ public class Globals {
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
-	public static final Map<EnumTheme, String> FLOOR_SPRITES = new HashMap<EnumTheme, String>();
+	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
-		FLOOR_SPRITES.put(EnumTheme.CAVE, "cave_floor.jpg");
-		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK_1, "gray_brick_floor_1.jpg");
-		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK_2, "gray_brick_floor_2.jpg");
-		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK_3, "gray_brick_floor_3.jpg");
-		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK_4, "gray_brick_floor_4.jpg");
-		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_floor.jpg");
-		FLOOR_SPRITES.put(EnumTheme.VOLCANO, "volcano_floor.jpg");
+		String[] cave = {"cave_floor.jpg"};
+		FLOOR_SPRITES.put(EnumTheme.CAVE, cave);
+		String[] grayBrick = {"gray_brick_floor_1.jpg", "gray_brick_floor_2.jpg", "gray_brick_floor_3.jpg", "gray_brick_floor_4.jpg"};
+		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, grayBrick);
+		String[] brownBrick = {"brown_brick_floor.jpg"};
+		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, brownBrick);
+		String[] volcano = {"volcano_floor.jpg"};
+		FLOOR_SPRITES.put(EnumTheme.VOLCANO, volcano);
 	};
 	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		WALL_SPRITES.put(EnumTheme.CAVE, "empty.png");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK_1, "empty.png");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK_2, "empty.png");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK_3, "empty.png");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK_4, "empty.png");
+		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "empty.png");
 		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "empty.png");
 		WALL_SPRITES.put(EnumTheme.VOLCANO, "empty.png");
 	};
@@ -47,10 +45,7 @@ public class Globals {
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_floor_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_1, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_2, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_3, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK_4, "gray_brick_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.jpg");
 	};
@@ -59,10 +54,7 @@ public class Globals {
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
 	static {
 		BG_COLORS.put(EnumTheme.CAVE, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK_1, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK_2, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK_3, Color.DARK_GRAY);
-		BG_COLORS.put(EnumTheme.GRAY_BRICK_4, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.GRAY_BRICK, Color.DARK_GRAY);
 	};
 	
 	//Keys

@@ -1,21 +1,15 @@
 package main.tiles;
 
+import java.util.Random;
+
 import main.util.Globals;
 
 public class TileFloor extends Tile {
-	protected boolean stairs = false;
 	
-	public TileFloor(EnumTheme t, boolean s) {
-		stairs = s;
-		if (stairs){
-			sprite = Globals.STAIRS_SPRITES.get(t);
-		}else{
-			sprite = Globals.FLOOR_SPRITES.get(t);
-		}
+	public TileFloor(EnumTheme t) {
+		Random rand = new Random();
+		sprite = Globals.FLOOR_SPRITES.get(t)[rand.nextInt(Globals.FLOOR_SPRITES.get(t).length)];
 		wall = false;
 	}
 	
-	public boolean getStairs(){
-		return stairs;
-	}
 }

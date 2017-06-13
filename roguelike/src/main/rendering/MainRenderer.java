@@ -89,7 +89,7 @@ public class MainRenderer {
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
-	private static EnumTheme[] theme = null;
+	private static EnumTheme theme = null;
 	
 	public static void init() {
 		

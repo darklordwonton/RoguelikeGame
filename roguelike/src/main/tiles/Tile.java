@@ -1,5 +1,7 @@
 package main.tiles;
 
+import main.entities.Entity;
+
 public abstract class Tile {
 	protected String sprite = null;
 	protected boolean wall = false;
@@ -13,4 +15,6 @@ public abstract class Tile {
 	public boolean isWall() {
 		return wall;
 	}
+	
+	public void onStep(Entity e) {}
 }
