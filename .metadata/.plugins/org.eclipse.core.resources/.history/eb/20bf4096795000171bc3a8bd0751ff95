@@ -55,6 +55,8 @@ public class Floor {
 				for (int r = 0; r < rooms[i].getSizeY(); r++){
 					if (!rooms[i].isWall(e, r) && (x + e != stairsX || y + r != stairsY)){
 						tiles[x + e][y + r] = new TileFloor(t, x + e, y + r);
+					if (!rooms[i].isWall(e, r) && (x + e != Globals.stairsX || y + r != Globals.stairsY)){
+						tiles[x + e][y + r] = new TileFloor(t, x + e, y + r);
 					}
 				}
 			}
