@@ -50,6 +50,7 @@ public class Stats {
 		innateWit += change;
 		innateSnk += change;
 		this.level = level;
+		System.out.println(innateHp + innateMp + innateBuf + innateTuf + innateWit + innateSnk);
 		calculateStats();
 	}
 	
@@ -165,10 +166,6 @@ public class Stats {
 
 	public void setSnk(int snk) {
 		this.snk = snk;
-	}
-
-	public void average(Stats ideal) {
-		
 	}
 	
 }

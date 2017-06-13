@@ -7,7 +7,10 @@ import main.entities.Entity;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.tiles.TileFloor;
+<<<<<<< HEAD
 import main.tiles.TileWall;
+=======
+>>>>>>> origin/master
 import main.util.Globals;
 
 public class Floor {
@@ -22,10 +25,15 @@ public class Floor {
 		height = h;
 		width = w;
 		theme = t;
+<<<<<<< HEAD
 		tiles = new Tile[h][w];		
 		rooms = new Room[4];
 		boolean[][] filled = new boolean[h][w];
 		
+=======
+		tiles = new Tile[h][w];
+		Globals.floorNum++;
+>>>>>>> origin/master
 		for (int i = 0; i < h; i++) {
 			for (int e = 0; e < w; e++) {
 				filled[i][e] = false;
@@ -82,4 +90,5 @@ public class Floor {
 	public EnumTheme getTheme() {
 		return theme;
 	}
+	
 }
