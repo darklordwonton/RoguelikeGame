@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="main.dungeon.Generator"/>
+=======
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
+<fullyQualifiedTypeName name="main.tiles.TileStairs"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="main.attacks.ModifierChart"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+>>>>>>> origin/master
 </qualifiedTypeNameHistroy>
