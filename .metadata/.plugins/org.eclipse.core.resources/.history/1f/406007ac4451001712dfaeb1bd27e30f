@@ -17,8 +17,14 @@ public class EntityOgre extends EntityMonster {
 				Globals.LOW_STAT, //snk
 				Globals.floorNumber); //level
 		
-		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
+		makeStats(20 + 7 * Globals.floorNumber);
 		
 	}
+	
+	public void attack(){
+		
+	}
+	
+	
 	
 }

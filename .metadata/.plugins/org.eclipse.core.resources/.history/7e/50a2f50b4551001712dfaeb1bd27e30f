@@ -16,8 +16,15 @@ public class EntityGoblin extends EntityMonster {
 				Globals.MID_STAT, //snk
 				Globals.floorNumber); //level
 		
-		makeStats(4 * Globals.MID_STAT + 2 * Globals.LOW_STAT);
+		Stats stats = new Stats(15 + 5 * Globals.floorNumber, Globals.floorNumber);
+		stats.averageInnate(ideal);
 		
 	}
+	
+	public void attack(){
+		
+	}
+	
+	
 	
 }

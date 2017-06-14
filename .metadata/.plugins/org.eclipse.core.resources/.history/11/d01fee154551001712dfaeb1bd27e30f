@@ -21,4 +21,5 @@ public class EntityOgre extends EntityMonster {
 		
 	}
 	
+	
 }

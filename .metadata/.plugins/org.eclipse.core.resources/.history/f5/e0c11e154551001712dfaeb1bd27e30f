@@ -21,4 +21,10 @@ public class EntityOgre extends EntityMonster {
 		
 	}
 	
+	public void attack(){
+		
+	}
+	
+	
+	
 }

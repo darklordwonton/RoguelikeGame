@@ -2,7 +2,6 @@ package main.entities.monsters;
 
 import main.entities.Entity;
 import main.entities.Stats;
-import main.util.Globals;
 
 public abstract class EntityMonster extends Entity {
 
@@ -14,8 +13,7 @@ public abstract class EntityMonster extends Entity {
 	}
 	
 	protected void makeStats(int magnitude) {
-		stats = new Stats(magnitude, Globals.floorNumber);
-		stats.averageInnate(ideal);
+		
 	}
 
 }
