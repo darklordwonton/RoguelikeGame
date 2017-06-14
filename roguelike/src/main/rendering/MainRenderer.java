@@ -67,7 +67,7 @@ public class MainRenderer {
 			EntityPlayer player = Globals.player;
 			
 			g.drawString("HP: " + player.getHp(), 5, 25);
-			g.drawString("MP: " + player.getHp(), 5, TILE_SIZE + 25);
+			g.drawString("MP: " + player.getMp(), 5, TILE_SIZE + 25);
 			g.drawString("TUF: " + player.getStats().getTuf(), 5, 3 * TILE_SIZE - 25);
 			g.drawString("BUF: " + player.getStats().getBuf(), 5, 3 * TILE_SIZE);
 			g.drawString("WIT: " + player.getStats().getWit(), 5, 3 * TILE_SIZE + 25);
