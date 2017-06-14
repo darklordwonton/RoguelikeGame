@@ -7,7 +7,7 @@ public class EntityPlayer extends Entity {
 	public EntityPlayer(String n, int px, int py){
 		super(n,px,py);
 		sprite = Globals.PLAYER_SPRITE;
-		stats = new Stats(100,1);
+		stats = new Stats(100,Globals.floorNumber);
 		hp = stats.getHp();
 		mp = stats.getMp();
 	}
