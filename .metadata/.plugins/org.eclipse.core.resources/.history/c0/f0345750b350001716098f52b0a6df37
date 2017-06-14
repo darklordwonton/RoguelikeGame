@@ -38,9 +38,9 @@ public class MainRenderer {
 			g.fillRect(0, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 			
 			if (tiles != null) {
-				for (int i = 0; i < 9; i++) {
-					for (int e = 0; e < 9; e++) {
-						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length)
+				for (int i = 0; i + Globals.scrollX < tiles.length && i < 9; i++) {
+					for (int e = 0; e + Globals.scrollY < tiles[0].length && e < 9; e++) {
+						if (i >= 0 && i + Globals.scrollX < tiles.length && e >= 0 && e + Globals.scrollY < tiles[0].length)
 							g.drawImage(ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite()), i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 					}
 				}
@@ -68,7 +68,7 @@ public class MainRenderer {
 			EntityPlayer player = Globals.player;
 			
 			g.drawString("HP: " + player.getHp(), 5, 25);
-			g.drawString("MP: " + player.getMp(), 5, TILE_SIZE + 25);
+			g.drawString("MP: " + player.getHp(), 5, TILE_SIZE + 25);
 			g.drawString("TUF: " + player.getStats().getTuf(), 5, 3 * TILE_SIZE - 25);
 			g.drawString("BUF: " + player.getStats().getBuf(), 5, 3 * TILE_SIZE);
 			g.drawString("WIT: " + player.getStats().getWit(), 5, 3 * TILE_SIZE + 25);

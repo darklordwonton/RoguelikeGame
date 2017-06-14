@@ -21,8 +21,8 @@ public class Globals {
 	public static final int MAX_ROOM_SIZE = 5;
 	public static final int MIN_ROOM_SIZE = 3;
 	public static final int ROOMS_BASE = 15;
-	public static final float ROOMS_MODIFIER = 0.5f;
-	public static final float ROOMS_LEEWAY = 0.25f;
+	public static final float ROOMS_MODIFIER = 1.5;
+	public static final int ROOMS_LEEWAY = 1;
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -84,7 +84,7 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int floorNumber = 0;
+	public static int floorNumber = 20;
 	public static int spawnX = 0;
 	public static int spawnY = 0;
 	public static int scrollX = 0;

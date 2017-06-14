@@ -24,7 +24,7 @@ public class Floor {
 		width = w;
 		theme = t;
 		tiles = new Tile[h][w];		
-		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber * Globals.floorNumber)];
+		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
 		
 		tiles = new Tile[h][w];
 		
@@ -126,31 +126,30 @@ public class Floor {
 			startY = endY;
 			endY = temp;
 		}
-		
 		boolean hidden = Math.random() >= 0.8;
-
+		
 		if (Math.random() >= 0.5) {
 			for (int i = startX; i <= endX; i++) {
 				if (tiles[i][startY] == null) {
-					tiles[i][startY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, startY) : new TileFloor(theme, i, startY);
+					tiles[i][startY] = hidden ? new TileFloor(theme, i, startY) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, startY);
 				}
 			}
 
 			for (int i = startY + 1; i <= endY; i++) {
 				if (tiles[endX][i] == null) {
-					tiles[endX][i] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, endX, i) : new TileFloor(theme, endX, i);
+					tiles[endX][i] = hidden ? new TileFloor(theme, endX, i) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, endX, i);
 				} 
 			}
 		} else {
 			for (int i = startY; i <= endY; i++) {
 				if (tiles[startX][i] == null) {
-					tiles[startX][i] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, startX, i) : new TileFloor(theme, startX, i);
+					tiles[startX][i] = hidden ? new TileFloor(theme, startX, i) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, startX, i);
 				}
 			}
 
 			for (int i = startX + 1; i <= endX; i++) {
 				if (tiles[i][endY] == null) {
-					tiles[i][endY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, endY) : new TileFloor(theme, i, endY);
+					tiles[i][endY] = hidden ? new TileFloor(theme, i, endY) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, endY);
 				}
 			}
 		}

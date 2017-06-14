@@ -126,9 +126,8 @@ public class Floor {
 			startY = endY;
 			endY = temp;
 		}
-		
-		boolean hidden = Math.random() >= 0.8;
-
+		//boolean hidden = Math.random() >= 0.8;
+		boolean hidden = false;
 		if (Math.random() >= 0.5) {
 			for (int i = startX; i <= endX; i++) {
 				if (tiles[i][startY] == null) {

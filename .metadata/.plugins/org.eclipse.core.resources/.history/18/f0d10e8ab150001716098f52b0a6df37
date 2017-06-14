@@ -126,9 +126,8 @@ public class Floor {
 			startY = endY;
 			endY = temp;
 		}
-		
-		boolean hidden = Math.random() >= 0.8;
-
+		//boolean hidden = Math.random() >= 0.8;
+		boolean hidden = false;
 		if (Math.random() >= 0.5) {
 			for (int i = startX; i <= endX; i++) {
 				if (tiles[i][startY] == null) {
@@ -144,13 +143,13 @@ public class Floor {
 		} else {
 			for (int i = startY; i <= endY; i++) {
 				if (tiles[startX][i] == null) {
-					tiles[startX][i] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, startX, i) : new TileFloor(theme, startX, i);
+					tiles[startX][i] = hidden ? new TileFloor(theme, startX, i) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, startX, i);
 				}
 			}
 
 			for (int i = startX + 1; i <= endX; i++) {
 				if (tiles[i][endY] == null) {
-					tiles[i][endY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, endY) : new TileFloor(theme, i, endY);
+					tiles[i][endY] = hidden ? new TileFloor(theme, i, endY) : new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, endY);
 				}
 			}
 		}
