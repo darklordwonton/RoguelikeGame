@@ -79,22 +79,22 @@ public class Stats {
 	public void changeInnateStat(int stat, int amount) {
 		switch (stat) {
 			case 0:
-				hp += amount;
+				innateHp += amount;
 				break;
 			case 1:
-				mp += amount;
+				innateMp += amount;
 				break;
 			case 2:
-				buf += amount;
+				innateBuf += amount;
 				break;
 			case 3:
-				tuf += amount;
+				innateTuf += amount;
 				break;
 			case 4:
-				wit += amount;
+				innateWit += amount;
 				break;
 			case 5:
-				snk += amount;
+				innateSnk += amount;
 				break;
 		}
 		calculateStats();
@@ -103,25 +103,44 @@ public class Stats {
 	public void setInnateStat(int stat, int amount) {
 		switch (stat) {
 			case 0:
-				hp = amount;
+				innateHp = amount;
 				break;
 			case 1:
-				mp = amount;
+				innateMp = amount;
 				break;
 			case 2:
-				buf = amount;
+				innateBuf = amount;
 				break;
 			case 3:
-				tuf = amount;
+				innateTuf = amount;
 				break;
 			case 4:
-				wit = amount;
+				innateWit = amount;
 				break;
 			case 5:
-				snk = amount;
+				innateSnk = amount;
 				break;
 		}
 		calculateStats();
+	}
+	
+	public int getInnateStat(int stat) {
+		switch (stat) {
+			case 0:
+				return innateHp;
+			case 1:
+				return innateMp;
+			case 2:
+				return innateBuf;
+			case 3:
+				return innateTuf;
+			case 4:
+				return innateWit;
+			case 5:
+				return innateSnk;
+			default:
+				return Integer.MIN_VALUE;
+		}
 	}
 	
 	public int getLevel() {
@@ -195,6 +214,13 @@ public class Stats {
 		snk += s.getSnk();
 		snk /= 2;
 		calculateStats();
+	}
+	
+	public void averageInnate(Stats s) {
+		for (int i = 0; i < 6; i++) {
+			changeInnateStat(i,s.getInnateStat(i));
+			setInnateStat(i,getInnateStat(i)/2);
+		}
 	}
 	
 }

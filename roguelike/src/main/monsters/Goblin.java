@@ -17,7 +17,7 @@ public class Goblin extends Entity{
 		super(n, px, py);
 		
 		Stats stats = new Stats(15 + 5 * Globals.floorNumber, Globals.floorNumber);
-		stats.average(ideal);
+		stats.averageInnate(ideal);
 		
 		
 		

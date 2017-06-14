@@ -17,7 +17,7 @@ public class Ogre extends Entity{
 		super(n, px, py);
 		
 		Stats stats = new Stats(20 + 7 * Globals.floorNumber, Globals.floorNumber);
-		stats.average(ideal);
+		stats.averageInnate(ideal);
 		
 		
 		

@@ -24,22 +24,23 @@ public class Floor {
 		width = w;
 		theme = t;
 		tiles = new Tile[h][w];		
-		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber * Globals.floorNumber)];
+		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
 		
 		tiles = new Tile[h][w];
 		
-		Globals.spawnX = (int) (Math.random() * width);
-		Globals.spawnY = (int) (Math.random() * height);
+		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
+		Globals.spawnY = (int) (Math.random() * (height - Globals.MAX_ROOM_SIZE));
 		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this);
+		rooms[0].basicRoom();
 		Globals.spawnX += (int)(Math.random() * rooms[0].getSizeX());
 		Globals.spawnY += (int)(Math.random() * rooms[0].getSizeY());
 		
 		for (int i = 1; i < rooms.length; i++){
 			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this);
+			rooms[i].basicRoom();
 		}
 		
 		for (int i = 0; i < rooms.length; i++){
-			rooms[i].basicRoom();
 			int x = rooms[i].getX();
 			int y = rooms[i].getY();
 			
@@ -58,7 +59,7 @@ public class Floor {
 				createCorridor(rooms[i], rooms[i + 1]);
 			} else {
 				createCorridor(rooms[i], rooms[(int)(Math.random() * rooms.length / 2)]);
-				if (Math.random() >= 0.4)
+				if (Math.random() < 0.4)
 					createCorridor(rooms[i], rooms[rooms.length / 2 + (int)(Math.random() * rooms.length / 2)]);
 			}
 		}
@@ -127,31 +128,19 @@ public class Floor {
 			endY = temp;
 		}
 		
-		boolean hidden = Math.random() >= 0.8;
-
-		if (Math.random() >= 0.5) {
-			for (int i = startX; i <= endX; i++) {
-				if (tiles[i][startY] == null) {
-					tiles[i][startY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, startY) : new TileFloor(theme, i, startY);
-				}
+		boolean hidden = Math.random() < 0.2 + 0.01 * Globals.floorNumber;
+		
+		int placeX = startX;
+		int placeY = startY;
+		
+		for (int i = 0; i < endX - startX + endY - startY; i++) {
+			if (Math.random() * (endX - placeX + endY - placeY) < endX - placeX) {
+				placeX++;
+			} else {
+				placeY++;
 			}
-
-			for (int i = startY + 1; i <= endY; i++) {
-				if (tiles[endX][i] == null) {
-					tiles[endX][i] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, endX, i) : new TileFloor(theme, endX, i);
-				} 
-			}
-		} else {
-			for (int i = startY; i <= endY; i++) {
-				if (tiles[startX][i] == null) {
-					tiles[startX][i] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, startX, i) : new TileFloor(theme, startX, i);
-				}
-			}
-
-			for (int i = startX + 1; i <= endX; i++) {
-				if (tiles[i][endY] == null) {
-					tiles[i][endY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, i, endY) : new TileFloor(theme, i, endY);
-				}
+			if (tiles[placeX][placeY] == null || tiles[placeX][placeY] instanceof TileBreakable) {
+				tiles[placeX][placeY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, placeX, placeY) : new TileFloor(theme, placeX, placeY);
 			}
 		}
 	}
