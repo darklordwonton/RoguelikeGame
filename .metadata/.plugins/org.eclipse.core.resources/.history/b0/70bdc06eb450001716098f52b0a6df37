@@ -17,9 +17,9 @@ public class Entity {
 	protected String sprite = null;
 	
 	public Entity(String n, int px, int py){
-		name = n;
-		x = px;
-		y = py;
+		setName(n);
+		setX(px);
+		setY(py);
 	}
 	
 	public String getName() {
