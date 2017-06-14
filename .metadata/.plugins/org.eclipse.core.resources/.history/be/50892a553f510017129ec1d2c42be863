@@ -5,7 +5,7 @@ import main.tiles.EnumTheme;
 import main.util.Globals;
 
 public class Generator {
-	public static void newFloor (){
+	public static void newFloor (int creatureCount){
 		Globals.floorNumber++;
 		
 		int theme = (int)(Math.random() * EnumTheme.values().length);

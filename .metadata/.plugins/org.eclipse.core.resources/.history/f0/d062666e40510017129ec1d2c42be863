@@ -10,13 +10,13 @@ import main.util.Globals;
 
 public class Entity {
 	protected Stats stats = null;
-	protected AI ai = null;
 	protected int hp = 0;
 	protected int mp = 0;
 	protected String name = "";
 	protected int x;
 	protected int y;
 	protected String sprite = null;
+	protected AI ai = null;
 	
 	public Entity(String n, int px, int py){
 		name = n;

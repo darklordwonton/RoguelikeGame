@@ -23,6 +23,10 @@ public class Goblin extends Entity{
 		
 	}
 	
+	public void action(){
+		move(ai.turn());
+	}
+	
 	public void move(char a){
 		
 	}

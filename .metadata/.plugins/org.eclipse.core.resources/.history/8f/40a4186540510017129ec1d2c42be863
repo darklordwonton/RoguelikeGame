@@ -20,7 +20,7 @@ public class AI {
 		targetY = -1;
 	}
 	
-	public char turn (){
+	public static char turn (){
 		char action = ' ';
 		switch(inte){
 		case 0: action = stupidMove();
@@ -31,7 +31,7 @@ public class AI {
 		return action;
 	}
 
-	public char stupidMove(){
+	public static char stupidMove(){
 		int ownX = entity.getX();
 		int ownY = entity.getY();
 		boolean moved = false;

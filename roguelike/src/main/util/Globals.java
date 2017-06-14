@@ -23,6 +23,8 @@ public class Globals {
 	public static final int ROOMS_BASE = 15;
 	public static final float ROOMS_MODIFIER = 0.5f;
 	public static final float ROOMS_LEEWAY = 0.25f;
+	public static final int baseCreatures = 1;
+	public static final float creatureIncrease = .3f;
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -37,6 +39,8 @@ public class Globals {
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
+	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
+	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
 		String[] cave = {"cave_floor.jpg"};
