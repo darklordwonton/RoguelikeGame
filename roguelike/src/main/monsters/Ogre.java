@@ -11,12 +11,12 @@ public class Ogre extends Entity{
 							Globals.HIGH_STAT, //tuf
 							Globals.LOW_STAT, //wit
 							Globals.LOW_STAT, //snk
-							Globals.floorNum); //level
+							Globals.floorNumber); //level
 	
 	Ogre(String n, int px, int py){
 		super(n, px, py);
 		
-		Stats stats = new Stats(20 + 7 * Globals.floorNum, Globals.floorNum);
+		Stats stats = new Stats(20 + 7 * Globals.floorNumber, Globals.floorNumber);
 		stats.average(ideal);
 		
 		

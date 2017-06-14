@@ -83,14 +83,14 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
-		if (!(x + dir.getX() < 0 || x + dir.getX() > Globals.FLOOR_SIZE)) {
+		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) {
 			changeX(dir.getX());
 		}
 		if (Globals.currentFloor.getTile(x, y).isWall()) {
 			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
 			changeX(-dir.getX());
 		}
-		if (!(y + dir.getY() < 0 || y + dir.getY() > Globals.FLOOR_SIZE)) {
+		if (!(y + dir.getY() < 0 || y + dir.getY() >= Globals.currentFloor.getHeight())) {
 			changeY(dir.getY());
 		}
 		if (Globals.currentFloor.getTile(x, y).isWall()) {

@@ -1,0 +1,19 @@
+package main.dungeon;
+
+import main.entities.Entity;
+import main.tiles.EnumTheme;
+import main.util.Globals;
+
+public class Generator {
+	public static void newFloor (int spawnX, int spawnY, int creatureCount){
+		Globals.floorNumber++;
+		Globals.stairsX = 15;
+		Globals.stairsY = 15;
+		
+		EnumTheme.values()
+		int theme = (int)(Math.random() * 5);
+		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE_BASE + Globals.floorNumber * Globals.FLOOR_SIZE_MODIFIER, Globals.FLOOR_SIZE_BASE + Globals.floorNumber * Globals.FLOOR_SIZE_MODIFIER, EnumTheme.values()[theme]);
+		
+		Globals.currentFloor.addEntity(Globals.player, spawnX, spawnY);
+	}
+}

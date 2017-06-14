@@ -16,12 +16,15 @@ import main.tiles.EnumTheme;
 public class Globals {
 	//Config Variables
 	public static final int MAX_CREATURES = 10;
-	public static final int FLOOR_SIZE = 20;
+	public static final int FLOOR_SIZE_BASE = 20;
+	public static final int FLOOR_SIZE_MODIFIER = 4;
 	public static final int MAX_ROOM_SIZE = 5;
-	public static final int MIN_ROOM_SIZE = 2;
-	public static final int ROOMS_PER_FLOOR = 15;
+	public static final int MIN_ROOM_SIZE = 3;
+	public static final int ROOMS_BASE = 15;
+	public static final int ROOMS_MODIFIER = 3;
+	public static final int ROOMS_LEEWAY = 1;
 	
-	//Wall Modifier Charts
+	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
 	static {
 		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.SHARP, 0.5f);
@@ -29,6 +32,8 @@ public class Globals {
 		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.FIRE, 0.5f);
 		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.EXPLOSION, 5f);
 	}
+	public static final int DESTRUCTION_BASE = 8;
+	public static final int DESTRUCTION_MODIFIER = 4;
 	
 	//Image Names
 	public static final String PLAYER_SPRITE = "player.jpg";
@@ -80,15 +85,14 @@ public class Globals {
 	//Global Variables
 	public static String message = "";
 	public static int floorNumber = 0;
+	public static int spawnX = 0;
+	public static int spawnY = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
-	public static int stairsX = 0;
-	public static int stairsY = 0;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
-	public static int floorNum = 0;
 	public static Floor currentFloor = null;
 	
 	
