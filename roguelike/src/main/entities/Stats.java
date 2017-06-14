@@ -3,6 +3,20 @@ package main.entities;
 import java.util.Random;
 
 public class Stats {
+	/* innateBuf // buffness - physical damage
+	 * innateTuf // toughness - determines natural damage resistance
+	 * innateWit // wit - magical damage
+	 * innateSnk // snark - magical resistance
+	 * innateSex // sexiness - npc relations, can be negative, maybe range from -100 to 100
+	 * innateDex // dexterity - disarm/notice/avoid traps, climb (?), ranged weapons, 
+	 * innatesmt // smartness - max mp, AI, and something with rituals
+	 * innateluk // luck - average of all players is used, influences loot, maybe enemy difficulty (only bad luck influences)
+	 * 
+	 * tuf + dex => hp
+	 * wit + snk => mp regen
+	 * 
+	 */
+	
 	private int innateHp = 0;
 	private int innateMp = 0;
 	private int innateBuf = 0;
