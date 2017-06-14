@@ -39,7 +39,7 @@ public class Globals {
 	public static final int DESTRUCTION_MODIFIER = 4;
 	
 	//Image Names
-	public static final String PLAYER_SPRITE = "player.jpg";
+	public static final String PLAYER_SPRITE = "player.png";
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
 	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
