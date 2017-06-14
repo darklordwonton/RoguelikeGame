@@ -4,11 +4,13 @@ import java.util.HashSet;
 
 import main.attacks.Attack;
 import main.attacks.EnumAttackType;
+import main.entities.ai.AI;
 import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Entity {
 	protected Stats stats = null;
+	protected AI ai = null;
 	protected int hp = 0;
 	protected int mp = 0;
 	protected String name = "";
@@ -20,6 +22,7 @@ public class Entity {
 		name = n;
 		x = px;
 		y = py;
+		ai = new AI(5, 0, 2);
 	}
 	
 	public String getName() {

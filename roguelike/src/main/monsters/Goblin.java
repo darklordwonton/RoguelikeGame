@@ -23,7 +23,7 @@ public class Goblin extends Entity{
 		
 	}
 	
-	public void move(){
+	public void move(char a){
 		
 	}
 	

@@ -12,16 +12,15 @@ public class AI {
 	private static int targetX = -1;
 	private static int targetY = -1;
 	
-	public AI(int a, int b, int i, Entity e){
+	public AI(int a, int b, int i){
 		anger = a;
 		bravery = b;
 		inte = i;
-		entity = e;
 		targetX = -1;
 		targetY = -1;
 	}
 	
-	public static char turn (){
+	public char turn (){
 		char action = ' ';
 		switch(inte){
 		case 0: action = stupidMove();
@@ -32,7 +31,7 @@ public class AI {
 		return action;
 	}
 
-	public static char stupidMove(){
+	public char stupidMove(){
 		int ownX = entity.getX();
 		int ownY = entity.getY();
 		boolean moved = false;
