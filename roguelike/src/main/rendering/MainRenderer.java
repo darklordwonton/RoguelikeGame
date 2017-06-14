@@ -130,4 +130,9 @@ public class MainRenderer {
 		frame.repaint();
 	}
 	
+	public static void closeWindow(){
+		frame.dispose();
+	}
+	
+	
 }
