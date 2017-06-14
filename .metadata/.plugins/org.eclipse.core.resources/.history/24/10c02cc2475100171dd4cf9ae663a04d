@@ -100,8 +100,7 @@ public class Globals {
 	public static int spawnY = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
-	public static int currentTheme = 1;
-	public static int floorsOnTheme = 0;
+	public static EnumTheme currentTheme = 1;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;

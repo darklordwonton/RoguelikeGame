@@ -25,7 +25,6 @@ public class Globals {
 	public static final float ROOMS_LEEWAY = 0.25f;
 	public static final int baseCreatures = 1;
 	public static final float creatureIncrease = .3f;
-	public static final int floorsPerTheme = 5;
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -100,8 +99,6 @@ public class Globals {
 	public static int spawnY = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
-	public static int currentTheme = 1;
-	public static int floorsOnTheme = 0;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;
