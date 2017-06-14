@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 
 import main.dungeon.Floor;
 import main.entities.Entity;
+import main.entities.EntityPlayer;
 import main.filemanager.ImageManager;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
@@ -37,9 +38,10 @@ public class MainRenderer {
 			g.fillRect(0, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 			
 			if (tiles != null) {
-				for (int i = 0; i < tiles.length; i++) {
-					for (int e = 0; e < tiles[0].length; e++) {
-						g.drawImage(ImageManager.getTileSprite(tiles[i][e].getSprite()), (i - Globals.scrollX) * TILE_SIZE, WINDOW_HEIGHT - (e - Globals.scrollY) * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
+				for (int i = 0; i < 8; i++) {
+					for (int e = 0; e < 8; e++) {
+						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length)
+							g.drawImage(ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite()), i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 					}
 				}
 			}
@@ -65,14 +67,23 @@ public class MainRenderer {
 			
 			EntityPlayer player = Globals.player;
 			
-			g.drawString("HP: " + Globals.player.getHp(), 5, 2 * TILE_SIZE);
-			g.drawString("HP: " + Globals.player.getHp(), 5, 2 * TILE_SIZE);
-			g.drawString("TUF: " + Globals.player.getStats().getTuf(), 5, 2 * TILE_SIZE);
-			g.drawString("BUF: " + Globals.player.getStats().getBuf(), 5, 2 * TILE_SIZE + 25);
-			g.drawString("WIT: " + Globals.player.getStats().getWit(), 5, 2 * TILE_SIZE + 50);
-			g.drawString("SNK: " + Globals.player.getStats().getSnk(), 5, 2 * TILE_SIZE + 75);
+			g.drawString("HP: " + player.getHp(), 5, 25);
+			g.drawString("MP: " + player.getMp(), 5, TILE_SIZE + 25);
+			g.drawString("TUF: " + player.getStats().getTuf(), 5, 3 * TILE_SIZE - 25);
+			g.drawString("BUF: " + player.getStats().getBuf(), 5, 3 * TILE_SIZE);
+			g.drawString("WIT: " + player.getStats().getWit(), 5, 3 * TILE_SIZE + 25);
+			g.drawString("SNK: " + player.getStats().getSnk(), 5, 3 * TILE_SIZE + 50);
 			
-			g.setColor(Color.GREEN);
+			g.setColor(Color.GRAY);
+			g.fillRect(5, TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
+			g.fillRect(5, 3 * TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
+			if (player.getHp() != 0 && player.getStats().getHp() / player.getHp() >= 4)
+				g.setColor(Color.RED);
+			else
+				g.setColor(Color.GREEN);
+			g.fillRect(6, TILE_SIZE / 2 + 1, player.getHp() / player.getStats().getHp() * 2 * TILE_SIZE - 12, TILE_SIZE / 2 - 2);
+			g.setColor(Color.BLUE);
+			g.fillRect(6, 3 * TILE_SIZE / 2 + 1, player.getMp() / player.getStats().getMp() * 2 * TILE_SIZE - 12, TILE_SIZE / 2 - 2);
 			
 		}
 	};
@@ -84,8 +95,6 @@ public class MainRenderer {
 	public static void init() {
 		
 		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 /*Extra bit because windows are weird*/);
-		frame.setVisible(true);
-		frame.setBackground(Color.WHITE);
 		frame.addWindowListener(new WindowAdapter() {
 	         public void windowClosing(WindowEvent event){
 	             System.exit(0);
@@ -111,7 +120,7 @@ public class MainRenderer {
 		frame.getContentPane().add(guiPane);
 		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 		guiPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		
+		frame.setVisible(true);
 	}
 	
 	public static void drawFloor(Floor map) {

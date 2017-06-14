@@ -39,7 +39,7 @@ public class MainRenderer {
 			
 			if (tiles != null) {
 				for (int i = 0; i < 9; i++) {
-					for (int e = 0; e < 9; e++) {
+					for (int e = 1; e < 10; e++) {
 						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length)
 							g.drawImage(ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite()), i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
 					}
@@ -129,5 +129,10 @@ public class MainRenderer {
 		entities = map.getEntities();
 		frame.repaint();
 	}
+	
+	public static void closeWindow(){
+		frame.dispose();
+	}
+	
 	
 }

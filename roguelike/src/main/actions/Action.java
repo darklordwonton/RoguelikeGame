@@ -1,6 +1,7 @@
 package main.actions;
 
 import main.entities.Entity;
+import main.rendering.MainRenderer;
 import main.util.EnumDirection;
 import main.util.Globals;
 
@@ -20,6 +21,7 @@ public class Action {
 		case Globals.LEFT_KEY: e.move(EnumDirection.LEFT);
 		  break;
 		  
+		case Globals.ESC_KEY: MainRenderer.closeWindow();
 		}
 	}
 	
