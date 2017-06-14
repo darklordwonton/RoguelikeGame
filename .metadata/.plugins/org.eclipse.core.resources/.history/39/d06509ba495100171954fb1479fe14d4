@@ -28,7 +28,7 @@ public class MainRenderer {
 	public static final int WINDOW_WIDTH = 832;
 	public static final int WINDOW_HEIGHT = 576;
 	public static final int TILE_SIZE = WINDOW_HEIGHT / 9;
-	private static JFrame frame = new JFrame("Goblin Adventure (working title)");
+	private static JFrame frame = new JFrame("Game");
 	private static JPanel mapPane = new JPanel() {
 		@Override
 		public void paintComponent(Graphics g) {

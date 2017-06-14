@@ -70,11 +70,11 @@ public class Globals {
 	
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
-		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_floor_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.DIRT, "stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.jpg");
 		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.jpg");
 	};
 	
@@ -83,6 +83,10 @@ public class Globals {
 	static {
 		BG_COLORS.put(EnumTheme.CAVE, Color.DARK_GRAY);
 		BG_COLORS.put(EnumTheme.GRAY_BRICK, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.BROWN_BRICK, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.VOLCANO, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.DIRT, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.CYBER, Color.DARK_GRAY);
 	};
 	
 	//Keys
