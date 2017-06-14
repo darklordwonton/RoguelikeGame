@@ -9,7 +9,7 @@ public class Generator {
 		Globals.floorNumber++;
 		
 		int theme = (int)(Math.random() * EnumTheme.values().length);
-		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE_BASE + (int)Math.pow(Globals.floorNumber, 1/2.0) * Globals.FLOOR_SIZE_MODIFIER, Globals.FLOOR_SIZE_BASE + (int)Math.pow(Globals.floorNumber, 1/2.0) * Globals.FLOOR_SIZE_MODIFIER, EnumTheme.values()[theme]);
+		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE_BASE + Globals.floorNumber * Globals.FLOOR_SIZE_MODIFIER, Globals.FLOOR_SIZE_BASE + Globals.floorNumber * Globals.FLOOR_SIZE_MODIFIER, EnumTheme.values()[theme]);
 		
 		Globals.scrollX = Globals.spawnX - 4;
 		Globals.scrollY = Globals.spawnY - 5;
