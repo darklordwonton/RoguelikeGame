@@ -14,7 +14,7 @@ public class Ogre extends Entity{
 							Globals.floorNumber); //level
 	
 	Ogre(String n, int px, int py){
-		super(n, px, py);
+		super("Ogre " + n, px, py);
 		
 		Stats stats = new Stats(20 + 7 * Globals.floorNumber, Globals.floorNumber);
 		stats.averageInnate(ideal);
@@ -22,15 +22,4 @@ public class Ogre extends Entity{
 		
 		
 	}
-	
-	public void move(){
-		
-	}
-	
-	public void attack(){
-		
-	}
-	
-	
-	
 }
