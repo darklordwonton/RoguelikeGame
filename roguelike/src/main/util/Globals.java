@@ -41,10 +41,8 @@ public class Globals {
 	//Image Names
 	public static final String PLAYER_SPRITE_SHEET = "enemy_slimes.png";
 	public static int PLAYER_SPRITE_ROW = 0;
-	public static int PLAYER_SPRITE_COLUMN = 1;
+	public static int PLAYER_SPRITE_COLUMN = 4;
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
-	
-	
 	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
@@ -64,12 +62,23 @@ public class Globals {
 	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
 	static {
-		WALL_SPRITES.put(EnumTheme.CAVE, "empty.png");
-		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "empty.png");
-		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "empty.png");
-		WALL_SPRITES.put(EnumTheme.VOLCANO, "empty.png");
-		WALL_SPRITES.put(EnumTheme.DIRT, "empty.png");
-		WALL_SPRITES.put(EnumTheme.CYBER, "empty.png");
+		WALL_SPRITES.put(EnumTheme.CAVE, "wall.png");
+		WALL_SPRITES.put(EnumTheme.GRAY_BRICK, "wall.png");
+		WALL_SPRITES.put(EnumTheme.BROWN_BRICK, "wall.png");
+		WALL_SPRITES.put(EnumTheme.VOLCANO, "wall.png");
+		WALL_SPRITES.put(EnumTheme.DIRT, "wall.png");
+		WALL_SPRITES.put(EnumTheme.CYBER, "wall.png");
+	};
+	
+	
+	public static final Map<EnumTheme, String> EMPTY_SPRITES = new HashMap<EnumTheme, String>();
+	static {
+		EMPTY_SPRITES.put(EnumTheme.CAVE, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.GRAY_BRICK, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.BROWN_BRICK, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.VOLCANO, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.DIRT, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.CYBER, "empty.png");
 	};
 	
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
@@ -81,6 +90,17 @@ public class Globals {
 		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.png");
 		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.png");
 	};
+	
+	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
+	static {
+		BREAKABLE_SPRITES.put(EnumTheme.CAVE, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.GRAY_BRICK, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.BROWN_BRICK, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.VOLCANO, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.DIRT, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.CYBER, "cracked_wall.png");
+	};
+	
 	
 	//Colors
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();

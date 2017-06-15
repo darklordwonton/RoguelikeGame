@@ -5,7 +5,7 @@ import main.entities.Entity;
 
 public abstract class Tile {
 	protected String sprite = null;
-	protected boolean wall = false;
+	protected boolean interactive = false;
 	protected int x = 0;
 	protected int y = 0;
 	
@@ -19,7 +19,7 @@ public abstract class Tile {
 	}
 
 	public boolean isWall() {
-		return wall;
+		return interactive;
 	}
 	
 	public void onStep(Entity e) {}
