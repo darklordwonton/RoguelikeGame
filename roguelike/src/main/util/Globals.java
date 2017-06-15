@@ -25,7 +25,7 @@ public class Globals {
 	public static final float ROOMS_LEEWAY = 0.25f;
 	public static final int baseCreatures = 1;
 	public static final float creatureIncrease = .3f;
-	public static final int floorsPerTheme = 5;
+//	public static final int floorsPerTheme = 5;
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -93,6 +93,23 @@ public class Globals {
 		BG_COLORS.put(EnumTheme.CYBER, Color.DARK_GRAY);
 	};
 	
+	public static final Map<EnumTheme, EnumTheme[]> RELATED_THEMES = new HashMap<EnumTheme, EnumTheme[]>();
+	static {
+		EnumTheme[] caveRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.VOLCANO, EnumTheme.DIRT};
+		RELATED_THEMES.put(EnumTheme.CAVE, caveRelated);
+		EnumTheme[] grayBrickRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.DIRT};
+		RELATED_THEMES.put(EnumTheme.GRAY_BRICK, grayBrickRelated);
+		EnumTheme[] brownBrickRelated = {EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.CYBER};
+		RELATED_THEMES.put(EnumTheme.BROWN_BRICK, brownBrickRelated);
+		EnumTheme[] volcanoRelated = {EnumTheme.CAVE, EnumTheme.VOLCANO, EnumTheme.CYBER};
+		RELATED_THEMES.put(EnumTheme.CAVE, caveRelated);
+		EnumTheme[] dirtRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.DIRT};
+		RELATED_THEMES.put(EnumTheme.VOLCANO, dirtRelated);
+		EnumTheme[] cyberRelated = {EnumTheme.BROWN_BRICK, EnumTheme.VOLCANO, EnumTheme.CYBER};
+		RELATED_THEMES.put(EnumTheme.CYBER, cyberRelated);
+	};
+	
+	
 	//Keys
 	public static final int UP_KEY = KeyEvent.VK_UP;
 	public static final int DOWN_KEY = KeyEvent.VK_DOWN;
@@ -108,8 +125,7 @@ public class Globals {
 	public static int spawnY = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
-	public static int currentTheme = 1;
-	public static int floorsOnTheme = 0;
+	public static EnumTheme currentTheme = EnumTheme.CYBER;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;
