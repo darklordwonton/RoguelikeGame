@@ -17,6 +17,8 @@ public class Entity {
 	protected int x;
 	protected int y;
 	protected String sprite = null;
+	protected int spriteSheetRow = 0;
+	protected int spriteSheetColumn = 0;
 	
 	public Entity(String n, int px, int py){
 		name = n;
@@ -72,9 +74,15 @@ public class Entity {
 	public void changeY(int y) {
 		this.y += y;
 	}
-
+	
+	public void setSprite(String sheet, int row, int column){
+		sprite = sheet;
+		spriteSheetRow = row;
+		spriteSheetColumn = column;
+	}
+	
 	public String getSprite() {
-		return sprite;
+		return sprite + "&" + spriteSheetRow + "&" + spriteSheetColumn;
 	}
 	
 	public Stats getStats() {

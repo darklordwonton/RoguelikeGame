@@ -39,22 +39,26 @@ public class Globals {
 	public static final int DESTRUCTION_MODIFIER = 4;
 	
 	//Image Names
-	public static final String PLAYER_SPRITE = "player.png";
+	public static final String PLAYER_SPRITE_SHEET = "enemy_slimes.png";
+	public static int PLAYER_SPRITE_ROW = 0;
+	public static int PLAYER_SPRITE_COLUMN = 1;
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
+	
+	
 	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
-		String[] cave = {"cave_floor.jpg"};
+		String[] cave = {"cave_floor.png"};
 		FLOOR_SPRITES.put(EnumTheme.CAVE, cave);
-		String[] grayBrick = {"gray_brick_floor_1.jpg", "gray_brick_floor_2.jpg", "gray_brick_floor_3.jpg", "gray_brick_floor_4.jpg"};
+		String[] grayBrick = {"gray_brick_floor_1.png", "gray_brick_floor_2.png", "gray_brick_floor_3.png", "gray_brick_floor_4.png"};
 		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, grayBrick);
-		String[] brownBrick = {"brown_brick_floor.jpg"};
+		String[] brownBrick = {"brown_brick_floor.png"};
 		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, brownBrick);
-		String[] volcano = {"volcano_floor.jpg"};
+		String[] volcano = {"volcano_floor.png"};
 		FLOOR_SPRITES.put(EnumTheme.VOLCANO, volcano);
-		String[] dirt = {"dirt_floor.jpg"};
+		String[] dirt = {"dirt_floor.png"};
 		FLOOR_SPRITES.put(EnumTheme.DIRT, dirt);
-		String[] cyber = {"cyber_floor_1.jpg", "cyber_floor_2.jpg", "cyber_floor_3.jpg", "cyber_floor_4.jpg"};
+		String[] cyber = {"cyber_floor_1.png", "cyber_floor_2.png", "cyber_floor_3.png", "cyber_floor_4.png"};
 		FLOOR_SPRITES.put(EnumTheme.CYBER, cyber);
 	};
 	
@@ -70,12 +74,12 @@ public class Globals {
 	
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
-		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.jpg");
-		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.jpg");
+		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.png");
+		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_stairs.png");
+		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_stairs.png");
+		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.png");
+		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.png");
+		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.png");
 	};
 	
 	//Colors
