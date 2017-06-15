@@ -9,7 +9,7 @@ public class EntitySlime extends EntityMonster {
 	EntitySlime(String n, int px, int py){
 		super(n, px, py);
 		
-		sprite = "enemy_slimes.png";
+		
 		
 		ideal = new Stats (Globals.LOW_STAT, //hp
 				Globals.HIGH_STAT, //mp
@@ -21,7 +21,7 @@ public class EntitySlime extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		
-		
+		this.setSprite("enemy_slimes.png", 0, 1);
 		
 	}
 	
