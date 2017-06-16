@@ -18,7 +18,7 @@ public abstract class Tile {
 		return sprite;
 	}
 
-	public boolean isWall() {
+	public boolean isInteractive() {
 		return interactive;
 	}
 	

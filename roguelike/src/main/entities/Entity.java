@@ -97,14 +97,14 @@ public class Entity {
 		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) {
 			changeX(dir.getX());
 		}
-		if (Globals.currentFloor.getTile(x, y).isWall()) {
+		if (Globals.currentFloor.getTile(x, y).isInteractive()) {
 			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
 			changeX(-dir.getX());
 		}
 		if (!(y + dir.getY() < 0 || y + dir.getY() >= Globals.currentFloor.getHeight())) {
 			changeY(dir.getY());
 		}
-		if (Globals.currentFloor.getTile(x, y).isWall()) {
+		if (Globals.currentFloor.getTile(x, y).isInteractive()) {
 			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
 			changeY(-dir.getY());
 		}
