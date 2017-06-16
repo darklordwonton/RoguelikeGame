@@ -50,7 +50,7 @@ public class ImageManager {
 		return tiles.get(image);
 	}
 	
-	public static BufferedImage getEntitySprite (String image, int row, int column) {
+	public static BufferedImage getEntitySprite (String image, int column, int row) {
 		return entities.get(image).getSubimage(column*16, row*16, 16, 16);
 	}
 	

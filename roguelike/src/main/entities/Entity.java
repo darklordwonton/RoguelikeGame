@@ -19,6 +19,7 @@ public class Entity {
 	protected String sprite = null;
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
+	protected boolean wallCollision = true;
 	
 	public Entity(String n, int px, int py){
 		name = n;
@@ -75,7 +76,7 @@ public class Entity {
 		this.y += y;
 	}
 	
-	public void setSprite(String sheet, int row, int column){
+	public void setSprite(String sheet, int column, int row){
 		sprite = sheet;
 		spriteSheetRow = row;
 		spriteSheetColumn = column;
@@ -93,7 +94,23 @@ public class Entity {
 		return new Attack(stats.getBuf(), new HashSet<EnumAttackType>());
 	}
 	
+	public void setCollision(boolean collision){
+		this.wallCollision = collision;
+	}
+	
+	public void toggleCollision(){
+		if (wallCollision)
+			setCollision(false);
+		else
+			setCollision(true);
+	}
+	
+	public boolean getCollision(){
+		return wallCollision;
+	}
+	
 	public void move(EnumDirection dir) {
+		
 		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) {
 			changeX(dir.getX());
 		}
@@ -108,6 +125,19 @@ public class Entity {
 			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
 			changeY(-dir.getY());
 		}
+		Globals.currentFloor.getTile(x, y).onStep(this);
+	}
+	
+	public void noClip(EnumDirection dir) {
+		
+		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) {
+			changeX(dir.getX());
+		}
+		
+		if (!(y + dir.getY() < 0 || y + dir.getY() >= Globals.currentFloor.getHeight())) {
+			changeY(dir.getY());
+		}
+		
 		Globals.currentFloor.getTile(x, y).onStep(this);
 	}
 }

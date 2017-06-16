@@ -136,7 +136,7 @@ public class Globals {
 	public static final int LEFT_KEY = KeyEvent.VK_LEFT;
 	public static final int RIGHT_KEY = KeyEvent.VK_RIGHT;
 	public static final int ESC_KEY = KeyEvent.VK_ESCAPE;
-	
+	public static final int ENTER_KEY = KeyEvent.VK_ENTER;
 	
 	//Global Variables
 	public static String message = "";

@@ -13,7 +13,10 @@ public class EntityPlayer extends Entity {
 	}
 	
 	public void move(EnumDirection dir) {
-		super.move(dir);
+		if(wallCollision)
+			super.move(dir);
+		else
+			super.noClip(dir);
 		Globals.scrollX = x - 4;
 		Globals.scrollY = y - 5;
 	}
