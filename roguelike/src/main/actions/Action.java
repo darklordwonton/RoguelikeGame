@@ -21,9 +21,6 @@ public class Action {
 		case Globals.LEFT_KEY: e.move(EnumDirection.LEFT);
 		  break;
 		
-		case Globals.ENTER_KEY: e.toggleCollision();
-		  break;
-		
 		case Globals.ESC_KEY: MainRenderer.closeWindow();
 		  break;
 		}

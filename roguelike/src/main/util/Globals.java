@@ -23,8 +23,8 @@ public class Globals {
 	public static final int ROOMS_BASE = 15;
 	public static final float ROOMS_MODIFIER = 0.5f;
 	public static final float ROOMS_LEEWAY = 0.25f;
-	public static final int baseCreatures = 1;
-	public static final float creatureIncrease = .3f;
+	public static final int BASE_CREATURS = 1;
+	public static final float CREATURES_INCREASE = .3f;
 //	public static final int floorsPerTheme = 5;
 	
 	//Walls
@@ -43,7 +43,6 @@ public class Globals {
 	public static int PLAYER_SPRITE_ROW = 0;
 	public static int PLAYER_SPRITE_COLUMN = 4;
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
-	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
 		String[] cave = {"cave_floor.png"};
@@ -59,7 +58,6 @@ public class Globals {
 		String[] cyber = {"cyber_floor_1.png", "cyber_floor_2.png", "cyber_floor_3.png", "cyber_floor_4.png"};
 		FLOOR_SPRITES.put(EnumTheme.CYBER, cyber);
 	};
-	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		WALL_SPRITES.put(EnumTheme.CAVE, "wall.png");
@@ -69,8 +67,6 @@ public class Globals {
 		WALL_SPRITES.put(EnumTheme.DIRT, "wall.png");
 		WALL_SPRITES.put(EnumTheme.CYBER, "wall.png");
 	};
-	
-	
 	public static final Map<EnumTheme, String> EMPTY_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		EMPTY_SPRITES.put(EnumTheme.CAVE, "empty.png");
@@ -80,7 +76,6 @@ public class Globals {
 		EMPTY_SPRITES.put(EnumTheme.DIRT, "empty.png");
 		EMPTY_SPRITES.put(EnumTheme.CYBER, "empty.png");
 	};
-	
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.png");
@@ -90,7 +85,6 @@ public class Globals {
 		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.png");
 		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.png");
 	};
-	
 	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		BREAKABLE_SPRITES.put(EnumTheme.CAVE, "cracked_wall.png");
@@ -113,6 +107,7 @@ public class Globals {
 		BG_COLORS.put(EnumTheme.CYBER, Color.DARK_GRAY);
 	};
 	
+	//Themes
 	public static final Map<EnumTheme, EnumTheme[]> RELATED_THEMES = new HashMap<EnumTheme, EnumTheme[]>();
 	static {
 		EnumTheme[] caveRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.VOLCANO, EnumTheme.DIRT};
@@ -122,9 +117,9 @@ public class Globals {
 		EnumTheme[] brownBrickRelated = {EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.CYBER};
 		RELATED_THEMES.put(EnumTheme.BROWN_BRICK, brownBrickRelated);
 		EnumTheme[] volcanoRelated = {EnumTheme.CAVE, EnumTheme.VOLCANO, EnumTheme.CYBER};
-		RELATED_THEMES.put(EnumTheme.CAVE, caveRelated);
+		RELATED_THEMES.put(EnumTheme.VOLCANO, volcanoRelated);
 		EnumTheme[] dirtRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.DIRT};
-		RELATED_THEMES.put(EnumTheme.VOLCANO, dirtRelated);
+		RELATED_THEMES.put(EnumTheme.DIRT, dirtRelated);
 		EnumTheme[] cyberRelated = {EnumTheme.BROWN_BRICK, EnumTheme.VOLCANO, EnumTheme.CYBER};
 		RELATED_THEMES.put(EnumTheme.CYBER, cyberRelated);
 	};
@@ -152,8 +147,7 @@ public class Globals {
 	public static List<Entity> entities = new ArrayList<Entity>();
 	public static Floor currentFloor = null;
 	
-	
-	//mob stat constants
+	//Mob stat constants
 	public static final int PATHETIC_STAT = 2;
 	public static final int VERY_LOW_STAT = 5;
 	public static final int LOW_STAT = 10;
@@ -162,5 +156,7 @@ public class Globals {
 	public static final int VERY_HIGH_STAT = 30;	
 	public static final int GOD_STAT = 50;
 	
+	//Debug features
+	public static final boolean NO_CLIP = true;
 	
 }

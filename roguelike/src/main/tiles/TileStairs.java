@@ -10,7 +10,7 @@ public class TileStairs extends Tile {
 	public TileStairs(EnumTheme t, int x, int y) {
 		super(x, y);
 		sprite = Globals.STAIRS_SPRITES.get(t);
-		interactive = false;
+		wall = false;
 	}
 	
 	public void onStep(Entity e) {
