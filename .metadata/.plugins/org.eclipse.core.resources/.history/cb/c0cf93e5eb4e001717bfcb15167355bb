@@ -1,5 +1,0 @@
-package main.tiles;
-
-public enum EnumTileTypes {
-
-}

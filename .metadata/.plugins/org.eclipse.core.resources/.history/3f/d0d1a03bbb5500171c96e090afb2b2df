@@ -39,9 +39,9 @@ public class Globals {
 	public static final int DESTRUCTION_MODIFIER = 4;
 	
 	//Image Names
-	public static final String PLAYER_SPRITE_SHEET = "player.png";
+	public static final String PLAYER_SPRITE_SHEET = "enemy_slimes.png";
 	public static int PLAYER_SPRITE_ROW = 0;
-	public static int PLAYER_SPRITE_COLUMN = 0;
+	public static int PLAYER_SPRITE_COLUMN = 4;
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
@@ -132,7 +132,6 @@ public class Globals {
 	public static final int RIGHT_KEY = KeyEvent.VK_RIGHT;
 	public static final int ESC_KEY = KeyEvent.VK_ESCAPE;
 	public static final int ENTER_KEY = KeyEvent.VK_ENTER;
-	public static final int BACKSLASH = KeyEvent.VK_BACK_SLASH;
 	
 	//Global Variables
 	public static String message = "";
@@ -158,7 +157,6 @@ public class Globals {
 	public static final int GOD_STAT = 50;
 	
 	//Debug features
-	public static final boolean NO_CLIP = false;
-	public static final boolean SKIP_FLOORS = true;
+	public static final boolean NO_CLIP = true;
 	
 }

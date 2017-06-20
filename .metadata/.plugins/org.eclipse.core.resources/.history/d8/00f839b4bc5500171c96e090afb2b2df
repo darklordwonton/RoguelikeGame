@@ -22,7 +22,7 @@ public class Action {
 		case Globals.LEFT_KEY: e.move(EnumDirection.LEFT);
 		  break;
 		  
-		case Globals.BACKSLASH: if (Globals.SKIP_FLOORS)
+		case Globals.SQUIGGLE: if (Globals.SKIP_FLOORS)
 			Generator.newFloor();
 		  break;
 		

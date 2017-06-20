@@ -1,6 +1,5 @@
 package main.actions;
 
-import main.dungeon.Generator;
 import main.entities.Entity;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
@@ -20,10 +19,6 @@ public class Action {
 		  break;
 		  
 		case Globals.LEFT_KEY: e.move(EnumDirection.LEFT);
-		  break;
-		  
-		case Globals.BACKSLASH: if (Globals.SKIP_FLOORS)
-			Generator.newFloor();
 		  break;
 		
 		case Globals.ESC_KEY: MainRenderer.closeWindow();

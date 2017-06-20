@@ -3,4 +3,5 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="main.entities.Stats"/>
 <fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.dungeon.Generator"/>
 </qualifiedTypeNameHistroy>
