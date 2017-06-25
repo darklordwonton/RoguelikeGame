@@ -11,6 +11,7 @@ public class Initializer {
 		Generator.newFloor();
 		ImageManager.init();
 		MainRenderer.init();
+		RollingCounterManager.init();
 		MainRenderer.drawFloor(Globals.currentFloor);
 	}
 }

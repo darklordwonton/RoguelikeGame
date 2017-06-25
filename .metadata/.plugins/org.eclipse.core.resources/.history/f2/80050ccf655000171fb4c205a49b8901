@@ -1,5 +1,0 @@
-package main.tiles;
-
-public class TileStairs extends Tile {
-
-}

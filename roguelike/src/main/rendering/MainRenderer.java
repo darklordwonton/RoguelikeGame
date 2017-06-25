@@ -21,8 +21,9 @@ import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.util.ControlManager;
 import main.util.Globals;
+import main.util.RollingCounterManager;
 
-public class MainRenderer {
+public abstract class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
 	public static final int WINDOW_WIDTH = 832;
@@ -86,13 +87,13 @@ public class MainRenderer {
 			g.setColor(Color.GRAY);
 			g.fillRect(5, TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
 			g.fillRect(5, 3 * TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
-			if (player.getHp() != 0 && player.getStats().getHp() / player.getHp() >= 4)
+			if (player.getHp() != 0 && player.getStats().getHp() / RollingCounterManager.getDisplayHealth() >= 4)
 				g.setColor(Color.RED);
 			else
 				g.setColor(Color.GREEN);
-			g.fillRect(6, TILE_SIZE / 2 + 1, player.getHp() / player.getStats().getHp() * 2 * TILE_SIZE - 12, TILE_SIZE / 2 - 2);
+			g.fillRect(6, TILE_SIZE / 2 + 1, (int)(RollingCounterManager.getDisplayHealth() / (float) player.getStats().getHp() * 2 * TILE_SIZE - 12), TILE_SIZE / 2 - 2);
 			g.setColor(Color.BLUE);
-			g.fillRect(6, 3 * TILE_SIZE / 2 + 1, player.getMp() / player.getStats().getMp() * 2 * TILE_SIZE - 12, TILE_SIZE / 2 - 2);
+			g.fillRect(6, 3 * TILE_SIZE / 2 + 1, (int)(player.getMp() / (float) player.getStats().getMp() * 2 * TILE_SIZE - 12), TILE_SIZE / 2 - 2);
 			
 		}
 	};
@@ -136,6 +137,10 @@ public class MainRenderer {
 		theme = map.getTheme();
 		tiles = map.getTileMap();
 		entities = map.getEntities();
+		frame.repaint();
+	}
+	
+	public static void refresh() {
 		frame.repaint();
 	}
 	

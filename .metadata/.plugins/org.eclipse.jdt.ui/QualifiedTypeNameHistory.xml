@@ -2,6 +2,11 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="main.entities.Stats"/>
-<fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.dungeon.Generator"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="main.util.PlayerLifeManager"/>
+<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.util.RollingCounterManager"/>
 </qualifiedTypeNameHistroy>

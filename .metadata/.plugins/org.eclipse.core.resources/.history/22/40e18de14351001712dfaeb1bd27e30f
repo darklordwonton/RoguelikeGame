@@ -1,7 +1,0 @@
-package main.entities.monsters;
-
-import main.entities.Entity;
-
-public class EntityMonster extends Entity {
-
-}

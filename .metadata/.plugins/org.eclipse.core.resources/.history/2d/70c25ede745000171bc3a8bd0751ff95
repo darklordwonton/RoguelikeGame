@@ -1,5 +1,0 @@
-package main.attacks;
-
-public enum EnumAttackType {
-	SHARP, SMASH, RANGED, 
-}
