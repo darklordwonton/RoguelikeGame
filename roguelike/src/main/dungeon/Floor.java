@@ -22,8 +22,7 @@ public class Floor {
 	public Floor (int h, int w, EnumTheme t) {
 		height = h;
 		width = w;
-		theme = EnumTheme.valueOf("CYBER");
-//		theme = t;
+		theme = t;
 		tiles = new Tile[h][w];		
 		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
 		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * (int)Math.pow(Globals.floorNumber, 1/2.0) * (int)Math.pow(Globals.floorNumber, 1/2.0))];

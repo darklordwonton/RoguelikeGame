@@ -23,9 +23,8 @@ public class Globals {
 	public static final int ROOMS_BASE = 15;
 	public static final float ROOMS_MODIFIER = 0.5f;
 	public static final float ROOMS_LEEWAY = 0.25f;
-	public static final int BASE_CREATURS = 1;
+	public static final int BASE_CREATURES = 1;
 	public static final float CREATURES_INCREASE = .3f;
-//	public static final int floorsPerTheme = 5;
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -40,40 +39,18 @@ public class Globals {
 	
 	//Image Names
 	public static final String PLAYER_SPRITE_SHEET = "player.png";
+	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
 	public static int PLAYER_SPRITE_ROW = 0;
 	public static int PLAYER_SPRITE_COLUMN = 0;
-	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
-	
-	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
-	static {
-		String[] cave = {"cave_floor.png"};
-		FLOOR_SPRITES.put(EnumTheme.CAVE, cave);
-		String[] grayBrick = {"gray_brick_floor_1.png", "gray_brick_floor_2.png", "gray_brick_floor_3.png", "gray_brick_floor_4.png"};
-		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, grayBrick);
-		String[] brownBrick = {"brown_brick_floor.png"};
-		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, brownBrick);
-		String[] volcano = {"volcano_floor.png"};
-		FLOOR_SPRITES.put(EnumTheme.VOLCANO, volcano);
-		String[] dirt = {"dirt_floor.png"};
-		FLOOR_SPRITES.put(EnumTheme.DIRT, dirt);
-		String[] cyber = {"cyber_floor_1.png", "cyber_floor_2.png", "cyber_floor_3.png", "cyber_floor_4.png"};
-		FLOOR_SPRITES.put(EnumTheme.CYBER, cyber);
-	};
 	
 	public static final Map<EnumTheme, String> FLOOR_SPRITE_SHEETS = new HashMap<EnumTheme, String>();
 	static {
-//		String[] cave = {"cave_floor.png"};
-//		FLOOR_SPRITES.put(EnumTheme.CAVE, cave);
-//		String[] grayBrick = {"gray_brick_floor_1.png", "gray_brick_floor_2.png", "gray_brick_floor_3.png", "gray_brick_floor_4.png"};
-//		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, grayBrick);
-//		String[] brownBrick = {"brown_brick_floor.png"};
-//		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, brownBrick);
-//		String[] volcano = {"volcano_floor.png"};
-//		FLOOR_SPRITES.put(EnumTheme.VOLCANO, volcano);
-//		String[] dirt = {"dirt_floor.png"};
-//		FLOOR_SPRITES.put(EnumTheme.DIRT, dirt);
-		String cyber = "cyber_sheet.png";
-		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, cyber);
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.CAVE, "cave_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.GRAY_BRICK, "gray_brick_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.BROWN_BRICK, "brown_brick_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.VOLCANO, "volcano_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.DIRT, "dirt_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, "cyber_sheet.png");
 	};
 	
 	public static final Map<EnumTheme, Integer> TILE_SPRITE_SHEET_LENGTHS = new HashMap<EnumTheme, Integer>();
@@ -106,16 +83,6 @@ public class Globals {
 		EMPTY_SPRITES.put(EnumTheme.CYBER, "empty.png");
 	};
 	
-	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
-	static {
-		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.png");
-		STAIRS_SPRITES.put(EnumTheme.GRAY_BRICK, "gray_brick_stairs.png");
-		STAIRS_SPRITES.put(EnumTheme.BROWN_BRICK, "brown_brick_stairs.png");
-		STAIRS_SPRITES.put(EnumTheme.VOLCANO, "volcano_stairs.png");
-		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.png");
-		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.png");
-	};
-	
 	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		BREAKABLE_SPRITES.put(EnumTheme.CAVE, "cracked_wall.png");
@@ -125,7 +92,6 @@ public class Globals {
 		BREAKABLE_SPRITES.put(EnumTheme.DIRT, "cracked_wall.png");
 		BREAKABLE_SPRITES.put(EnumTheme.CYBER, "cracked_wall.png");
 	};
-	
 	
 	//Colors
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
@@ -172,7 +138,7 @@ public class Globals {
 	public static int spawnY = 0;
 	public static int scrollX = 0;
 	public static int scrollY = 0;
-	public static EnumTheme currentTheme = EnumTheme.CYBER;
+	public static EnumTheme currentTheme = EnumTheme.GRAY_BRICK;
 	
 	//Global Arrays
 	public static EntityPlayer player = null;

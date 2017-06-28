@@ -9,7 +9,8 @@ public class TileStairs extends Tile {
 	
 	public TileStairs(EnumTheme t, int x, int y) {
 		super(x, y);
-		sprite = Globals.STAIRS_SPRITES.get(t);
+		sprite = Globals.FLOOR_SPRITE_SHEETS.get(t);
+		this.setSheetPos(0, 0);
 		wall = false;
 	}
 	
