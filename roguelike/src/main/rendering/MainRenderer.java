@@ -41,8 +41,20 @@ public abstract class MainRenderer {
 			if (tiles != null) {
 				for (int i = 0; i < 9; i++) {
 					for (int e = 1; e < 10; e++) {
-						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length)
-							g.drawImage(ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite()), i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, TILE_SIZE, TILE_SIZE, null);
+						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length){
+							
+							Tile tile = tiles[i + Globals.scrollX][e + Globals.scrollY];
+							
+						g.drawImage(ImageManager.getTileTexture(tile.getSprite(), 
+																tile.getSpriteSheetColumn(), 
+																tile.getSpriteSheetRow()),
+							
+//							ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite(), 0, (Math.random() * 5)), 
+									i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, 
+									TILE_SIZE, 
+									TILE_SIZE, 
+									null);
+						}
 					}
 				}
 			}

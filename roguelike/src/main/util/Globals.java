@@ -43,6 +43,7 @@ public class Globals {
 	public static int PLAYER_SPRITE_ROW = 0;
 	public static int PLAYER_SPRITE_COLUMN = 0;
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
+	
 	public static final Map<EnumTheme, String[]> FLOOR_SPRITES = new HashMap<EnumTheme, String[]>();
 	static {
 		String[] cave = {"cave_floor.png"};
@@ -58,6 +59,33 @@ public class Globals {
 		String[] cyber = {"cyber_floor_1.png", "cyber_floor_2.png", "cyber_floor_3.png", "cyber_floor_4.png"};
 		FLOOR_SPRITES.put(EnumTheme.CYBER, cyber);
 	};
+	
+	public static final Map<EnumTheme, String> FLOOR_SPRITE_SHEETS = new HashMap<EnumTheme, String>();
+	static {
+//		String[] cave = {"cave_floor.png"};
+//		FLOOR_SPRITES.put(EnumTheme.CAVE, cave);
+//		String[] grayBrick = {"gray_brick_floor_1.png", "gray_brick_floor_2.png", "gray_brick_floor_3.png", "gray_brick_floor_4.png"};
+//		FLOOR_SPRITES.put(EnumTheme.GRAY_BRICK, grayBrick);
+//		String[] brownBrick = {"brown_brick_floor.png"};
+//		FLOOR_SPRITES.put(EnumTheme.BROWN_BRICK, brownBrick);
+//		String[] volcano = {"volcano_floor.png"};
+//		FLOOR_SPRITES.put(EnumTheme.VOLCANO, volcano);
+//		String[] dirt = {"dirt_floor.png"};
+//		FLOOR_SPRITES.put(EnumTheme.DIRT, dirt);
+		String cyber = "cyber_sheet.png";
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, cyber);
+	};
+	
+	public static final Map<EnumTheme, Integer> TILE_SPRITE_SHEET_LENGTHS = new HashMap<EnumTheme, Integer>();
+	static {
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.CAVE, 1);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.GRAY_BRICK, 4);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.BROWN_BRICK, 1);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.VOLCANO, 1);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.DIRT, 1);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.CYBER, 4);
+	};
+	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		WALL_SPRITES.put(EnumTheme.CAVE, "wall.png");
@@ -67,6 +95,7 @@ public class Globals {
 		WALL_SPRITES.put(EnumTheme.DIRT, "wall.png");
 		WALL_SPRITES.put(EnumTheme.CYBER, "wall.png");
 	};
+	
 	public static final Map<EnumTheme, String> EMPTY_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		EMPTY_SPRITES.put(EnumTheme.CAVE, "empty.png");
@@ -76,6 +105,7 @@ public class Globals {
 		EMPTY_SPRITES.put(EnumTheme.DIRT, "empty.png");
 		EMPTY_SPRITES.put(EnumTheme.CYBER, "empty.png");
 	};
+	
 	public static final Map<EnumTheme, String> STAIRS_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		STAIRS_SPRITES.put(EnumTheme.CAVE, "cave_stairs.png");
@@ -85,6 +115,7 @@ public class Globals {
 		STAIRS_SPRITES.put(EnumTheme.DIRT, "dirt_stairs.png");
 		STAIRS_SPRITES.put(EnumTheme.CYBER, "cyber_stairs.png");
 	};
+	
 	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
 	static {
 		BREAKABLE_SPRITES.put(EnumTheme.CAVE, "cracked_wall.png");

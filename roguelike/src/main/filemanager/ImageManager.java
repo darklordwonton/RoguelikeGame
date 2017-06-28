@@ -46,8 +46,8 @@ public class ImageManager {
 		return ret;
 	}
 	
-	public static BufferedImage getTileTexture (String image) {
-		return tiles.get(image);
+	public static BufferedImage getTileTexture (String image, int column, int row) {
+		return tiles.get(image).getSubimage(column*16, row*16, 16, 16);
 	}
 	
 	public static BufferedImage getEntitySprite (String image, int column, int row) {
