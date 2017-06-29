@@ -20,14 +20,12 @@ public class Entity {
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
 	protected boolean tangible = true;
-	protected Attack basicAttack = null;
 	
 	public Entity(String n, int px, int py){
 		name = n;
 		x = px;
 		y = py;
 		ai = new AI(5, 0, 2);
-		basicAttack = new Attack (0, 3, 1, null);
 	}
 	
 	public String getName() {
@@ -85,7 +83,7 @@ public class Entity {
 	}
 	
 	public Attack getMeleeAttack() {
-		return basicAttack;
+		return new Attack(stats.getBuf(), new HashSet<EnumAttackType>());
 	}
 	
 	public boolean getTangible(){

@@ -3,18 +3,14 @@ package main.attacks;
 import java.util.Set;
 
 public class Attack {
-	protected int lowDamage = 0; //Low bound of damage
-	protected int highDamage = 0; //Upper bound of damage
-	protected int bellCurve = 0;  //Randomization of damage. 1 is equal chance of anything, the higher the more likely it is to center
+	protected int damage = 0;
 	protected Set<EnumAttackType> types = null;
 	protected String sprite = null;
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
 	
-	public Attack(int dl, int du, int bc, Set<EnumAttackType> t) {
-		lowDamage = dl;
-		highDamage = du;
-		bellCurve = bc;
+	public Attack(int d, Set<EnumAttackType> t) {
+		damage = d;
 		types = t;
 	}
 	
@@ -31,13 +27,7 @@ public class Attack {
 	}
 	
 	public int getDamage () {
-		double d = lowDamage + 0.5;
-		double m = (double)((highDamage - lowDamage) / bellCurve);
-		for (int i = 0; i < bellCurve; i++){
-			d += m * Math.random();
-		}
-		
-		return (int) d;
+		return damage;
 	}
 	
 	public void setSprite(String sheet, int column, int row){

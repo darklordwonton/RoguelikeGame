@@ -31,13 +31,7 @@ public class Attack {
 	}
 	
 	public int getDamage () {
-		double d = lowDamage + 0.5;
-		double m = (double)((highDamage - lowDamage) / bellCurve);
-		for (int i = 0; i < bellCurve; i++){
-			d += m * Math.random();
-		}
-		
-		return (int) d;
+		return damage;
 	}
 	
 	public void setSprite(String sheet, int column, int row){

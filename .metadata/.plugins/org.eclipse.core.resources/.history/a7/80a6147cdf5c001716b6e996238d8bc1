@@ -12,7 +12,7 @@ public class Attack {
 	protected int spriteSheetColumn = 0;
 	
 	public Attack(int dl, int du, int bc, Set<EnumAttackType> t) {
-		lowDamage = dl;
+		lowDamage = d1;
 		highDamage = du;
 		bellCurve = bc;
 		types = t;
@@ -31,13 +31,7 @@ public class Attack {
 	}
 	
 	public int getDamage () {
-		double d = lowDamage + 0.5;
-		double m = (double)((highDamage - lowDamage) / bellCurve);
-		for (int i = 0; i < bellCurve; i++){
-			d += m * Math.random();
-		}
-		
-		return (int) d;
+		return damage;
 	}
 	
 	public void setSprite(String sheet, int column, int row){

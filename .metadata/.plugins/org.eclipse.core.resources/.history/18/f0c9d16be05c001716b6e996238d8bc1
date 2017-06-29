@@ -27,7 +27,7 @@ public class Entity {
 		x = px;
 		y = py;
 		ai = new AI(5, 0, 2);
-		basicAttack = new Attack (0, 3, 1, null);
+		basicAttack = new Attack (0, 3, 1, new Set<EnumAttackType>.);
 	}
 	
 	public String getName() {
@@ -85,7 +85,7 @@ public class Entity {
 	}
 	
 	public Attack getMeleeAttack() {
-		return basicAttack;
+		return new Attack(stats.getBuf(), new HashSet<EnumAttackType>());
 	}
 	
 	public boolean getTangible(){
