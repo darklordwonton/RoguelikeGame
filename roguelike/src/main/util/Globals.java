@@ -16,6 +16,7 @@ import main.tiles.EnumTheme;
 public class Globals {
 	//Config Variables
 	public static final int MAX_CREATURES = 10;
+	
 	public static final int FLOOR_SIZE_BASE = 20;
 	public static final int FLOOR_SIZE_MODIFIER = 4;
 	public static final int MAX_ROOM_SIZE = 5;
@@ -23,8 +24,13 @@ public class Globals {
 	public static final int ROOMS_BASE = 15;
 	public static final float ROOMS_MODIFIER = 0.5f;
 	public static final float ROOMS_LEEWAY = 0.25f;
+	
 	public static final int BASE_CREATURES = 1;
-	public static final float CREATURES_INCREASE = .3f;
+	public static final float CREATURES_INCREASE = .3f; //Creatures should go up exponentially. 
+														//Maybe make them a property of rooms so it's based off rooms per floor instead?
+	
+	
+	public static final int FLOORS_PER_THEME = 5; //Number of floors per theme
 	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
@@ -155,7 +161,7 @@ public class Globals {
 	public static final int GOD_STAT = 50;
 	
 	//Debug features
-	public static final boolean NO_CLIP = false;
-	public static final boolean SKIP_FLOORS = true;
+	public static final boolean NO_CLIP = false;	//Walk through walls
+	public static final boolean SKIP_FLOORS = true; //Skip floor button, currently "\"
 	
 }
