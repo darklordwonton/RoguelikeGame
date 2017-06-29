@@ -47,7 +47,6 @@ public class ImageManager {
 	}
 	
 	public static BufferedImage getTileTexture (String image, int column, int row) {
-		System.out.println(image + " " + column + " " + row);
 		return tiles.get(image).getSubimage(column*16, row*16, 16, 16);
 	}
 	
