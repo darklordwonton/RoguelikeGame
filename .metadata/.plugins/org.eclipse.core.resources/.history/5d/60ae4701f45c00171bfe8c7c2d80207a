@@ -103,7 +103,6 @@ public class Entity {
 			if (this != Globals.player)
 				die();
 		}
-		//TODO animation stuff
 	}
 	
 	private void die() {

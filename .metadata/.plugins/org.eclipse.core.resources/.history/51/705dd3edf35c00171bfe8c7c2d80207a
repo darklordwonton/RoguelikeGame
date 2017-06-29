@@ -98,12 +98,7 @@ public class Entity {
 	
 	public void onAttack(Attack a) {
 		hp -= modifiers.getModifiedDamage(a);
-		if (hp < 0) {
-			hp = 0;
-			if (this != Globals.player)
-				die();
-		}
-		//TODO animation stuff
+		
 	}
 	
 	private void die() {

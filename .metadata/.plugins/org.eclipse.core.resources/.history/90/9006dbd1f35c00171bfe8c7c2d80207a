@@ -1,6 +1,5 @@
 package main.entities;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 import main.attacks.Attack;
@@ -31,7 +30,7 @@ public class Entity {
 		y = py;
 		ai = new AI(5, 0, 2);
 		basicAttack = new Attack (0, 3, 1, null);
-		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
+		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>);
 	}
 	
 	public String getName() {
@@ -97,13 +96,7 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		hp -= modifiers.getModifiedDamage(a);
-		if (hp < 0) {
-			hp = 0;
-			if (this != Globals.player)
-				die();
-		}
-		//TODO animation stuff
+		
 	}
 	
 	private void die() {

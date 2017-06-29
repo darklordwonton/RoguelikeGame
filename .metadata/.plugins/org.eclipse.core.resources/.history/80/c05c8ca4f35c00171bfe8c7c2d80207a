@@ -1,11 +1,9 @@
 package main.entities;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 import main.attacks.Attack;
 import main.attacks.EnumAttackType;
-import main.attacks.ModifierChart;
 import main.entities.ai.AI;
 import main.util.EnumDirection;
 import main.util.Globals;
@@ -23,7 +21,6 @@ public class Entity {
 	protected int spriteSheetColumn = 0;
 	protected boolean tangible = true;
 	protected Attack basicAttack = null;
-	protected ModifierChart modifiers = null;
 	
 	public Entity(String n, int px, int py){
 		name = n;
@@ -31,7 +28,6 @@ public class Entity {
 		y = py;
 		ai = new AI(5, 0, 2);
 		basicAttack = new Attack (0, 3, 1, null);
-		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
 	}
 	
 	public String getName() {
@@ -97,17 +93,7 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		hp -= modifiers.getModifiedDamage(a);
-		if (hp < 0) {
-			hp = 0;
-			if (this != Globals.player)
-				die();
-		}
-		//TODO animation stuff
-	}
-	
-	private void die() {
-		//TODO put stuff here
+		
 	}
 	
 	public void move(EnumDirection dir) {

@@ -101,9 +101,8 @@ public class Entity {
 		if (hp < 0) {
 			hp = 0;
 			if (this != Globals.player)
-				die();
+				die;
 		}
-		//TODO animation stuff
 	}
 	
 	private void die() {
