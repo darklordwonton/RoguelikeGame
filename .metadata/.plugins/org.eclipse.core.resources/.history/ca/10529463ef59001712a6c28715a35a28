@@ -1,0 +1,35 @@
+package main.util;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import main.rendering.MainRenderer;
+
+public abstract class PlayerLifeManager {
+
+	private static int displayHealth = 0;
+	private static Timer timer = null;
+	
+	public static void init() {
+		timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				int playerHealth = Globals.player.getHp();
+				if (displayHealth < playerHealth) {
+					displayHealth += Globals.player.getStats().getHp() / 20;
+					if (displayerHealth > playerHealth)
+						displayHealth = playerHealth;
+				} else if (displayHealth > playerHealth) {
+					displayHealth--;
+				}
+				MainRenderer.refresh();
+			}
+		}, 0, 50);
+	}
+	
+	public static int getDisplayHealth() {
+		return displayHealth;
+	}
+	
+}

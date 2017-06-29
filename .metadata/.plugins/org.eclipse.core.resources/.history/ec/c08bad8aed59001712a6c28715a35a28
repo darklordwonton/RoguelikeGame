@@ -1,0 +1,36 @@
+package main.util;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public abstract class PlayerLifeManager {
+
+	private static int displayHealth;
+	private static boolean isCritical;
+	private static int change;
+	private static Timer timer = null;
+	
+	public static void init() {
+		timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				displayHealth += change;
+			}
+		}, 0, 10);
+	}
+	
+	public static void updateHealth(int health) {
+		change = health > displayHealth ? 1 : -1;
+		isCritical = health <= 0;
+	}
+	
+	public static int getDisplayHealth() {
+		return displayHealth;
+	}
+	
+	public static boolean getCritical() {
+		return isCritical;
+	}
+	
+}

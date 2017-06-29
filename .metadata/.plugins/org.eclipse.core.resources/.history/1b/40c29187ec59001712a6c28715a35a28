@@ -1,0 +1,26 @@
+package main.util;
+
+public abstract class PlayerLifeManager {
+
+	private int displayHealth;
+	private boolean isCritical;
+	private int change;
+	
+	
+	
+	public void updateHealth(int health) {
+		change = health > displayHealth ? 1 : -1;
+		isCritical = health <= 0;
+	}
+	
+	
+	
+	public int getDisplayHealth() {
+		return displayHealth;
+	}
+	
+	public boolean getCritical() {
+		return isCritical;
+	}
+	
+}
