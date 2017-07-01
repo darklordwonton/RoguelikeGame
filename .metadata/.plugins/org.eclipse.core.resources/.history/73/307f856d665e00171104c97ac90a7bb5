@@ -11,12 +11,11 @@ public class AOE {
 	
 	protected boolean throughWalls = false;
 	
-	public AOE (int cx, int cy, int sx, int sy, String s, Attack a){
+	public AOE (int cx, int cy, int sx, int sy, Attack a){
 		centerX = cx;
 		centerY = cy;
 		sizeX = sx;
 		sizeY = sy;
-		shape = s;
 		attack = a;
 	}
 }

@@ -11,4 +11,7 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="main.attacks.ModifierChart"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="main.attacks.AOE"/>
+<fullyQualifiedTypeName name="main.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 </qualifiedTypeNameHistroy>
