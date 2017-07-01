@@ -11,11 +11,10 @@ public class AOE {
 	
 	protected boolean throughWalls = false;
 	
-	public AOE (int cx, int cy, int sx, int sy, Attack a){
+	public AOE (int cx, int cy, int sx, int sy){
 		centerX = cx;
 		centerY = cy;
 		sizeX = sx;
 		sizeY = sy;
-		attack = a;
 	}
 }

@@ -8066,3 +8066,13 @@ org.eclipse.core.internal.resources.ResourceException: File not found: /Users/Si
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2017-06-29 13:48:51.063
 !MESSAGE File not found: /Users/Simon/Desktop/RoguelikeGame/roguelike/bin/main/attacks/AOE.class.
+!SESSION 2017-07-01 09:54:36.559 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-07-01 09:55:45.873
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
