@@ -14,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import main.dungeon.Floor;
-import main.effects.Effect;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.filemanager.ImageManager;
@@ -75,21 +74,6 @@ public abstract class MainRenderer {
 				}
 			}
 			
-			if (entities != null) {
-				for (Entity e : entities) {
-					String xypos = e.getSprite().substring(e.getSprite().indexOf('&')+1);
-					
-					g.drawImage(ImageManager.getEntitySprite(e.getSprite().substring(0, e.getSprite().indexOf('&')), 
-															Integer.parseInt(xypos.substring(0, xypos.indexOf('&'))), 
-															Integer.parseInt(xypos.substring(xypos.indexOf('&')+1))),
-							(e.getX() - Globals.scrollX) * TILE_SIZE, 
-							WINDOW_HEIGHT - (e.getY() - Globals.scrollY) * TILE_SIZE, 
-							TILE_SIZE, 
-							TILE_SIZE, 
-							null);
-				}
-			}
-			
 		}
 	};
 	private static JPanel guiPane = new JPanel() {
@@ -128,7 +112,6 @@ public abstract class MainRenderer {
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
-	private static Effect[] effects = null;
 	private static EnumTheme theme = null;
 	
 	public static void init() {

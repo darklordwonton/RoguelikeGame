@@ -1,0 +1,13 @@
+package main.effects;
+
+public class Effect {
+	protected int x = 0;
+	protected int y = 0;
+	protected String tile = null;
+	
+	public Effect (){
+		x = 5;
+		y = 5;
+		tile = "fireball.jpg";
+	}
+}
