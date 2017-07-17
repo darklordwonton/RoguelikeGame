@@ -111,22 +111,26 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
+
+		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) { //check if x is within bounds of floor
+			if (Globals.currentFloor.getTile(x + dir.getX(), y).isWall() && tangible){ //check if there is a wall in the way
+				Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack()); //attack the wall
+			}
+			else{
+				changeX(dir.getX()); //move only if there is no wall and is within bounds of floor
+			}
+		}
 		
-		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) {
-			changeX(dir.getX());
-		}
-		if (Globals.currentFloor.getTile(x, y).isWall() && tangible) {
-			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
-			changeX(-dir.getX());
-		}
 		if (!(y + dir.getY() < 0 || y + dir.getY() >= Globals.currentFloor.getHeight())) {
+			if (Globals.currentFloor.getTile(x, y + dir.getY()).isWall() && tangible) {
+				Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
+			}
+			else{
 			changeY(dir.getY());
+			}
 		}
-		if (Globals.currentFloor.getTile(x, y).isWall() && tangible) {
-			Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
-			changeY(-dir.getY());
-		}
-		Globals.currentFloor.getTile(x, y).onStep(this);
+		
+		Globals.currentFloor.getTile(x, y).onStep(this); 
 	}
 
 }
