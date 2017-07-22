@@ -46,9 +46,9 @@ public abstract class MainRenderer {
 							
 							Tile tile = tiles[i + Globals.scrollX][e + Globals.scrollY];
 							
-						g.drawImage(ImageManager.getTileTexture(tile.getSprite(), 
-																tile.getSpriteSheetColumn(), 
-																tile.getSpriteSheetRow()),
+							g.drawImage(ImageManager.getTileTexture(tile.getSprite(), 
+																	tile.getSpriteSheetColumn(), 
+																	tile.getSpriteSheetRow()),
 							
 //							ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite(), 0, (Math.random() * 5)), 
 									i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, 

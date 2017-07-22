@@ -1,7 +1,6 @@
 package main.entities;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 import main.attacks.Attack;
 import main.attacks.EnumAttackType;

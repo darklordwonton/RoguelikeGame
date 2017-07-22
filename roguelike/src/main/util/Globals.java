@@ -57,7 +57,7 @@ public class Globals {
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.BROWN_BRICK, "brown_brick_floor_sheet.png");
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.VOLCANO, "volcano_floor_sheet.png");
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.DIRT, "dirt_floor_sheet.png");
-		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, "cyber_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, "cyber_floor_sheet.png");
 	};
 	
 	public static final Map<EnumTheme, Integer> TILE_SPRITE_SHEET_LENGTHS = new HashMap<EnumTheme, Integer>();
