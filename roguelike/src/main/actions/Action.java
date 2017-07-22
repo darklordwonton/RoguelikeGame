@@ -26,7 +26,9 @@ public class Action {
 			Generator.newFloor();
 		  break;
 		
-		case Globals.ESC_KEY: MainRenderer.closeWindow();
+		case Globals.ESC_KEY: 
+			MainRenderer.closeWindow();
+			System.exit(0);
 		  break;
 		}
 	}
