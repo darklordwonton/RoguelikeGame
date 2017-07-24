@@ -1,7 +1,6 @@
 package main.entities;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 import main.attacks.Attack;
 import main.attacks.EnumAttackType;
@@ -30,7 +29,7 @@ public class Entity {
 		x = px;
 		y = py;
 		ai = new AI(5, 0, 2);
-		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>());
+		basicAttack = new Attack (0, 3, 1, null);
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
 	}
 	
@@ -114,7 +113,7 @@ public class Entity {
 
 		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) { //check if x is within bounds of floor
 			if (Globals.currentFloor.getTile(x + dir.getX(), y).isWall() && tangible){ //check if there is a wall in the way
-				Globals.currentFloor.getTile(x + dir.getX(), y).onAttack(getMeleeAttack()); //attack the wall
+				Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack()); //attack the wall
 			}
 			else{
 				changeX(dir.getX()); //move only if there is no wall and is within bounds of floor
@@ -123,7 +122,7 @@ public class Entity {
 		
 		if (!(y + dir.getY() < 0 || y + dir.getY() >= Globals.currentFloor.getHeight())) {
 			if (Globals.currentFloor.getTile(x, y + dir.getY()).isWall() && tangible) {
-				Globals.currentFloor.getTile(x, y + dir.getY()).onAttack(getMeleeAttack());
+				Globals.currentFloor.getTile(x, y).onAttack(getMeleeAttack());
 			}
 			else{
 			changeY(dir.getY());

@@ -8,7 +8,7 @@ public class EntityPlayer extends Entity {
 		super(n,px,py);
 		this.setSprite(Globals.PLAYER_SPRITE_SHEET, Globals.PLAYER_SPRITE_COLUMN, Globals.PLAYER_SPRITE_ROW);
 		tangible = !Globals.NO_CLIP;
-		stats = new Stats(100,Globals.floorNumber + 100);
+		stats = new Stats(100,Globals.floorNumber + 1);
 		hp = stats.getHp();
 		mp = stats.getMp();
 	}
