@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
