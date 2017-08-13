@@ -1,0 +1,24 @@
+package main.entities.monsters;
+
+import main.entities.Stats;
+import main.util.Globals;
+
+public class EntityGoblin extends EntityMonster {
+	
+	public EntityGoblin(String n, int px, int py) {
+		super(n, px, py);
+		
+		ideal = new Stats (Globals.LOW_STAT, //hp
+				Globals.LOW_STAT, //mp
+				Globals.LOW_STAT, //buf
+				Globals.MID_STAT, //tuf
+				Globals.VERY_LOW_STAT, //wit
+				Globals.MID_STAT, //snk
+				Globals.floorNumber); //level
+		
+		makeStats(4 * Globals.MID_STAT + 2 * Globals.LOW_STAT);
+		
+		setSprite("enemy_goblin2.png", 0, 0);
+	}
+	
+}

@@ -1,5 +1,6 @@
 package main.dungeon;
 
+import main.entities.monsters.EntityGoblin;
 import main.util.Globals;
 
 public class Generator {

@@ -15,6 +15,7 @@ public class TileStairs extends Tile {
 	}
 	
 	public void onStep(Entity e) {
+		super.onStep(e);
 		if (e instanceof EntityPlayer) {
 			Generator.newFloor();
 		}

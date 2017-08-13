@@ -25,10 +25,10 @@ public class Entity {
 	protected Attack basicAttack = null;
 	protected ModifierChart modifiers = null;
 	
-	public Entity(String n, int px, int py){
+	public Entity(String n, int sx, int sy){
 		name = n;
-		x = px;
-		y = py;
+		x = sx;
+		y = sy;
 		ai = new AI(5, 0, 2);
 		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>());
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
@@ -97,7 +97,8 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		hp -= modifiers.getModifiedDamage(a);
+		hp -= Math.max(modifiers.getModifiedDamage(a) / stats.getTuf(), 1);
+		System.out.println(hp);
 		if (hp < 0) {
 			hp = 0;
 			if (this != Globals.player)
@@ -111,12 +112,16 @@ public class Entity {
 	}
 	
 	public void move(EnumDirection dir) {
-
+		
+		Globals.currentFloor.getTile(x, y).onLeave(this);
+		int oldX = x;
+		int oldY = y;
+		
 		if (!(x + dir.getX() < 0 || x + dir.getX() >= Globals.currentFloor.getWidth())) { //check if x is within bounds of floor
-			if (Globals.currentFloor.getTile(x + dir.getX(), y).isWall() && tangible){ //check if there is a wall in the way
+			if (Globals.currentFloor.getTile(x + dir.getX(), y).isWall() && tangible) { //check if there is a wall in the way
 				Globals.currentFloor.getTile(x + dir.getX(), y).onAttack(getMeleeAttack()); //attack the wall
 			}
-			else{
+			else {
 				changeX(dir.getX()); //move only if there is no wall and is within bounds of floor
 			}
 		}
@@ -125,12 +130,17 @@ public class Entity {
 			if (Globals.currentFloor.getTile(x, y + dir.getY()).isWall() && tangible) {
 				Globals.currentFloor.getTile(x, y + dir.getY()).onAttack(getMeleeAttack());
 			}
-			else{
-			changeY(dir.getY());
+			else {
+				changeY(dir.getY());
 			}
 		}
 		
-		Globals.currentFloor.getTile(x, y).onStep(this); 
+		if (Globals.currentFloor.getTile(x, y).getResidentEntity() != null) {
+			Globals.currentFloor.getTile(x, y).getResidentEntity().onAttack(getMeleeAttack());
+			setX(oldX);
+			setY(oldY);
+		}
+		Globals.currentFloor.getTile(x, y).onStep(this);
 	}
 
 }

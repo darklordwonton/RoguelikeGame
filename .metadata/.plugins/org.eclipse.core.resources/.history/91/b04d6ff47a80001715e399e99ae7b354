@@ -1,0 +1,57 @@
+package main.tiles;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import main.attacks.Attack;
+import main.entities.Entity;
+
+public abstract class Tile {
+	protected String sprite = null;
+	protected boolean wall = false;
+	protected int x = 0;
+	protected int y = 0;
+	protected int spriteSheetRow = 0;
+	protected int spriteSheetColumn = 0;
+	protected Set<Entity> entities = null;
+	
+	protected Tile(int x, int y) {
+		this.x = x;
+		this.y = y;
+		entities = new HashSet<Entity>();
+	}
+	
+	public String getSprite(){
+		return sprite;
+	}
+
+	public int getSpriteSheetRow(){
+		return spriteSheetRow;
+	}
+	
+	public int getSpriteSheetColumn(){
+		return spriteSheetColumn;
+	}
+	
+	public boolean isWall() {
+		return wall;
+	}
+	
+	public void setSheetPos(int x, int y){
+		spriteSheetRow = y;
+		spriteSheetColumn = x;
+	}
+	
+	//When an entity enters the tile
+	public void onStep(Entity e) {
+		entities.add(e);
+	}
+	
+	//When an entity leaves the tile
+	public void onLeave(Entity e) {
+		entities.remove(e);
+	}
+	
+	//When an entity attacks a wall tile
+	public void onAttack(Attack a) {}
+}

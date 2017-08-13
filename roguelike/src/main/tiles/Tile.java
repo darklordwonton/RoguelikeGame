@@ -1,5 +1,8 @@
 package main.tiles;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import main.attacks.Attack;
 import main.entities.Entity;
 
@@ -10,7 +13,7 @@ public abstract class Tile {
 	protected int y = 0;
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
-	
+	protected Entity entity = null;
 	
 	protected Tile(int x, int y) {
 		this.x = x;
@@ -38,8 +41,20 @@ public abstract class Tile {
 		spriteSheetColumn = x;
 	}
 	
+	public Entity getResidentEntity() {
+		return entity;
+	}
 	
-	public void onStep(Entity e) {}
+	//When an entity enters the tile
+	public void onStep(Entity e) {
+		entity = e;
+	}
 	
+	//When an entity leaves the tile
+	public void onLeave(Entity e) {
+		entity = null;
+	}
+	
+	//When an entity attacks a wall tile
 	public void onAttack(Attack a) {}
 }
