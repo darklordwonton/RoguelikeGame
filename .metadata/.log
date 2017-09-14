@@ -8267,11 +8267,16 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-07-24 16:00:02.618
 !MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 '
+<<<<<<< Updated upstream
 !SESSION 2017-08-13 18:42:51.970 -----------------------------------------------
+=======
+!SESSION 2017-08-10 21:15:38.205 -----------------------------------------------
+>>>>>>> Stashed changes
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+<<<<<<< Updated upstream
 Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
 Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
 
@@ -8279,6 +8284,18 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 !MESSAGE Unable to load resource file:/Users/Simon/Desktop/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 !STACK 0
 org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/Users/Simon/Desktop/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/Users/Simon/Desktop/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 76; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+=======
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-08-10 21:15:43.760
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-08-10 21:15:44.395
+!MESSAGE Unable to load resource file:/Users/Sam/Documents/GitHub/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/Users/Sam/Documents/GitHub/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/Users/Sam/Documents/GitHub/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 76; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+>>>>>>> Stashed changes
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
@@ -8304,7 +8321,11 @@ org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException:
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+<<<<<<< Updated upstream
 Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/Users/Simon/Desktop/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/Users/Simon/Desktop/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 76; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+=======
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/Users/Sam/Documents/GitHub/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/Users/Sam/Documents/GitHub/RoguelikeGame/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 76; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+>>>>>>> Stashed changes
 	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
 	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
 	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
@@ -8329,7 +8350,11 @@ Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/Users/Simon/Desktop/Rogu
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
 	... 23 more
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2017-08-13 18:43:41.493
+=======
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-08-10 21:15:44.397
+>>>>>>> Stashed changes
 !MESSAGE The persisted workbench has no top-level windows, so reinitializing with defaults.
 !STACK 0
 java.lang.Exception
@@ -8354,6 +8379,7 @@ java.lang.Exception
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.core.net 1 0 2017-08-13 18:43:48.047
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 
@@ -8414,3 +8440,17 @@ java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquir
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-08-13 18:44:29.742
 !MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 '
+=======
+!ENTRY org.eclipse.core.net 1 0 2017-08-10 21:15:44.916
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-09-03 20:41:46.804 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-09-03 20:41:57.469
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+>>>>>>> Stashed changes
