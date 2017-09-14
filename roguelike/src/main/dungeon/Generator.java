@@ -8,9 +8,8 @@ public class Generator {
 		Globals.floorNumber++;
 		
 		if ((Globals.floorNumber - 1) % 5 == 0){
-		Globals.currentTheme = Globals.RELATED_THEMES.get(Globals.currentTheme)
-								[(int) (Math.random() * 
-							   Globals.RELATED_THEMES.get(Globals.currentTheme).length)];
+			Globals.currentTheme = Globals.RELATED_THEMES.get(Globals.currentTheme)
+								[(int) (Math.random() * Globals.RELATED_THEMES.get(Globals.currentTheme).length)];
 		}
 		
 		Globals.currentFloor = new Floor(Globals.FLOOR_SIZE_BASE + (int)Math.pow(Globals.floorNumber, 1/2.0) * Globals.FLOOR_SIZE_MODIFIER, 

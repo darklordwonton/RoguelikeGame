@@ -1,5 +1,10 @@
 package main.dungeon;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import main.entities.Entity;
+import main.entities.monsters.EntityGoblin;
 import main.util.Globals;
 
 public class Room {
@@ -10,13 +15,16 @@ public class Room {
 	protected boolean[][] wall;
 	protected int[] exitX = new int[2];
 	protected int[] exitY = new int[2];
-	protected Floor floor = null;
+	protected Floor floor = null; //Do we need to give it the floor? I can't see where it uses it
+	protected List<Entity> entities = new ArrayList<Entity> (); //A list of the entities that start in this room
+	protected int ECount = 0;
 	
-	public Room(int a, int b, Floor f){
+	public Room(int a, int b, Floor f, int e){
 		x = a;
 		y = b;
 		floor = f;
 		wall = new boolean [x][y];
+		ECount = e;
 	}
 	
 	public void basicRoom(){
@@ -35,6 +43,10 @@ public class Room {
 			for (int e = 0; e < sizeX; e++){
 				wall[e][i] = false;
 			}
+		}
+		
+		while (ECount > 0){
+			entities.add(new EntityGoblin("Gobbo", (int)(x + Math.random() * sizeX), (int)(y + Math.random() * sizeY)));
 		}
 	}
 	
@@ -56,6 +68,10 @@ public class Room {
 	
 	public int getSizeY(){
 		return sizeY;
+	}
+	
+	public List<Entity> getEntities(int x){
+		return entities;
 	}
 	
 }

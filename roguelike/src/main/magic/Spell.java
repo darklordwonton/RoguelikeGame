@@ -1,13 +1,11 @@
 package main.magic;
 
-import main.attacks.AOE;
 import main.attacks.Attack;
 import main.attacks.EnumAttackType;
 
 public class Spell {
 	protected int value = 0;
 	
-	protected AOE aoe = null;
 	protected Attack attack = null;
 	
 	protected String shape = null;
@@ -20,9 +18,6 @@ public class Spell {
 		Attack attack = new Attack(10,20,2,null);
 		attack.addType(EnumAttackType.FIRE);
 		
-		
-		
-		aoe = new AOE(centerX, centerY, sizeX, sizeY, shape, attack);
 		value = 0;
 	}
 }

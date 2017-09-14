@@ -39,46 +39,46 @@ public class AI {
 		
 		if (Math.random() > .5 && targetX != -1 && targetY != -1){
 			if (targetX > ownX && !moved){
-				move = '>';
+				move = Globals.RIGHT_KEY;
 				moved = true;
 			}else if (targetX < ownX && !moved){
-				move = '<';
+				move = Globals.LEFT_KEY;
 				moved = true;
 			}
 			if (targetY > ownY && !moved){
-				move = '^';
+				move = Globals.UP_KEY;
 				moved = true;
 			}else if (targetY > ownY && !moved){
-				move = 'v';
+				move = Globals.DOWN_KEY;
 				moved = true;
 			}
 		}else if (targetX != -1 && targetY != -1){
 			if (targetY > ownY && !moved){
-				move = '^';
+				move = Globals.UP_KEY;
 				moved = true;
 			}else if (targetY > ownY && !moved){
-				move = 'v';
+				move = Globals.DOWN_KEY;
 				moved = true;
 			}	
 			if (targetX > ownX && !moved){
-				move = '>';
+				move = Globals.RIGHT_KEY;
 				moved = true;
 			}else if (targetX < ownX && !moved){
-				move = '<';
+				move = Globals.LEFT_KEY;
 				moved = true;
 			}
 		}else {
 			switch((int)(Math.random() * 4)){
-			case 0: move = 'v';
+			case 0: move = Globals.DOWN_KEY;
 			  break;
 					  
-			case 1: move = '>';
+			case 1: move = Globals.RIGHT_KEY;
 			  break;
 			  
-			case 2: move = '<';
+			case 2: move = Globals.LEFT_KEY;
 			  break;
 			  
-			case 3: move = '^';
+			case 3: move = Globals.UP_KEY;
 			  break;
 			  
 			}

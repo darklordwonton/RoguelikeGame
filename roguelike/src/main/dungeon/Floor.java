@@ -14,6 +14,7 @@ import main.util.Globals;
 public class Floor {
 	private Tile[][] tiles = null;
 	private List<Entity> entities = new ArrayList<Entity> ();
+	private int ECount = 0;
 	private Room[] rooms = null;
 	private int height = 0;
 	private int width = 0;
@@ -31,13 +32,20 @@ public class Floor {
 		
 		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
 		Globals.spawnY = (int) (Math.random() * (height - Globals.MAX_ROOM_SIZE));
-		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this);
+		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this, 0);
 		rooms[0].basicRoom();
 		Globals.spawnX += (int)(Math.random() * rooms[0].getSizeX());
 		Globals.spawnY += (int)(Math.random() * rooms[0].getSizeY());
 		
 		for (int i = 1; i < rooms.length; i++){
-			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this);
+			int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
+			if (ECount + e < Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber){
+				ECount += e;
+			}else{
+				e = 0;
+			}
+			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, e);
+			
 			rooms[i].basicRoom();
 		}
 		

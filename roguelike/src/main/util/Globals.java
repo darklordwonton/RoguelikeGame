@@ -40,7 +40,7 @@ public class Globals {
 		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.FIRE, 0.5f);
 		DEFAULT_WALL_MODIFIERS.put(EnumAttackType.EXPLOSION, 5f);
 	}
-	public static final int DESTRUCTION_BASE = 8;
+	public static final int DESTRUCTION_BASE = 1; 
 	public static final int DESTRUCTION_MODIFIER = 4;
 	
 	//Image Names
@@ -91,7 +91,7 @@ public class Globals {
 	};
 	
 	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
-	static {
+	static { //If they're all the same, do we really need this?
 		BREAKABLE_SPRITES.put(EnumTheme.CAVE, "cracked_wall.png");
 		BREAKABLE_SPRITES.put(EnumTheme.GRAY_BRICK, "cracked_wall.png");
 		BREAKABLE_SPRITES.put(EnumTheme.BROWN_BRICK, "cracked_wall.png");
@@ -102,7 +102,7 @@ public class Globals {
 	
 	//Colors
 	public static final Map<EnumTheme, Color> BG_COLORS = new HashMap<EnumTheme, Color>();
-	static {
+	static {//See above
 		BG_COLORS.put(EnumTheme.CAVE, Color.DARK_GRAY);
 		BG_COLORS.put(EnumTheme.GRAY_BRICK, Color.DARK_GRAY);
 		BG_COLORS.put(EnumTheme.BROWN_BRICK, Color.DARK_GRAY);
