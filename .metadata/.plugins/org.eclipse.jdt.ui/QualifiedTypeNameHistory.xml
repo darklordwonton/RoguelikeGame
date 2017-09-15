@@ -16,4 +16,6 @@
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.effects.Effect"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
 </qualifiedTypeNameHistroy>
