@@ -5,7 +5,6 @@ import java.util.List;
 
 import main.entities.Entity;
 import main.entities.monsters.EntityGoblin;
-import main.entities.monsters.EntitySlime;
 import main.util.Globals;
 
 public class Room {
@@ -47,9 +46,7 @@ public class Room {
 		}
 		
 		while (ECount > 0){
-			EntitySlime slime = new EntitySlime("Slimo", x, y);
-			entities.add(slime);
-			Globals.currentFloor.getTile(x, y).onStep(slime);
+			Globals.entities.add(new EntityGoblin("Gobbo", (int)(x + Math.random() * sizeX), (int)(y + Math.random() * sizeY)));
 			ECount --;
 		}
 	}

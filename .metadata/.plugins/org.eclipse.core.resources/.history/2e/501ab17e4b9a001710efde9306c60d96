@@ -45,8 +45,8 @@ public class Floor {
 				e = 0;
 			}*/
 			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, 1);
+			
 			rooms[i].basicRoom();
-			entities.addAll(rooms[i].getEntities(0));
 		}
 		
 		for (int i = 0; i < rooms.length; i++){

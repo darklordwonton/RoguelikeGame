@@ -38,15 +38,15 @@ public class Floor {
 		Globals.spawnY += (int)(Math.random() * rooms[0].getSizeY());
 		
 		for (int i = 1; i < rooms.length; i++){
-			/*int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
+			int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
 			if (ECount + e < Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber){
 				ECount += e;
 			}else{
 				e = 0;
-			}*/
-			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, 1);
+			}
+			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, e);
+			
 			rooms[i].basicRoom();
-			entities.addAll(rooms[i].getEntities(0));
 		}
 		
 		for (int i = 0; i < rooms.length; i++){

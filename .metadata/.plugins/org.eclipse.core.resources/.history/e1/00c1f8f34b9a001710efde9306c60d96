@@ -47,9 +47,7 @@ public class Room {
 		}
 		
 		while (ECount > 0){
-			EntitySlime slime = new EntitySlime("Slimo", x, y);
-			entities.add(slime);
-			Globals.currentFloor.getTile(x, y).onStep(slime);
+			entities.add(new EntitySlime("Slimo", x, y));
 			ECount --;
 		}
 	}
