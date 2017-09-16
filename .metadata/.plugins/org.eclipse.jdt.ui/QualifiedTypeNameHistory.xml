@@ -15,7 +15,12 @@
 <fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<<<<<<< Updated upstream
 <fullyQualifiedTypeName name="main.entities.Entity"/>
+=======
+<fullyQualifiedTypeName name="main.entities.monsters.EntitySlime"/>
+>>>>>>> Stashed changes
 <fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
 </qualifiedTypeNameHistroy>
