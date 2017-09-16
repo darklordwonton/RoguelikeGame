@@ -85,10 +85,6 @@ public class Floor {
 				}
 			}
 		}
-		
-		for (Entity e : Globals.entities) {
-			tiles[e.getX()][e.getY()].onStep(e);
-		}
 	}
 	
 	public Tile getTile (int x, int y) {

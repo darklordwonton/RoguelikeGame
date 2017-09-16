@@ -48,7 +48,6 @@ public class Room {
 		
 		while (ECount > 0){
 			EntitySlime slime = new EntitySlime("Slimo", x, y);
-			entities.add(slime);
 			Globals.entities.add(slime);
 			ECount --;
 		}

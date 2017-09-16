@@ -17,7 +17,7 @@ public class Room {
 	protected int[] exitX = new int[2];
 	protected int[] exitY = new int[2];
 	protected Floor floor = null; //Do we need to give it the floor? I can't see where it uses it
-	protected List<Entity> entities = new ArrayList<Entity> (); //A list of the entities that start in this room
+	//protected List<Entity> entities = new ArrayList<Entity> (); //A list of the entities that start in this room
 	protected int ECount = 0;
 	
 	public Room(int a, int b, Floor f, int e){
@@ -48,7 +48,6 @@ public class Room {
 		
 		while (ECount > 0){
 			EntitySlime slime = new EntitySlime("Slimo", x, y);
-			entities.add(slime);
 			Globals.entities.add(slime);
 			ECount --;
 		}
@@ -74,8 +73,8 @@ public class Room {
 		return sizeY;
 	}
 	
-	public List<Entity> getEntities(int x){
+	/*public List<Entity> getEntities(int x){
 		return entities;
-	}
+	}*/
 	
 }
