@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="main.entities.Stats"/>
+<fullyQualifiedTypeName name="main.dungeon.Generator"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="main.util.PlayerLifeManager"/>
+<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
+<fullyQualifiedTypeName name="main.util.RollingCounterManager"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="main.attacks.ModifierChart"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="main.attacks.AOE"/>
+<fullyQualifiedTypeName name="main.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntitySlime"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntityOgre"/>
+</qualifiedTypeNameHistroy>
