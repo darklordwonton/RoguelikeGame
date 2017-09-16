@@ -46,16 +46,14 @@ public class Entity {
 		return maxTurns;
 	}
 	
-	public void incrementTurns() {
+	public boolean incrementTurns() {
 		turns--;
-	}
-	
-	public boolean hasTurns() {
-		return turns > 0;
-	}
-	
-	public void resetTurns() {
-		turns = maxTurns;
+		if (turns == 0) {
+			turns = maxTurns;
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public int getTurns() {

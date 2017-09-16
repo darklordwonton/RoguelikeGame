@@ -3,7 +3,7 @@ package main.util;
 import java.util.HashSet;
 import java.util.Set;
 
-import main.actions.ActionHandler;
+import main.actions.Action;
 import main.rendering.MainRenderer;
 
 public class ControlManager {
@@ -15,7 +15,7 @@ public class ControlManager {
 	}
 	
 	public static void keyDown(int key) {
-		ActionHandler.command(key, Globals.player);
+		Action.command(key, Globals.player);
 		MainRenderer.drawFloor(Globals.currentFloor);
 		keysDown.add(key);
 	}

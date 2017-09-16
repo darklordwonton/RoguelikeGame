@@ -26,7 +26,7 @@ public class Entity {
 	protected ModifierChart modifiers = null;
 	protected int xpValue = 0;
 	protected int turns = 0;
-	protected int maxTurns = 1;
+	protected int maxTurns = 0;
 	
 	public Entity(String n, int sx, int sy){
 		name = n;
@@ -35,31 +35,6 @@ public class Entity {
 		ai = new AI(5, 0, 2);
 		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>());
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
-	}
-	
-	public void setMaxTurns(int t) {
-		maxTurns = t;
-		turns = maxTurns;
-	}
-	
-	public int getMaxTurns() {
-		return maxTurns;
-	}
-	
-	public void incrementTurns() {
-		turns--;
-	}
-	
-	public boolean hasTurns() {
-		return turns > 0;
-	}
-	
-	public void resetTurns() {
-		turns = maxTurns;
-	}
-	
-	public int getTurns() {
-		return turns;
 	}
 	
 	public String getName() {

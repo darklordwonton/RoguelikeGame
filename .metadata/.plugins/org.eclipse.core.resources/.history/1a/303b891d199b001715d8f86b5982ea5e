@@ -37,25 +37,8 @@ public class Entity {
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
 	}
 	
-	public void setMaxTurns(int t) {
-		maxTurns = t;
-		turns = maxTurns;
-	}
-	
-	public int getMaxTurns() {
-		return maxTurns;
-	}
-	
 	public void incrementTurns() {
 		turns--;
-	}
-	
-	public boolean hasTurns() {
-		return turns > 0;
-	}
-	
-	public void resetTurns() {
-		turns = maxTurns;
 	}
 	
 	public int getTurns() {

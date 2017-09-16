@@ -3,7 +3,7 @@ package main.util;
 import java.util.HashSet;
 import java.util.Set;
 
-import main.actions.ActionHandler;
+import main.actions.Action;
 import main.rendering.MainRenderer;
 
 public class ControlManager {

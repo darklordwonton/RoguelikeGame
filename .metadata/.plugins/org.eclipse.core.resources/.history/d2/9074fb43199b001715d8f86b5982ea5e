@@ -50,14 +50,6 @@ public class Entity {
 		turns--;
 	}
 	
-	public boolean hasTurns() {
-		return turns > 0;
-	}
-	
-	public void resetTurns() {
-		turns = maxTurns;
-	}
-	
 	public int getTurns() {
 		return turns;
 	}
