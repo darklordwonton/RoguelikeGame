@@ -27,7 +27,7 @@ public class Room {
 		ECount = e;
 	}
 	
-	public void basicRoom(){
+	public void generateRoom(){
 		sizeX = Globals.MIN_ROOM_SIZE + (int)(Math.random() * (Globals.MAX_ROOM_SIZE - Globals.MIN_ROOM_SIZE + 1));
 		if (x + sizeX > floor.getWidth() - 1) {
 			sizeX = floor.getWidth() - 1 - x;
@@ -44,11 +44,14 @@ public class Room {
 				wall[e][i] = false;
 			}
 		}
-		
+
+	}
+	
+	public void spawnEntities() {
 		while (ECount > 0){
-			EntityOgre ogre = new EntityOgre("Shrek", x, y);
+			EntityOgre ogre = new EntityOgre("Shrek" + x * 100 + y, x, y);
 			entities.add(ogre);
-			Globals.entities.add(ogre);
+			floor.addEntity(ogre, x, y);
 			ECount --;
 		}
 	}

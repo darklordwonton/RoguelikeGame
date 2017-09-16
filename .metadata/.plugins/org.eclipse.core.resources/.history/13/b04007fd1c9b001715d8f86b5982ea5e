@@ -1,0 +1,162 @@
+package main.dungeon;
+
+import java.util.ArrayList;
+import java.util.List;
+import main.entities.Entity;
+import main.tiles.EnumTheme;
+import main.tiles.Tile;
+import main.tiles.TileBreakable;
+import main.tiles.TileFloor;
+import main.tiles.TileStairs;
+import main.tiles.TileWall;
+import main.util.Globals;
+
+public class Floor {
+	private Tile[][] tiles = null;
+	private List<Entity> entities = new ArrayList<Entity> ();
+	private int ECount = 0;
+	private Room[] rooms = null;
+	private int height = 0;
+	private int width = 0;
+	private EnumTheme theme = null;
+	
+	public Floor (int h, int w, EnumTheme t) {
+		height = h;
+		width = w;
+		theme = t;
+		tiles = new Tile[h][w];		
+		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
+		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * (int)Math.pow(Globals.floorNumber, 1/2.0) * (int)Math.pow(Globals.floorNumber, 1/2.0))];
+		
+		tiles = new Tile[h][w];
+		
+		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
+		Globals.spawnY = (int) (Math.random() * (height - Globals.MAX_ROOM_SIZE));
+		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this, 0);
+		rooms[0].basicRoom();
+		Globals.spawnX += (int)(Math.random() * rooms[0].getSizeX());
+		Globals.spawnY += (int)(Math.random() * rooms[0].getSizeY());
+		
+		for (int i = 1; i < rooms.length; i++){
+			/*int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
+			if (ECount + e < Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber){
+				ECount += e;
+			}else{
+				e = 0;
+			}*/
+			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, 1);
+			rooms[i].basicRoom();
+			entities.addAll(rooms[i].getEntities(0));
+		}
+		
+		for (int i = 0; i < rooms.length; i++){
+			int x = rooms[i].getX();
+			int y = rooms[i].getY();
+			
+			for (int e = 0; e < rooms[i].getSizeX(); e++){
+				for (int r = 0; r < rooms[i].getSizeY(); r++){
+					if (!rooms[i].isWall(e, r)){
+						tiles[x + e][y + r] = new TileFloor(t, x + e, y + r);
+					}
+				}
+			}
+			
+		}
+		
+		for (int i = 0; i < rooms.length; i++) {
+			if (i < rooms.length / 2) {
+				createCorridor(rooms[i], rooms[i + 1]);
+			} else {
+				createCorridor(rooms[i], rooms[(int)(Math.random() * rooms.length / 2)]);
+				if (Math.random() < 0.4)
+					createCorridor(rooms[i], rooms[rooms.length / 2 + (int)(Math.random() * rooms.length / 2)]);
+			}
+		}
+	
+		int stairX = rooms[rooms.length / 2].getX() + (int)(Math.random() * rooms[rooms.length / 2].getSizeX());
+		int stairY = rooms[rooms.length / 2].getY() + (int)(Math.random() * rooms[rooms.length / 2].getSizeY());
+		
+		tiles[stairX][stairY] = new TileStairs(t, stairX, stairY);
+		
+		for (int i = 0; i < h; i++) {
+			for (int e = 0; e < w; e++) {
+				if (tiles[i][e] == null){
+					tiles [i][e]= new TileWall(t, i, e);
+				}
+			}
+		}
+		
+		for (Entity e : Globals.entities) {
+			tiles[e.getX()][e.getY()].onStep(e);
+		}
+	}
+	
+	public Tile getTile (int x, int y) {
+		return tiles[x][y];
+	}
+	
+	public Tile[][] getTileMap() {
+		return tiles;
+	}
+	
+	public void addEntity(Entity e, int x, int y) {
+		e.setX(x);
+		e.setY(y);
+		entities.add(e);
+		Globals.currentFloor.getTile(x, y).onStep(e);
+	}
+	
+	public Entity[] getEntities(){
+		return entities.toArray(new Entity[entities.size()]);
+	}
+	
+	public EnumTheme getTheme() {
+		return theme;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public void destroyTile (int x, int y) {
+		tiles[x][y] = new TileFloor(theme, x, y);
+	}
+	
+	public void createCorridor(Room start, Room end) {
+		int startX = start.getX() + (int) (Math.random() * start.getSizeX());
+		int startY = start.getY() + (int) (Math.random() * start.getSizeY());
+		int endX = end.getX() + (int) (Math.random() * end.getSizeX());
+		int endY = end.getY() + (int) (Math.random() * end.getSizeY());
+		if (startX > endX) {
+			int temp = startX;
+			startX = endX;
+			endX = temp;
+		}
+		if (startY > endY) {
+			int temp = startY;
+			startY = endY;
+			endY = temp;
+		}
+		
+		boolean hidden = Math.random() < 0.2 + 0.01 * Globals.floorNumber;
+		
+		int placeX = startX;
+		int placeY = startY;
+		
+		for (int i = 0; i < endX - startX + endY - startY; i++) {
+			if (Math.random() * (endX - placeX + endY - placeY) < endX - placeX) {
+				placeX++;
+			} else {
+				placeY++;
+			}
+			if (tiles[placeX][placeY] == null || tiles[placeX][placeY] instanceof TileBreakable) {
+				tiles[placeX][placeY] = hidden ? new TileBreakable(theme, Globals.DESTRUCTION_BASE +  Globals.DESTRUCTION_MODIFIER * Globals.floorNumber, placeX, placeY) : new TileFloor(theme, placeX, placeY);
+			}
+		}
+	}
+	
+}

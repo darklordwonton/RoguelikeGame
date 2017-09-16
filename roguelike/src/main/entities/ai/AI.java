@@ -5,20 +5,20 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class AI {
-	private static int anger = 0;
-	private static int bravery = 0;
-	private static int inte = 0;
-	private static Entity entity = null;
+	private int anger = 0;
+	private int bravery = 0;
+	private int inte = 0;
+	private Entity entity = null;
 	
-	public AI(int a, int b, int i){
+	public AI(int a, int b, int i, Entity e){
 		anger = a;
 		bravery = b;
 		inte = i;
+		entity = e;
 	}
 	
 	//Anything the monster does will be in this method
 	public void turn (){
-		char action = ' ';
 		switch(inte){
 		case 0: stupidMove();
 			break;
@@ -28,7 +28,7 @@ public class AI {
 
 	//Temporary method to show how to do monster actions
 	public void stupidMove() {
-		int rand = (int)Math.random() * 4;
+		int rand = (int)(Math.random() * 4);
 		switch(rand) {
 			case 0 :
 				entity.move(EnumDirection.RIGHT);
