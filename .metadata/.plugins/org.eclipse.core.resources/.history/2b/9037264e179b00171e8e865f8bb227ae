@@ -24,7 +24,6 @@ public class EntityPlayer extends Entity {
 	
 	public void gainXp(int x){
 		xp += x;
-		
 		if (xp >= Globals.LEVEL_XP_BASE + this.stats.getLevel() * Globals.LEVEL_XP_MODIFIER){
 			this.stats.setLevel(this.stats.getLevel() + 1);
 			xp = 0;
