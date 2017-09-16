@@ -7,7 +7,6 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Action {
-	
 	public static void command(int action, Entity e){
 		switch(action){
 		case Globals.UP_KEY: e.move(EnumDirection.UP);

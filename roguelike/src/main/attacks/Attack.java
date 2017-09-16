@@ -6,10 +6,10 @@ public class Attack {
 	protected int lowDamage = 0; //Low bound of damage
 	protected int highDamage = 0; //Upper bound of damage
 	protected int bellCurve = 0;  //Randomization of damage. 1 is equal chance of anything, the higher the more likely it is to center
-	protected Set<EnumAttackType> types = null;
-	protected String sprite = null;
-	protected int spriteSheetRow = 0;
-	protected int spriteSheetColumn = 0;
+	
+	protected int buf = 0; //Bonus to damage. Comes from buf and weapon enhancements (when we program them)
+	
+	protected Set<EnumAttackType> types = null; //Types of damage
 	
 	public Attack(int dl, int du, int bc, Set<EnumAttackType> t) {
 		lowDamage = dl;
@@ -30,6 +30,10 @@ public class Attack {
 		types.remove(t);
 	}
 	
+	public void setBuf (int b){
+		buf = b;
+	}
+	
 	public int getDamage () {
 		double d = lowDamage + 0.5;
 		double m = (double)((highDamage - lowDamage) / bellCurve);
@@ -37,17 +41,8 @@ public class Attack {
 			d += m * Math.random();
 		}
 		
+		d += buf / 2;
+		System.out.println(d);
 		return (int) d;
 	}
-	
-	public void setSprite(String sheet, int column, int row){
-		sprite = sheet;
-		spriteSheetRow = row;
-		spriteSheetColumn = column;
-	}
-	
-	public String getSprite() {
-		return sprite + "&" + spriteSheetRow + "&" + spriteSheetColumn;
-	}
-	
 }

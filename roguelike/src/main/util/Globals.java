@@ -32,6 +32,9 @@ public class Globals {
 	
 	public static final int FLOORS_PER_THEME = 5; //Number of floors per theme
 	
+	public static final int LEVEL_XP_BASE = 10;
+	public static final int LEVEL_XP_MODIFIER = 5;
+	
 	//Walls
 	public static final Map<EnumAttackType, Float> DEFAULT_WALL_MODIFIERS = new HashMap<EnumAttackType, Float>();
 	static {
@@ -146,11 +149,11 @@ public class Globals {
 	public static int scrollX = 0;
 	public static int scrollY = 0;
 	public static EnumTheme currentTheme = EnumTheme.GRAY_BRICK;
+	public static EntityPlayer player = null;
+	public static Floor currentFloor = null;
 	
 	//Global Arrays
-	public static EntityPlayer player = null;
 	public static List<Entity> entities = new ArrayList<Entity>();
-	public static Floor currentFloor = null;
 	
 	//Mob stat constants
 	public static final int PATHETIC_STAT = 2;

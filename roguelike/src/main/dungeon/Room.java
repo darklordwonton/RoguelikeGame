@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.entities.Entity;
-import main.entities.monsters.EntityGoblin;
-import main.entities.monsters.EntitySlime;
+import main.entities.monsters.EntityOgre;
 import main.util.Globals;
 
 public class Room {
@@ -47,9 +46,9 @@ public class Room {
 		}
 		
 		while (ECount > 0){
-			EntitySlime slime = new EntitySlime("Slimo", x, y);
-			entities.add(slime);
-			Globals.entities.add(slime);
+			EntityOgre ogre = new EntityOgre("Shrek", x, y);
+			entities.add(ogre);
+			Globals.entities.add(ogre);
 			ECount --;
 		}
 	}

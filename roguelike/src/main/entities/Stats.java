@@ -148,7 +148,7 @@ public class Stats {
 	}
 	
 	public void setLevel(int level) {
-		level = this.level;
+		this.level = level;
 		calculateStats();
 	}
 

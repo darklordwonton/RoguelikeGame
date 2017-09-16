@@ -6,7 +6,7 @@ import main.util.Globals;
 public class EntityOgre extends EntityMonster {
 	
 	
-	EntityOgre(String n, int px, int py){
+	public EntityOgre(String n, int px, int py){
 		super(n, px, py);
 		
 		ideal = new Stats (Globals.HIGH_STAT, //hp
@@ -19,6 +19,7 @@ public class EntityOgre extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		
+		setSprite("enemy_ogre.png", 0, 0);
 	}
 	
 }
