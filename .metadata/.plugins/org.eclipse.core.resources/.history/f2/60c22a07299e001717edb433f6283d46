@@ -19,8 +19,6 @@ public class EntityOgre extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		
-		this.xpValue = 20;
-		this.species = "Ogre";
 		setSprite("enemy_ogre.png", 0, 0);
 	}
 	

@@ -16,7 +16,6 @@ public class Entity {
 	protected int hp = 0;
 	protected int mp = 0;
 	protected String name = "";
-	protected String species = "";
 	protected int x;
 	protected int y;
 	protected String sprite = null;
@@ -28,7 +27,6 @@ public class Entity {
 	protected int xpValue = Integer.MAX_VALUE;
 	protected int turns = 0;
 	protected int maxTurns = 1;
-	protected boolean dead = false;
 	
 	public Entity(String n, int sx, int sy){
 		turns = maxTurns;
@@ -123,14 +121,6 @@ public class Entity {
 		return stats;
 	}
 	
-	public boolean getDead(){
-		return dead;
-	}
-	
-	public String getSpecies(){
-		return species;
-	}
-	
 	public Attack getMeleeAttack() {
 		basicAttack.setBuf(this.stats.getBuf());
 		return basicAttack;
@@ -153,7 +143,6 @@ public class Entity {
 	private void die() {
 		Globals.currentFloor.getTile(x, y).onLeave(this);
 		Globals.player.gainXp(this.xpValue);
-		dead = true;
 		//Will eventually need overhaul. Works for now
 	}
 	
@@ -187,4 +176,5 @@ public class Entity {
 		}
 		Globals.currentFloor.getTile(x, y).onStep(this);
 	}
+
 }

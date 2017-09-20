@@ -16,7 +16,6 @@ public class Entity {
 	protected int hp = 0;
 	protected int mp = 0;
 	protected String name = "";
-	protected String species = "";
 	protected int x;
 	protected int y;
 	protected String sprite = null;
@@ -125,10 +124,6 @@ public class Entity {
 	
 	public boolean getDead(){
 		return dead;
-	}
-	
-	public String getSpecies(){
-		return species;
 	}
 	
 	public Attack getMeleeAttack() {

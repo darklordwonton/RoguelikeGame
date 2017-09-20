@@ -1,0 +1,54 @@
+package main.entities.ai;
+
+import main.entities.Entity;
+import main.util.EnumDirection;
+import main.util.Globals;
+
+public class AI {
+	private int anger = 0;
+	private int bravery = 0;
+	private int inte = 0;
+	private Entity entity = null;
+	
+	public AI(int a, int b, int i, Entity e){
+		anger = a;
+		bravery = b;
+		inte = i;
+		entity = e;
+	}
+	
+	//Anything the monster does will be in this method
+	public void turn (){
+		switch(inte){
+		case 0: boredMove();
+			break;
+		}
+		
+	}
+
+	//When nothing is aggravating the monster
+	public void boredMove() {
+		int rand = (int)(Math.random() * 4);
+		while(entity.getX()) {
+			rand = (int)(Math.random() * 4);
+		}
+		
+		switch(rand) {
+		case 0 :
+			entity.move(EnumDirection.DOWN);
+			break;
+		case 1 :
+			entity.move(EnumDirection.RIGHT);
+			break;
+		case 2 :
+			entity.move(EnumDirection.UP);
+			break;
+		case 3 :
+			entity.move(EnumDirection.LEFT);
+			break;
+	}
+		
+		//To check if it will walk into another monster or a wall
+	}
+
+}

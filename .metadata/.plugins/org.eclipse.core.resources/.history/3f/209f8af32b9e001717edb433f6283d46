@@ -32,7 +32,7 @@ public class AI {
 		boolean blocked = false;
 		do{
 			int rand = (int) (4 * Math.random());
-			blocked = false;
+			spaceClear = false;
 			
 			switch(rand) {
 			case 0 :
@@ -62,10 +62,8 @@ public class AI {
 				}
 			}
 			
-			if (!Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().equals(null)) {
-				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
-					blocked = true; //Same kind of creature. Definitely don't walk here
-				}
+			if (Globals.currentFloor.getTile(entity.getX(), entity.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())) {
+				blocked = true; //Same kind of creature. Definitely don't walk here
 			}
 		} while (blocked);
 		

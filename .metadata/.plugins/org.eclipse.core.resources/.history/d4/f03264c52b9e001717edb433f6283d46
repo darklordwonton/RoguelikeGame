@@ -127,10 +127,6 @@ public class Entity {
 		return dead;
 	}
 	
-	public String getSpecies(){
-		return species;
-	}
-	
 	public Attack getMeleeAttack() {
 		basicAttack.setBuf(this.stats.getBuf());
 		return basicAttack;

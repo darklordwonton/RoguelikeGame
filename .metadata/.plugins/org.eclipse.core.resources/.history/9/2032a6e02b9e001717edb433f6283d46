@@ -29,10 +29,10 @@ public class AI {
 	//When nothing is aggravating the monster
 	public void boredMove() {
 		EnumDirection dir = null;
-		boolean blocked = false;
+		boolean spaceClear = true;
 		do{
 			int rand = (int) (4 * Math.random());
-			blocked = false;
+			spaceClear = true;
 			
 			switch(rand) {
 			case 0 :
@@ -52,22 +52,18 @@ public class AI {
 			//To check if it will walk into another monster or a wall
 			if (!(entity.getX() + dir.getX() < 0 || entity.getX() + dir.getX() >= Globals.currentFloor.getWidth())) { //check if x is within bounds of floor
 				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY()).isWall() && entity.getTangible()) { //check if there is a wall in the way
-					blocked = true; //There is a wall. Don't walk here
+					; //There is a wall. Do it again.
 				}
 			}
 				
 			if (!(entity.getY() + dir.getY() < 0 || entity.getY() + dir.getY() >= Globals.currentFloor.getHeight())) {
 				if (Globals.currentFloor.getTile(entity.getX(), entity.getY() + dir.getY()).isWall() && entity.getTangible()) {
-					blocked = true; //There is a wall. Don't walk here either
+					; //There is a wall. Do it again
 				}
 			}
-			
-			if (!Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().equals(null)) {
-				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
-					blocked = true; //Same kind of creature. Definitely don't walk here
-				}
-			}
-		} while (blocked);
+		} while (!spaceClear)
+		
+		
 		
 		entity.move(dir);
 	}
