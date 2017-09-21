@@ -18,6 +18,13 @@
 <fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntitySlime"/>
-<fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntityOgre"/>
+<fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
+<fullyQualifiedTypeName name="main.entities.ai.AI"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntityMonster"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="main.util.ControlManager"/>
+<fullyQualifiedTypeName name="main.actions.ActionHandler"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

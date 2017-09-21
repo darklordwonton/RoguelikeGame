@@ -9,5 +9,13 @@ public class Main {
 		
 	public static void main(String [] args){
 		Initializer.start();
+		while (true) {
+			Integer[] keys = ControlManager.getQueue();
+			if (keys != null) {
+				for (int key : keys) {
+					ActionHandler.command(key, Globals.player);
+				}
+			}
+		}
 	}
 }

@@ -1,0 +1,20 @@
+package main;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import main.util.Initializer;
+
+public class Main {
+	
+	private static Set<Integer> oldKeysDown = new HashSet<Integer>();
+
+	
+	public static void main(String [] args){
+		Initializer.start();
+		Set<>
+		while (true) {
+			
+		}
+	}
+}

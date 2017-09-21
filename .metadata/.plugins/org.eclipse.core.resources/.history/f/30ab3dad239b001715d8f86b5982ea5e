@@ -18,7 +18,7 @@ public class ControlManager {
 	}
 	
 	public static void keyDown(int key) {
-		ActionHandler.command(key, Globals.player);
+		//ActionHandler.command(key, Globals.player);
 		//MainRenderer.drawFloor(Globals.currentFloor);
 		keyQueue.add(key);
 		keysDown.add(key);
@@ -32,8 +32,8 @@ public class ControlManager {
 		return keysDown.contains(key);
 	}
 	
-	public static Integer[] getQueue() {
-		Integer[] queue = keyQueue.toArray(new Integer[1]);
+	public static List<Integer> getQueue() {
+		List<Integer> queue = keyQueue;
 		keyQueue.clear();
 		return queue;
 	}

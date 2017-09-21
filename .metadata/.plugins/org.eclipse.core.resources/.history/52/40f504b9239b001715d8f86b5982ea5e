@@ -1,5 +1,7 @@
 package main;
 
+import java.util.List;
+
 import main.actions.ActionHandler;
 import main.util.ControlManager;
 import main.util.Globals;
@@ -9,5 +11,11 @@ public class Main {
 		
 	public static void main(String [] args){
 		Initializer.start();
+		while (true) {
+			Integer[] keys = ControlManager.getQueue();
+			for (int key : keys) {
+				ActionHandler.command(key, Globals.player);
+			}
+		}
 	}
 }

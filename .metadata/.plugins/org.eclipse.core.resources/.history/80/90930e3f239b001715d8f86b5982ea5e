@@ -10,7 +10,7 @@ import main.rendering.MainRenderer;
 
 public class ControlManager {
 
-	private static Set<Integer> keyQueue = new HashSet<Integer>();
+	private static List<Integer> keyQueue = new ArrayList<Integer>();
 	private static Set<Integer> keysDown = new HashSet<Integer>();
 	
 	public static void init() {
@@ -18,7 +18,7 @@ public class ControlManager {
 	}
 	
 	public static void keyDown(int key) {
-		ActionHandler.command(key, Globals.player);
+		//ActionHandler.command(key, Globals.player);
 		//MainRenderer.drawFloor(Globals.currentFloor);
 		keyQueue.add(key);
 		keysDown.add(key);
@@ -32,10 +32,8 @@ public class ControlManager {
 		return keysDown.contains(key);
 	}
 	
-	public static Integer[] getQueue() {
-		Integer[] queue = keyQueue.toArray(new Integer[1]);
-		keyQueue.clear();
-		return queue;
+	public static int[] getQueue() {
+		int[] queue = keyQueue.toArray(new int[]);
 	}
 	
 }
