@@ -64,7 +64,6 @@ public class AI {
 					if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
 						blocked = true; //Same kind of creature. Definitely don't walk here
 					}
-				}
 
 			}
 			System.out.println(Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().equals(null));
@@ -74,7 +73,6 @@ public class AI {
 				}
 
 			}
-			
 
 
 		} while (blocked);
