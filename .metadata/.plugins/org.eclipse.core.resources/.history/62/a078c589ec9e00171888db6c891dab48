@@ -50,24 +50,24 @@ public class AI {
 			}
 		
 			//To check if it will walk into another monster or a wall
-			if ((entity.getX() + dir.getX() < 0 || entity.getX() + dir.getX() >= Globals.currentFloor.getWidth()) || (entity.getY() + dir.getY() < 0 || entity.getY() + dir.getY() >= Globals.currentFloor.getHeight())) {
-				blocked = true;
-			} else {
+			if ((entity.getX() + dir.getX() < 0 || entity.getX() + dir.getX() >= Globals.currentFloor.getWidth()) || (entity.getY() + dir.getY() < 0 || entity.getY() + dir.getY() >= Globals.currentFloor.getHeight()))
+			if () { //check if x is within bounds of floor
 				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY()).isWall() && entity.getTangible()) { //check if there is a wall in the way
 					blocked = true; //There is a wall. Don't walk here
 				}
+			}
+			
+			if (!) {
 				if (Globals.currentFloor.getTile(entity.getX(), entity.getY() + dir.getY()).isWall() && entity.getTangible()) {
 					blocked = true; //There is a wall. Don't walk here either
 				}
-				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity() != null) {
-					if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
-						blocked = true; //Same kind of creature. Definitely don't walk here
-					}
-				}
-
 			}
-
-
+			
+			if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity() != null) {
+				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
+					blocked = true; //Same kind of creature. Definitely don't walk here
+				}
+			}
 		} while (blocked);
 		
 		entity.move(dir);

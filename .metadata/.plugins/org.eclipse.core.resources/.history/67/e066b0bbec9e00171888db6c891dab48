@@ -59,6 +59,7 @@ public class AI {
 				if (Globals.currentFloor.getTile(entity.getX(), entity.getY() + dir.getY()).isWall() && entity.getTangible()) {
 					blocked = true; //There is a wall. Don't walk here either
 				}
+				
 				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity() != null) {
 					if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
 						blocked = true; //Same kind of creature. Definitely don't walk here
@@ -66,7 +67,13 @@ public class AI {
 				}
 
 			}
+			if () { //check if x is within bounds of floor
 
+			}
+			
+			if () {
+
+			}
 
 		} while (blocked);
 		
