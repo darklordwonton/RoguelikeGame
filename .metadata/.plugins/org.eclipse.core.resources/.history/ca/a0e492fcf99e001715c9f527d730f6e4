@@ -67,6 +67,14 @@ public class AI {
 				}
 
 			}
+			System.out.println(Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().equals(null));
+			if (!Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().equals(null)) {
+				if (Globals.currentFloor.getTile(entity.getX() + dir.getX(), entity.getY() + dir.getY()).getResidentEntity().getSpecies().equals(entity.getSpecies())){
+					blocked = true; //Same kind of creature. Definitely don't walk here
+				}
+
+			}
+			
 
 
 		} while (blocked);
