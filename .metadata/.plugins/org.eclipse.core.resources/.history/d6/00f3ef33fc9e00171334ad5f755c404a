@@ -30,7 +30,6 @@ public class AI {
 	public void boredMove() {
 		EnumDirection dir = null;
 		boolean blocked = false;
-		int infiniteLoopAvoidance = 0;
 		do{
 			int rand = (int) (4 * Math.random());
 			blocked = false;
@@ -68,9 +67,9 @@ public class AI {
 				}
 
 			}
-			infiniteLoopAvoidance++;
 
-		} while (blocked && infiniteLoopAvoidance < 6);
+
+		} while (blocked);
 		
 		entity.move(dir);
 	}

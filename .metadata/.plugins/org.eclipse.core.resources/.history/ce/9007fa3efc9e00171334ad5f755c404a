@@ -70,7 +70,7 @@ public class AI {
 			}
 			infiniteLoopAvoidance++;
 
-		} while (blocked && infiniteLoopAvoidance < 6);
+		} while (blocked);
 		
 		entity.move(dir);
 	}

@@ -141,7 +141,7 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		hp -= Math.max(modifiers.getModifiedDamage(a), 1);
+		hp -= Math.max(modifiers.getModifiedDamage(a) / stats.getTuf(), 1);
 		System.out.println(hp);
 		if (hp < 0) {
 			hp = 0;
