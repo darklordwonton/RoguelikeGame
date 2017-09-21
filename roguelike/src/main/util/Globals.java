@@ -153,7 +153,6 @@ public class Globals {
 	public static Floor currentFloor = null;
 	
 	//Global Arrays
-	public static List<Entity> entities = new ArrayList<Entity>();
 	
 	//Mob stat constants
 	public static final int PATHETIC_STAT = 2;
