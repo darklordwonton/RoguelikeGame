@@ -143,7 +143,7 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int floorNumber = 10;
+	public static int floorNumber = 1;
 	public static int spawnX = 0;
 	public static int spawnY = 0;
 	public static int scrollX = 0;
@@ -166,5 +166,4 @@ public class Globals {
 	//Debug features
 	public static final boolean NO_CLIP = false;	//Walk through walls
 	public static final boolean SKIP_FLOORS = true; //Skip floor button, currently "\"
-	
 }

@@ -28,7 +28,7 @@ public class ActionHandler {
 				case Globals.BACKSLASH: if (Globals.SKIP_FLOORS)
 					Generator.newFloor();
 		  			break;
-		
+		  			
 				case Globals.ESC_KEY: 
 					MainRenderer.closeWindow();
 					System.exit(0);

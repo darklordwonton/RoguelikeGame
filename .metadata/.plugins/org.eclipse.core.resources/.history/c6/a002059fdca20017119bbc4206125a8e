@@ -1,0 +1,14 @@
+package main.items;
+
+public class Item {
+	protected String name = "";
+	protected String descriptor = "";
+	
+	protected int value = 0;
+	
+	protected Item(String n, String d, int v){
+		name = n;
+		descriptor = d;
+		value = v;
+	}
+}

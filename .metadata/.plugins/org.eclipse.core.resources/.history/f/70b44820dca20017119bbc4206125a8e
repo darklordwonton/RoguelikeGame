@@ -1,0 +1,9 @@
+package main.items;
+
+public class ItemFood {
+
+	public ItemFood() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

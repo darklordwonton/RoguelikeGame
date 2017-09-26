@@ -2,6 +2,8 @@ package main.attacks;
 
 import java.util.Set;
 
+import main.entities.Entity;
+
 public class Attack {
 	protected int lowDamage = 0; //Low bound of damage
 	protected int highDamage = 0; //Upper bound of damage
@@ -11,11 +13,14 @@ public class Attack {
 	
 	protected Set<EnumAttackType> types = null; //Types of damage
 	
-	public Attack(int dl, int du, int bc, Set<EnumAttackType> t) {
+	protected Entity origin = null;
+	
+	public Attack(int dl, int du, int bc, Set<EnumAttackType> t, Entity e) {
 		lowDamage = dl;
 		highDamage = du;
 		bellCurve = bc;
 		types = t;
+		origin = e;
 	}
 	
 	public boolean isType (EnumAttackType t) {
@@ -34,6 +39,10 @@ public class Attack {
 		buf = b;
 	}
 	
+	public Entity getOrigin (){
+		return origin;
+	}
+	
 	public int getDamage () {
 		double d = lowDamage + 0.5;
 		double m = (double)((highDamage - lowDamage) / bellCurve);
@@ -42,7 +51,6 @@ public class Attack {
 		}
 		
 		d += buf / 2;
-		System.out.println(d);
 		return (int) d;
 	}
 }

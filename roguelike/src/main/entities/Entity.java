@@ -36,7 +36,7 @@ public class Entity {
 		x = sx;
 		y = sy;
 		ai = new AI(5, 0, 0, this);
-		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>());
+		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>(), this);
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
 	}
 	
@@ -142,18 +142,20 @@ public class Entity {
 	
 	public void onAttack(Attack a) {
 		hp -= Math.max(modifiers.getModifiedDamage(a), 1);
-		System.out.println(hp);
 		if (hp < 0) {
 			hp = 0;
-			if (this != Globals.player)
+			if (this != Globals.player){
 				die();
+				if (a.getOrigin().equals(Globals.player)){
+					Globals.player.gainXp(this.xpValue);
+				}
+			}
 		}
 		//TODO animation stuff
 	}
 	
 	private void die() {
 		Globals.currentFloor.getTile(x, y).onLeave(this);
-		Globals.player.gainXp(this.xpValue);
 		dead = true;
 		//Will eventually need overhaul. Works for now
 	}
