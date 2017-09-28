@@ -15,6 +15,7 @@
 <fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.effects.Effect"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntitySlime"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntityOgre"/>
 <fullyQualifiedTypeName name="main.entities.EntityPlayer"/>
@@ -27,5 +28,4 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.items.Item"/>
-<fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
 </qualifiedTypeNameHistroy>
