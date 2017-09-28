@@ -47,11 +47,11 @@ public class MessageBarPane extends JPanel {
 		super.paintComponent(g);
 		
 		g.setColor(Color.BLACK);
-		g.fillRect(0,0,getWidth(),getHeight());
+		g.fillRect(0,0,MainRenderer.scaleX(MainRenderer.DEFAULT_WINDOW_WIDTH), MainRenderer.scaleY(80));
 		if (messages.size() > 0) {
-			g.setFont(new Font("Papyrus", 0, 25));
+			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(25)));
 			g.setColor(Color.WHITE);
-			g.drawString(messages.get(0), 5, getHeight() - 40);
+			g.drawString(messages.get(0), MainRenderer.scaleX(5), MainRenderer.scaleY(40));
 		}
 	}
 

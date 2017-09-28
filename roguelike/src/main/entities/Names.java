@@ -1,11 +1,11 @@
 package main.entities;
 
 public class Names {
-	private static String[] firstSlime = {"Gl", "Bl", "Pl", "Gl", "Blo", "'L", "Shl", "Lol"};
-	private static String[] middleSlime = {"o", "oo", "ooo", "oooo", "a", "aa", "ao", "oa", "u", "ou", "uo", "olo", "uo"};
-	private static String[] endSlime = {"rp", "p", "mp", "p", "k", "lp", "lol", "h"};
+	private static String[] firstSlime = {"Gl", "Bl", "Pl", "'L", "Shl", "Lol"};
+	private static String[] middleSlime = {"o", "oo", "ooo", "oooo", "u", "uu", "uuu", "ou", "olo"};
+	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
-	private static String[] firstGob = {"Ch", "Kr"};
+	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd"};
 	private static String[] middleGob = {"a"};
 	private static String[] endGob = {"h", "k"};
 	
