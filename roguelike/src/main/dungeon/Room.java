@@ -6,8 +6,8 @@ import java.util.List;
 import main.entities.Entity;
 import main.entities.monsters.EntityGoblin;
 import main.entities.monsters.EntityOgre;
-import main.entities.monsters.EntitySlimeGreen;
-import main.entities.monsters.EntitySlimeRed;
+import main.entities.monsters.SlimeVariants.EntitySlimeGreen;
+import main.entities.monsters.SlimeVariants.EntitySlimeRed;
 import main.util.Globals;
 
 public class Room {
