@@ -169,12 +169,12 @@ public abstract class MainRenderer {
 	}
 	
 	public static void addMessage(String m){
-		messagePane.addMessage(m);
+		((MessageBarPane)messagePane).addMessage(m);
 		frame.repaint();
 	}
 	
 	public static void incrementMessage() {
-		messagePane.incrementMessage();
+		((MessageBarPane)messagePane).incrementMessage();
 	}
 	
 	

@@ -113,7 +113,7 @@ public abstract class MainRenderer {
 			
 		}
 	};
-	private static MessageBarPane messagePane = new MessageBarPane();
+	private static MessageBarPane messagePane = null;
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
@@ -146,6 +146,7 @@ public abstract class MainRenderer {
 		
 		frame.getContentPane().add(mapPane);
 		frame.getContentPane().add(guiPane);
+		messagePane = new MessageBarPane();
 		frame.getContentPane().add(messagePane);
 		
 		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);

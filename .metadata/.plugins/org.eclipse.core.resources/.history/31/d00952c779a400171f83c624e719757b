@@ -37,7 +37,7 @@ public class MessageBarPane extends JPanel {
 	}
 	
 	public void incrementMessage () {
-		if (messages.size() > 0)
+		if (messages.size() == 0)
 			messages.remove(0);
 		repaint();
 	}
@@ -51,7 +51,7 @@ public class MessageBarPane extends JPanel {
 		if (messages.size() > 0) {
 			g.setFont(new Font("Papyrus", 0, 25));
 			g.setColor(Color.WHITE);
-			g.drawString(messages.get(0), 5, getHeight() - 40);
+			g.drawString(messages.get(0), , 5);
 		}
 	}
 

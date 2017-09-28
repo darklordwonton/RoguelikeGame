@@ -37,7 +37,7 @@ public class MessageBarPane extends JPanel {
 	}
 	
 	public void incrementMessage () {
-		if (messages.size() > 0)
+		if (messages.size() == 0)
 			messages.remove(0);
 		repaint();
 	}

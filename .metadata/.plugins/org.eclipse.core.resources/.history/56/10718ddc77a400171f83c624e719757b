@@ -7,7 +7,6 @@ import main.attacks.Attack;
 import main.attacks.EnumAttackType;
 import main.attacks.ModifierChart;
 import main.entities.ai.AI;
-import main.rendering.MainRenderer;
 import main.util.EnumDirection;
 import main.util.Globals;
 
@@ -157,7 +156,6 @@ public class Entity {
 	
 	public void onAttack(Attack a) {
 		int damage = Math.max(modifiers.getModifiedDamage(a), 1);
-		MainRenderer.addMessage(a.getOrigin().getName() + " hit " + getName() + " for " + damage + " damage!");
 		hp -= damage;
 		if (hp < 0) {
 			hp = 0;
@@ -174,7 +172,6 @@ public class Entity {
 	private void die() {
 		Globals.currentFloor.getTile(x, y).onLeave(this);
 		dead = true;
-		MainRenderer.addMessage(name + " died");
 		//Will eventually need overhaul. Works for now
 	}
 	

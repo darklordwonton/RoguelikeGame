@@ -37,21 +37,18 @@ public class MessageBarPane extends JPanel {
 	}
 	
 	public void incrementMessage () {
-		if (messages.size() > 0)
+		if (messages.size() == 0)
 			messages.remove(0);
 		repaint();
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		
 		g.setColor(Color.BLACK);
 		g.fillRect(0,0,getWidth(),getHeight());
-		if (messages.size() > 0) {
+		if (messages.get(0) != null) {
 			g.setFont(new Font("Papyrus", 0, 25));
-			g.setColor(Color.WHITE);
-			g.drawString(messages.get(0), 5, getHeight() - 40);
+			g.drawString(messages.get(0), 5, 5);
 		}
 	}
 

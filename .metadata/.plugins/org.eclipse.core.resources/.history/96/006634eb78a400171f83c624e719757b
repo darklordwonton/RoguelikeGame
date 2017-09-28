@@ -113,7 +113,7 @@ public abstract class MainRenderer {
 			
 		}
 	};
-	private static MessageBarPane messagePane = new MessageBarPane();
+	private static JPanel messagePane = new MessageBarPane();
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
@@ -169,7 +169,7 @@ public abstract class MainRenderer {
 	}
 	
 	public static void addMessage(String m){
-		messagePane.addMessage(m);
+		((MessageBarPane)messagePane).addMessage(m);
 		frame.repaint();
 	}
 	
