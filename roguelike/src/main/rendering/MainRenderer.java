@@ -199,7 +199,7 @@ public abstract class MainRenderer {
 	}
 	
 	public static int scaleXY(int num){
-		return num * (frame.getWidth() * frame.getHeight()) / (DEFAULT_WINDOW_HEIGHT * DEFAULT_WINDOW_WIDTH);
+		return num * (frame.getWidth() + frame.getHeight()) / (DEFAULT_WINDOW_HEIGHT + DEFAULT_WINDOW_WIDTH);
 	}
 	
 	
