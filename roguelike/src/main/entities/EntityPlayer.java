@@ -7,7 +7,10 @@ public class EntityPlayer extends Entity {
 	protected int xp = 0;
 	
 	public EntityPlayer(String n, int px, int py){
-		super(n,px,py);
+		super(px,py);
+		name = "you";
+		pronoun = "your";
+		
 		this.setSprite(Globals.PLAYER_SPRITE_SHEET, Globals.PLAYER_SPRITE_COLUMN, Globals.PLAYER_SPRITE_ROW, Globals.PLAYER_SPRITE_FRAME_COUNT);
 		tangible = !Globals.NO_CLIP;
 		stats = new Stats(100,Globals.floorNumber);

@@ -1,0 +1,9 @@
+package main.entities;
+
+public class Names {
+
+	public Names() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

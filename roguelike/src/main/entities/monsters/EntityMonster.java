@@ -9,9 +9,8 @@ public abstract class EntityMonster extends Entity {
 
 	protected Stats ideal;
 	
-	public EntityMonster(String n, int px, int py) {
-		super(n, px, py);
-		// TODO Auto-generated constructor stub
+	public EntityMonster(int px, int py) {
+		super(px, py);
 	}
 	
 	public AI getAI() {

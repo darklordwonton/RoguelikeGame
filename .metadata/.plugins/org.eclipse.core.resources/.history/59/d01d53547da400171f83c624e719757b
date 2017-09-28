@@ -1,0 +1,8 @@
+package main.entities;
+
+public class Names {
+	String[] firstSlime = {"Gl", "Bl", "Pl", "Ga"};
+	String[] endSlime = {"oorp", "oop", "omp"};
+	
+
+}

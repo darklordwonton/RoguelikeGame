@@ -52,7 +52,7 @@ public class Room {
 	
 	public void spawnEntities() {
 		while (ECount > 0){
-			EntitySlimeRed slimyboi = new EntitySlimeRed("Friend" + x * 100 + y, x, y);
+			EntitySlimeRed slimyboi = new EntitySlimeRed(x, y);
 			entities.add(slimyboi);
 			floor.addEntity(slimyboi, x, y);
 			ECount --;

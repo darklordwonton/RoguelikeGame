@@ -16,8 +16,9 @@ public class Entity {
 	protected AI ai = null;
 	protected int hp = 0;
 	protected int mp = 0;
-	protected String name = "";
+	protected String name = "error";
 	protected String species = "";
+	protected String pronoun = "";
 	protected int x;
 	protected int y;
 	protected String sprite = null;
@@ -32,9 +33,8 @@ public class Entity {
 	protected int maxTurns = 1;
 	protected boolean dead = false;
 	
-	public Entity(String n, int sx, int sy){
+	public Entity(int sx, int sy){
 		turns = maxTurns;
-		name = n;
 		x = sx;
 		y = sy;
 		ai = new AI(5, 0, 0, this);

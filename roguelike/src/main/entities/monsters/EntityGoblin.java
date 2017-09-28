@@ -6,8 +6,8 @@ import main.util.Globals;
 
 public class EntityGoblin extends EntityMonster {
 	
-	public EntityGoblin(String n, int px, int py) {
-		super(n, px, py);
+	public EntityGoblin(int px, int py) {
+		super(px, py);
 		
 		ideal = new Stats (Globals.MID_STAT, //hp
 				Globals.MID_STAT, //mp

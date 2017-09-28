@@ -1,0 +1,18 @@
+package main.entities;
+
+public class Names {
+
+	public Names() {
+		String[] primative = new String[1];
+		String[] gross = new String[1];
+		String[] fancy = new String[1];
+		
+		primative[0] = "hi";
+		
+		public static String prim (){
+			return "hi";
+		}
+
+	}
+
+}

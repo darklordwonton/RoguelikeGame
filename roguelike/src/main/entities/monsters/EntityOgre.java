@@ -7,8 +7,8 @@ import main.util.Globals;
 public class EntityOgre extends EntityMonster {
 	
 	
-	public EntityOgre(String n, int px, int py){
-		super(n, px, py);
+	public EntityOgre(int px, int py){
+		super(px, py);
 		
 		ideal = new Stats (Globals.HIGH_STAT, //hp
 				Globals.LOW_STAT, //mp

@@ -1,0 +1,19 @@
+package main.entities.monsters.SlimeVariants;
+
+import main.entities.Stats;
+import main.rendering.animation.Animation;
+import main.util.Globals;
+
+public class EntitySlimeYellow extends EntitySlime {
+	
+	
+	public EntitySlimeYellow(String n, int px, int py) {
+		super(n, px, py);
+		this.xpValue = 5;
+		
+		setSprite("enemy_slimes.png", (int)(Math.random() * 3), 4, 3);
+		
+		Animation.animate(this);
+	}
+	
+}

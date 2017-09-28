@@ -1,15 +1,15 @@
 package main.entities.monsters.SlimeVariants;
 
+import main.entities.Names;
 import main.entities.Stats;
 import main.entities.monsters.EntityMonster;
-import main.rendering.animation.Animation;
 import main.util.Globals;
 
 public class EntitySlime extends EntityMonster {
 	
 	
-	public EntitySlime(String n, int px, int py) {
-		super(n, px, py);
+	public EntitySlime(int px, int py) {
+		super(px, py);
 		this.xpValue = 5;
 		ideal = new Stats (Globals.LOW_STAT, //hp
 				Globals.HIGH_STAT, //mp
@@ -20,6 +20,8 @@ public class EntitySlime extends EntityMonster {
 				Globals.floorNumber); //level
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
+		name = Names.slimeName();
+		pronoun = "they";
 	}
 	
 }
