@@ -7,21 +7,6 @@ import main.rendering.MainRenderer;
 
 public class Animation {
 	
-	int totalFrames;
-	int currentFrame;
-	String sprite;
-//	Timer timer = null;
-	
-	public Animation(){
-	}
-	
-	public Animation(String sprite, int spriteSheetColumn, int spriteSheetRow, int totalFrames){
-		currentFrame = spriteSheetColumn;
-		this.totalFrames = totalFrames;
-		this.sprite = sprite;
-		
-	}
-	
 	public static void Animate(Entity e){
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {

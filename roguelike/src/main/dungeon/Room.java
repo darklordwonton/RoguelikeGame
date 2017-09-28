@@ -6,7 +6,8 @@ import java.util.List;
 import main.entities.Entity;
 import main.entities.monsters.EntityGoblin;
 import main.entities.monsters.EntityOgre;
-import main.entities.monsters.EntitySlime;
+import main.entities.monsters.EntitySlimeGreen;
+import main.entities.monsters.EntitySlimeRed;
 import main.util.Globals;
 
 public class Room {
@@ -51,9 +52,9 @@ public class Room {
 	
 	public void spawnEntities() {
 		while (ECount > 0){
-			EntitySlime green = new EntitySlime("Friend" + x * 100 + y, x, y);
-			entities.add(green);
-			floor.addEntity(green, x, y);
+			EntitySlimeRed slimyboi = new EntitySlimeRed("Friend" + x * 100 + y, x, y);
+			entities.add(slimyboi);
+			floor.addEntity(slimyboi, x, y);
 			ECount --;
 		}
 	}

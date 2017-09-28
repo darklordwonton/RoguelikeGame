@@ -1,5 +1,6 @@
 package main.entities.monsters;
 
+import main.entities.Animation;
 import main.entities.Stats;
 import main.util.Globals;
 
@@ -21,7 +22,8 @@ public class EntityOgre extends EntityMonster {
 		
 		this.xpValue = 20;
 		this.species = "Ogre";
-		setSprite("enemy_ogre.png", 0, 0);
+		setSprite("enemy_ogre.png", 0, 0, 1);
+		Animation.Animate(this);
 	}
 	
 }

@@ -52,6 +52,7 @@ public class Globals {
 	public static final String FIREBALL = "fireball.jpg";
 	public static int PLAYER_SPRITE_ROW = 0;
 	public static int PLAYER_SPRITE_COLUMN = 0;
+	public static int PLAYER_SPRITE_FRAME_COUNT = 1;
 	
 	public static final Map<EnumTheme, String> FLOOR_SPRITE_SHEETS = new HashMap<EnumTheme, String>();
 	static {

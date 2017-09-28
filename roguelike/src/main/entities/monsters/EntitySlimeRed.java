@@ -4,10 +4,10 @@ import main.entities.Animation;
 import main.entities.Stats;
 import main.util.Globals;
 
-public class EntitySlime extends EntityMonster {
+public class EntitySlimeRed extends EntityMonster {
 	
 	
-	public EntitySlime(String n, int px, int py) {
+	public EntitySlimeRed(String n, int px, int py) {
 		super(n, px, py);
 		this.xpValue = 5;
 		ideal = new Stats (Globals.LOW_STAT, //hp
@@ -20,7 +20,7 @@ public class EntitySlime extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		
-		setSprite("enemy_slimes.png", 0, 0, 3);
+		setSprite("enemy_slimes.png", (int)(Math.random() * 3), 1, 3);
 		
 		Animation.Animate(this);
 	}
