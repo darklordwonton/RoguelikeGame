@@ -1,5 +1,8 @@
 package main.rendering;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +36,23 @@ public class MessageBarPane extends JPanel {
 		messages.add(m);
 	}
 	
-	public void incrementMessage (){
+	public void incrementMessage () {
+		if (messages.size() > 0)
+			messages.remove(0);
+		repaint();
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		
+		g.setColor(Color.BLACK);
+		g.fillRect(0,0,MainRenderer.scaleX(MainRenderer.DEFAULT_WINDOW_WIDTH), MainRenderer.scaleY(80));
+		if (messages.size() > 0) {
+			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(25)));
+			g.setColor(Color.WHITE);
+			g.drawString(messages.get(0), MainRenderer.scaleX(5), MainRenderer.scaleY(40));
+		}
 	}
 
 }

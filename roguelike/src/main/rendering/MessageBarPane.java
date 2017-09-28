@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import main.util.StringUtils;
+
 public class MessageBarPane extends JPanel {
 
 	private List<String> messages = new ArrayList<String>();
@@ -51,7 +53,7 @@ public class MessageBarPane extends JPanel {
 		if (messages.size() > 0) {
 			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(25)));
 			g.setColor(Color.WHITE);
-			g.drawString(messages.get(0), MainRenderer.scaleX(5), MainRenderer.scaleY(40));
+			g.drawString(StringUtils.capitalize(messages.get(0)), MainRenderer.scaleX(5), MainRenderer.scaleY(40));
 		}
 	}
 
