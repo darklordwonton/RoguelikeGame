@@ -6,8 +6,8 @@ public class Names {
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
 	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd", "Big Kr"};
-	private static String[] middleGob = {"a", "o"};
-	private static String[] endGob = {"h", "k", "r"};
+	private static String[] middleGob = {"a", "oh"};
+	private static String[] endGob = {"h", "k"};
 	
 	
 	public static String slimeName() {

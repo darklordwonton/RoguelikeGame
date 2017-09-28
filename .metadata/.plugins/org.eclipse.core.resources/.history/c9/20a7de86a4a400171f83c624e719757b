@@ -21,14 +21,6 @@ public class EntityGoblin extends EntityMonster {
 		makeStats(4 * Globals.MID_STAT + 2 * Globals.LOW_STAT);
 		
 		name = Names.gobName();
-		int rand = (int)(Math.random() * 10);
-		if (rand <= 3){
-			pronoun = "his";
-		}else if(rand <= 7){
-			pronoun = "her";
-		}else{
-			pronoun = "their";
-		}
 		
 		setSprite("enemy_goblin2.png", 0, 0, 1);
 		Animation.animate(this);

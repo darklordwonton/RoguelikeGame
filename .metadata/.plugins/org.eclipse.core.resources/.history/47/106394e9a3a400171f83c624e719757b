@@ -7,7 +7,7 @@ public class Names {
 	
 	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd", "Big Kr"};
 	private static String[] middleGob = {"a", "o"};
-	private static String[] endGob = {"h", "k", "r"};
+	private static String[] endGob = {"h", "k"};
 	
 	
 	public static String slimeName() {

@@ -47,11 +47,12 @@ public class Room {
 				wall[e][i] = false;
 			}
 		}
+
 	}
 	
 	public void spawnEntities() {
 		while (ECount > 0){
-			EntityGoblin slimyboi = new EntityGoblin(x, y);
+			EntitySlimeRed slimyboi = new EntitySlimeRed(x, y);
 			entities.add(slimyboi);
 			floor.addEntity(slimyboi, x, y);
 			ECount --;
