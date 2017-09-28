@@ -28,4 +28,5 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.items.Item"/>
+<fullyQualifiedTypeName name="main.util.StringUtils"/>
 </qualifiedTypeNameHistroy>
