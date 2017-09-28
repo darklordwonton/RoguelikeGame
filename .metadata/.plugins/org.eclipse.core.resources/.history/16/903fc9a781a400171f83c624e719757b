@@ -1,6 +1,5 @@
 package main.entities.monsters;
 
-import main.entities.Names;
 import main.entities.Stats;
 import main.rendering.animation.Animation;
 import main.util.Globals;
@@ -19,8 +18,6 @@ public class EntityGoblin extends EntityMonster {
 				Globals.floorNumber); //level
 		
 		makeStats(4 * Globals.MID_STAT + 2 * Globals.LOW_STAT);
-		
-		name = Names.gobName();
 		
 		setSprite("enemy_goblin2.png", 0, 0, 1);
 		Animation.animate(this);

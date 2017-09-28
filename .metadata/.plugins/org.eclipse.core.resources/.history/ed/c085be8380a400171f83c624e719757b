@@ -1,0 +1,19 @@
+package main.entities;
+
+import main.util.StringUtils;
+
+public class Names {
+	private static String[] firstSlime = {"Gl", "Bl", "Pl", "Ga", "Blo"};
+	private static String[] middleSlime = {"o", "oo", "ooo", "a", "aa", "ao", "oa", "u", "ou", "uo"};
+	private static String[] endSlime = {"rp", "p", "omp", "orp", "p", ""};
+	
+	public static String slimeName(){
+		int x = (int)(Math.random() * firstSlime.length);		
+		int y = (int)(Math.random() * middleSlime.length);
+		int z = (int)(Math.random() * endSlime.length);
+		return firstSlime[x] + middleSlime[y]+ endSlime[z];
+			
+	}
+	
+	
+}

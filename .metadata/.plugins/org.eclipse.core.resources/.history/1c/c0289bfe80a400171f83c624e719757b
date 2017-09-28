@@ -21,7 +21,7 @@ public class EntitySlime extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		name = Names.slimeName();
-		pronoun = "their";
+		pronoun = "they";
 	}
 	
 }
