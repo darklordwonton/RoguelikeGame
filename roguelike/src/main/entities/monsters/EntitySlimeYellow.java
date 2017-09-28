@@ -1,7 +1,7 @@
 package main.entities.monsters;
 
-import main.entities.Animation;
 import main.entities.Stats;
+import main.rendering.animation.Animation;
 import main.util.Globals;
 
 public class EntitySlimeYellow extends EntityMonster {

@@ -1,8 +1,9 @@
-package main.entities;
+package main.rendering.animation;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import main.entities.Entity;
 import main.rendering.MainRenderer;
 
 public class Animation {
@@ -18,6 +19,4 @@ public class Animation {
 			}
 		}, 0, (long) Math.round(20 / e.getTotalFrames()) * 50);
 	}
-	
-	
 }
