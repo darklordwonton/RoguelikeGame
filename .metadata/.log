@@ -10074,11 +10074,16 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-09-21 14:31:27.094
 !MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 '
+<<<<<<< Updated upstream
 !SESSION 2017-09-26 12:46:58.669 -----------------------------------------------
+=======
+!SESSION 2017-09-21 14:53:59.079 -----------------------------------------------
+>>>>>>> Stashed changes
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+<<<<<<< Updated upstream
 Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 
@@ -10089,6 +10094,15 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2017-09-26 12:47:14.926
+=======
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-09-21 14:54:10.129
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2017-09-21 14:54:17.050
+>>>>>>> Stashed changes
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10. ; version: 2.0.4.v20170307-1435
 !STACK 0
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10
@@ -10109,6 +10123,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.Gson.fromJson(Gson.java:803)
 	... 8 more
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.recommenders.coordinates.rcp 4 5 2017-09-26 12:50:25.438
 !MESSAGE Failed to read cached coordinates from file ‘/Users/Sam/Documents/GitHub/RoguelikeGame/.recommenders/caches/identified-project-coordinates.json’
 !STACK 0
@@ -10127,10 +10142,17 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.Gson.fromJson(Gson.java:803)
 	... 6 more
 !SESSION 2017-09-26 13:52:53.620 -----------------------------------------------
+=======
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-09-21 14:54:18.141
+!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+'
+!SESSION 2017-09-21 15:07:00.460 -----------------------------------------------
+>>>>>>> Stashed changes
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+<<<<<<< Updated upstream
 Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Sam/.eclipse_keyring
 
@@ -10138,6 +10160,15 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2017-09-26 13:53:18.570
+=======
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Simon/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-09-21 15:07:12.510
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2017-09-21 15:07:19.597
+>>>>>>> Stashed changes
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10. ; version: 2.0.4.v20170307-1435
 !STACK 0
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10
@@ -10157,6 +10188,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:170)
 	at com.google.gson.Gson.fromJson(Gson.java:803)
 	... 8 more
+<<<<<<< Updated upstream
 !SESSION 2017-09-27 14:35:30.395 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
@@ -10185,3 +10217,16 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:170)
 	at com.google.gson.Gson.fromJson(Gson.java:803)
 	... 8 more
+=======
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-09-21 15:07:20.559
+!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+'
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2017-09-21 15:07:21.717
+!MESSAGE The Eclipse Git-hosted URI 'http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.setup' is blocked for direct access.
+Please open a Bugzilla to add it to an official Oomph catalog.
+For initial testing, use the file system local version of the resource.
+Alternatively, run the setup archiver application as follows:
+  /Applications/Eclipse.app/Contents/MacOS/eclipse -application org.eclipse.oomph.setup.core.SetupArchiver -consoleLog -noSplash -uris http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.setup
+>>>>>>> Stashed changes
