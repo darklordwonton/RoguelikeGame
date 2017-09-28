@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.entities.Entity;
-import main.entities.monsters.EntityGoblin;
 import main.entities.monsters.EntityOgre;
 import main.util.Globals;
 

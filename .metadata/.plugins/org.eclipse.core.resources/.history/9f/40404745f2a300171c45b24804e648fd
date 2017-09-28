@@ -1,6 +1,8 @@
 package main.util;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import main.actions.ActionHandler;
@@ -8,7 +10,6 @@ import main.rendering.MainRenderer;
 
 public class ControlManager {
 
-	private static Set<Integer> keysDown = new HashSet<Integer>();
 	
 	public static void init() {
 		
@@ -16,9 +17,7 @@ public class ControlManager {
 	
 	public static void keyDown(int key) {
 		ActionHandler.command(key, Globals.player);
-		MainRenderer.updateFloor(Globals.currentFloor);
-		MainRenderer.refresh();
-		keysDown.add(key);
+		//MainRenderer.drawFloor(Globals.currentFloor);
 	}
 	
 	public static void keyUp(int key) {

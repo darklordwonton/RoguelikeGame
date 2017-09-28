@@ -151,10 +151,11 @@ public abstract class MainRenderer {
 		frame.setVisible(true);
 	}
 	
-	public static void updateFloor(Floor map) {
+	public static void drawFloor(Floor map) {
 		theme = map.getTheme();
 		tiles = map.getTileMap();
 		entities = map.getEntities();
+		frame.repaint();
 	}
 	
 	public static void refresh() {

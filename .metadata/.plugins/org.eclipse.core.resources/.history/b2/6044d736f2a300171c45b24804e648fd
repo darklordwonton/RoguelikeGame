@@ -12,7 +12,6 @@ public class Initializer {
 		ImageManager.init();
 		MainRenderer.init();
 		RollingCounterManager.init();
-		MainRenderer.updateFloor(Globals.currentFloor);
-		MainRenderer.refresh();
+		MainRenderer.drawFloor(Globals.currentFloor);
 	}
 }
