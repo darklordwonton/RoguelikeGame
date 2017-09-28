@@ -1,13 +1,14 @@
-package main.entities.monsters;
+package main.entities.monsters.SlimeVariants;
 
 import main.entities.Stats;
+import main.entities.monsters.EntityMonster;
 import main.rendering.animation.Animation;
 import main.util.Globals;
 
-public class EntitySlimeYellow extends EntityMonster {
+public class EntitySlime extends EntityMonster {
 	
 	
-	public EntitySlimeYellow(String n, int px, int py) {
+	public EntitySlime(String n, int px, int py) {
 		super(n, px, py);
 		this.xpValue = 5;
 		ideal = new Stats (Globals.LOW_STAT, //hp
@@ -19,10 +20,6 @@ public class EntitySlimeYellow extends EntityMonster {
 				Globals.floorNumber); //level
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
-		
-		setSprite("enemy_slimes.png", (int)(Math.random() * 3), 4, 3);
-		
-		Animation.animate(this);
 	}
 	
 }
