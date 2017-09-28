@@ -27,9 +27,14 @@ import main.util.RollingCounterManager;
 public abstract class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
-	public static final int WINDOW_WIDTH = 832;
-	public static final int WINDOW_HEIGHT = 576; 
-	public static final int TILE_SIZE = WINDOW_HEIGHT / 9;
+	
+	public static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	public static final int WINDOW_WIDTH = (int) (screenSize.getWidth() / 3);
+	public static final int WINDOW_HEIGHT = (int) (screenSize.getHeight() * 2 / 5);
+	
+	public static final int DEFAULT_WINDOW_WIDTH = 832; //2560
+	public static final int DEFAULT_WINDOW_HEIGHT = 656; //1600
+	public static final int TILE_SIZE = 64;
 	private static JFrame frame = new JFrame("Goblin Adventure (working title)");
 	private static JPanel mapPane = new JPanel() {
 		@Override
@@ -37,7 +42,7 @@ public abstract class MainRenderer {
 			super.paintComponent(g);
 			
 			g.setColor(Globals.BG_COLORS.get(theme));
-			g.fillRect(0, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
+			g.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 			
 			if (tiles != null) {
 				for (int i = 0; i < 9; i++) {
@@ -51,9 +56,9 @@ public abstract class MainRenderer {
 																	tile.getSpriteSheetRow()),
 							
 //							ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite(), 0, (Math.random() * 5)), 
-									i * TILE_SIZE, WINDOW_HEIGHT - e * TILE_SIZE, 
-									TILE_SIZE, 
-									TILE_SIZE, 
+									scaleX(i * TILE_SIZE), scaleY(DEFAULT_WINDOW_HEIGHT - e * TILE_SIZE), 
+									scaleX(TILE_SIZE), 
+									scaleY(TILE_SIZE), 
 									null);
 						}
 					}
@@ -67,10 +72,10 @@ public abstract class MainRenderer {
 						g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
 																e.getSpriteX(), 
 																e.getSpriteY()),
-								(e.getX() - Globals.scrollX) * TILE_SIZE, 
-								WINDOW_HEIGHT - (e.getY() - Globals.scrollY) * TILE_SIZE, 
-								TILE_SIZE, 
-								TILE_SIZE, 
+								scaleX((e.getX() - Globals.scrollX) * TILE_SIZE), 
+								scaleY(DEFAULT_WINDOW_HEIGHT - (e.getY() - Globals.scrollY) * TILE_SIZE), 
+								scaleX(TILE_SIZE), 
+								scaleY(TILE_SIZE), 
 								null);
 					}
 				}
@@ -84,32 +89,32 @@ public abstract class MainRenderer {
 			super.paintComponent(g);
 			
 			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
+			g.fillRect(0, 0, scaleX(2 * TILE_SIZE), scaleY(WINDOW_HEIGHT));
 			g.fillRect(WINDOW_WIDTH - 2 * TILE_SIZE, 0, 2 * TILE_SIZE, WINDOW_HEIGHT);
-			g.setFont(new Font("Papyrus", 0, 25));
+			g.setFont(new Font("Papyrus", 0, scaleXY(25)));
 			g.setColor(Color.WHITE);
 			
 			EntityPlayer player = Globals.player;
 			
 			
-			g.drawString("HP: " + player.getHp(), 5, 25);
-			g.drawString("MP: " + player.getMp(), 5, TILE_SIZE + 25);
-			g.drawString("LVL: " + player.getStats().getLevel(), 5, 3 * TILE_SIZE - 25);
-			g.drawString("TUF: " + player.getStats().getTuf(), 5, 3 * TILE_SIZE + 10);
-			g.drawString("BUF: " + player.getStats().getBuf(), 5, 3 * TILE_SIZE + 35);
-			g.drawString("WIT: " + player.getStats().getWit(), 5, 3 * TILE_SIZE + 60);
-			g.drawString("SNK: " + player.getStats().getSnk(), 5, 3 * TILE_SIZE + 85);
+			g.drawString("HP: " + player.getHp(), scaleX(5), scaleY(25));
+			g.drawString("MP: " + player.getMp(), scaleX(5), scaleY(TILE_SIZE + 25));
+			g.drawString("LVL: " + player.getStats().getLevel(), scaleX(5), scaleY(3 * TILE_SIZE - 25));
+			g.drawString("TUF: " + player.getStats().getTuf(), scaleX(5), scaleY(3 * TILE_SIZE + 10));
+			g.drawString("BUF: " + player.getStats().getBuf(), scaleX(5), scaleY(3 * TILE_SIZE + 35));
+			g.drawString("WIT: " + player.getStats().getWit(), scaleX(5), scaleY(3 * TILE_SIZE + 60));
+			g.drawString("SNK: " + player.getStats().getSnk(), scaleX(5), scaleY(3 * TILE_SIZE + 85));
 			
 			g.setColor(Color.GRAY);
-			g.fillRect(5, TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
-			g.fillRect(5, 3 * TILE_SIZE / 2, 2 * TILE_SIZE - 10, TILE_SIZE / 2);
+			g.fillRect(5, TILE_SIZE / 2, scaleX(2 * TILE_SIZE - 10), scaleY(TILE_SIZE / 2));
+			g.fillRect(5, 3 * TILE_SIZE / 2, scaleX(2 * TILE_SIZE - 10), scaleY(TILE_SIZE / 2));
 			if (player.getHp() != 0 && player.getStats().getHp() / RollingCounterManager.getDisplayHealth() >= 4)
 				g.setColor(Color.RED);
 			else
 				g.setColor(Color.GREEN);
-			g.fillRect(6, TILE_SIZE / 2 + 1, (int)(RollingCounterManager.getDisplayHealth() / (float) player.getStats().getHp() * 2 * TILE_SIZE - 12), TILE_SIZE / 2 - 2);
+			g.fillRect(scaleX(6), scaleY(TILE_SIZE / 2 + 1), scaleX((int)(RollingCounterManager.getDisplayHealth() / (float) player.getStats().getHp() * 2 * TILE_SIZE - 12)), scaleY(TILE_SIZE / 2 - 2));
 			g.setColor(Color.BLUE);
-			g.fillRect(6, 3 * TILE_SIZE / 2 + 1, (int)(player.getMp() / (float) player.getStats().getMp() * 2 * TILE_SIZE - 12), TILE_SIZE / 2 - 2);
+			g.fillRect(scaleX(6), scaleY(3 * TILE_SIZE / 2 + 1), scaleX((int)(player.getMp() / (float) player.getStats().getMp() * 2 * TILE_SIZE - 12)), scaleY(TILE_SIZE / 2 - 2));
 			
 		}
 	};
@@ -122,7 +127,7 @@ public abstract class MainRenderer {
 	
 	public static void init() {
 		
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 + 80 /*Extra bit because windows are weird*/);
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 /*Extra bit because windows are weird*/);
 		frame.addWindowListener(new WindowAdapter() {
 	         public void windowClosing(WindowEvent event){
 	             System.exit(0);
@@ -150,7 +155,7 @@ public abstract class MainRenderer {
 		
 		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 		guiPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		messagePane.setBounds(0, WINDOW_HEIGHT, WINDOW_WIDTH, 80);
+		messagePane.setBounds(0, WINDOW_HEIGHT, WINDOW_WIDTH, scaleY(80));
 		frame.setVisible(true);
 	}
 	
@@ -175,6 +180,18 @@ public abstract class MainRenderer {
 	
 	public static void incrementMessage() {
 		messagePane.incrementMessage();
+	}
+	
+	public static int scaleX(int num) {
+		return num * WINDOW_WIDTH / DEFAULT_WINDOW_WIDTH;
+	}
+	
+	public static int scaleY(int num) {
+		return num * WINDOW_HEIGHT / DEFAULT_WINDOW_HEIGHT;
+	}
+	
+	public static int scaleXY(int num){
+		return num * (WINDOW_HEIGHT * WINDOW_WIDTH) / (DEFAULT_WINDOW_HEIGHT * DEFAULT_WINDOW_WIDTH);
 	}
 	
 	
