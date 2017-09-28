@@ -1,0 +1,9 @@
+package main.util;
+
+public class StringUtils {
+
+	public StringUtils() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

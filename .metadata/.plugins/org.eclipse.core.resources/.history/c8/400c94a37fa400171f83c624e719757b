@@ -1,0 +1,13 @@
+package main.util;
+
+import main.rendering.MainRenderer;
+
+public class StringUtils {
+
+	public static String capitalize (String s){
+		s = s.substring(0,1).toUpperCase() + s.substring(1);
+		return s;	
+	}
+
+
+}

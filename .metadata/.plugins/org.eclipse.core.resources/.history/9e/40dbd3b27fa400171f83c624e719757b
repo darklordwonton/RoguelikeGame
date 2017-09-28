@@ -14,6 +14,7 @@ public class TileWall extends Tile{
 	
 	@Override
 	public void onAttack(Attack a) {
+		String s = 
 		MainRenderer.addMessage(a.getOrigin().getName() + " smashed " + a.getOrigin().getPronoun() + " face into the wall!");
 	}
 }

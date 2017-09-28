@@ -155,10 +155,6 @@ public class Entity {
 		return tangible;
 	}
 	
-	public String getPronoun(){
-		return pronoun;
-	}
-	
 	public void onAttack(Attack a) {
 		int damage = Math.max(modifiers.getModifiedDamage(a), 1);
 		MainRenderer.addMessage(a.getOrigin().getName() + " hit " + getName() + " for " + damage + " damage!");
