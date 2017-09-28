@@ -81,7 +81,7 @@ public abstract class MainRenderer {
 								null);
 						
 						g.drawString(e.getName(), scaleX((e.getX() - Globals.scrollX) * TILE_SIZE + 1), 
-								scaleY(10 * TILE_SIZE - (e.getY() - Globals.scrollY) * TILE_SIZE + 1));
+								scaleY(10 * TILE_SIZE - (e.getY() - Globals.scrollY) * TILE_SIZE - 5));
 					}
 				}
 			}

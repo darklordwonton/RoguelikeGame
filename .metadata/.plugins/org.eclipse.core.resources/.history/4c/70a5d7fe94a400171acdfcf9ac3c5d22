@@ -5,7 +5,7 @@ public class Names {
 	private static String[] middleSlime = {"o", "oo", "ooo", "oooo", "u", "uu", "uuu", "ou", "olo"};
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
-	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd"};
+	private static String[] firstGob = {"Ch", "Kr", "Gr"};
 	private static String[] middleGob = {"a"};
 	private static String[] endGob = {"h", "k"};
 	

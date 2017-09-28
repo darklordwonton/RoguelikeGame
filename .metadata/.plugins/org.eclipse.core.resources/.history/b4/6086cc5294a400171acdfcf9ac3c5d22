@@ -65,7 +65,7 @@ public abstract class MainRenderer {
 				}
 			}
 			
-			g.setFont(new Font("Papyrus", 0, scaleXY(15)));
+			g.setFont(new Font("Papyrus", 0, scaleXY(10)));
 			g.setColor(Color.WHITE);
 			if (entities != null) {
 				for (Entity e : entities) {
@@ -81,7 +81,7 @@ public abstract class MainRenderer {
 								null);
 						
 						g.drawString(e.getName(), scaleX((e.getX() - Globals.scrollX) * TILE_SIZE + 1), 
-								scaleY(10 * TILE_SIZE - (e.getY() - Globals.scrollY) * TILE_SIZE + 1));
+								scaleY(10 * TILE_SIZE - (e.getY() - Globals.scrollY) * TILE_SIZE));
 					}
 				}
 			}
