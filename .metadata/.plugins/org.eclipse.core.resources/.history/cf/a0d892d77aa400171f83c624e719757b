@@ -1,7 +1,6 @@
 package main.tiles;
 
 import main.attacks.Attack;
-import main.rendering.MainRenderer;
 import main.util.Globals;
 
 public class TileWall extends Tile{
@@ -14,6 +13,6 @@ public class TileWall extends Tile{
 	
 	@Override
 	public void onAttack(Attack a) {
-		MainRenderer.addMessage(a.getOrigin().getName() + " smashed their face into the wall!");
+		
 	}
 }
