@@ -8,7 +8,7 @@ import main.rendering.MainRenderer;
 
 public class Animation {
 	
-	public static void Animate(Entity e){
+	public static void animate(Entity e){
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 

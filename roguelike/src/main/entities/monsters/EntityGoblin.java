@@ -20,7 +20,7 @@ public class EntityGoblin extends EntityMonster {
 		makeStats(4 * Globals.MID_STAT + 2 * Globals.LOW_STAT);
 		
 		setSprite("enemy_goblin2.png", 0, 0, 1);
-		Animation.Animate(this);
+		Animation.animate(this);
 	}
 	
 }

@@ -22,7 +22,7 @@ public class EntitySlimeLightBlue extends EntityMonster {
 		
 		setSprite("enemy_slimes.png", (int)(Math.random() * 3), 3, 3);
 		
-		Animation.Animate(this);
+		Animation.animate(this);
 	}
 	
 }
