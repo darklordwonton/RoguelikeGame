@@ -20,8 +20,9 @@ public class Entity {
 	protected int x;
 	protected int y;
 	protected String sprite = null;
-	protected int spriteSheetRow = 0;
-	protected int spriteSheetColumn = 0;
+	protected int spriteSheetRow;
+	protected int spriteSheetColumn;
+	protected int totalFrames;
 	protected boolean tangible = true;
 	protected Attack basicAttack = null;
 	protected ModifierChart modifiers = null;
@@ -109,14 +110,27 @@ public class Entity {
 		this.y += y;
 	}
 	
-	public void setSprite(String sheet, int column, int row){
+	public void setSprite(String sheet, int column, int row, int numFrames){
 		sprite = sheet;
 		spriteSheetRow = row;
 		spriteSheetColumn = column;
+		totalFrames = numFrames;
 	}
 	
 	public String getSprite() {
-		return sprite + "&" + spriteSheetRow + "&" + spriteSheetColumn;
+		return sprite;
+	}
+	
+	public int getSpriteX(){
+		return spriteSheetColumn;
+	}
+	
+	public int getSpriteY(){
+		return spriteSheetRow;
+	}
+	
+	public int getTotalFrames(){
+		return totalFrames;
 	}
 	
 	public Stats getStats() {

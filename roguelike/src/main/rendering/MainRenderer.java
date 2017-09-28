@@ -63,11 +63,10 @@ public abstract class MainRenderer {
 			if (entities != null) {
 				for (Entity e : entities) {
 					if (!e.getDead()){
-						String xypos = e.getSprite().substring(e.getSprite().indexOf('&')+1);
-					
-						g.drawImage(ImageManager.getEntitySprite(e.getSprite().substring(0, e.getSprite().indexOf('&')), 
-																Integer.parseInt(xypos.substring(0, xypos.indexOf('&'))), 
-																Integer.parseInt(xypos.substring(xypos.indexOf('&')+1))),
+						
+						g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
+																e.getSpriteX(), 
+																e.getSpriteY()),
 								(e.getX() - Globals.scrollX) * TILE_SIZE, 
 								WINDOW_HEIGHT - (e.getY() - Globals.scrollY) * TILE_SIZE, 
 								TILE_SIZE, 

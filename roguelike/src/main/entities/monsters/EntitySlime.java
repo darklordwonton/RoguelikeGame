@@ -1,5 +1,6 @@
 package main.entities.monsters;
 
+import main.entities.Animation;
 import main.entities.Stats;
 import main.util.Globals;
 
@@ -19,8 +20,9 @@ public class EntitySlime extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		
-		setSprite("enemy_slimes.png", 0, 0);
+		setSprite("enemy_slimes.png", 0, 0, 3);
 		
+		Animation.Animate(this);
 	}
 	
 }
