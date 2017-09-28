@@ -1,0 +1,40 @@
+package main.rendering;
+
+import java.awt.LayoutManager;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JPanel;
+
+public class MessageBarPane extends JPanel {
+
+	private List<String> messages = new ArrayList<String>();
+	
+	public MessageBarPane() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public MessageBarPane(LayoutManager layout) {
+		super(layout);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MessageBarPane(boolean isDoubleBuffered) {
+		super(isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MessageBarPane(LayoutManager layout, boolean isDoubleBuffered) {
+		super(layout, isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void addMessage (String m){
+		messages.add(m);
+	}
+	
+	public void incrementMessage (){
+		
+	}
+
+}

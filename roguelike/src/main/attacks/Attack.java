@@ -3,6 +3,7 @@ package main.attacks;
 import java.util.Set;
 
 import main.entities.Entity;
+import main.rendering.MainRenderer;
 
 public class Attack {
 	protected int lowDamage = 0; //Low bound of damage
@@ -52,5 +53,6 @@ public class Attack {
 		
 		d += buf / 2;
 		return (int) d;
+
 	}
 }

@@ -155,7 +155,8 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		hp -= Math.max(modifiers.getModifiedDamage(a), 1);
+		int damage = Math.max(modifiers.getModifiedDamage(a), 1);
+		hp -= damage;
 		if (hp < 0) {
 			hp = 0;
 			if (this != Globals.player){

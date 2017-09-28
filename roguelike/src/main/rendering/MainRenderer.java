@@ -113,6 +113,7 @@ public abstract class MainRenderer {
 			
 		}
 	};
+	private static MessageBarPane messagePane = null;
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
@@ -121,7 +122,7 @@ public abstract class MainRenderer {
 	
 	public static void init() {
 		
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 /*Extra bit because windows are weird*/);
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - WINDOW_WIDTH) / 2, (int) (SCREEN_RECT.getHeight() - WINDOW_HEIGHT) / 2, WINDOW_WIDTH, WINDOW_HEIGHT + 22 + 80 /*Extra bit because windows are weird*/);
 		frame.addWindowListener(new WindowAdapter() {
 	         public void windowClosing(WindowEvent event){
 	             System.exit(0);
@@ -145,8 +146,12 @@ public abstract class MainRenderer {
 		
 		frame.getContentPane().add(mapPane);
 		frame.getContentPane().add(guiPane);
+		messagePane = new MessageBarPane();
+		frame.getContentPane().add(messagePane);
+		
 		mapPane.setBounds(2 * WINDOW_HEIGHT / 9, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
 		guiPane.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		messagePane.setBounds(0, WINDOW_HEIGHT, WINDOW_WIDTH, 80);
 		frame.setVisible(true);
 	}
 	
@@ -162,6 +167,15 @@ public abstract class MainRenderer {
 	
 	public static void closeWindow(){
 		frame.dispose();
+	}
+	
+	public static void addMessage(String m){
+		messagePane.addMessage(m);
+		frame.repaint();
+	}
+	
+	public static void incrementMessage() {
+		messagePane.incrementMessage();
 	}
 	
 	
