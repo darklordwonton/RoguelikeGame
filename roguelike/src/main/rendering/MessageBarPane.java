@@ -49,11 +49,12 @@ public class MessageBarPane extends JPanel {
 		super.paintComponent(g);
 		
 		g.setColor(Color.BLACK);
-		g.fillRect(0,0,MainRenderer.scaleX(MainRenderer.DEFAULT_WINDOW_WIDTH), MainRenderer.scaleY(80));
+		g.fillRect(0,0,MainRenderer.scaleX(this.getWidth()), MainRenderer.scaleY(this.getHeight()));
 		if (messages.size() > 0) {
-			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(25)));
+			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
 			g.setColor(Color.WHITE);
-			g.drawString(StringUtils.capitalize(messages.get(0)), MainRenderer.scaleX(5), MainRenderer.scaleY(40));
+			g.drawString(StringUtils.capitalize(messages.get(0)), MainRenderer.scaleX(MainRenderer.TILE_SIZE / 50), MainRenderer.scaleY(MainRenderer.TILE_SIZE));
+//			TODO keep old messages one line above, fits at TILE_SIZE / 2
 		}
 	}
 
