@@ -11537,7 +11537,13 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+<<<<<<< HEAD
+
+!ENTRY org.eclipse.core.resources 4 567 2017-09-28 21:46:05.728
+!MESSAGE The project description file (.project) for 'roguelike' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+=======
 >>>>>>> origin/master
+<<<<<<< HEAD
 !SESSION 2017-09-28 22:04:08.128 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_65
@@ -11573,3 +11579,6 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-09-28 22:04:25.246
 !MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 '
+=======
+>>>>>>> d326b86fb21c0b90be97ccecc03ea08a47da9031
+>>>>>>> origin/master
