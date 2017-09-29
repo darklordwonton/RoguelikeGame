@@ -31,6 +31,7 @@
 <fullyQualifiedTypeName name="main.attacks.Attack"/>
 <fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
 <fullyQualifiedTypeName name="java.util.jar.Attributes.Name"/>
-<fullyQualifiedTypeName name="main.entities.Names"/>
 <fullyQualifiedTypeName name="main.util.StringUtils"/>
+<fullyQualifiedTypeName name="main.entities.Names"/>
+<fullyQualifiedTypeName name="main.entities.monsters.SlimeVariants.EntitySlimeDarkBlue"/>
 </qualifiedTypeNameHistroy>
