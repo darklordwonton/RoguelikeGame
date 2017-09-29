@@ -5,7 +5,7 @@ public class Names {
 	private static String[] middleSlime = {"o", "oo", "ooo", "u", "uu", "ou", "olo"};
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
-	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd", "Big Kr"};
+	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd", "Big Kr", "Li'l B"};
 	private static String[] middleGob = {"a", "o"};
 	private static String[] endGob = {"h", "k", "r"};
 	
@@ -15,23 +15,25 @@ public class Names {
 	
 	
 	public static String slimeName() {
-		int x = (int)(Math.random() * firstSlime.length);		
-		int y = (int)(Math.random() * middleSlime.length);
-		int z = (int)(Math.random() * endSlime.length);
-		return firstSlime[x] + middleSlime[y]+ endSlime[z];
+		int a = (int)(Math.random() * firstSlime.length);		
+		int b = (int)(Math.random() * middleSlime.length);
+		int c = (int)(Math.random() * endSlime.length);
+		return firstSlime[a] + middleSlime[b]+ endSlime[c];
 	}
 	
 	public static String gobName(){
-		int x = (int)(Math.random() * firstGob.length);		
-		int y = (int)(Math.random() * middleGob.length);
-		int z = (int)(Math.random() * endGob.length);
-		return firstGob[x] + middleGob[y]+ endGob[z];
+		int a = (int)(Math.random() * firstGob.length);		
+		int b = (int)(Math.random() * middleGob.length);
+		int c = (int)(Math.random() * endGob.length);
+		int d = (int)(Math.random() * middleGob.length);
+		int e = (int)(Math.random() * endGob.length);
+		return firstGob[a] + middleGob[b]+ endGob[c] + middleGob[d] + endGob[e];
 	}
 	
 	public static String ogreName() {
-		int x = (int)(Math.random() * firstOgre.length);		
-		int y = (int)(Math.random() * middleOgre.length);
-		int z = (int)(Math.random() * endOgre.length);
-		return firstOgre[x] + middleOgre[y]+ endOgre[z];
+		int a = (int)(Math.random() * firstOgre.length);		
+		int b = (int)(Math.random() * middleOgre.length);
+		int c = (int)(Math.random() * endOgre.length);
+		return firstOgre[a] + middleOgre[b]+ endOgre[c];
 	}
 }
