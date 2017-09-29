@@ -35,6 +35,10 @@ public abstract class MainRenderer {
 	public static final int DEFAULT_WINDOW_WIDTH = 832; //2560
 	public static final int DEFAULT_WINDOW_HEIGHT = 656; //1600
 	public static final int TILE_SIZE = 64;
+	
+//	public static final int DEFAULT_WINDOW_WIDTH = (int) (SCREEN_RECT.getWidth() / 3);
+//	public static final int DEFAULT_WINDOW_HEIGHT = DEFAULT_WINDOW_WIDTH * 3 / 4;
+	
 	private static JFrame frame = new JFrame("Goblin Adventure (working title)");
 	private static JPanel mapPane = new JPanel() {
 		@Override
@@ -56,7 +60,7 @@ public abstract class MainRenderer {
 																	tile.getSpriteSheetRow()),
 							
 //							ImageManager.getTileTexture(tiles[i + Globals.scrollX][e + Globals.scrollY].getSprite(), 0, (Math.random() * 5)), 
-									scaleX(i * TILE_SIZE), scaleY(9 * TILE_SIZE - e * TILE_SIZE), 
+									scaleX(i * TILE_SIZE), scaleY((9 - e) * TILE_SIZE), 
 									scaleX(TILE_SIZE), 
 									scaleY(TILE_SIZE), 
 									null);
