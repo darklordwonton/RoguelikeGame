@@ -51,7 +51,7 @@ public class Room {
 	public void spawnEntities() {
 		while (ECount > 0){
 			Entity e = null;
-			int rand = (int)(Math.random() * 3);/*
+			int rand = (int)(Math.random() * 3);
 			switch(rand) {
 				case 0 :
 					e = new EntityOgre(x, y);
@@ -79,8 +79,7 @@ public class Room {
 						break;
 					}
 					break;
-			}*/
-			e = new EntityOgre(x, y);
+			}
 			entities.add(e);
 			floor.addEntity(e, x, y);
 			ECount --;

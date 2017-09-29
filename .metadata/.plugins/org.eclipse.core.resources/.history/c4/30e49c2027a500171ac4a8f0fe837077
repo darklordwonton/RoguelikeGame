@@ -11,7 +11,7 @@ public class Names {
 	
 	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K", "Wh"};
 	private static String[] middleOgre = {"e", "a", "o", "u"};
-	private static String[] endOgre = {"k", "nk", "nt", "t", "ck", "m", "sh"};
+	private static String[] endOgre = {"k", "nk", "nt", "t", "ck", "m"};
 	
 	
 	public static String slimeName() {
