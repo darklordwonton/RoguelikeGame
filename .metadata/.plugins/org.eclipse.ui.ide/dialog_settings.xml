@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< HEAD
 		<item value="/Users/Sam/Documents/GitHub/RoguelikeGame"/>
+=======
+		<item value="/Users/Simon/Desktop/RoguelikeGame/roguelike"/>
+>>>>>>> 949cc6b73c3b22a2ef9f8a86f6eab7b01f6d7d1f
 		<item value="/Users/Sam/Documents/GitHub/RoguelikeGame/roguelike"/>
 		<item value="/Users/Sam/Documents/GitHub"/>
 	</list>

@@ -17,8 +17,6 @@ public class FrameInsets {
 		insets[2] = Integer.parseInt(insetString.substring(insetString.indexOf("bottom=") + 7, insetString.indexOf(',')));
 		insetString = insetString.substring(insetString.indexOf(",right=") + 7);
 		
-		System.out.println(frame.getInsets().toString() + '\n' + insetString);
-		
 		insets[3] = insetString.charAt(0)- '0';
 		
 		if (dir.equals("top"))

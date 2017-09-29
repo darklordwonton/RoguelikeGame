@@ -25,6 +25,10 @@ public class EntityPlayer extends Entity {
 		Globals.scrollY = y - 5;
 	}
 	
+	public void onDeath(){
+		
+	}
+	
 	public void gainXp(int x){
 		xp += x;
 		

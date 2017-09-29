@@ -30,9 +30,9 @@ public abstract class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
 	
-	public static final int DEFAULT_WINDOW_WIDTH = (int) (SCREEN_RECT.getWidth() / 3); //832
-	public static final int DEFAULT_WINDOW_HEIGHT = DEFAULT_WINDOW_WIDTH * 11 / 12; //656
-	public static final int TILE_SIZE = DEFAULT_WINDOW_WIDTH / 12;
+	public static final int DEFAULT_WINDOW_WIDTH = 832;
+	public static final int DEFAULT_WINDOW_HEIGHT = 636;
+	public static final int TILE_SIZE = 64;
 	private static JFrame frame = new JFrame("Goblin Adventure (working title)");
 	private static JPanel mapPane = new JPanel() {
 		@Override
@@ -81,7 +81,11 @@ public abstract class MainRenderer {
 					}
 				}
 			}
-
+			if (Globals.player.getDead()){
+				g.setColor(new Color(128, 128, 128, 128));
+				g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+				g.drawString("test", DEFAULT_WINDOW_WIDTH/2, DEFAULT_WINDOW_HEIGHT/2);
+			}
 		}
 	};
 	private static JPanel guiPane = new JPanel() {
@@ -129,11 +133,11 @@ public abstract class MainRenderer {
 	private static EnumTheme theme = null;
 	
 	public static void init() {
-		
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - (DEFAULT_WINDOW_WIDTH + FrameInsets.getInsets(frame, "sides"))) / 2, 
-						(int) (SCREEN_RECT.getHeight() - (DEFAULT_WINDOW_HEIGHT + FrameInsets.getInsets(frame, "long"))) / 2, 
-						TILE_SIZE * 12 + FrameInsets.getInsets(frame, "sides"), 
-						TILE_SIZE * 12 + FrameInsets.getInsets(frame, "long") /*Extra bit because windows are weird*/);
+
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH) / 2, 
+				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT) / 2, 
+				DEFAULT_WINDOW_WIDTH, 
+				DEFAULT_WINDOW_HEIGHT);
 		
 		
 		frame.addWindowListener(new WindowAdapter() {
@@ -163,8 +167,11 @@ public abstract class MainRenderer {
 		
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		guiPane.setBounds(0, 0, frame.getWidth(), scaleY(9 * TILE_SIZE));
-		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(3 * TILE_SIZE));
+		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(80));
 		frame.setVisible(true);
+		
+
+		
 	}
 	
 	public static void updateFloor(Floor map) {
@@ -176,7 +183,7 @@ public abstract class MainRenderer {
 	public static void refresh() {
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		guiPane.setBounds(0, 0, frame.getWidth(), scaleY(9 * TILE_SIZE));
-		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(3 * TILE_SIZE));
+		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(80));
 		frame.repaint();
 	}
 	
@@ -194,11 +201,11 @@ public abstract class MainRenderer {
 	}
 	
 	public static int scaleX(int num) {
-		return num * frame.getWidth() / DEFAULT_WINDOW_WIDTH;
+		return num * (frame.getWidth() - FrameInsets.getInsets(frame, "sides")) / DEFAULT_WINDOW_WIDTH;
 	}
 	
 	public static int scaleY(int num) {
-		return num * frame.getHeight() / DEFAULT_WINDOW_HEIGHT;
+		return num * (frame.getHeight() - FrameInsets.getInsets(frame, "long")) / DEFAULT_WINDOW_HEIGHT;
 	}
 	
 	public static int scaleXY(int num){
