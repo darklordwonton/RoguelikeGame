@@ -9,9 +9,9 @@ public class Names {
 	private static String[] middleGob = {"a", "o", "e"};
 	private static String[] endGob = {"h", "k", "r", "rk"};
 	
-	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K", "Wh"};
+	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K"};
 	private static String[] middleOgre = {"e", "a", "o", "u"};
-	private static String[] endOgre = {"k", "nk", "nt", "t", "ck", "m"};
+	private static String[] endOgre = {"k", "nk", "nt", "t", "ck"};
 	
 	
 	public static String slimeName() {
