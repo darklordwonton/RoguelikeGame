@@ -1,17 +1,17 @@
 package main.entities;
 
 public class Names {
-	private static String[] firstSlime = {"Gl", "Bl", "Pl", "'L", "Shl", "Lol"};
+	private static String[] firstSlime = {"Gl", "Bl", "Pl", "'L", "Shl", "Lol", "Sphl"};
 	private static String[] middleSlime = {"o", "oo", "ooo", "u", "uu", "ou", "olo"};
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
 	private static String[] firstGob = {"Ch", "Kr", "Gr", "N'd", "Big Kr", "Li'l B"};
-	private static String[] middleGob = {"a", "o"};
-	private static String[] endGob = {"h", "k", "r"};
+	private static String[] middleGob = {"a", "o", "aka", "aha"};
+	private static String[] endGob = {"h", "k", "r", "rk"};
 	
 	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K"};
 	private static String[] middleOgre = {"e", "a", "o", "u"};
-	private static String[] endOgre = {"k", "nk", "nt", "t"};
+	private static String[] endOgre = {"k", "nk", "nt", "t", "ck"};
 	
 	
 	public static String slimeName() {
