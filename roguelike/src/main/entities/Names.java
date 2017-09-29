@@ -9,6 +9,10 @@ public class Names {
 	private static String[] middleGob = {"a", "o"};
 	private static String[] endGob = {"h", "k", "r"};
 	
+	private static String[] firstOgre = {"Shr", "Ur'K", "Kr"};
+	private static String[] middleOgre = {"e", "a", "o", "u"};
+	private static String[] endOgre = {"k", "nk", "nt", "t"};
+	
 	
 	public static String slimeName() {
 		int x = (int)(Math.random() * firstSlime.length);		
@@ -24,4 +28,10 @@ public class Names {
 		return firstGob[x] + middleGob[y]+ endGob[z];
 	}
 	
+	public static String ogreName() {
+		int x = (int)(Math.random() * firstOgre.length);		
+		int y = (int)(Math.random() * middleOgre.length);
+		int z = (int)(Math.random() * endOgre.length);
+		return firstOgre[x] + middleOgre[y]+ endOgre[z];
+	}
 }
