@@ -79,7 +79,6 @@ public class Room {
 						break;
 					}
 					break;
-			}
 			entities.add(e);
 			floor.addEntity(e, x, y);
 			ECount --;
