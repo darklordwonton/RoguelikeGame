@@ -53,7 +53,7 @@ public class MessageBarPane extends JPanel {
 		if (messages.size() > 0) {
 			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
 			g.setColor(Color.WHITE);
-			g.drawString(StringUtils.capitalize(messages.get(0)), MainRenderer.scaleX(MainRenderer.TILE_SIZE / 50), MainRenderer.scaleY(MainRenderer.TILE_SIZE));
+			g.drawString(StringUtils.capitalize(messages.get(0)), MainRenderer.scaleX(MainRenderer.TILE_SIZE / 50), MainRenderer.scaleY(40));
 //			TODO keep old messages one line above, fits at TILE_SIZE / 2
 //			TODO actions you make are not printed
 		}
