@@ -1,5 +1,6 @@
 package main.entities;
 
+import main.magic.Spell;
 import main.util.EnumDirection;
 import main.util.Globals;
 
@@ -17,6 +18,9 @@ public class EntityPlayer extends Entity {
 		hp = stats.getHp();
 		mp = stats.getMp();
 		xp = 0;
+		
+		spell = new Spell();
+		spell.generateSpell(0);
 	}
 	
 	public void move(EnumDirection dir) {

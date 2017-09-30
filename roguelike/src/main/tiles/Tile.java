@@ -1,8 +1,5 @@
 package main.tiles;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import main.attacks.Attack;
 import main.entities.Entity;
 

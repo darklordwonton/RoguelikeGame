@@ -1,0 +1,55 @@
+package main.magic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import main.attacks.Attack;
+import main.attacks.EnumAttackType;
+import main.util.EnumDirection;
+import main.util.Globals;
+
+public class Spell {
+	Attack attack = null;
+	String name = "";
+	int value = 0;
+	int manaCost = 0;
+	
+	int shape = 0; //0 line
+	
+	public Spell(){
+		attack = null;
+		name = "";
+		manaCost = 0;
+		
+		value = 0;
+	}
+	
+	public Spell(Attack a, String n, int m){
+		attack = a;
+		name = n;
+		manaCost = m;
+		
+		value = 0;
+	}
+	
+	public List<int[]> squaresTargeted(int x, int y, EnumDirection d){
+		List<int[]> hits = new ArrayList<int[]>();
+		boolean stopped= false;
+		
+		while (x + d.getX() >= 0 && x + d.getX() < Globals.currentFloor.getWidth() &&
+			   y + d.getY() >= 0 && y + d.getY() < Globals.currentFloor.getHeight() &&
+			   !stopped){
+			x += d.getX();
+			y += d.getY();
+			hits.add(new int {x, y})
+			if (Globals.currentFloor.getTile(x, y).isWall()){
+				stopped = true;
+			}
+			
+			
+		}
+		
+		
+		return hits;
+	}
+}

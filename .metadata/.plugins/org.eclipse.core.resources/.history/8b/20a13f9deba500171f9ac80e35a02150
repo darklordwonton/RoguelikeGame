@@ -1,0 +1,39 @@
+package main.magic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import main.attacks.Attack;
+import main.attacks.EnumAttackType;
+
+public class Spell {
+	Attack attack = null;
+	String name = "";
+	int value = 0;
+	int manaCost = 0;
+	
+	int shape = 0; //0 line
+	
+	public Spell(){
+		attack = null;
+		name = "";
+		manaCost = 0;
+		
+		value = 0;
+	}
+	
+	public Spell(Attack a, String n, int m){
+		attack = a;
+		name = n;
+		manaCost = m;
+		
+		value = 0;
+	}
+	
+	public List<int[]> squaresTargeted(int x, int y){
+		List<Integer> hits = new ArrayList<Integer>();
+		
+		
+		return hits;
+	}
+}

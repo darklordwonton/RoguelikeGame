@@ -7,6 +7,7 @@ import main.attacks.Attack;
 import main.attacks.EnumAttackType;
 import main.attacks.ModifierChart;
 import main.entities.ai.AI;
+import main.magic.Spell;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
 import main.util.Globals;
@@ -32,6 +33,7 @@ public class Entity {
 	protected int turns = 0;
 	protected int maxTurns = 1;
 	protected boolean dead = false;
+	protected Spell spell = null;
 	
 	public Entity(int sx, int sy){
 		turns = maxTurns;
@@ -40,6 +42,10 @@ public class Entity {
 		ai = new AI(5, 0, 0, this);
 		basicAttack = new Attack (0, 3, 1, new HashSet<EnumAttackType>(), this);
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
+	}
+	
+	public Spell getSpell(){
+		return spell;
 	}
 	
 	public void turn() {

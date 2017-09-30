@@ -141,6 +141,7 @@ public class Globals {
 	public static final int ESC_KEY = KeyEvent.VK_ESCAPE;
 	public static final int ENTER_KEY = KeyEvent.VK_ENTER;
 	public static final int BACKSLASH = KeyEvent.VK_BACK_SLASH;
+	public static final int M = KeyEvent.VK_M;
 	
 	//Global Variables
 	public static String message = "";

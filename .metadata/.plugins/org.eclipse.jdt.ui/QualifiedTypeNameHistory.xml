@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="main.attacks.ModifierChart"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="main.attacks.AOE"/>
-<fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.effects.Effect"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="main.entities.monsters.EntityGoblin"/>
@@ -21,11 +20,7 @@
 <fullyQualifiedTypeName name="main.entities.monsters.EntityMonster"/>
 <fullyQualifiedTypeName name="main.util.ControlManager"/>
 <fullyQualifiedTypeName name="main.actions.ActionHandler"/>
-<fullyQualifiedTypeName name="main.util.Globals"/>
-<fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.items.Item"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="main.attacks.Attack"/>
@@ -34,4 +29,11 @@
 <fullyQualifiedTypeName name="main.util.StringUtils"/>
 <fullyQualifiedTypeName name="main.entities.Names"/>
 <fullyQualifiedTypeName name="main.entities.monsters.SlimeVariants.EntitySlimeDarkBlue"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="main.util.EnumDirection"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="main.magic.Spell"/>
 </qualifiedTypeNameHistroy>
