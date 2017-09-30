@@ -28,9 +28,10 @@ public class Spell {
 		value = 0;
 	}
 	
-	public Spell(Attack a, String n, int m){
+	public Spell(Attack a, String n, Entity e, int m){
 		attack = a;
 		name = n;
+		entity = e;
 		manaCost = m;
 		
 		value = 0;
