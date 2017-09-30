@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="main.attacks.Attack"/>
 <fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
 <fullyQualifiedTypeName name="java.util.jar.Attributes.Name"/>
-<fullyQualifiedTypeName name="main.util.StringUtils"/>
 <fullyQualifiedTypeName name="main.entities.Names"/>
 <fullyQualifiedTypeName name="main.entities.monsters.SlimeVariants.EntitySlimeDarkBlue"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -36,4 +35,5 @@
 <fullyQualifiedTypeName name="main.entities.Entity"/>
 <fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.magic.Spell"/>
+<fullyQualifiedTypeName name="main.util.StringUtils"/>
 </qualifiedTypeNameHistroy>
