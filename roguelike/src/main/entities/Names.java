@@ -1,7 +1,7 @@
 package main.entities;
 
 public class Names {
-	private static String[] firstSlime = {"Gl", "Bl", "Pl", "'L", "Shl", "Lol", "Sphl"};
+	private static String[] firstSlime = {"Gl", "Bl", "Pl", "Shl", "Lol", "Sphl"};
 	private static String[] middleSlime = {"o", "oo", "ooo", "u", "uu", "ou", "olo", "", ""};
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "lol", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	
@@ -9,7 +9,7 @@ public class Names {
 	private static String[] middleGob = {"a", "o", "e"};
 	private static String[] endGob = {"h", "k", "r", "rk"};
 	
-	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K", "Wh"};
+	private static String[] firstOgre = {"Shr", "Gr", "Kr", "K"};
 	private static String[] middleOgre = {"e", "a", "o", "u"};
 	private static String[] endOgre = {"k", "nk", "nt", "t", "ck", "m", "sh"};
 	
