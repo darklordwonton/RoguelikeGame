@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import main.attacks.EnumAttackType;
+import main.effects.attacks.EnumAttackType;
 import main.dungeon.Floor;
 import main.entities.Entity;
 import main.entities.EntityPlayer;

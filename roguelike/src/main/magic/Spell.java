@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import main.attacks.Attack;
-import main.attacks.EnumAttackType;
+import main.effects.attacks.*;
 import main.entities.Entity;
 import main.util.EnumDirection;
 import main.util.Globals;

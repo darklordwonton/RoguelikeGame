@@ -3,9 +3,7 @@ package main.entities;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import main.attacks.Attack;
-import main.attacks.EnumAttackType;
-import main.attacks.ModifierChart;
+import main.effects.attacks.*;
 import main.entities.ai.AI;
 import main.magic.Spell;
 import main.rendering.MainRenderer;

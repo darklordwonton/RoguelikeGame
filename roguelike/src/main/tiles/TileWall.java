@@ -1,6 +1,6 @@
 package main.tiles;
 
-import main.attacks.Attack;
+import main.effects.attacks.Attack;
 import main.rendering.MainRenderer;
 import main.util.Globals;
 

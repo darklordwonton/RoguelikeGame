@@ -1,7 +1,6 @@
 package main.tiles;
 
-import main.attacks.Attack;
-import main.attacks.ModifierChart;
+import main.effects.attacks.*;
 import main.util.Globals;
 
 public class TileBreakable extends Tile {
