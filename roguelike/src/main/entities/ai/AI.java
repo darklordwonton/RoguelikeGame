@@ -5,14 +5,10 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class AI {
-	private int anger = 0;
-	private int bravery = 0;
 	private int inte = 0;
 	private Entity entity = null;
 	
 	public AI(int a, int b, int i, Entity e){
-		anger = a;
-		bravery = b;
 		inte = i;
 		entity = e;
 	}

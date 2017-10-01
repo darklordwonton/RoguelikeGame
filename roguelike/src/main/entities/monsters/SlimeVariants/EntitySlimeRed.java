@@ -1,8 +1,6 @@
 package main.entities.monsters.SlimeVariants;
 
-import main.entities.Stats;
 import main.rendering.animation.Animation;
-import main.util.Globals;
 
 public class EntitySlimeRed extends EntitySlime {
 	

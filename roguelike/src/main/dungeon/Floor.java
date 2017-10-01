@@ -3,7 +3,6 @@ package main.dungeon;
 import java.util.ArrayList;
 import java.util.List;
 import main.entities.Entity;
-import main.items.Item;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.tiles.TileBreakable;
@@ -15,7 +14,6 @@ import main.util.Globals;
 public class Floor {
 	private Tile[][] tiles = null;
 	private List<Entity> entities = new ArrayList<Entity> ();
-	private List<Item> items = new ArrayList<Item> ();
 	private Room[] rooms = null;
 	private int height = 0;
 	private int width = 0;

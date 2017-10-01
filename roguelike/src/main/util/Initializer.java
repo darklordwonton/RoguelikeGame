@@ -4,6 +4,7 @@ import main.dungeon.Generator;
 import main.entities.EntityPlayer;
 import main.filemanager.ImageManager;
 import main.rendering.MainRenderer;
+import main.tiles.EnumTheme;
 
 public class Initializer {
 	public static void start(){

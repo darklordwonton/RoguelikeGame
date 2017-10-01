@@ -36,4 +36,5 @@
 <fullyQualifiedTypeName name="main.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.magic.Spell"/>
 <fullyQualifiedTypeName name="main.util.StringUtils"/>
+<fullyQualifiedTypeName name="main.tiles.EnumTheme"/>
 </qualifiedTypeNameHistroy>

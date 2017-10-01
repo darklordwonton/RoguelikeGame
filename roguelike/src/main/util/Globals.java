@@ -145,7 +145,7 @@ public class Globals {
 	
 	//Global Variables
 	public static String message = "";
-	public static int floorNumber = 1;
+	public static int floorNumber = 0;
 	public static int spawnX = 0;
 	public static int spawnY = 0;
 	public static int scrollX = 0;
