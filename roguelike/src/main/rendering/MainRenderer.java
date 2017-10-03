@@ -25,6 +25,7 @@ import main.util.ControlManager;
 import main.util.FrameInsets;
 import main.util.Globals;
 import main.util.RollingCounterManager;
+import main.util.StringUtils;
 
 public abstract class MainRenderer {
 	
@@ -42,7 +43,6 @@ public abstract class MainRenderer {
 			super.paintComponent(g);
 			
 			g.setColor(Globals.BG_COLORS.get(theme));
-//			g.setColor(Color.black);
 			g.fillRect(0, 0, getWidth(), getHeight());
 			
 			if (tiles != null) {
@@ -92,6 +92,7 @@ public abstract class MainRenderer {
 			}
 		}
 	};
+	
 	private static JPanel guiPane = new JPanel() {
 //		TODO increase distance between lines
 		@Override
@@ -128,6 +129,7 @@ public abstract class MainRenderer {
 		}
 	};
 	
+	
 	private static MessageBarPane messagePane = new MessageBarPane() {
 		@Override
 		public void paintComponent(Graphics g) {
@@ -140,23 +142,14 @@ public abstract class MainRenderer {
 				g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
 				g.setColor(Color.WHITE);
 				
-				g.drawString(getMessage(0), 
-						MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
-						getHeight() - MainRenderer.scaleY(MainRenderer.TILE_SIZE / 3));
-				
-//				for(int messageNum = 0; messageNum < messages.size(); messageNum++){
-//					g.drawString(StringUtils.capitalize(messages.get(messages.size() - messageNum - 1)),  
-//							MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
-//							getHeight() - (messageNum * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3)));
-//				}
-//				TODO keep old messages one line above
-//				TODO actions you make are not printed
+				for(int messageNum = 0; messageNum < getMessageAmount(); messageNum++){
+					g.drawString(StringUtils.capitalize(getMessage(getMessageAmount() - messageNum - 1)),  
+							MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
+							getHeight() - (messageNum + 1) * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3));
+				}
 			}
 		}
 	};
-	
-	
-	
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
