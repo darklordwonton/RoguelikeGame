@@ -30,8 +30,8 @@ public abstract class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
 	
-	public static final int DEFAULT_WINDOW_WIDTH = 832;
-	public static final int DEFAULT_WINDOW_HEIGHT = 636;
+	public static final int DEFAULT_WINDOW_WIDTH = 1152;
+	public static final int DEFAULT_WINDOW_HEIGHT = 576;
 	public static final int TILE_SIZE = 64;
 	private static JFrame frame = new JFrame("Goblin Adventure (working title)");
 	private static JPanel mapPane = new JPanel() {
@@ -39,8 +39,11 @@ public abstract class MainRenderer {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			
-			g.setColor(Globals.BG_COLORS.get(theme));
-			g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+//			g.setColor(Globals.BG_COLORS.get(theme));
+//			g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+			g.setColor(Color.black);
+			g.fillRect(0, 0, getWidth(), getHeight()); 
+			// TODO fix white bars on very edge
 			
 			if (tiles != null) {
 				for (int i = 0; i < 9; i++) {
@@ -70,8 +73,8 @@ public abstract class MainRenderer {
 						g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
 																e.getSpriteX(), 
 																e.getSpriteY()),
-								scaleX((e.getX() - Globals.scrollX) * TILE_SIZE), 
-								scaleY((9 - (e.getY() - Globals.scrollY)) * TILE_SIZE), 
+								(e.getX() - Globals.scrollX) * scaleX(TILE_SIZE), 
+								(9 - (e.getY() - Globals.scrollY)) * scaleY(TILE_SIZE), 
 								scaleX(TILE_SIZE), 
 								scaleY(TILE_SIZE), 
 								null);
@@ -81,6 +84,7 @@ public abstract class MainRenderer {
 					}
 				}
 			}
+//			TODO integrate into ondeath in entity
 			if (Globals.player.getDead()){
 				g.setColor(new Color(128, 128, 128, 128));
 				g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
@@ -95,13 +99,11 @@ public abstract class MainRenderer {
 			super.paintComponent(g);
 			
 			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
-			g.fillRect(scaleX(DEFAULT_WINDOW_WIDTH - 2 * TILE_SIZE), 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+			g.fillRect(0, 0, getWidth(), getHeight());
 			g.setFont(new Font("Papyrus", 0, scaleXY(TILE_SIZE * 2 / 5)));
 			g.setColor(Color.WHITE);
 			
 			EntityPlayer player = Globals.player;
-			
 			
 			g.drawString("HP: " + player.getHp(), scaleX(TILE_SIZE / 50), scaleY(TILE_SIZE / 2));
 			g.drawString("MP: " + player.getMp(), scaleX(TILE_SIZE / 50), scaleY(TILE_SIZE * 3 / 2));
@@ -165,12 +167,28 @@ public abstract class MainRenderer {
 		frame.getContentPane().add(guiPane);
 		frame.getContentPane().add(messagePane);
 		
+		guiPane.setBounds(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
-		guiPane.setBounds(0, 0, frame.getWidth(), scaleY(9 * TILE_SIZE));
-		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(80));
+		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		frame.setVisible(true);
 		
-
+		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX()); // 0 + 128 = 128
+		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight()); //0->576
+		System.out.println();
+		System.out.println("mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
+		System.out.println("mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
+		System.out.println();
+		System.out.println("messagePane x: " + messagePane.getX() + "+" + messagePane.getWidth() + "->" + scaleX(DEFAULT_WINDOW_WIDTH)); //0+1116 -> 1133
+		System.out.println("messagePane x: " + scaleX(11 * TILE_SIZE) + "+" + scaleX(7 * TILE_SIZE) + "->" + scaleX(DEFAULT_WINDOW_WIDTH));//692 + 440 -> 1133
+		System.out.println("messagePane y: " + messagePane.getY() + "->" + messagePane.getHeight());//0 -> 473
+		System.out.println("messagePane y: " + 0 + "->" + scaleY(9 * TILE_SIZE));//0 -> 473
+		System.out.println();
+		
+		
+		
+		System.out.println("frame x: " + frame.getWidth()); //1152
+		System.out.println("frame y: " + frame.getHeight()); //576
+		
 		
 	}
 	
@@ -181,9 +199,9 @@ public abstract class MainRenderer {
 	}
 	
 	public static void refresh() {
-		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
-		guiPane.setBounds(0, 0, frame.getWidth(), scaleY(9 * TILE_SIZE));
-		messagePane.setBounds(0, scaleY(9 * TILE_SIZE), frame.getWidth(), scaleY(80));
+		guiPane.setBounds(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+		mapPane.setBounds(guiPane.getWidth(), 0, scaleX(9 * TILE_SIZE), guiPane.getHeight());
+		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), guiPane.getHeight());
 		frame.repaint();
 	}
 	
