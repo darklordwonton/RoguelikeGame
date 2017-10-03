@@ -43,8 +43,11 @@ public abstract class MainRenderer {
 			g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 			
 			if (tiles != null) {
+//				int y = 0;
 				for (int i = 0; i < 9; i++) {
+//					int x = 0;
 					for (int e = 1; e < 10; e++) {
+						
 						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length){
 							
 							Tile tile = tiles[i + Globals.scrollX][e + Globals.scrollY];
@@ -53,11 +56,14 @@ public abstract class MainRenderer {
 																	tile.getSpriteSheetColumn(), 
 																	tile.getSpriteSheetRow()),
 									scaleX(i * TILE_SIZE), scaleY((9 - e) * TILE_SIZE), 
+//									x, y, 
 									scaleX(TILE_SIZE), 
 									scaleY(TILE_SIZE), 
 									null);
 						}
+//						x += scaleX(TILE_SIZE);
 					}
+//					y += scaleY(TILE_SIZE);
 				}
 			}
 			
