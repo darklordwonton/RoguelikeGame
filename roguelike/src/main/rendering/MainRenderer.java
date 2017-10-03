@@ -194,16 +194,15 @@ public abstract class MainRenderer {
 		frame.getContentPane().add(guiPane);
 		frame.getContentPane().add(messagePane);
 		
-		
 		guiPane.setBounds(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		frame.setVisible(true);
 		
 		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX() // 0 + 128 = 128
-				+ "     " + "mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
+				+ "    " + "mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
 		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight() + "    " //0->576
-				+ "     " + "mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
+				+ "    " + "mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
 		
 		System.out.println();
 		System.out.println("messagePane x: " + messagePane.getX() + "+" + messagePane.getWidth() + "->" + scaleX(DEFAULT_WINDOW_WIDTH)); //0+1116 -> 1133
@@ -257,6 +256,5 @@ public abstract class MainRenderer {
 	public static int scaleXY(int num){
 		return num * (frame.getWidth() + frame.getHeight()) / (DEFAULT_WINDOW_HEIGHT + DEFAULT_WINDOW_WIDTH);
 	}
-	
 	
 }
