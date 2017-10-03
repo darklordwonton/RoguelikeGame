@@ -30,6 +30,8 @@ public abstract class MainRenderer {
 	
 	public static final Dimension SCREEN_RECT = Toolkit.getDefaultToolkit().getScreenSize();
 	
+	public static final Insets DEFAULT_INSETS = new Insets(16, 16, 16, 16);
+	
 	public static final int DEFAULT_WINDOW_WIDTH = 1152;
 	public static final int DEFAULT_WINDOW_HEIGHT = 576;
 	public static final int TILE_SIZE = 64;
@@ -162,12 +164,13 @@ public abstract class MainRenderer {
 	private static EnumTheme theme = null;
 	
 	public static void init() {
-
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH - FrameInsets.getInsets(frame, "sides")) / 2, 
-				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT - FrameInsets.getInsets(frame, "long")) / 2, 
-				DEFAULT_WINDOW_WIDTH + FrameInsets.getInsets(frame, "sides"), 
-				DEFAULT_WINDOW_HEIGHT + FrameInsets.getInsets(frame, "long"));
 		
+		System.out.println(FrameInsets.get(frame, "long"));
+		
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH) / 2, 
+				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT) / 2, 
+				DEFAULT_WINDOW_WIDTH, 
+				DEFAULT_WINDOW_HEIGHT);
 		
 		frame.addWindowListener(new WindowAdapter() {
 	         public void windowClosing(WindowEvent event){
@@ -199,23 +202,32 @@ public abstract class MainRenderer {
 		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		frame.setVisible(true);
 		
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH - FrameInsets.get(frame, "sides")) / 2, 
+				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT - FrameInsets.get(frame, "long")) / 2, 
+				DEFAULT_WINDOW_WIDTH + FrameInsets.get(frame, "sides"), 
+				DEFAULT_WINDOW_HEIGHT + FrameInsets.get(frame, "long"));
+		
+		guiPane.setBounds(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
+		
 		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX() // 0 + 128 = 128
 				+ "    " + "mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
-		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight() + "    " //0->576
+		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight() + "    " //0->576 
 				+ "    " + "mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
 		
 		System.out.println();
 		System.out.println("messagePane x: " + messagePane.getX() + "+" + messagePane.getWidth() + "->" + scaleX(DEFAULT_WINDOW_WIDTH)); //0+1116 -> 1133
 		System.out.println("messagePane x: " + scaleX(11 * TILE_SIZE) + "+" + scaleX(7 * TILE_SIZE) + "->" + scaleX(DEFAULT_WINDOW_WIDTH));//692 + 440 -> 1133
-		System.out.println("messagePane y: " + messagePane.getY() + "->" + messagePane.getHeight());//0 -> 473
-		System.out.println("messagePane y: " + 0 + "->" + scaleY(9 * TILE_SIZE));//0 -> 473
+		System.out.println("messagePane y: " + messagePane.getY() + "->" + messagePane.getHeight());//0 -> 473 || 0 -> 576
+		System.out.println("messagePane y: " + 0 + "->" + scaleY(9 * TILE_SIZE));//0 -> 473 || 0 -> 576
 		System.out.println();
 		
-		System.out.println("frame x: " + frame.getWidth()); //1152 - 19 (horizontal insets) = 1133
-		System.out.println("frame y: " + frame.getHeight()); //576 - 103 (vertical insets) = 473
+		System.out.println("frame x: " + frame.getWidth()); //1152 - 19 (horizontal insets) = 1133 || 1171 - 19 = 1152
+		System.out.println("frame y: " + frame.getHeight()); //576 - 103 (vertical insets) = 473 || 679 - 103 = 576
 		
-		System.out.println("heightwise insets: " + FrameInsets.getInsets(frame, "long"));
-		System.out.println("lengthwise insets: " + FrameInsets.getInsets(frame, "sides"));
+		System.out.println("heightwise insets: " + FrameInsets.get(frame, "long"));
+		System.out.println("lengthwise insets: " + FrameInsets.get(frame, "sides"));
 		
 	}
 	
@@ -246,11 +258,11 @@ public abstract class MainRenderer {
 	}
 	
 	public static int scaleX(int num) {
-		return num * (frame.getWidth() - FrameInsets.getInsets(frame, "sides")) / DEFAULT_WINDOW_WIDTH;
+		return num * (frame.getWidth() - FrameInsets.get(frame, "sides")) / DEFAULT_WINDOW_WIDTH;
 	}
 	
 	public static int scaleY(int num) {
-		return num * (frame.getHeight() - FrameInsets.getInsets(frame, "long")) / DEFAULT_WINDOW_HEIGHT;
+		return num * (frame.getHeight() - FrameInsets.get(frame, "long")) / DEFAULT_WINDOW_HEIGHT;
 	}
 	
 	public static int scaleXY(int num){

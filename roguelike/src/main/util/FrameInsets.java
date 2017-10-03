@@ -2,9 +2,11 @@ package main.util;
 
 import javax.swing.JFrame;
 
-public class FrameInsets {
+public class FrameInsets extends JFrame{
 	
-	public static int getInsets(JFrame frame, String dir){
+	
+	
+	public static int get(JFrame frame, String dir){
 		String insetString = frame.getInsets().toString();
 		int[] insets = new int[4];
 		
