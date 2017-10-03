@@ -18,6 +18,7 @@ public class ControlManager {
 		if (key == Globals.ENTER_KEY) {
 			MainRenderer.incrementMessage();
 		} else {
+			MainRenderer.incrementMessage();
 			ActionHandler.command(key, Globals.player);
 		}
 		MainRenderer.updateFloor(Globals.currentFloor);
