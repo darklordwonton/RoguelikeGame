@@ -21,15 +21,15 @@ public class FrameInsets {
 		
 		if (dir.equals("top"))
 			return insets[0];
-		if (dir.equals("left"))
+		else if (dir.equals("left"))
 			return insets[1];
-		if (dir.equals("bottom"))
+		else if (dir.equals("bottom"))
 			return insets[2];
-		if (dir.equals("right"))
+		else if (dir.equals("right"))
 			return insets[3];
-		if (dir.equals("sides"))
+		else if (dir.equals("sides"))
 			return insets[1] + insets[3];
-		if (dir.equals("long"))
+		else if (dir.equals("long"))
 			return insets[0] + insets[2];
 		else
 			return -1;

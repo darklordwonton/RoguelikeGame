@@ -39,11 +39,9 @@ public abstract class MainRenderer {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			
-//			g.setColor(Globals.BG_COLORS.get(theme));
-//			g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
-			g.setColor(Color.black);
-			g.fillRect(0, 0, getWidth(), getHeight()); 
-			// TODO fix white bars on very edge
+			g.setColor(Globals.BG_COLORS.get(theme));
+//			g.setColor(Color.black);
+			g.fillRect(0, 0, getWidth(), getHeight());
 			
 			if (tiles != null) {
 				for (int i = 0; i < 9; i++) {
@@ -127,7 +125,36 @@ public abstract class MainRenderer {
 			g.fillRect(scaleX(TILE_SIZE / 25 + borderWidth), scaleY(TILE_SIZE * 39 / 24 + borderWidth), scaleX(2 * TILE_SIZE - TILE_SIZE / 10 - 2 * borderWidth), scaleY(TILE_SIZE / 2 - 2 * borderWidth));
 		}
 	};
-	private static MessageBarPane messagePane = new MessageBarPane();
+	
+	private static MessageBarPane messagePane = new MessageBarPane() {
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			
+			g.setColor(Color.BLACK);
+			g.fillRect(0, 0, getWidth(), getHeight());
+			
+			if (getMessageAmount() > 0) {
+				g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
+				g.setColor(Color.WHITE);
+				
+				g.drawString(getMessage(0), 
+						MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
+						getHeight() - MainRenderer.scaleY(MainRenderer.TILE_SIZE / 3));
+				
+//				for(int messageNum = 0; messageNum < messages.size(); messageNum++){
+//					g.drawString(StringUtils.capitalize(messages.get(messages.size() - messageNum - 1)),  
+//							MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
+//							getHeight() - (messageNum * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3)));
+//				}
+//				TODO keep old messages one line above
+//				TODO actions you make are not printed
+			}
+		}
+	};
+	
+	
+	
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
@@ -136,10 +163,10 @@ public abstract class MainRenderer {
 	
 	public static void init() {
 
-		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH) / 2, 
-				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT) / 2, 
-				DEFAULT_WINDOW_WIDTH, 
-				DEFAULT_WINDOW_HEIGHT);
+		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH - FrameInsets.getInsets(frame, "sides")) / 2, 
+				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT - FrameInsets.getInsets(frame, "long")) / 2, 
+				DEFAULT_WINDOW_WIDTH + FrameInsets.getInsets(frame, "sides"), 
+				DEFAULT_WINDOW_HEIGHT + FrameInsets.getInsets(frame, "long"));
 		
 		
 		frame.addWindowListener(new WindowAdapter() {
@@ -167,16 +194,17 @@ public abstract class MainRenderer {
 		frame.getContentPane().add(guiPane);
 		frame.getContentPane().add(messagePane);
 		
+		
 		guiPane.setBounds(0, 0, scaleX(2 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		frame.setVisible(true);
 		
-		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX()); // 0 + 128 = 128
-		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight()); //0->576
-		System.out.println();
-		System.out.println("mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
-		System.out.println("mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
+		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX() // 0 + 128 = 128
+				+ "     " + "mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
+		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight() + "    " //0->576
+				+ "     " + "mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
+		
 		System.out.println();
 		System.out.println("messagePane x: " + messagePane.getX() + "+" + messagePane.getWidth() + "->" + scaleX(DEFAULT_WINDOW_WIDTH)); //0+1116 -> 1133
 		System.out.println("messagePane x: " + scaleX(11 * TILE_SIZE) + "+" + scaleX(7 * TILE_SIZE) + "->" + scaleX(DEFAULT_WINDOW_WIDTH));//692 + 440 -> 1133
@@ -184,11 +212,11 @@ public abstract class MainRenderer {
 		System.out.println("messagePane y: " + 0 + "->" + scaleY(9 * TILE_SIZE));//0 -> 473
 		System.out.println();
 		
+		System.out.println("frame x: " + frame.getWidth()); //1152 - 19 (horizontal insets) = 1133
+		System.out.println("frame y: " + frame.getHeight()); //576 - 103 (vertical insets) = 473
 		
-		
-		System.out.println("frame x: " + frame.getWidth()); //1152
-		System.out.println("frame y: " + frame.getHeight()); //576
-		
+		System.out.println("heightwise insets: " + FrameInsets.getInsets(frame, "long"));
+		System.out.println("lengthwise insets: " + FrameInsets.getInsets(frame, "sides"));
 		
 	}
 	
