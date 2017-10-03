@@ -183,6 +183,11 @@ public class Entity {
 		Globals.currentFloor.getTile(x, y).onLeave(this);
 		dead = true;
 		MainRenderer.addMessage(name + " died");
+		if (this.getSpecies().equals("Player")){
+			while(true){
+				MainRenderer.addMessage("u ded");
+			}
+		}
 		//Will eventually need overhaul. Works for now
 	}
 	

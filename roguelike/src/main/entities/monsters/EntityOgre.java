@@ -11,6 +11,8 @@ public class EntityOgre extends EntityMonster {
 	public EntityOgre(int px, int py){
 		super(px, py);
 		
+		species = "Ogre";
+		
 		ideal = new Stats (Globals.HIGH_STAT, //hp
 				Globals.LOW_STAT, //mp
 				Globals.HIGH_STAT, //buf

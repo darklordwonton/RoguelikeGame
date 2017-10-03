@@ -10,6 +10,8 @@ public class EntityGoblin extends EntityMonster {
 	public EntityGoblin(int px, int py) {
 		super(px, py);
 		
+		species = "Goblin";
+		
 		ideal = new Stats (Globals.MID_STAT, //hp
 				Globals.MID_STAT, //mp
 				Globals.LOW_STAT, //buf

@@ -10,6 +10,9 @@ public class EntitySlime extends EntityMonster {
 	
 	public EntitySlime(int px, int py) {
 		super(px, py);
+		
+		species = "Slime";
+		
 		this.xpValue = 5;
 		ideal = new Stats (Globals.LOW_STAT, //hp
 				Globals.HIGH_STAT, //mp
