@@ -188,7 +188,7 @@ public class Entity {
 				MainRenderer.addMessage("u ded");
 			}
 		}
-		//Will eventually need overhaul. Works for now
+		//TODO overhaul
 	}
 	
 	public void move(EnumDirection dir) {
