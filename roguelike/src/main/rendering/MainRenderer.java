@@ -68,18 +68,20 @@ public abstract class MainRenderer {
 			if (entities != null) {
 				for (Entity e : entities) {
 					if (!e.getDead() || e.getSpecies().equals("Player")){
-						// TODO stop drawing entities off screen
-						g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
-																e.getSpriteX(), 
-																e.getSpriteY()),
-								(e.getX() - Globals.scrollX) * scaleX(TILE_SIZE), 
-								(9 - (e.getY() - Globals.scrollY)) * scaleY(TILE_SIZE), 
-								scaleX(TILE_SIZE), 
-								scaleY(TILE_SIZE), 
-								null);
-						
-						g.drawString(e.getName(), scaleX((e.getX() - Globals.scrollX) * TILE_SIZE), 
-								scaleY((10 - (e.getY() - Globals.scrollY)) * TILE_SIZE));
+						// TODO refine boundaries for drawing entities
+						if (Math.abs(e.getX() - Globals.player.getX()) <5 && Math.abs(e.getY() - Globals.player.getY()) <5){
+							g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
+																	e.getSpriteX(), 
+																	e.getSpriteY()),
+									(e.getX() - Globals.scrollX) * scaleX(TILE_SIZE), 
+									(9 - (e.getY() - Globals.scrollY)) * scaleY(TILE_SIZE), 
+									scaleX(TILE_SIZE), 
+									scaleY(TILE_SIZE), 
+									null);
+							
+							g.drawString(e.getName(), scaleX((e.getX() - Globals.scrollX) * TILE_SIZE), 
+									scaleY((10 - (e.getY() - Globals.scrollY)) * TILE_SIZE));
+						}
 					}
 				}
 			}
