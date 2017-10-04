@@ -1,6 +1,7 @@
 package main.entities;
 
 import main.magic.Spell;
+import main.rendering.MainRenderer;
 import main.util.EnumDirection;
 import main.util.Globals;
 
@@ -29,10 +30,6 @@ public class EntityPlayer extends Entity {
 		super.move(dir);
 		Globals.scrollX = x - 4;
 		Globals.scrollY = y - 5;
-	}
-	
-	public void onDeath(){
-		
 	}
 	
 	public void gainXp(int x){

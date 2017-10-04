@@ -63,11 +63,11 @@ public abstract class MainRenderer {
 				}
 			}
 			
-			g.setFont(new Font("Papyrus", 0, scaleXY(TILE_SIZE / 3)));
+			g.setFont(new Font("Papyrus", Font.BOLD, scaleXY(TILE_SIZE / 3)));
 			g.setColor(Color.WHITE);
 			if (entities != null) {
 				for (Entity e : entities) {
-					if (!e.getDead()){
+					if (!e.getDead() || e.getSpecies().equals("Player")){
 						// TODO stop drawing entities off screen
 						g.drawImage(ImageManager.getEntitySprite(e.getSprite(), 
 																e.getSpriteX(), 
@@ -84,11 +84,12 @@ public abstract class MainRenderer {
 				}
 			}
 //			TODO integrate into ondeath in entity
-			System.out.println(Globals.player.getDead());
 			if (Globals.player.getDead()){
 				g.setColor(new Color(128, 128, 128, 128));
 				g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
-				g.drawString("test", DEFAULT_WINDOW_WIDTH/2, DEFAULT_WINDOW_HEIGHT/2);
+				g.setColor(Color.BLACK);
+				g.setFont(new Font("Papyrus", Font.BOLD, scaleXY(TILE_SIZE * 2)));
+				g.drawString("u ded", scaleX(TILE_SIZE * 2), mapPane.getHeight()/2);
 			}
 		}
 	};
@@ -218,10 +219,6 @@ public abstract class MainRenderer {
 	
 	public static void closeWindow(){
 		frame.dispose();
-	}
-	
-	public static void playerDeath(){
-		
 	}
 	
 	public static void addMessage(String m){

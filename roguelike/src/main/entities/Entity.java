@@ -163,10 +163,10 @@ public class Entity {
 		int damage = Math.max(modifiers.getModifiedDamage(a), 1);
 		MainRenderer.addMessage(a.getOrigin().getName() + " hit " + getName() + " for " + damage + " damage!");
 		hp -= damage;
-		if (hp < 0) {
+		if (hp <= 0) {
 			hp = 0;
+			die();
 			if (this != Globals.player){
-				die();
 				if (a.getOrigin().equals(Globals.player)){
 					Globals.player.gainXp(this.xpValue);
 				}
@@ -179,10 +179,7 @@ public class Entity {
 		Globals.currentFloor.getTile(x, y).onLeave(this);
 		dead = true;
 		MainRenderer.addMessage(name + " died");
-		if (this.getSpecies().equals("Player")){
-				MainRenderer.addMessage("u ded");
-				MainRenderer.playerDeath();
-		}
+		
 		//TODO overhaul
 	}
 	

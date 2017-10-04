@@ -15,14 +15,12 @@ public class ControlManager {
 	}
 	
 	public static void keyDown(int key) {
-		if (key == Globals.ENTER_KEY) {
-			MainRenderer.incrementMessage();
-		} else {
+		if (!Globals.player.getDead() || key == 27){
 			ActionHandler.command(key, Globals.player);
+			MainRenderer.updateFloor(Globals.currentFloor);
+			MainRenderer.refresh();
+			keysDown.add(key);
 		}
-		MainRenderer.updateFloor(Globals.currentFloor);
-		MainRenderer.refresh();
-		keysDown.add(key);
 	}
 	
 	public static void keyUp(int key) {
