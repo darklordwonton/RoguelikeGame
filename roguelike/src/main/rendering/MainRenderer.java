@@ -25,7 +25,6 @@ import main.util.ControlManager;
 import main.util.FrameInsets;
 import main.util.Globals;
 import main.util.RollingCounterManager;
-import main.util.StringUtils;
 
 public abstract class MainRenderer {
 	
@@ -130,26 +129,7 @@ public abstract class MainRenderer {
 	};
 	
 	
-	private static MessageBarPane messagePane = new MessageBarPane() {
-		@Override
-		public void paintComponent(Graphics g) {
-			super.paintComponent(g);
-			
-			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, getWidth(), getHeight());
-			
-			if (getMessageAmount() > 0) {
-				g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
-				g.setColor(Color.WHITE);
-				
-				for(int messageNum = 0; messageNum < getMessageAmount(); messageNum++){
-					g.drawString(StringUtils.capitalize(getMessage(getMessageAmount() - messageNum - 1)),  
-							MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
-							getHeight() - (messageNum + 1) * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3));
-				}
-			}
-		}
-	};
+	private static MessageBarPane messagePane = new MessageBarPane();
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
@@ -204,7 +184,7 @@ public abstract class MainRenderer {
 		mapPane.setBounds(scaleX(2 * TILE_SIZE), 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		messagePane.setBounds(scaleX(11 * TILE_SIZE), 0, scaleX(7 * TILE_SIZE), scaleY(9 * TILE_SIZE));
 		
-		System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX() // 0 + 128 = 128
+		/*System.out.println("guiPane x: " + guiPane.getX() + "+" + guiPane.getWidth() + "->" + mapPane.getX() // 0 + 128 = 128
 				+ "    " + "mapPane x: " + mapPane.getX() + "+" + mapPane.getWidth() + "->" + messagePane.getX()); //128 + 576 = 704
 		System.out.println("guiPane y: " + guiPane.getY() + "->" + guiPane.getHeight() + "    " //0->576 
 				+ "    " + "mapPane y: " + mapPane.getY() + "->" + mapPane.getHeight()); // 0->576
@@ -220,7 +200,7 @@ public abstract class MainRenderer {
 		System.out.println("frame y: " + frame.getHeight()); //576 - 103 (vertical insets) = 473 || 679 - 103 = 576
 		
 		System.out.println("heightwise insets: " + FrameInsets.get(frame, "long"));
-		System.out.println("lengthwise insets: " + FrameInsets.get(frame, "sides"));
+		System.out.println("lengthwise insets: " + FrameInsets.get(frame, "sides"));*/
 		
 	}
 	
