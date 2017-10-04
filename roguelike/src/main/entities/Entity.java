@@ -142,10 +142,6 @@ public class Entity {
 		return stats;
 	}
 	
-	public boolean getDead(){
-		return dead;
-	}
-	
 	public String getSpecies(){
 		return species;
 	}
@@ -184,11 +180,14 @@ public class Entity {
 		dead = true;
 		MainRenderer.addMessage(name + " died");
 		if (this.getSpecies().equals("Player")){
-			while(true){
 				MainRenderer.addMessage("u ded");
-			}
+				MainRenderer.playerDeath();
 		}
 		//TODO overhaul
+	}
+	
+	public boolean getDead(){
+		return dead;
 	}
 	
 	public void move(EnumDirection dir) {

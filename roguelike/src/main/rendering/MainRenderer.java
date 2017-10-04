@@ -84,6 +84,7 @@ public abstract class MainRenderer {
 				}
 			}
 //			TODO integrate into ondeath in entity
+			System.out.println(Globals.player.getDead());
 			if (Globals.player.getDead()){
 				g.setColor(new Color(128, 128, 128, 128));
 				g.fillRect(0, 0, scaleX(9 * TILE_SIZE), scaleY(9 * TILE_SIZE));
@@ -137,8 +138,6 @@ public abstract class MainRenderer {
 	private static EnumTheme theme = null;
 	
 	public static void init() {
-		
-		System.out.println(FrameInsets.get(frame, "long"));
 		
 		frame.setBounds((int) (SCREEN_RECT.getWidth() - DEFAULT_WINDOW_WIDTH) / 2, 
 				(int) (SCREEN_RECT.getHeight() - DEFAULT_WINDOW_HEIGHT) / 2, 
@@ -219,6 +218,10 @@ public abstract class MainRenderer {
 	
 	public static void closeWindow(){
 		frame.dispose();
+	}
+	
+	public static void playerDeath(){
+		
 	}
 	
 	public static void addMessage(String m){
