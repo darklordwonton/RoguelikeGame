@@ -1,7 +1,10 @@
 package main.actions;
 
+import java.util.HashSet;
+
 import main.dungeon.Generator;
 import main.effects.attacks.Attack;
+import main.effects.attacks.EnumAttackType;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.entities.monsters.EntityMonster;
@@ -34,7 +37,7 @@ public class ActionHandler {
 		  	
 		  		//TEMPORARY
 				case Globals.M: 
-					Spell s = new Spell(new Attack(1, 1, 1, null, Globals.player), 
+					Spell s = new Spell(new Attack(1, 1, 1, new HashSet<EnumAttackType>(), Globals.player), 
 							new ShapeCenteredCircle(null, Globals.player, 3),
 							"TEST", Globals.player, 0);
 					s.cast();

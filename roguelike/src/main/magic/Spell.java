@@ -13,7 +13,7 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Spell {
-	Effect effect = null;
+	Effect[] effects = null;
 	Shape shape = null;
 	String name = "";
 	int value = 0;
@@ -21,8 +21,19 @@ public class Spell {
 	
 	Entity entity = null;
 	
+	public Spell(Effect[] ef, Shape s, String n, Entity e, int m){
+		effects = ef;
+		shape = s;
+		name = n;
+		entity = e;
+		manaCost = m;
+		
+		value = 0;
+	}
+	
 	public Spell(Effect ef, Shape s, String n, Entity e, int m){
-		effect = ef;
+		effects = new Effect[1];
+		effects[0] = ef;
 		shape = s;
 		name = n;
 		entity = e;
@@ -68,7 +79,8 @@ public class Spell {
 			Globals.currentFloor.getTile(l.get(i)[0], l.get(i)[1]).getResidentEntity().onAttack(attack);
 		}*/
 		for (Tile t : shape.getTilesAffected()) {
-			effect.affectTile(t);
+			for (Effect e : effects)
+				e.affectTile(t);
 		}
 	}
 	

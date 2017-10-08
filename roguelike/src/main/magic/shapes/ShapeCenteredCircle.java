@@ -24,7 +24,9 @@ public class ShapeCenteredCircle extends Shape {
 		for (int xDisplacement = -size; xDisplacement <= size; xDisplacement++) {
 			for (int yDisplacement = -size; yDisplacement <= size; yDisplacement++) {
 				if (xDisplacement * xDisplacement + yDisplacement * yDisplacement <= size * size) {
-					ret.add(Globals.currentFloor.getTile(x + xDisplacement, y + yDisplacement));
+					if (Globals.currentFloor.inBounds(xDisplacement + x, yDisplacement + y)) {
+							ret.add(Globals.currentFloor.getTile(x + xDisplacement, y + yDisplacement));
+					}
 				}
 			}
 		}
