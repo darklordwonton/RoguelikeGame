@@ -31,7 +31,7 @@ public class Entity {
 	protected int turns = 0;
 	protected int maxTurns = 1;
 	protected boolean dead = false;
-	protected Spell spell = null;
+	//protected Spell spell = null;
 	
 	public Entity(int sx, int sy){
 		turns = maxTurns;
@@ -42,9 +42,9 @@ public class Entity {
 		modifiers = new ModifierChart(new HashMap<EnumAttackType, Float>());
 	}
 	
-	public Spell getSpell(){
-		return spell;
-	}
+	//public Spell getSpell(){
+	//	return spell;
+	//}
 	
 	public void turn() {
 		ai.turn();
