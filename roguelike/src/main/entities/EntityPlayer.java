@@ -22,8 +22,8 @@ public class EntityPlayer extends Entity {
 		mp = stats.getMp();
 		xp = 0;
 		
-		spell = new Spell();
-		spell.generateSpell(0);
+		//spell = new Spell();
+		//spell.generateSpell(0);
 	}
 	
 	public void move(EnumDirection dir) {

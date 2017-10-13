@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="main.tiles.Tile"/>
+<fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="main.magic.shapes.Shape"/>
+<fullyQualifiedTypeName name="main.util.Globals"/>
+<fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.magic.Spell"/>
+<fullyQualifiedTypeName name="main.entities.Entity"/>
+<fullyQualifiedTypeName name="main.magic.shapes.ShapeCenteredCircle"/>
+<fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+</qualifiedTypeNameHistroy>

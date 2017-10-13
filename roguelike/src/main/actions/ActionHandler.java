@@ -1,9 +1,15 @@
 package main.actions;
 
+import java.util.HashSet;
+
 import main.dungeon.Generator;
+import main.effects.attacks.Attack;
+import main.effects.attacks.EnumAttackType;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.entities.monsters.EntityMonster;
+import main.magic.Spell;
+import main.magic.shapes.ShapeCenteredCircle;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
 import main.util.Globals;
@@ -29,7 +35,12 @@ public class ActionHandler {
 					Generator.newFloor();
 		  			break;
 		  	
-				case Globals.M: Globals.player.getSpell().cast();
+		  		//TEMPORARY
+				case Globals.M: 
+					Spell s = new Spell(new Attack(1, 1, 1, new HashSet<EnumAttackType>(), Globals.player), 
+							new ShapeCenteredCircle(null, Globals.player, 3),
+							"TEST", Globals.player, 0);
+					s.cast();
 					break;
 		  			
 				case Globals.ESC_KEY: 

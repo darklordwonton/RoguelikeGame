@@ -4,31 +4,37 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import main.effects.Effect;
 import main.effects.attacks.*;
 import main.entities.Entity;
+import main.magic.shapes.Shape;
+import main.tiles.Tile;
 import main.util.EnumDirection;
 import main.util.Globals;
 
 public class Spell {
-	Attack attack = null;
+	Effect[] effects = null;
+	Shape shape = null;
 	String name = "";
 	int value = 0;
 	int manaCost = 0;
 	
-	EnumDirection d = null;
 	Entity entity = null;
 	
-	public Spell(){
-		attack = null;
-		entity = null;
-		name = "";
-		manaCost = 0;
+	public Spell(Effect[] ef, Shape s, String n, Entity e, int m){
+		effects = ef;
+		shape = s;
+		name = n;
+		entity = e;
+		manaCost = m;
 		
 		value = 0;
 	}
 	
-	public Spell(Attack a, String n, Entity e, int m){
-		attack = a;
+	public Spell(Effect ef, Shape s, String n, Entity e, int m){
+		effects = new Effect[1];
+		effects[0] = ef;
+		shape = s;
 		name = n;
 		entity = e;
 		manaCost = m;
@@ -36,18 +42,14 @@ public class Spell {
 		value = 0;
 	}
 
-	public void generateSpell(int v){ //This will eventually randomly generate a spell of a given value. Until then, this is default.
+	/*public void generateSpell(int v){ //This will eventually randomly generate a spell of a given value. Until then, this is default.
 		value = v;
 		
 		attack = new Attack(100, 1000, 1, new HashSet<EnumAttackType>(), entity);
 		attack.addType(EnumAttackType.FIRE);
-	}
+	}*/
 	
-	public void setDirection(EnumDirection de){
-		d = de;
-	}
-	
-	public List<int[]> squaresTargeted(int x, int y, EnumDirection d){
+	/*public List<int[]> squaresTargeted(int x, int y, EnumDirection d){
 		List<int[]> hits = new ArrayList<int[]>();
 		boolean stopped= false;
 		
@@ -69,12 +71,17 @@ public class Spell {
 		}
 		
 		return hits;
-	}
+	}*/
 
-	public void cast (){
-		List<int[]> l = squaresTargeted(entity.getX(), entity.getY(), EnumDirection.LEFT);
+	public void cast() {
+		/*List<int[]> l = squaresTargeted(entity.getX(), entity.getY(), EnumDirection.LEFT);
 		for (int i = 0; i < l.size(); i++){
 			Globals.currentFloor.getTile(l.get(i)[0], l.get(i)[1]).getResidentEntity().onAttack(attack);
+		}*/
+		for (Tile t : shape.getTilesAffected()) {
+			for (Effect e : effects)
+				e.affectTile(t);
 		}
 	}
+	
 }
