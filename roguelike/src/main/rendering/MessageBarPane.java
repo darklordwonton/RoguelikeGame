@@ -62,10 +62,10 @@ public class MessageBarPane extends JPanel {
 			g.setFont(new Font("Papyrus", 0, MainRenderer.scaleXY(MainRenderer.TILE_SIZE / 3)));
 			g.setColor(Color.WHITE);
 			
-			for(int messageNum = 0; messageNum < 13 && messageNum < getMessageAmount(); messageNum++){
+			for(int messageNum = getMessageAmount() - 1; messageNum > 0; messageNum--){
 				g.drawString(StringUtils.capitalize(getMessage(messageNum)),  
 						MainRenderer.scaleX(MainRenderer.TILE_SIZE / 10), 
-						getHeight() - (messageNum + 1) * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3));
+						getHeight() - (getMessageAmount() - messageNum + 1) * MainRenderer.scaleY(MainRenderer.TILE_SIZE * 2 / 3));
 			}
 		}
 	}
