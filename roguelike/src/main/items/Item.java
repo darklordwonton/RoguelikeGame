@@ -4,7 +4,8 @@ public class Item {
 	protected String name = "";
 	protected String descriptor = "";
 	
-	protected int value = 0;
+	protected int value = -1;
+	protected int weight = -1;
 	
 	protected String sprite = null;
 	protected int spriteSheetRow = 0;
@@ -20,5 +21,9 @@ public class Item {
 		name = n;
 		descriptor = d;
 		value = v;
+	}
+	
+	public int getWeight() {
+		return weight;
 	}
 }
