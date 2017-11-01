@@ -10,4 +10,7 @@
 <fullyQualifiedTypeName name="main.magic.shapes.ShapeCenteredCircle"/>
 <fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="main.items.armour.ItemArmour"/>
+<fullyQualifiedTypeName name="main.items.Item"/>
+<fullyQualifiedTypeName name="main.items.InventoryArmour"/>
 </qualifiedTypeNameHistroy>

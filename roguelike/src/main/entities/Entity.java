@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 import main.effects.attacks.*;
 import main.entities.ai.AI;
+import main.items.InventoryArmour;
 import main.magic.Spell;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
@@ -31,6 +32,7 @@ public class Entity {
 	protected int turns = 0;
 	protected int maxTurns = 1;
 	protected boolean dead = false;
+	protected InventoryArmour armour = null;
 	//protected Spell spell = null;
 	
 	public Entity(int sx, int sy){
@@ -160,7 +162,7 @@ public class Entity {
 	}
 	
 	public void onAttack(Attack a) {
-		int damage = Math.max(modifiers.getModifiedDamage(a), 1);
+		int damage = armour.reduceDamage(Math.max(modifiers.getModifiedDamage(a), 1));
 		MainRenderer.addMessage(a.getOrigin().getName() + " hit " + getName() + " for " + damage + " damage!");
 		hp -= damage;
 		if (hp <= 0) {
