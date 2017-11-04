@@ -150,9 +150,11 @@ public class InventoryArmour extends Inventory {
 	public int reduceDamage(int damage) {
 		int ret = damage;
 		for (int i = 1; i < slots; i++) {
-			ret = ((ItemArmour)items[i]).reduceDamage(ret);
+			if (items[i] != null)
+				ret = ((ItemArmour)items[i]).reduceDamage(ret);
 		}
-		ret = ((ItemArmour)items[0]).reduceDamage(ret);
+		if (items[0] != null)
+			ret = ((ItemArmour)items[0]).reduceDamage(ret);
 		return ret;
 	}
 

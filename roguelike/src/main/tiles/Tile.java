@@ -54,4 +54,12 @@ public abstract class Tile {
 	
 	//When an entity attacks a wall tile
 	public void onAttack(Attack a) {}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
 }

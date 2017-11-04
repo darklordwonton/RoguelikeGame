@@ -32,7 +32,7 @@ public class Entity {
 	protected int turns = 0;
 	protected int maxTurns = 1;
 	protected boolean dead = false;
-	protected InventoryArmour armour = null;
+	protected InventoryArmour armour = new InventoryArmour(0,0,0,0,0);
 	//protected Spell spell = null;
 	
 	public Entity(int sx, int sy){

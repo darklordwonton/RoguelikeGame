@@ -8,6 +8,8 @@ import main.effects.Effect;
 import main.effects.attacks.*;
 import main.entities.Entity;
 import main.magic.shapes.Shape;
+import main.rendering.MainRenderer;
+import main.rendering.animation.Animation;
 import main.tiles.Tile;
 import main.util.EnumDirection;
 import main.util.Globals;
@@ -79,8 +81,10 @@ public class Spell {
 			Globals.currentFloor.getTile(l.get(i)[0], l.get(i)[1]).getResidentEntity().onAttack(attack);
 		}*/
 		for (Tile t : shape.getTilesAffected()) {
-			for (Effect e : effects)
+			for (Effect e : effects) {
+				Animation.addEffect(e, t.getX(), t.getY());
 				e.affectTile(t);
+			}
 		}
 	}
 	

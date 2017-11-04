@@ -19,6 +19,7 @@ import main.effects.Effect;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.filemanager.ImageManager;
+import main.rendering.animation.Animation;
 import main.tiles.EnumTheme;
 import main.tiles.Tile;
 import main.util.ControlManager;
@@ -45,17 +46,17 @@ public abstract class MainRenderer {
 			g.fillRect(0, 0, getWidth(), getHeight());
 			
 			if (tiles != null) {
-				for (int i = 0; i < 9; i++) {
-					for (int e = 1; e < 10; e++) {
+				for (int x = 0; x < 9; x++) {
+					for (int y = 1; y < 10; y++) {
 						
-						if (i + Globals.scrollX >= 0 && i + Globals.scrollX < tiles.length && e + Globals.scrollY >= 0 && e + Globals.scrollY < tiles[0].length){
+						if (x + Globals.scrollX >= 0 && x + Globals.scrollX < tiles.length && y + Globals.scrollY >= 0 && y + Globals.scrollY < tiles[0].length){
 							
-							Tile tile = tiles[i + Globals.scrollX][e + Globals.scrollY];
+							Tile tile = tiles[x + Globals.scrollX][y + Globals.scrollY];
 							
 							g.drawImage(ImageManager.getTileTexture(tile.getSprite(), 
 																	tile.getSpriteSheetColumn(), 
 																	tile.getSpriteSheetRow()),
-									i * scaleX(TILE_SIZE),	(9 - e) * scaleY(TILE_SIZE), 
+									x * scaleX(TILE_SIZE),	(9 - y) * scaleY(TILE_SIZE), 
 									scaleX(TILE_SIZE), 		scaleY(TILE_SIZE), 
 									null);
 						}
@@ -85,6 +86,24 @@ public abstract class MainRenderer {
 					}
 				}
 			}
+			
+			if (effects != null) {
+				for (int x = 0; x < 9; x++) {
+					for (int y = 1; y < 10; y++) {
+						
+						if (x + Globals.scrollX >= 0 && x + Globals.scrollX < tiles.length && y + Globals.scrollY >= 0 && y + Globals.scrollY < tiles[0].length){
+							
+							Effect e = effects[x + Globals.scrollX][y + Globals.scrollY];
+							if (e != null)
+								g.drawImage(e.getSprite(),
+									x * scaleX(TILE_SIZE),	(9 - y) * scaleY(TILE_SIZE), 
+									scaleX(TILE_SIZE), 		scaleY(TILE_SIZE), 
+									null);
+						}
+					}
+				}
+			}
+			
 //			TODO integrate into ondeath in entity
 			if (Globals.player.getDead()){
 				g.setColor(new Color(128, 128, 128, 128));
@@ -137,7 +156,7 @@ public abstract class MainRenderer {
 	
 	private static Tile[][] tiles = null;
 	private static Entity[] entities = null;
-	private static Effect[] effects = null;
+	private static Effect[][] effects = null;
 	private static EnumTheme theme = null;
 	
 	public static void init() {
@@ -209,6 +228,7 @@ public abstract class MainRenderer {
 	public static void updateFloor(Floor map) {
 		theme = map.getTheme();
 		tiles = map.getTileMap();
+		effects = Animation.getEffects();
 		entities = map.getEntities();
 	}
 	

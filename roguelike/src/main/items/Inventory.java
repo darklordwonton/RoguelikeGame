@@ -48,7 +48,8 @@ public class Inventory {
 	public int getWeight() {
 		int weight = 0;
 		for (Item item : items) {
-			weight += item.getWeight();
+			if (item != null)
+				weight += item.getWeight();
 		}
 		return weight;
 	}

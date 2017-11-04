@@ -1,9 +1,11 @@
 package main.effects.attacks;
 
+import java.awt.image.BufferedImage;
 import java.util.Set;
 
 import main.effects.Effect;
 import main.entities.Entity;
+import main.filemanager.ImageManager;
 import main.tiles.Tile;
 
 public class Attack extends Effect {
@@ -21,6 +23,7 @@ public class Attack extends Effect {
 		highDamage = du;
 		bellCurve = bc;
 		types = t;
+		animationFrames = 1;
 	}
 	
 	public boolean isType (EnumAttackType t) {
@@ -64,4 +67,10 @@ public class Attack extends Effect {
 			affectEntity(t.getResidentEntity());
 		}
 	}
+	
+	@Override
+	public BufferedImage getSprite() {
+		return ImageManager.getEffectSprite("fireball.jpg", 0, 0);
+	}
+	
 }

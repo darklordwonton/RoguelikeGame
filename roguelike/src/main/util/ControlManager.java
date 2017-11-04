@@ -5,6 +5,7 @@ import java.util.Set;
 
 import main.actions.ActionHandler;
 import main.rendering.MainRenderer;
+import main.rendering.animation.Animation;
 
 public class ControlManager {
 
@@ -19,6 +20,7 @@ public class ControlManager {
 			ActionHandler.command(key, Globals.player);
 			MainRenderer.updateFloor(Globals.currentFloor);
 			MainRenderer.refresh();
+			Animation.resetEffects(Globals.currentFloor.getWidth(), Globals.currentFloor.getHeight());
 			keysDown.add(key);
 		}
 	}

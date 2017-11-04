@@ -11,10 +11,12 @@ public class ImageManager {
 	
 	private static HashMap<String, BufferedImage> tiles = new HashMap<String, BufferedImage>();
 	private static HashMap<String, BufferedImage> entities = new HashMap<String, BufferedImage>();
+	private static HashMap<String, BufferedImage> effects = new HashMap<String, BufferedImage>();
 	
 	public static void init () {
 		tiles.putAll(loadAllImages("src/resources/tiles"));
 		entities.putAll(loadAllImages("src/resources/entities"));
+		effects.putAll(loadAllImages("src/resources/effects"));
 	}
 	
 	public static HashMap<String, BufferedImage> loadAllImages (String path) {
@@ -54,4 +56,7 @@ public class ImageManager {
 		return entities.get(image).getSubimage(column*16, row*16, 16, 16);
 	}
 	
+	public static BufferedImage getEffectSprite (String image, int column, int row) {
+		return effects.get(image).getSubimage(column*16, row*16, 16, 16);
+	}
 }

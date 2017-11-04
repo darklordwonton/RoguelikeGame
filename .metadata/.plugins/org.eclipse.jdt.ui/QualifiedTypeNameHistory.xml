@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="main.tiles.Tile"/>
-<fullyQualifiedTypeName name="main.effects.Effect"/>
 <fullyQualifiedTypeName name="main.magic.shapes.Shape"/>
 <fullyQualifiedTypeName name="main.util.Globals"/>
 <fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
@@ -13,4 +12,9 @@
 <fullyQualifiedTypeName name="main.items.armour.ItemArmour"/>
 <fullyQualifiedTypeName name="main.items.Item"/>
 <fullyQualifiedTypeName name="main.items.InventoryArmour"/>
+<fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
+<fullyQualifiedTypeName name="main.rendering.animation.Animation"/>
 </qualifiedTypeNameHistroy>
