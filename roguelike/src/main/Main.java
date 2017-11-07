@@ -1,7 +1,7 @@
 package main;
 
-import main.entities.Names;
 import main.util.Initializer;
+import main.util.Names;
 
 public class Main {
 		
