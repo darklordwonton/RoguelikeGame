@@ -17,4 +17,5 @@
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
 <fullyQualifiedTypeName name="main.rendering.animation.Animation"/>
+<fullyQualifiedTypeName name="main.entities.Names"/>
 </qualifiedTypeNameHistroy>
