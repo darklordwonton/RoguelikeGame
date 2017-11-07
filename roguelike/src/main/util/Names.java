@@ -6,19 +6,19 @@ public class Names {
 	private static String[] firstSlime = {"Gl", "Bl", "Pl", "Shl", "Lol", "Sphl"};  //Goopy sounds
 	private static String[] firstHard = {"Shr", "Gr", "Kr", "K", "G", "Br"};		//Harsh names	
 	private static String[] firstPrim = {"Ch", "Kr", "Gr", "N'd", "Big Kr", "Li'l B"};	//Primitive names
-	private static String[] firstMat = {"M", "S", "St", "W", "Ir", "Br", "C", "Sil", "Anth", "R", "Ur", "P", "N", "Th", "T"}; //Material names
+	private static String[] firstMat = {"M", "S", "St", "W", "Ir", "Br", "C", "Sil", "Anth", "R", "Ur", "P", "N", "Th", "T", "Ith"}; //Material names
 	
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	private static String[] endPrim = {"h", "k", "r", "rk", "rh", "w", "ch"};
 	private static String[] endHard = {"k", "nk", "nt", "t", "ck", "m", "sh", "g"};
-	private static String[] endMat = {"t", "th", "thr", "m", "st", "d", "ral", "ril", "n", "l", "ll", "lf", "dun", "san", "ln", "r", "pp", "lt", "b"};
+	private static String[] endMat = {"t", "th", "thr", "m", "st", "d", "ral", "ril", "n", "l", "ll", "lf", "dun", "san", "ln", "r", "pp", "lt", "b", "sten"};
 	
 	
 	private static String[] vowels = {"a", "e", "i", "o", "u"};
 	private static String[] vowel1 = {"a", "e", "o", "u"};
 	private static String[] vowel2 = {"a", "e", "o"};
 	private static String[] slimeVowels = {"o", "oo", "ooo", "u", "uu", "ou", "olo", ""};
-	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar"};
+	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar", "ra"};
 	
 	public static String slimeName() {
 		int a = (int)(Math.random() * firstSlime.length);		
@@ -45,13 +45,13 @@ public class Names {
 	}
 
 	public static String materialName(){
-		int syl = 1 + (int)(Math.random() * 2.1);
+		int syl = 1 + (int)(Math.random() * 1.85);
 		String ret = firstMat[(int)(Math.random() * firstMat.length)];
 		for (int i = 0; i < syl; i++) {
 			ret += matVowels[(int)(Math.random() * matVowels.length)];
 			ret += endMat[(int)(Math.random() * endMat.length)];
 		}
-		if (Math.random() < 0.4) {
+		if (Math.random() < 0.45) {
 			ret += "ium";
 		}
 		return ret;
