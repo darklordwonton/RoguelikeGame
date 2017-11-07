@@ -1,9 +1,9 @@
 package main.entities.monsters.SlimeVariants;
 
-import main.entities.Names;
 import main.entities.Stats;
 import main.entities.monsters.EntityMonster;
 import main.util.Globals;
+import main.util.Names;
 
 public class EntitySlime extends EntityMonster {
 	

@@ -1,9 +1,9 @@
 package main.entities.monsters;
 
-import main.entities.Names;
 import main.entities.Stats;
 import main.rendering.animation.Animation;
 import main.util.Globals;
+import main.util.Names;
 
 public class EntityOgre extends EntityMonster {
 	
