@@ -23,7 +23,9 @@ public class Effect {
 	
 	public void affectEntity (Entity e) {}
 	
-	public void affectTile (Tile t) {}
+	public void affectTile (Tile t) {
+		t.addEffect(this);
+	}
 	
 	public void incrementAnimation() {
 		currentFrame++;

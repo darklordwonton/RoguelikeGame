@@ -34,7 +34,6 @@ public class EntityOgre extends EntityMonster {
 		this.xpValue = 20;
 		this.species = "Ogre";
 		setSprite("enemy_ogre.png", 0, 0, 1);
-		Animation.animate(this);
 	}
 	
 }

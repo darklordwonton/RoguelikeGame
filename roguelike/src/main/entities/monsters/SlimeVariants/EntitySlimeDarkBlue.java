@@ -11,7 +11,6 @@ public class EntitySlimeDarkBlue extends EntitySlime {
 		
 		setSprite("enemy_slimes.png", (int)(Math.random() * 3), 2, 3);
 		
-		Animation.animate(this);
 	}
 	
 }

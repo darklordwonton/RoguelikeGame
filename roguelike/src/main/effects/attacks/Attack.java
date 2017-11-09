@@ -23,7 +23,7 @@ public class Attack extends Effect {
 		highDamage = du;
 		bellCurve = bc;
 		types = t;
-		animationFrames = 1;
+		animationFrames = 32;
 	}
 	
 	public boolean isType (EnumAttackType t) {
@@ -57,11 +57,13 @@ public class Attack extends Effect {
 	
 	@Override
 	public void affectEntity (Entity e) {
+		super.affectEntity(e);
 		e.onAttack(this);
 	}
 	
 	@Override
 	public void affectTile (Tile t) {
+		super.affectTile(t);
 		t.onAttack(this);
 		if (t.getResidentEntity() != null) {
 			affectEntity(t.getResidentEntity());
@@ -70,7 +72,7 @@ public class Attack extends Effect {
 	
 	@Override
 	public BufferedImage getSprite() {
-		return ImageManager.getEffectSprite("fireball.jpg", 0, 0);
+		return ImageManager.getEffectSprite("fire.png", 7 - currentFrame / 4, 0);
 	}
 	
 }

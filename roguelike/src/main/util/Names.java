@@ -11,7 +11,7 @@ public class Names {
 	private static String[] endSlime = {"rp", "p", "mp", "k", "lp", "h", "pe", "b", "bby", "rb", "mb", "mpy", "mby"};
 	private static String[] endPrim = {"h", "k", "r", "rk", "rh", "w", "ch"};
 	private static String[] endHard = {"k", "nk", "nt", "t", "ck", "m", "sh", "g"};
-	private static String[] endMat = {"t", "th", "thr", "m", "st", "d", "ral", "ril", "n", "l", "ll", "lf", "dun", "san", "ln", "r", "pp", "lt", "b", "sten"};
+	private static String[] endMat = {"t", "th", "thr", "m", "st", "d", "ral", "ril", "n", "l", "ll", "lf", "dun", "san", "ln", "r", "p", "lt", "b", "sten", "g"};
 	
 	
 	private static String[] vowels = {"a", "e", "i", "o", "u"};
@@ -53,6 +53,9 @@ public class Names {
 		}
 		if (Math.random() < 0.45) {
 			ret += "ium";
+		}
+		if (Math.random() < 0.2) {
+			ret += "ite";
 		}
 		return ret;
 	}

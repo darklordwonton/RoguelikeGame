@@ -59,12 +59,31 @@ public abstract class MainRenderer {
 									x * scaleX(TILE_SIZE),	(9 - y) * scaleY(TILE_SIZE), 
 									scaleX(TILE_SIZE), 		scaleY(TILE_SIZE), 
 									null);
+							
+							Entity entity = tile.getResidentEntity();
+							
+							if (entity != null)
+								g.drawImage(ImageManager.getEntitySprite(entity.getSprite(), 
+																		 entity.getSpriteX(), 
+																		 entity.getSpriteY()),
+										x * scaleX(TILE_SIZE), 
+										(9 - y) * scaleY(TILE_SIZE), 
+										scaleX(TILE_SIZE), 
+										scaleY(TILE_SIZE), 
+										null);
+							
+							for (Effect effect : tile.getEffects()) {
+								g.drawImage(effect.getSprite(),
+										x * scaleX(TILE_SIZE),	(9 - y) * scaleY(TILE_SIZE), 
+										scaleX(TILE_SIZE), 		scaleY(TILE_SIZE), 
+										null);
+							}
 						}
 					}
 				}
 			}
 			
-			g.setFont(new Font("Papyrus", Font.BOLD, scaleXY(TILE_SIZE / 3)));
+			/*g.setFont(new Font("Papyrus", Font.BOLD, scaleXY(TILE_SIZE / 3)));
 			g.setColor(Color.WHITE);
 			if (entities != null) {
 				for (Entity e : entities) {
@@ -85,7 +104,7 @@ public abstract class MainRenderer {
 						}
 					}
 				}
-			}
+			}*/
 			
 			if (effects != null) {
 				for (int x = 0; x < 9; x++) {
@@ -228,7 +247,6 @@ public abstract class MainRenderer {
 	public static void updateFloor(Floor map) {
 		theme = map.getTheme();
 		tiles = map.getTileMap();
-		effects = Animation.getEffects();
 		entities = map.getEntities();
 	}
 	

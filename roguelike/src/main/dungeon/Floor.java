@@ -162,4 +162,12 @@ public class Floor {
 		return x >= 0 && y >= 0 && x < width && y < height;
 	}
 	
+	public void refresh() {
+		for (Tile[] i : tiles) {
+			for (Tile t : i) {
+				t.clearEffects();
+			}
+		}
+	}
+	
 }

@@ -17,10 +17,10 @@ public class ControlManager {
 	
 	public static void keyDown(int key) {
 		if (!Globals.player.getDead() || key == 27){
+			Globals.currentFloor.refresh();
 			ActionHandler.command(key, Globals.player);
 			MainRenderer.updateFloor(Globals.currentFloor);
 			MainRenderer.refresh();
-			Animation.resetEffects(Globals.currentFloor.getWidth(), Globals.currentFloor.getHeight());
 			keysDown.add(key);
 		}
 	}

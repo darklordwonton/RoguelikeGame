@@ -1,7 +1,5 @@
 package main.tiles;
 
-import main.effects.attacks.Attack;
-import main.rendering.MainRenderer;
 import main.util.Globals;
 
 public class TileWall extends Tile{
@@ -12,8 +10,4 @@ public class TileWall extends Tile{
 		sprite = Globals.EMPTY_SPRITES.get(t);
 	}
 	
-	@Override
-	public void onAttack(Attack a) {
-		//MainRenderer.addMessage(a.getOrigin().getName() + " smashed " + a.getOrigin().getPronoun() + " face into the wall!");
-	}
 }

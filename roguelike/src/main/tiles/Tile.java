@@ -1,5 +1,9 @@
 package main.tiles;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import main.effects.Effect;
 import main.effects.attacks.Attack;
 import main.entities.Entity;
 
@@ -11,10 +15,12 @@ public abstract class Tile {
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
 	protected Entity entity = null;
+	protected List<Effect> effects = null;
 	
 	protected Tile(int x, int y) {
 		this.x = x;
 		this.y = y;
+		effects = new ArrayList<Effect>();
 	}
 	
 	public String getSprite(){
@@ -53,7 +59,9 @@ public abstract class Tile {
 	}
 	
 	//When an entity attacks a wall tile
-	public void onAttack(Attack a) {}
+	public void onAttack(Attack a) {
+		
+	}
 	
 	public int getX() {
 		return x;
@@ -61,5 +69,25 @@ public abstract class Tile {
 	
 	public int getY() {
 		return y;
+	}
+
+	public void incrementAnimation() {
+		if (entity != null)
+			entity.incrementAnimation();
+		for (Effect e : effects) {
+			e.incrementAnimation();
+		}
+	}
+	
+	public void addEffect(Effect e) {
+		effects.add(e);
+	}
+	
+	public void clearEffects() {
+		effects.clear();
+	}
+	
+	public List<Effect> getEffects() {
+		return effects;
 	}
 }
