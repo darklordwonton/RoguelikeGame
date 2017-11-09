@@ -82,7 +82,6 @@ public class Spell {
 		}*/
 		for (Tile t : shape.getTilesAffected()) {
 			for (Effect e : effects) {
-				Animation.addEffect(e, t.getX(), t.getY());
 				e.affectTile(t);
 			}
 		}

@@ -33,7 +33,6 @@ public class EntityGoblin extends EntityMonster {
 		}
 		
 		setSprite("enemy_goblin2.png", 0, 0, 1);
-		Animation.animate(this);
 	}
 	
 }

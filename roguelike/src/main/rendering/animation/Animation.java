@@ -6,44 +6,24 @@ import java.util.TimerTask;
 import main.effects.Effect;
 import main.entities.Entity;
 import main.rendering.MainRenderer;
+import main.tiles.Tile;
+import main.util.Globals;
 
 public class Animation {
 	
-	private static Effect[][] effects = null;
-	
-	public static void animate(Entity e) {
+	public static void animateTiles() {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 
 			@Override
 			public void run() {
-				e.setSprite(e.getSprite(), (e.getSpriteX() + 1) % e.getTotalFrames(), e.getSpriteY(), e.getTotalFrames());
+				for (Tile[] tiles: Globals.currentFloor.getTileMap()) {
+					for (Tile t : tiles)
+						t.incrementAnimation();
+				}
 				MainRenderer.refresh();
 			}
-		}, 0, (long) Math.round(20 / e.getTotalFrames()) * 50);
+		}, 0, (long) 50);
 	}
 	
-	/*public static void animate(Effect e) {
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-
-			@Override
-			public void run() {
-				e.incrementAnimation();
-				MainRenderer.refresh();
-			}
-		}, 0, (long) Math.round(20 / e.getTotalFrames()) * 50);
-	}*/
-	
-	public static void resetEffects(int w, int h) {
-		effects = new Effect[w][h];
-	}
-	
-	public static void addEffect(Effect e, int x, int y) {
-		effects[x][y] = e;
-	}
-	
-	public static Effect[][] getEffects() {
-		return effects;
-	}
 }

@@ -29,4 +29,10 @@ public class EntitySlime extends EntityMonster {
 		pronoun = "their";
 	}
 	
+	@Override
+	public void incrementAnimation() {
+		super.incrementAnimation();
+		setSprite(getSprite(), (getSpriteX() + 1) % getTotalFrames(), getSpriteY(), getTotalFrames());
+	}
+	
 }

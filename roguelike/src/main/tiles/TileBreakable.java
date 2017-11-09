@@ -18,6 +18,7 @@ public class TileBreakable extends Tile {
 	
 	@Override
 	public void onAttack(Attack a) {
+		super.onAttack(a);
 		hp -= modifier.getModifiedDamage(a);
 		if (hp <= 0)
 			Globals.currentFloor.destroyTile(x, y);

@@ -213,10 +213,14 @@ public class Entity {
 		}
 		
 		if (Globals.currentFloor.getTile(x, y).getResidentEntity() != null) {
-			Globals.currentFloor.getTile(x, y).getResidentEntity().onAttack(getMeleeAttack());
+			getMeleeAttack().affectTile(Globals.currentFloor.getTile(x, y));
 			setX(oldX);
 			setY(oldY);
 		}
 		Globals.currentFloor.getTile(x, y).onStep(this);
+	}
+	
+	public void incrementAnimation() {
+		
 	}
 }
