@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="main.magic.shapes.Shape"/>
-<fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
-<fullyQualifiedTypeName name="main.magic.Spell"/>
-<fullyQualifiedTypeName name="main.entities.Entity"/>
-<fullyQualifiedTypeName name="main.magic.shapes.ShapeCenteredCircle"/>
-<fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="main.items.armour.ItemArmour"/>
-<fullyQualifiedTypeName name="main.items.Item"/>
-<fullyQualifiedTypeName name="main.items.InventoryArmour"/>
-<fullyQualifiedTypeName name="main.filemanager.ImageManager"/>
-<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
-<fullyQualifiedTypeName name="main.rendering.MainRenderer"/>
-<fullyQualifiedTypeName name="main.entities.Names"/>
-<<<<<<< HEAD
-<fullyQualifiedTypeName name="main.util.Names"/>
-=======
-<fullyQualifiedTypeName name="main.tiles.Tile"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="main.effects.Effect"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="javax.swing.tree.TreeNode"/>
+<fullyQualifiedTypeName name="main.util.TreeNode"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="main.job.Job"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="main.util.Globals"/>
-<fullyQualifiedTypeName name="main.rendering.animation.Animation"/>
->>>>>>> 985c26f3f37d424a3744428b4179a5b60cbde0e6
+<fullyQualifiedTypeName name="main.job.JobTree"/>
 </qualifiedTypeNameHistroy>
