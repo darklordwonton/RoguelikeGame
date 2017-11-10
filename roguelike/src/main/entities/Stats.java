@@ -1,6 +1,11 @@
 package main.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import main.job.Job;
+import main.job.JobTree;
 
 public class Stats {
 	/* buffness - physical damage, carry weight
@@ -32,6 +37,8 @@ public class Stats {
 	private int snk = 0; //Snark - magic defense
 	
 	private int level = 0;
+	
+	private JobTree jobTree = null;
 	
 	//Set stats specifically
 	public Stats(int health, int mana, int buffness, int toughness, int wit, int snark, int level) {
@@ -100,6 +107,15 @@ public class Stats {
 		calculateStats();
 	}
 	
+	public void changeInnateStats(int[] stats) {
+		innateHp += stats[0];
+		innateMp += stats[1];
+		innateBuf += stats[2];
+		innateTuf += stats[3];
+		innateWit += stats[4];
+		innateSnk += stats[5];
+	}
+	
 	public void setInnateStat(int stat, int amount) {
 		switch (stat) {
 			case 0:
@@ -149,6 +165,12 @@ public class Stats {
 	
 	public void setLevel(int level) {
 		this.level = level;
+		calculateStats();
+	}
+	
+	public void levelUp() {
+		level++;
+		changeInnateStats(jobTree.getCurrentJob().getStatsArray());
 		calculateStats();
 	}
 
@@ -222,5 +244,4 @@ public class Stats {
 			setInnateStat(i,getInnateStat(i)/2);
 		}
 	}
-	
 }

@@ -6,9 +6,12 @@ import main.util.Names;
 public class Main {
 		
 	public static void main(String [] args){
-		for (int i = 0; i < 100; i++){
-			System.out.println(Names.materialName());
-		}
+	/*	for (int i = 0; i < 100; i++){
+			System.out.println(Names.gobName());
+			System.out.println(Names.ogreName());
+			System.out.println(Names.slimeName());
+		}*/
+		
 		
 		Initializer.start();
 	}

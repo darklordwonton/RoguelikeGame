@@ -2,10 +2,10 @@ package main.entities;
 
 import java.util.HashMap;
 import java.util.HashSet;
-
 import main.effects.attacks.*;
 import main.entities.ai.AI;
 import main.items.InventoryArmour;
+import main.job.JobTree;
 import main.magic.Spell;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
@@ -13,6 +13,7 @@ import main.util.Globals;
 
 public class Entity {
 	protected Stats stats = null;
+	protected JobTree job = null;
 	protected AI ai = null;
 	protected int hp = 0;
 	protected int mp = 0;
