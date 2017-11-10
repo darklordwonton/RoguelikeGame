@@ -23,7 +23,7 @@ public class Floor {
 		height = h;
 		width = w;
 		theme = t;
-		tiles = new Tile[h][w];		
+		tiles = new Tile[h][w];	
 		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
 		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * (int)Math.pow(Globals.floorNumber, 1/2.0) * (int)Math.pow(Globals.floorNumber, 1/2.0))];
 		
