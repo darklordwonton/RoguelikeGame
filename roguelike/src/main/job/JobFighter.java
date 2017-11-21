@@ -1,9 +1,11 @@
 package main.job;
 
+import main.util.Names;
+
 public class JobFighter extends Job {
 	
 	public JobFighter() {
-		super("FightyMan");
+		super(Names.fighterName());
 		hpGain = 1;
 		mpGain = 0;
 		bufGain = 2;

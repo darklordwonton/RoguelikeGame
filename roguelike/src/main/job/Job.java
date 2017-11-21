@@ -13,10 +13,12 @@ public class Job {
 	protected int witGain = 0;
 	protected int snkGain = 0;
 	
-	private Job(){}
-	
 	public Job(String n) {
 		name = n;
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 	public int[] getStatsArray() {

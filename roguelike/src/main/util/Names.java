@@ -20,6 +20,9 @@ public class Names {
 	private static String[] slimeVowels = {"o", "oo", "ooo", "u", "uu", "ou", "olo", ""};
 	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar", "ra"};
 	
+	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword"};
+	private static String[] fightJobNames = {"fighter", "rager", "soldier", "warrior", "devastator"};
+			
 	public static String slimeName() {
 		int a = (int)(Math.random() * firstSlime.length);		
 		int b = (int)(Math.random() * slimeVowels.length);
@@ -58,5 +61,9 @@ public class Names {
 			ret += "ite";
 		}
 		return ret;
+	}
+	
+	public static String fighterName() {
+		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + fightJobNames[(int)(Math.random() * fightJobNames.length)];
 	}
 }

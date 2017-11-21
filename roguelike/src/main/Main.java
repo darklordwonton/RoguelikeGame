@@ -11,8 +11,6 @@ public class Main {
 			System.out.println(Names.ogreName());
 			System.out.println(Names.slimeName());
 		}*/
-		
-		
 		Initializer.start();
 	}
 }
