@@ -141,6 +141,7 @@ public class Globals {
 	public static final int ESC_KEY = KeyEvent.VK_ESCAPE;
 	public static final int ENTER_KEY = KeyEvent.VK_ENTER;
 	public static final int BACKSLASH = KeyEvent.VK_BACK_SLASH;
+	public static final int S = KeyEvent.VK_S;
 	public static final int M = KeyEvent.VK_M;
 	
 	//Global Variables
@@ -168,4 +169,5 @@ public class Globals {
 	//Debug features
 	public static final boolean NO_CLIP = false;	//Walk through walls
 	public static final boolean SKIP_FLOORS = true; //Skip floor button, currently "\"
+	public static final boolean SKIP_LEVEL = true;  //Skip level button, currently "s"
 }

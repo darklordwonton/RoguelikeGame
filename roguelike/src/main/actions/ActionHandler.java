@@ -34,6 +34,9 @@ public class ActionHandler {
 				case Globals.BACKSLASH: if (Globals.SKIP_FLOORS)
 					Generator.newFloor();
 		  			break;
+		  			
+				case Globals.S: if (Globals.SKIP_LEVEL)
+					Globals.player.gainXp(Globals.LEVEL_XP_BASE + Globals.player.getStats().getLevel() * Globals.LEVEL_XP_MODIFIER);
 		  	
 		  		//TEMPORARY
 				case Globals.M: 
