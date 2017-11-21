@@ -31,4 +31,8 @@ public class Pair {
 		n2 = n;
 	}
 	
+	public String toString(){
+		return ("[" + getFirst() + ", " + getSecond() + "]");
+	}
+	
 }
