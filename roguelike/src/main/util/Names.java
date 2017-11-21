@@ -20,7 +20,7 @@ public class Names {
 	private static String[] slimeVowels = {"o", "oo", "ooo", "u", "uu", "ou", "olo", ""};
 	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar", "ra"};
 	
-	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword"};
+	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword", "Witch"};
 	private static String[] fightJobNames = {"fighter", "rager", "soldier", "warrior", "devastator"};
 			
 	public static String slimeName() {

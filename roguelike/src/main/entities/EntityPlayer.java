@@ -1,6 +1,7 @@
 package main.entities;
 
 import main.job.Job;
+import main.job.JobFighter;
 import main.magic.Spell;
 import main.rendering.MainRenderer;
 import main.util.EnumDirection;
@@ -14,7 +15,7 @@ public class EntityPlayer extends Entity {
 		super(px,py);
 		name = "you";
 		pronoun = "your";
-		currentJob = new Job("Fighter");
+		currentJob = new JobFighter();
 		
 		species = "Player";
 		
@@ -41,9 +42,11 @@ public class EntityPlayer extends Entity {
 		if (xp >= Globals.LEVEL_XP_BASE + this.stats.getLevel() * Globals.LEVEL_XP_MODIFIER){
 			this.stats.setLevel(this.stats.getLevel() + 1);
 			this.stats.changeInnateStats(currentJob.getStatsArray());
+			System.out.println("-----------------");
 			System.out.println(currentJob.getName());
+			System.out.println(stats);
 			if (this.stats.getLevel() % 5 == 0){
-				//currentJob.max()
+				currentJob = currentJob.maxJob();
 			}
 			xp = 0;
 		}

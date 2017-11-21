@@ -244,4 +244,8 @@ public class Stats {
 			setInnateStat(i,getInnateStat(i)/2);
 		}
 	}
+	
+	public String toString(){
+		return "" + innateHp + " " + innateMp + " " + innateBuf + " " + innateTuf + " " + innateWit + " " + innateSnk;
+	}
 }

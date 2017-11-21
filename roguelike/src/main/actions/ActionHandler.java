@@ -37,7 +37,8 @@ public class ActionHandler {
 		  			
 				case Globals.S: if (Globals.SKIP_LEVEL)
 					Globals.player.gainXp(Globals.LEVEL_XP_BASE + Globals.player.getStats().getLevel() * Globals.LEVEL_XP_MODIFIER);
-		  	
+					break;
+					
 		  		//TEMPORARY
 				case Globals.M: 
 					Spell s = new Spell(new Attack(1, 1, 1, new HashSet<EnumAttackType>(), Globals.player), 
