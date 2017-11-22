@@ -49,7 +49,10 @@ public abstract class MainRenderer {
 				for (int x = 0; x < 9; x++) {
 					for (int y = 1; y < 10; y++) {
 						
-						if (x + Globals.scrollX >= 0 && x + Globals.scrollX < tiles.length && y + Globals.scrollY >= 0 && y + Globals.scrollY < tiles[0].length){
+						if (x + Globals.scrollX >= 0 && 
+								x + Globals.scrollX < tiles.length && 
+								y + Globals.scrollY >= 0 && 
+								y + Globals.scrollY < tiles[0].length){
 							
 							Tile tile = tiles[x + Globals.scrollX][y + Globals.scrollY];
 							

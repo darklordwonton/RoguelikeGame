@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import main.util.Pair;
 
 public class Maze {
-	static char[][] tiles;
+	static char[][] maze;
 	static List<Pair> frontier = new ArrayList<Pair>();
 	
 	static int mapWidth;
@@ -22,11 +22,11 @@ public class Maze {
 		mapHeight = rowLength;
 		checkDiagonals = checkCorners;
 		
-		tiles = new char[mapHeight][mapWidth];
+		maze = new char[mapHeight][mapWidth];
 		
 		for(int row = 0; row<mapHeight; row++){
 			for(int column = 0; column<mapWidth; column++){
-				tiles[row][column] = '?';
+				maze[row][column] = '?';
 			}
 		}
 		
@@ -53,7 +53,7 @@ public class Maze {
 //		turn all unchecked elements into walls
 		for(int row = 0; row<mapHeight; row++){
 			for(int column = 0; column<mapWidth; column++){
-				if (tiles[row][column] == '?')
+				if (maze[row][column] == '?')
 					harden(new Pair(row, column));
 			}
 		}
@@ -65,22 +65,22 @@ public class Maze {
 		int row = coords.getFirst();
 		int column = coords.getSecond();
 		
-		tiles[row][column] = '.';
+		maze[row][column] = '.';
 		
-		if (column > 0 				&& tiles[row][column-1] == '?'){
-			tiles[row][column-1] = ',';
+		if (column > 0 				&& maze[row][column-1] == '?'){
+			maze[row][column-1] = ',';
 			extra.add(new Pair(row, column-1));
 		}
-		if (column < mapWidth-1 && tiles[row][column+1] == '?'){
-			tiles[row][column+1] = ',';
+		if (column < mapWidth-1 && maze[row][column+1] == '?'){
+			maze[row][column+1] = ',';
 			extra.add(new Pair(row, column+1));
 		}
-		if (row > 0 				&& tiles[row-1][column] == '?'){
-			tiles[row-1][column] = ',';
+		if (row > 0 				&& maze[row-1][column] == '?'){
+			maze[row-1][column] = ',';
 			extra.add(new Pair(row-1, column));
 		}
-		if (row < mapHeight-1 		&& tiles[row+1][column] == '?'){
-			tiles[row+1][column] = ',';
+		if (row < mapHeight-1 		&& maze[row+1][column] == '?'){
+			maze[row+1][column] = ',';
 			extra.add(new Pair(row+1, column));
 		}
 		
@@ -88,7 +88,7 @@ public class Maze {
 		frontier.addAll(extra);
 	}
 	private static void harden(Pair coords){
-		tiles[coords.getFirst()][coords.getSecond()] = '#';
+		maze[coords.getFirst()][coords.getSecond()] = '#';
 	}
 	private static boolean check(Pair coords){
 		
@@ -97,35 +97,35 @@ public class Maze {
 		
 		int edgeState = 0;
 		
-		if (column > 0 && tiles[row][column-1] == '.')
+		if (column > 0 && maze[row][column-1] == '.')
 			edgeState += 1;
-		if (column < mapWidth - 1 && tiles[row][column+1] == '.')
+		if (column < mapWidth - 1 && maze[row][column+1] == '.')
 			edgeState += 2;
-		if (row > 0 && tiles[row-1][column] == '.')
+		if (row > 0 && maze[row-1][column] == '.')
 			edgeState += 4;
-		if (row < mapHeight - 1 && tiles[row+1][column] == '.')
+		if (row < mapHeight - 1 && maze[row+1][column] == '.')
 			edgeState += 8;
 		
 		if (checkDiagonals){
 			if (edgeState == 1){
 				return ((column < mapWidth - 1) && 
-					   ((row > 0 && tiles[row-1][column+1] == '.') || 
-						(row < mapHeight - 1 && tiles[row+1][column+1] == '.'))) ? false : true;
+					   ((row > 0 && maze[row-1][column+1] == '.') || 
+						(row < mapHeight - 1 && maze[row+1][column+1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 2){
 				return ((column > 0) && 
-					   ((row > 0 && tiles[row-1][column-1] == '.') || 
-						(row < mapHeight - 1 && tiles[row+1][column-1] == '.'))) ? false : true;
+					   ((row > 0 && maze[row-1][column-1] == '.') || 
+						(row < mapHeight - 1 && maze[row+1][column-1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 4){
 				return ((row < mapHeight - 1) && 
-					   ((column > 0 && tiles[row+1][column-1] == '.') || 
-						(column < mapWidth - 1 && tiles[row+1][column+1] == '.'))) ? false : true;
+					   ((column > 0 && maze[row+1][column-1] == '.') || 
+						(column < mapWidth - 1 && maze[row+1][column+1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 8){
 				return ((row > 0) && 
-					   ((column > 0 && tiles[row-1][column-1] == '.') || 
-						(column < mapWidth-1 && tiles[row-1][column+1] == '.'))) ? false : true;
+					   ((column > 0 && maze[row-1][column-1] == '.') || 
+						(column < mapWidth-1 && maze[row-1][column+1] == '.'))) ? false : true;
 			}
 			return false;
 		}
@@ -244,42 +244,42 @@ public class Maze {
 		int column = coords.getSecond();
 		int sharedEdges = 0;
 		
-		char fill = (tiles[row][column] == '#') ? '.' : '#';
+		char fill = (maze[row][column] == '#') ? '.' : '#';
 		
 		if (checkDiagonals){
 			if (row > 0){
-				if (tiles[row-1][column] == fill)
+				if (maze[row-1][column] == fill)
 					sharedEdges++;
-				if (column > 0 && tiles[row-1][column-1] == fill)
+				if (column > 0 && maze[row-1][column-1] == fill)
 					sharedEdges++;
-				if (column < mapWidth-1 && tiles[row-1][column+1] == fill)
+				if (column < mapWidth-1 && maze[row-1][column+1] == fill)
 					sharedEdges++;
 			}
 			if (row < mapHeight-1){
-				if (tiles[row+1][column] == fill)
+				if (maze[row+1][column] == fill)
 					sharedEdges++;
-				if (column > 0 && tiles[row+1][column-1] == fill)
+				if (column > 0 && maze[row+1][column-1] == fill)
 					sharedEdges++;
-				if (column < mapWidth-1 && tiles[row+1][column+1] == fill)
+				if (column < mapWidth-1 && maze[row+1][column+1] == fill)
 					sharedEdges++;
 			}
-			if (column > 0 && tiles[row][column-1] == fill)
+			if (column > 0 && maze[row][column-1] == fill)
 				sharedEdges++;
-			if (column < mapWidth-1 && tiles[row][column+1] == fill)
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
 				sharedEdges++;
 		}
 		else{
-			if (row > 0 && tiles[row-1][column] == fill)
+			if (row > 0 && maze[row-1][column] == fill)
 					sharedEdges++;
-			if (row < mapHeight-1 && tiles[row+1][column] == fill)
+			if (row < mapHeight-1 && maze[row+1][column] == fill)
 					sharedEdges++;
-			if (column > 0 && tiles[row][column-1] == fill)
+			if (column > 0 && maze[row][column-1] == fill)
 				sharedEdges++;
-			if (column < mapWidth-1 && tiles[row][column+1] == fill)
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
 				sharedEdges++;
 		}
 		if (sharedEdges >= degree)
-			tiles[row][column] = fill;
+			maze[row][column] = fill;
 	}
 	private static void smooth(Pair coords, int degree, char fill){
 		int row = coords.getFirst();
@@ -288,52 +288,56 @@ public class Maze {
 		
 		if (checkDiagonals){
 			if (row > 0){
-				if (tiles[row-1][column] == fill)
+				if (maze[row-1][column] == fill)
 					sharedEdges++;
-				if (column > 0 && tiles[row-1][column-1] == fill)
+				if (column > 0 && maze[row-1][column-1] == fill)
 					sharedEdges++;
-				if (column < mapWidth-1 && tiles[row-1][column+1] == fill)
+				if (column < mapWidth-1 && maze[row-1][column+1] == fill)
 					sharedEdges++;
 			}
 			if (row < mapHeight-1){
-				if (tiles[row+1][column] == fill)
+				if (maze[row+1][column] == fill)
 					sharedEdges++;
-				if (column > 0 && tiles[row+1][column-1] == fill)
+				if (column > 0 && maze[row+1][column-1] == fill)
 					sharedEdges++;
-				if (column < mapWidth-1 && tiles[row+1][column+1] == fill)
+				if (column < mapWidth-1 && maze[row+1][column+1] == fill)
 					sharedEdges++;
 			}
-			if (column > 0 && tiles[row][column-1] == fill)
+			if (column > 0 && maze[row][column-1] == fill)
 				sharedEdges++;
-			if (column < mapWidth-1 && tiles[row][column+1] == fill)
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
 				sharedEdges++;
 		}
 		else{
-			if (row > 0 && tiles[row-1][column] == fill)
+			if (row > 0 && maze[row-1][column] == fill)
 					sharedEdges++;
-			if (row < mapHeight-1 && tiles[row+1][column] == fill)
+			if (row < mapHeight-1 && maze[row+1][column] == fill)
 					sharedEdges++;
-			if (column > 0 && tiles[row][column-1] == fill)
+			if (column > 0 && maze[row][column-1] == fill)
 				sharedEdges++;
-			if (column < mapWidth-1 && tiles[row][column+1] == fill)
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
 				sharedEdges++;
 		}
 		if (sharedEdges >= degree)
-			tiles[row][column] = fill;
+			maze[row][column] = fill;
 	}
 	
 	public static void printMaze(){
-		for(char[] c : tiles)
+		for(char[] c : maze)
 			System.out.println(new String(c));
 		System.out.println();
 	}
 	
+	public static char[][] getMaze(){
+		return maze;
+	}
+	
 	public static void main(String[] args){
 //		generateMaze(mapHeight, mapWidth, branchRate, checkDiagonals)
-		generateMaze(25 	  ,	25		, 0			, false			);
+		generateMaze(25 	  ,	25		, 5			, false			);
 		
 //		smoothMaze(type, degree, passes)
-//		smoothMaze(0   , 6     , 5	   );
+//		smoothMaze(0   , 4     , 1	   );
 		
 //		smoothMaze(type, degree, wallPasses, floorPasses, mode)
 		
