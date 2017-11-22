@@ -29,6 +29,24 @@ public class Floor {
 		
 		tiles = new Tile[h][w];
 		
+		/*
+		
+		Maze.generateMaze(h, w, 10, true);
+		Maze.createRooms(4,6);
+		
+		for(int row = 0; row<h; row++){
+			for(int column = 0; column<w; column++){
+				if (Maze.maze[row][column] == '#')
+					tiles[row][column] = new TileWall(t, row, column);
+				else
+					tiles[row][column] = new TileFloor(t, row, column);
+			}
+		}
+		Maze.printMaze();
+		
+		 */
+		
+		
 		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
 		Globals.spawnY = (int) (Math.random() * (height - Globals.MAX_ROOM_SIZE));
 		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this, 0);
