@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import main.tiles.Tile;
 import main.util.Pair;
 
 public class Maze {
@@ -144,98 +145,47 @@ public class Maze {
 		}
 	}
 	
-	public static void smoothMaze(int type, int degree, int passes){
-		for(int i = 0; i<passes; i++)
-			smoothType(type, degree);
-	}
-	public static void smoothMaze(int type, int degree, int wallPasses, int floorPasses, int mode){
-		switch (mode){
-		case 0:
-			for(int i = 0; i<wallPasses || i<floorPasses; i++){
-				if (i < wallPasses)
-					smoothType(type, degree, '#');
-				if (i < floorPasses)
-					smoothType(type, degree, '.');
+	public static void createRooms(int openness, int smoothing){
+		for(int row = 0; row<mapHeight/2; row++){
+			for(int column = 0; column<mapWidth/2; column++){
+				smooth(new Pair(row, column), smoothing);
+				smooth(new Pair(row, mapWidth-1-column), smoothing);
 			}
-			break;
-		case 1:
-			for(int i = 0; i<wallPasses; i++)
-				smoothType(type, degree, '#');
-			for(int i = 0; i<floorPasses; i++)
-				smoothType(type, degree, '.');
-			break;
-		case 2:
-			for(int i = 0; i<floorPasses; i++)
-				smoothType(type, degree, '.');
-			for(int i = 0; i<wallPasses; i++)
-				smoothType(type, degree, '#');
-			
-			break;
+			for(int column = 0; column<mapWidth/2; column++){
+				smooth(new Pair(mapHeight-1-row, column), smoothing);
+				smooth(new Pair(mapHeight-1-row, mapWidth-1-column), smoothing);
+			}
+			if (mapWidth % 2 == 1){ 
+				smooth(new Pair(row, mapWidth/2), smoothing);
+				smooth(new Pair(mapHeight-1-row, mapWidth/2), smoothing);
+			}
 		}
-	}
-	
-	private static void smoothType(int type, int degree){
-		switch (type){
-		case 0:
-			for(int row = 0; row<mapHeight; row++)
-				for(int column = 0; column<mapWidth; column++)
-					smooth(new Pair(row, column), degree);
-			break;
-		case 1: 
-			for(int row = 0; row<mapHeight/2; row++){
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(row, column), degree);
-					smooth(new Pair(row, mapWidth-1-column), degree);
-				}
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(mapHeight-1-row, column), degree);
-					smooth(new Pair(mapHeight-1-row, mapWidth-1-column), degree);
-				}
-				if (mapWidth % 2 == 1){ 
-					smooth(new Pair(row, mapWidth/2), degree);
-					smooth(new Pair(mapHeight-1-row, mapWidth/2), degree);
-				}
+		if (mapHeight % 2 == 1){
+			for(int column = 0; column<mapWidth/2; column++){
+				smooth(new Pair(mapHeight/2, column), smoothing);
+				smooth(new Pair(mapHeight/2, mapWidth-1-column), smoothing);
 			}
-			if (mapHeight % 2 == 1){
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(mapHeight/2, column), degree);
-					smooth(new Pair(mapHeight/2, mapWidth-1-column), degree);
-				}
-			}
-			break;
 		}
-	}
-	private static void smoothType(int type, int degree, char fill){
-		switch (type){
-		case 0:
-			for(int row = 0; row<mapHeight; row++){
-				for(int column = 0; column<mapWidth; column++){
-					smooth(new Pair(row, column), degree, fill);
-				}
+		
+		for(int row = 0; row<mapHeight/2; row++){
+			for(int column = 0; column<mapWidth/2; column++){
+				open(new Pair(row, column), openness);
+				open(new Pair(row, mapWidth-1-column), openness);
 			}
-			break;
-		case 1: 
-			for(int row = 0; row<mapHeight/2; row++){
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(row, column), degree, fill);
-					smooth(new Pair(row, mapWidth-1-column), degree, fill);
-				}
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(mapHeight-1-row, column), degree, fill);
-					smooth(new Pair(mapHeight-1-row, mapWidth-1-column), degree, fill);
-				}
-				if (mapWidth % 2 == 1){ 
-					smooth(new Pair(row, mapWidth/2), degree, fill);
-					smooth(new Pair(mapHeight-1-row, mapWidth/2), degree, fill);
-				}
+			for(int column = 0; column<mapWidth/2; column++){
+				open(new Pair(mapHeight-1-row, column), openness);
+				open(new Pair(mapHeight-1-row, mapWidth-1-column), openness);
 			}
-			if (mapHeight % 2 == 1){
-				for(int column = 0; column<mapWidth/2; column++){
-					smooth(new Pair(mapHeight/2, column), degree, fill);
-					smooth(new Pair(mapHeight/2, mapWidth-1-column), degree, fill);
-				}
+			if (mapWidth % 2 == 1){ 
+				open(new Pair(row, mapWidth/2), openness);
+				open(new Pair(mapHeight-1-row, mapWidth/2), openness);
 			}
-			break;
+		}
+		if (mapHeight % 2 == 1){
+			for(int column = 0; column<mapWidth/2; column++){
+				open(new Pair(mapHeight/2, column), openness);
+				open(new Pair(mapHeight/2, mapWidth-1-column), openness);
+			}
 		}
 	}
 	
@@ -281,45 +231,49 @@ public class Maze {
 		if (sharedEdges >= degree)
 			maze[row][column] = fill;
 	}
-	private static void smooth(Pair coords, int degree, char fill){
+	
+	private static void open(Pair coords, int degree){
 		int row = coords.getFirst();
 		int column = coords.getSecond();
-		int sharedEdges = 0;
+		char fill = '.';
 		
-		if (checkDiagonals){
-			if (row > 0){
-				if (maze[row-1][column] == fill)
-					sharedEdges++;
-				if (column > 0 && maze[row-1][column-1] == fill)
-					sharedEdges++;
-				if (column < mapWidth-1 && maze[row-1][column+1] == fill)
-					sharedEdges++;
-			}
-			if (row < mapHeight-1){
-				if (maze[row+1][column] == fill)
-					sharedEdges++;
-				if (column > 0 && maze[row+1][column-1] == fill)
-					sharedEdges++;
-				if (column < mapWidth-1 && maze[row+1][column+1] == fill)
-					sharedEdges++;
-			}
-			if (column > 0 && maze[row][column-1] == fill)
-				sharedEdges++;
-			if (column < mapWidth-1 && maze[row][column+1] == fill)
-				sharedEdges++;
-		}
-		else{
-			if (row > 0 && maze[row-1][column] == fill)
-					sharedEdges++;
+		if (maze[row][column] != fill){
+			boolean[] side = {false, false, false, false};
+			boolean[] diagonal = {false, false, false, false};
+			int count = 0;
+			
+			
 			if (row < mapHeight-1 && maze[row+1][column] == fill)
-					sharedEdges++;
-			if (column > 0 && maze[row][column-1] == fill)
-				sharedEdges++;
+				side[0] = true;
+			if (row > 0 && maze[row-1][column] == fill)
+				side[1] = true;
 			if (column < mapWidth-1 && maze[row][column+1] == fill)
-				sharedEdges++;
+				side[2] = true;
+			if (column > 0 && maze[row][column-1] == fill)
+				side[3] = true;
+			
+	
+			if (side[0] && side[2] && maze[row+1][column+1] == fill)
+				diagonal[0] = true;
+			if (side[0] && side[3] && maze[row+1][column-1] == fill)
+				diagonal[1] = true;
+			if (side[1] && side[2] && maze[row-1][column+1] == fill)
+				diagonal[2] = true;
+			if (side[1] && side[3] && maze[row-1][column-1] == fill)
+				diagonal[3] = true;
+			
+			for(boolean b : side){
+				if (b)
+					count++;
+			}
+			for(boolean b : diagonal){
+				if (b)
+					count++;
+			}
+			
+			if (count >= degree)
+				maze[row][column] = fill;
 		}
-		if (sharedEdges >= degree)
-			maze[row][column] = fill;
 	}
 	
 	public static void printMaze(){
@@ -336,12 +290,10 @@ public class Maze {
 //		generateMaze(mapHeight, mapWidth, branchRate, checkDiagonals)
 		generateMaze(25 	  ,	25		, 5			, false			);
 		
-//		smoothMaze(type, degree, passes)
-//		smoothMaze(0   , 4     , 1	   );
-		
-//		smoothMaze(type, degree, wallPasses, floorPasses, mode)
+		createRooms(4, 5);
 		
 		printMaze();
+		
 	}
 	
 }
