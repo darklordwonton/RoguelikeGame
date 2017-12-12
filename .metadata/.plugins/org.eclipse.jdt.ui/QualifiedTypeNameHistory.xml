@@ -6,7 +6,10 @@
 <fullyQualifiedTypeName name="javax.swing.tree.TreeNode"/>
 <fullyQualifiedTypeName name="main.util.TreeNode"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="main.job.Job"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="main.job.JobTree"/>
+<fullyQualifiedTypeName name="main.job.Job"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="main.util.Names"/>
+<fullyQualifiedTypeName name="main.job.JobFighter"/>
 </qualifiedTypeNameHistroy>
