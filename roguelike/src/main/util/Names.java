@@ -20,8 +20,10 @@ public class Names {
 	private static String[] slimeVowels = {"o", "oo", "ooo", "u", "uu", "ou", "olo", ""};
 	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar", "ra"};
 	
-	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword", "Witch"};
+	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword", "Witch", "Magic", "Doomsday", "Apocalypse", "Stealthy", "Axe", "Chaos"};
 	private static String[] fightJobNames = {"fighter", "rager", "soldier", "warrior", "devastator"};
+	private static String[] mageJobNames = {"mage", "wiazard", "sorcerer", "caster", "magic dude", "wizardly boi", "Potter"};
+	private static String[] sneakJobNames = {"rogue", "sneak", "assassin", "stealth", "sneaky boi", "hideyman"};
 			
 	public static String slimeName() {
 		int a = (int)(Math.random() * firstSlime.length);		
@@ -54,7 +56,7 @@ public class Names {
 			ret += matVowels[(int)(Math.random() * matVowels.length)];
 			ret += endMat[(int)(Math.random() * endMat.length)];
 		}
-		if (Math.random() < 0.45) {
+		if (Math.random() < 0.44) {
 			ret += "ium";
 		}
 		if (Math.random() < 0.2) {
@@ -65,5 +67,11 @@ public class Names {
 	
 	public static String fighterName() {
 		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + fightJobNames[(int)(Math.random() * fightJobNames.length)];
+	}
+	public static String mageName() {
+		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + mageJobNames[(int)(Math.random() * mageJobNames.length)];
+	}
+	public static String sneakName() {
+		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + sneakJobNames[(int)(Math.random() * sneakJobNames.length)];
 	}
 }

@@ -3,7 +3,6 @@ package main.job;
 import main.util.Names;
 
 public class JobFighter extends Job {
-	
 	public JobFighter() {
 		super(Names.fighterName());
 		hpGain = 1;

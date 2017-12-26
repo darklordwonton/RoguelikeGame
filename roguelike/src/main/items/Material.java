@@ -9,6 +9,8 @@ public class Material {
 	
 	public Material() {
 		name = Names.materialName();
+		hardness = (int)(100 * Math.random());
+		sharpness = (int)(100 * Math.random());
 	}
 
 }
