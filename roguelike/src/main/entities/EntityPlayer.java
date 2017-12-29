@@ -22,6 +22,9 @@ public class EntityPlayer extends Entity {
 		this.setSprite(Globals.PLAYER_SPRITE_SHEET, Globals.PLAYER_SPRITE_COLUMN, Globals.PLAYER_SPRITE_ROW, Globals.PLAYER_SPRITE_FRAME_COUNT);
 		tangible = !Globals.NO_CLIP;
 		stats = new Stats(100,Globals.floorNumber);
+		stats.Statsp(100, Globals.floorNumber);
+		stats.Statsp(100, Globals.floorNumber);
+		stats.Statsp(100, Globals.floorNumber);
 		hp = stats.getHp();
 		mp = stats.getMp();
 		xp = 0;

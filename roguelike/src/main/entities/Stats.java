@@ -17,7 +17,7 @@ public class Stats {
 	 * smartness - max mp, AI, and something with rituals
 	 * luck - average of all players is used, influences loot, maybe enemy difficulty (only bad luck influences)
 	 * 
-	 * tuf + dex => hp
+	 * tuf + buf => hp
 	 * wit + snk => mp regen
 	 * 
 	 */
@@ -70,6 +70,29 @@ public class Stats {
 		innateTuf += change;
 		innateWit += change;
 		innateSnk += change;
+		this.level = level;
+		calculateStats();
+	}
+	
+	//Print innate stats *Sam is using this for testing*
+	public void Statsp(int magnitude, int level) {
+		Random rand = new Random();
+		innateHp = rand.nextInt(magnitude / 5);
+		innateMp = rand.nextInt(magnitude / 5);
+		innateBuf = rand.nextInt(magnitude / 5);
+		innateTuf = rand.nextInt(magnitude / 5);
+		innateWit = rand.nextInt(magnitude / 5);
+		innateSnk = rand.nextInt(magnitude / 5);
+		int total = innateHp + innateMp + innateBuf
+				+ innateTuf + innateWit + innateSnk;
+		int change = (magnitude - total) / 6;
+		innateHp += change;
+		innateMp += change;
+		innateBuf += change;
+		innateTuf += change;
+		innateWit += change;
+		innateSnk += change;
+		System.out.println(innateHp + "  " + innateMp + "  " + innateBuf + "  " + innateTuf + "  " + innateWit + "  " + innateSnk);
 		this.level = level;
 		calculateStats();
 	}

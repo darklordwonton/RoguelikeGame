@@ -42,7 +42,6 @@ public class Attack extends Effect {
 		buf = b;
 	}
 
-	
 	public int getDamage () {
 		double d = lowDamage + 0.5;
 		double m = (double)((highDamage - lowDamage) / bellCurve);

@@ -21,9 +21,13 @@ public class Names {
 	private static String[] matVowels = {"i", "y", "u", "o", "oe", "eo", "ee", "e", "a", "ar", "ra"};
 	
 	private static String[] jobDescriptors = {"Holy", "Blood", "Destrution", "Sword", "Witch", "Magic", "Doomsday", "Apocalypse", "Stealthy", "Axe", "Chaos"};
+	private static String[] tier1Descriptors = {"Stealthy", "Smart", "Tough", "Powerful"};
+	private static String[] tier2Descriptors = {"Magic", "Blood", "Destruction", "Holy", "Monstrous", ""};
+	private static String[] tier3Descriptors = {"Apocalypse", "Chaos", "Doomsday", "Infernal", "Damned", "Demonic", "Angelic"};
+
 	private static String[] fightJobNames = {"fighter", "rager", "soldier", "warrior", "devastator"};
-	private static String[] mageJobNames = {"mage", "wiazard", "sorcerer", "caster", "magic dude", "wizardly boi", "Potter"};
-	private static String[] sneakJobNames = {"rogue", "sneak", "assassin", "stealth", "sneaky boi", "hideyman"};
+	private static String[] mageJobNames = {"mage", "wiazard", "sorcerer", "caster", "magic dude", "oracle", "cleric", "enchanter"};
+	private static String[] sneakJobNames = {"rogue", "sneak", "assassin", "stealth", "sneaky boi", "hideyman", "ninja"};
 			
 	public static String slimeName() {
 		int a = (int)(Math.random() * firstSlime.length);		
