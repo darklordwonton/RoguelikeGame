@@ -6,21 +6,23 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import main.tiles.Tile;
+import main.util.Globals;
 import main.util.Pair;
 
 public class Maze {
 	static char[][] maze;
+	static char[][] altMaze;
+	
 	static List<Pair> frontier = new ArrayList<Pair>();
 	
 	static int mapWidth;
 	static int mapHeight;
 	static boolean checkDiagonals;
 	
-	public static void generateMaze(int rowLength, int columnLength, int branchRate, boolean checkCorners){
+	public static void generateMaze(int height, int width, int branchRate, boolean checkCorners){
 //		creating char[][] to hold values
-		mapWidth = columnLength;
-		mapHeight = rowLength;
+		mapWidth = width;
+		mapHeight = height;
 		checkDiagonals = checkCorners;
 		
 		maze = new char[mapHeight][mapWidth];
@@ -32,22 +34,20 @@ public class Maze {
 		}
 		
 //		first coordinates
-		int originalRow = (int)(Math.random() * mapHeight);
-		int originalColumn = (int)(Math.random() * mapWidth);
+		Globals.spawnY = (int)(Math.random() * mapHeight);
+		Globals.spawnX = (int)(Math.random() * mapWidth);
 		
 //		generate maze
-		carve(new Pair(originalRow, originalColumn));
+		carve(new Pair(Globals.spawnY, Globals.spawnX));
 		
 		while(frontier.size() > 0){
 			int pos = (int)(Math.pow(Math.random(), Math.pow(Math.E, -branchRate)) * frontier.size());
 			Pair choice = frontier.get(pos);
 			
-			if(check(choice)){
+			if(check(choice))
 				carve(choice);
-			}
-			else{
+			else
 				harden(choice);
-			}
 			frontier.remove(choice);
 		}
 		
@@ -58,6 +58,15 @@ public class Maze {
 					harden(new Pair(row, column));
 			}
 		}
+		
+		altMaze = new char[mapHeight][mapWidth];
+		
+		for(int row = 0; row<mapHeight; row++){
+			for(int column = 0; column<mapWidth; column++){
+				altMaze[row][column] = maze[row][column];
+			}
+		}
+		
 	}
 	
 	private static void carve(Pair coords){
@@ -109,24 +118,24 @@ public class Maze {
 		
 		if (checkDiagonals){
 			if (edgeState == 1){
-				return ((column < mapWidth - 1) && 
-					   ((row > 0 && maze[row-1][column+1] == '.') || 
-						(row < mapHeight - 1 && maze[row+1][column+1] == '.'))) ? false : true;
+				return ((column < mapWidth-1) 	&& 
+					     ((row > 0 				&& maze[row-1][column+1] == '.') || 
+						  (row < mapHeight-1 	&& maze[row+1][column+1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 2){
-				return ((column > 0) && 
-					   ((row > 0 && maze[row-1][column-1] == '.') || 
-						(row < mapHeight - 1 && maze[row+1][column-1] == '.'))) ? false : true;
+				return ((column > 0) 			&& 
+					     ((row > 0 				&& maze[row-1][column-1] == '.') || 
+						  (row < mapHeight-1 	&& maze[row+1][column-1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 4){
-				return ((row < mapHeight - 1) && 
-					   ((column > 0 && maze[row+1][column-1] == '.') || 
-						(column < mapWidth - 1 && maze[row+1][column+1] == '.'))) ? false : true;
+				return ((row < mapHeight-1)		&& 
+					     ((column > 0 			&& maze[row+1][column-1] == '.') || 
+						  (column < mapWidth-1	&& maze[row+1][column+1] == '.'))) ? false : true;
 			}
 			else if (edgeState == 8){
-				return ((row > 0) && 
-					   ((column > 0 && maze[row-1][column-1] == '.') || 
-						(column < mapWidth-1 && maze[row-1][column+1] == '.'))) ? false : true;
+				return ((row > 0) 				&& 
+					     ((column > 0 			&& maze[row-1][column-1] == '.') || 
+						  (column < mapWidth-1  && maze[row-1][column+1] == '.'))) ? false : true;
 			}
 			return false;
 		}
@@ -145,56 +154,127 @@ public class Maze {
 		}
 	}
 	
-	public static void createRooms(int openness, int smoothing){
-		for(int row = 0; row<mapHeight/2; row++){
-			for(int column = 0; column<mapWidth/2; column++){
-				smooth(new Pair(row, column), smoothing);
-				smooth(new Pair(row, mapWidth-1-column), smoothing);
-			}
-			for(int column = 0; column<mapWidth/2; column++){
-				smooth(new Pair(mapHeight-1-row, column), smoothing);
-				smooth(new Pair(mapHeight-1-row, mapWidth-1-column), smoothing);
-			}
-			if (mapWidth % 2 == 1){ 
-				smooth(new Pair(row, mapWidth/2), smoothing);
-				smooth(new Pair(mapHeight-1-row, mapWidth/2), smoothing);
-			}
-		}
-		if (mapHeight % 2 == 1){
-			for(int column = 0; column<mapWidth/2; column++){
-				smooth(new Pair(mapHeight/2, column), smoothing);
-				smooth(new Pair(mapHeight/2, mapWidth-1-column), smoothing);
-			}
-		}
+	public static void createRooms(char[][] maze, char mode, int rooms, int halls, boolean smoothFirst){
 		
-		for(int row = 0; row<mapHeight/2; row++){
-			for(int column = 0; column<mapWidth/2; column++){
-				open(new Pair(row, column), openness);
-				open(new Pair(row, mapWidth-1-column), openness);
-			}
-			for(int column = 0; column<mapWidth/2; column++){
-				open(new Pair(mapHeight-1-row, column), openness);
-				open(new Pair(mapHeight-1-row, mapWidth-1-column), openness);
-			}
-			if (mapWidth % 2 == 1){ 
-				open(new Pair(row, mapWidth/2), openness);
-				open(new Pair(mapHeight-1-row, mapWidth/2), openness);
+		if(smoothFirst)
+			smooth(maze, mode, halls);
+		else
+			smooth(maze, mode, rooms, '.');
+		
+		if (!smoothFirst)
+			smooth(maze, mode, rooms, '.');
+		else
+			smooth(maze, mode, halls);
+		
+	}
+	private static void smooth(char[][] maze, char mode, int smoothing){
+		if (mode == 'n'){
+			for(int row = 0; row<mapHeight; row++){
+				for(int column = 0; column<mapWidth; column++){
+					smooth(maze, new Pair(row, column), smoothing);
+				}
 			}
 		}
-		if (mapHeight % 2 == 1){
-			for(int column = 0; column<mapWidth/2; column++){
-				open(new Pair(mapHeight/2, column), openness);
-				open(new Pair(mapHeight/2, mapWidth-1-column), openness);
+		else{
+			for(int row = 0; row<mapHeight/2; row++){
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(row, column), smoothing);
+					smooth(maze, new Pair(row, mapWidth-1-column), smoothing);
+				}
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(mapHeight-1-row, column), smoothing);
+					smooth(maze, new Pair(mapHeight-1-row, mapWidth-1-column), smoothing);
+				}
+				if (mapWidth % 2 == 1){ 
+					smooth(maze, new Pair(row, mapWidth/2), smoothing);
+					smooth(maze, new Pair(mapHeight-1-row, mapWidth/2), smoothing);
+				}
+			}
+			if (mapHeight % 2 == 1){
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(mapHeight/2, column), smoothing);
+					smooth(maze, new Pair(mapHeight/2, mapWidth-1-column), smoothing);
+				}
 			}
 		}
 	}
-	
-	private static void smooth(Pair coords, int degree){
+	private static void smooth(char[][] maze, char mode, int smoothing, char fill){
+		if (mode == 'n'){
+			for(int row = 0; row<mapHeight; row++){
+				for(int column = 0; column<mapWidth; column++){
+					smooth(maze, new Pair(row, column), smoothing);
+				}
+			}
+		}
+		else{
+			for(int row = 0; row<mapHeight/2; row++){
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(row, column), smoothing, fill);
+					smooth(maze, new Pair(row, mapWidth-1-column), smoothing, fill);
+				}
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(mapHeight-1-row, column), smoothing, fill);
+					smooth(maze, new Pair(mapHeight-1-row, mapWidth-1-column), smoothing, fill);
+				}
+				if (mapWidth % 2 == 1){ 
+					smooth(maze, new Pair(row, mapWidth/2), smoothing, fill);
+					smooth(maze, new Pair(mapHeight-1-row, mapWidth/2), smoothing, fill);
+				}
+			}
+			if (mapHeight % 2 == 1){
+				for(int column = 0; column<mapWidth/2; column++){
+					smooth(maze, new Pair(mapHeight/2, column), smoothing, fill);
+					smooth(maze, new Pair(mapHeight/2, mapWidth-1-column), smoothing, fill);
+				}
+			}
+	}
+	}
+	private static void smooth(char[][] maze, Pair coords, int degree){
 		int row = coords.getFirst();
 		int column = coords.getSecond();
 		int sharedEdges = 0;
 		
 		char fill = (maze[row][column] == '#') ? '.' : '#';
+		
+		if (checkDiagonals){
+			if (row > 0){
+				if (					   maze[row-1][column] == fill)
+					sharedEdges++;
+				if (column > 0 			&& maze[row-1][column-1] == fill)
+					sharedEdges++;
+				if (column < mapWidth-1 && maze[row-1][column+1] == fill)
+					sharedEdges++;
+			}
+			if (row < mapHeight-1){
+				if (					   maze[row+1][column] == fill)
+					sharedEdges++;
+				if (column > 0 			&& maze[row+1][column-1] == fill)
+					sharedEdges++;
+				if (column < mapWidth-1 && maze[row+1][column+1] == fill)
+					sharedEdges++;
+			}
+			if (column > 0 			&& maze[row][column-1] == fill)
+				sharedEdges++;
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
+				sharedEdges++;
+		}
+		else{
+			if (row > 0 && maze[row-1][column] == fill)
+					sharedEdges++;
+			if (row < mapHeight-1 && maze[row+1][column] == fill)
+					sharedEdges++;
+			if (column > 0 && maze[row][column-1] == fill)
+				sharedEdges++;
+			if (column < mapWidth-1 && maze[row][column+1] == fill)
+				sharedEdges++;
+		}
+		if (sharedEdges >= degree)
+			maze[row][column] = fill;
+	}
+	private static void smooth(char[][] maze, Pair coords, int degree, char fill){
+		int row = coords.getFirst();
+		int column = coords.getSecond();
+		int sharedEdges = 0;
 		
 		if (checkDiagonals){
 			if (row > 0){
@@ -232,53 +312,28 @@ public class Maze {
 			maze[row][column] = fill;
 	}
 	
-	private static void open(Pair coords, int degree){
-		int row = coords.getFirst();
-		int column = coords.getSecond();
-		char fill = '.';
-		
-		if (maze[row][column] != fill){
-			boolean[] side = {false, false, false, false};
-			boolean[] diagonal = {false, false, false, false};
-			int count = 0;
-			
-			
-			if (row < mapHeight-1 && maze[row+1][column] == fill)
-				side[0] = true;
-			if (row > 0 && maze[row-1][column] == fill)
-				side[1] = true;
-			if (column < mapWidth-1 && maze[row][column+1] == fill)
-				side[2] = true;
-			if (column > 0 && maze[row][column-1] == fill)
-				side[3] = true;
-			
-	
-			if (side[0] && side[2] && maze[row+1][column+1] == fill)
-				diagonal[0] = true;
-			if (side[0] && side[3] && maze[row+1][column-1] == fill)
-				diagonal[1] = true;
-			if (side[1] && side[2] && maze[row-1][column+1] == fill)
-				diagonal[2] = true;
-			if (side[1] && side[3] && maze[row-1][column-1] == fill)
-				diagonal[3] = true;
-			
-			for(boolean b : side){
-				if (b)
-					count++;
-			}
-			for(boolean b : diagonal){
-				if (b)
-					count++;
-			}
-			
-			if (count >= degree)
-				maze[row][column] = fill;
-		}
-	}
-	
 	public static void printMaze(){
 		for(char[] c : maze)
 			System.out.println(new String(c));
+		System.out.println();
+	}
+	
+	public static void printMazeDif(char[][] maze1, char[][] maze2){
+		for(int row = 0; row<mapHeight; row++){
+			String s1 = new String(maze1[row]);
+			String s2 = "";
+			String s3 = new String(maze2[row]);
+			for(int column = 0; column<mapWidth; column++){
+					if (maze1[row][column] == maze2[row][column]){
+						s2 += ' ';
+					}
+					else if (maze1[row][column] == '.')
+						s2 += '+';
+					else
+						s2 += '-';
+			}
+			System.out.println(s1 + "   " + s2 + "   " + s3);
+		}
 		System.out.println();
 	}
 	
@@ -287,13 +342,28 @@ public class Maze {
 	}
 	
 	public static void main(String[] args){
-//		generateMaze(mapHeight, mapWidth, branchRate, checkDiagonals)
-		generateMaze(25 	  ,	25		, 5			, false			);
+//		generateMaze(0<mapHeight, 0<mapWidth, -10<branchRate<10, checkDiagonals)
+		generateMaze(25			, 25		, 5				   , true		   );
 		
-		createRooms(4, 5);
+		/*
+		if checkDiagonals is true
+		5<halls, identical above 8
+		halls = 9;  6<=room<=7		 ; false = true all room
+		halls = 8; 	6<=room<=7		 ; false = true all room
+		halls = 7; 	6<=room			 ; false = true when 7<=room
+		halls = 6; 	6 & false 8<=room; false = true when 9<=room
 		
-		printMaze();
+		if checkDiagonals is false
+		halls = 5; 4<=rooms; false = true all room
+		halls = 4; 4<=rooms; false = true all room
+		*/
 		
+		int halls = 8;
+		int rooms = 8;
+		
+		createRooms(maze, 'n', rooms, halls, false);
+		createRooms(altMaze, 'w', rooms, halls, false);
+		printMazeDif(maze, altMaze);
 	}
 	
 }

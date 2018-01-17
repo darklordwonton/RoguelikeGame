@@ -29,10 +29,11 @@ public class Floor {
 		
 		tiles = new Tile[h][w];
 		
-		/*
 		
-		Maze.generateMaze(h, w, 10, true);
+		
+		Maze.generateMaze(h, w, 10, false);
 		Maze.createRooms(4,6);
+		
 		
 		for(int row = 0; row<h; row++){
 			for(int column = 0; column<w; column++){
@@ -44,9 +45,9 @@ public class Floor {
 		}
 		Maze.printMaze();
 		
-		 */
+		 
 		
-		
+		/*
 		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
 		Globals.spawnY = (int) (Math.random() * (height - Globals.MAX_ROOM_SIZE));
 		rooms[0] = new Room(Globals.spawnX,Globals.spawnY,this, 0);
@@ -55,12 +56,12 @@ public class Floor {
 		Globals.spawnY += (int)(Math.random() * rooms[0].getSizeY());
 		
 		for (int i = 1; i < rooms.length; i++){
-			/*int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
+			*//*int e = (int)(Math.random() * (Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber));
 			if (ECount + e < Globals.BASE_CREATURES + Globals.CREATURES_INCREASE * Globals.floorNumber){
 				ECount += e;
 			}else{
 				e = 0;
-			}*/
+			}*//*
 			rooms[i] = new Room((int)(Math.random() * width), (int)(Math.random() * height), this, 1);
 			rooms[i].generateRoom();
 			entities.addAll(rooms[i].getEntities(0));
@@ -106,6 +107,7 @@ public class Floor {
 		for (Room r : rooms) {
 			r.spawnEntities();
 		}
+		*/
 	}
 	
 	public Tile getTile (int x, int y) {
