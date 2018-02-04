@@ -31,7 +31,11 @@ public class Floor {
 		
 		
 		
+<<<<<<< Updated upstream
 		Maze.generateMaze(h, w, 10, false);
+=======
+		/*Maze.generateMaze(h, w, 10, true);
+>>>>>>> Stashed changes
 		Maze.createRooms(4,6);
 		
 		
@@ -43,9 +47,13 @@ public class Floor {
 					tiles[row][column] = new TileFloor(t, row, column);
 			}
 		}
-		Maze.printMaze();
+		Maze.printMaze();*/
 		
 		 
+<<<<<<< Updated upstream
+=======
+		
+>>>>>>> Stashed changes
 		
 		/*
 		Globals.spawnX = (int) (Math.random() * (width - Globals.MAX_ROOM_SIZE));
