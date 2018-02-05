@@ -6,10 +6,11 @@ import main.entities.Entity;
 import main.tiles.Tile;
 
 public class Effect {
-	
 	protected Entity origin = null;
 	protected int animationFrames = -1;
 	protected int currentFrame = 0;
+	
+	protected int duration = -1;
 	
 	protected String sprite = null;
 	
@@ -40,6 +41,14 @@ public class Effect {
 	
 	public BufferedImage getSprite() {
 		return null;
+	}
+	
+	public void incrementDuration(){
+		if (duration >= 0){
+			duration--;
+		} else{
+			//Put code for removal of effect here. 
+		}
 	}
 	
 }

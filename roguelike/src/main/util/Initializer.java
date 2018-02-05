@@ -9,7 +9,7 @@ import main.tiles.EnumTheme;
 
 public class Initializer {
 	public static void start(){
-		Globals.player = new EntityPlayer("You", 0, 0);
+		Globals.player = new EntityPlayer("You", Globals.spawnX, Globals.spawnY);
 		Generator.newFloor();
 		ImageManager.init();
 		MainRenderer.init();

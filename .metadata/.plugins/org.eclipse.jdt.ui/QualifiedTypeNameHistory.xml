@@ -12,4 +12,10 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="main.util.Names"/>
 <fullyQualifiedTypeName name="main.job.JobFighter"/>
+<fullyQualifiedTypeName name="main.magic.shapes.ShapeLine"/>
+<fullyQualifiedTypeName name="main.magic.shapes.ShapeCenteredCircle"/>
+<fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.rendering.MessageBarPane"/>
+<fullyQualifiedTypeName name="main.magic.DamageSpell"/>
+<fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
 </qualifiedTypeNameHistroy>

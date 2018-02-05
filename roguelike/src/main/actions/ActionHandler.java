@@ -8,6 +8,7 @@ import main.effects.attacks.EnumAttackType;
 import main.entities.Entity;
 import main.entities.EntityPlayer;
 import main.entities.monsters.EntityMonster;
+import main.magic.DamageSpell;
 import main.magic.Spell;
 import main.magic.shapes.ShapeCenteredCircle;
 import main.rendering.MainRenderer;
@@ -41,10 +42,8 @@ public class ActionHandler {
 					
 		  		//TEMPORARY
 				case Globals.M: 
-					Spell s = new Spell(new Attack(1, 1, 1, new HashSet<EnumAttackType>(), Globals.player), 
-							new ShapeCenteredCircle(null, Globals.player, 3),
-							"TEST", Globals.player, 0);
-					s.cast();
+					Spell s = DamageSpell.createSpell(0, Globals.player);
+					s.cast(EnumDirection.LEFT);
 					break;
 		  			
 				case Globals.ESC_KEY: 

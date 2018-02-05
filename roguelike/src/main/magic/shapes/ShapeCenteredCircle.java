@@ -10,12 +10,12 @@ import main.util.Globals;
 
 public class ShapeCenteredCircle extends Shape {
 
-	public ShapeCenteredCircle(EnumDirection d, Entity e, int s) {
-		super(d, e, s);
+	public ShapeCenteredCircle(Entity e, int s) {
+		super(e, s);
 	}
 	
-	public ShapeCenteredCircle(EnumDirection d, int x, int y, int s) {
-		super(d, x, y, s);
+	public ShapeCenteredCircle(int x, int y, int s) {
+		super(x, y, s);
 	}
 	
 	@Override
