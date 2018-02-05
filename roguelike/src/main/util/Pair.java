@@ -31,6 +31,24 @@ public class Pair {
 		n2 = n;
 	}
 	
+	public void randFirst(int upperbound){
+		setFirst((int)(Math.random() * upperbound));
+	}
+	
+	public void randSecond(int upperbound){
+		setSecond((int)(Math.random() * upperbound));
+	}
+	
+	public void rand(int upperbound){
+		setFirst((int)(Math.random() * upperbound));
+		setSecond((int)(Math.random() * upperbound));
+	}
+	
+	public void rand(int firstUpperbound, int secondUpperbound){
+		setFirst((int)(Math.random() * firstUpperbound));
+		setSecond((int)(Math.random() * secondUpperbound));
+	}
+	
 	public String toString(){
 		return ("[" + getFirst() + ", " + getSecond() + "]");
 	}

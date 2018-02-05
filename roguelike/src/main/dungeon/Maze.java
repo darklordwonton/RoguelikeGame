@@ -18,7 +18,7 @@ public class Maze {
 	static int mapHeight;
 	static boolean checkDiagonals;
 	
-	public static void generateMaze(int height, int width, int branchRate, boolean checkCorners, int roomSmoothing, int hallSmoothing, boolean smoothFirst){
+	public static Pair generateMaze(int height, int width, int branchRate, boolean checkCorners, int roomSmoothing, int hallSmoothing, boolean smoothFirst){
 //		creating char[][] to hold values
 		mapWidth = width;
 		mapHeight = height;
@@ -57,9 +57,16 @@ public class Maze {
 					harden(new Pair(row, column));
 			}
 		}
-		
+//		smoothing
 		createRooms(maze, 'n', roomSmoothing, hallSmoothing, smoothFirst);
 		
+//		stair coords
+		Pair stairCords = new Pair();
+		stairCords.rand(height, width);
+		while (maze[stairCords.getFirst()][stairCords.getSecond()] != '.'){
+			stairCords.rand(height, width);
+		}
+		return stairCords;
 	}
 	
 	private static void carve(Pair coords){
