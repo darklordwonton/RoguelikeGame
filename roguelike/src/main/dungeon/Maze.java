@@ -11,7 +11,6 @@ import main.util.Pair;
 
 public class Maze {
 	static char[][] maze;
-	static char[][] altMaze;
 	
 	static List<Pair> frontier = new ArrayList<Pair>();
 	
@@ -19,7 +18,7 @@ public class Maze {
 	static int mapHeight;
 	static boolean checkDiagonals;
 	
-	public static void generateMaze(int height, int width, int branchRate, boolean checkCorners){
+	public static void generateMaze(int height, int width, int branchRate, boolean checkCorners, int roomSmoothing, int hallSmoothing, boolean smoothFirst){
 //		creating char[][] to hold values
 		mapWidth = width;
 		mapHeight = height;
@@ -59,13 +58,7 @@ public class Maze {
 			}
 		}
 		
-		altMaze = new char[mapHeight][mapWidth];
-		
-		for(int row = 0; row<mapHeight; row++){
-			for(int column = 0; column<mapWidth; column++){
-				altMaze[row][column] = maze[row][column];
-			}
-		}
+		createRooms(maze, 'n', roomSmoothing, hallSmoothing, smoothFirst);
 		
 	}
 	
@@ -154,17 +147,17 @@ public class Maze {
 		}
 	}
 	
-	public static void createRooms(char[][] maze, char mode, int rooms, int halls, boolean smoothFirst){
+	public static void createRooms(char[][] maze, char mode, int roomSmoothing, int hallSmoothing, boolean smoothFirst){
 		
 		if(smoothFirst)
-			smooth(maze, mode, halls);
+			smooth(maze, mode, hallSmoothing);
 		else
-			smooth(maze, mode, rooms, '.');
+			smooth(maze, mode, roomSmoothing, '.');
 		
 		if (!smoothFirst)
-			smooth(maze, mode, rooms, '.');
+			smooth(maze, mode, roomSmoothing, '.');
 		else
-			smooth(maze, mode, halls);
+			smooth(maze, mode, hallSmoothing);
 		
 	}
 	private static void smooth(char[][] maze, char mode, int smoothing){
@@ -342,28 +335,21 @@ public class Maze {
 	}
 	
 	public static void main(String[] args){
-//		generateMaze(0<mapHeight, 0<mapWidth, -10<branchRate<10, checkDiagonals)
-		generateMaze(25			, 25		, 5				   , true		   );
-		
+//		generateMaze(0<mapHeight, 0<mapWidth, -10<branchRate<10, checkDiagonals, int roomSmoothing, int hallSmoothing, boolean smoothFirst)
+		generateMaze(25			, 25		, 5				   , true		   , 7                , 6                , false);
 		/*
 		if checkDiagonals is true
-		5<halls, identical above 8
-		halls = 9;  6<=room<=7		 ; false = true all room
-		halls = 8; 	6<=room<=7		 ; false = true all room
-		halls = 7; 	6<=room			 ; false = true when 7<=room
-		halls = 6; 	6 & false 8<=room; false = true when 9<=room
+		5<hallSmoothing, identical above 8
+		hallSmoothing = 9;  6<=roomSmoothing<=7		  ; false = true all roomSmoothing
+		hallSmoothing = 8; 	6<=roomSmoothing<=7		  ; false = true all roomSmoothing
+		hallSmoothing = 7; 	6<=roomSmoothing		  ; false = true when 7<=roomSmoothing
+		hallSmoothing = 6; 	6 & false 8<=roomSmoothing; false = true when 9<=roomSmoothing
 		
 		if checkDiagonals is false
-		halls = 5; 4<=rooms; false = true all room
-		halls = 4; 4<=rooms; false = true all room
+		hallSmoothing = 5; 4<=rooms; false = true all room
+		hallSmoothing = 4; 4<=rooms; false = true all room
 		*/
-		
-		int halls = 8;
-		int rooms = 8;
-		
-		createRooms(maze, 'n', rooms, halls, false);
-		createRooms(altMaze, 'w', rooms, halls, false);
-		printMazeDif(maze, altMaze);
+		printMaze();
 	}
 	
 }

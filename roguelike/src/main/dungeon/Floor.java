@@ -35,7 +35,7 @@ public class Floor {
 		//Maze.generateMaze(h, w, 10, false);
 
 		/*Maze.generateMaze(h, w, 10, true);
->>>>>>> Stashed changes
+		
 		Maze.createRooms(4,6);
 		
 		
