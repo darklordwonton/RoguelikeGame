@@ -62,6 +62,8 @@ public class Globals {
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.VOLCANO, "volcano_floor_sheet.png");
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.DIRT, "dirt_floor_sheet.png");
 		FLOOR_SPRITE_SHEETS.put(EnumTheme.CYBER, "cyber_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.SAND, "sand_floor_sheet.png");
+		FLOOR_SPRITE_SHEETS.put(EnumTheme.WEEDSTONE, "weedStone_floor_sheet.png");
 	};
 	
 	public static final Map<EnumTheme, Integer> TILE_SPRITE_SHEET_LENGTHS = new HashMap<EnumTheme, Integer>();
@@ -72,6 +74,8 @@ public class Globals {
 		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.VOLCANO, 1);
 		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.DIRT, 1);
 		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.CYBER, 4);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.SAND, 1);
+		TILE_SPRITE_SHEET_LENGTHS.put(EnumTheme.WEEDSTONE, 2);
 	};
 	
 	public static final Map<EnumTheme, String> WALL_SPRITES = new HashMap<EnumTheme, String>();
@@ -82,6 +86,8 @@ public class Globals {
 		WALL_SPRITES.put(EnumTheme.VOLCANO, "wall.png");
 		WALL_SPRITES.put(EnumTheme.DIRT, "wall.png");
 		WALL_SPRITES.put(EnumTheme.CYBER, "wall.png");
+		WALL_SPRITES.put(EnumTheme.SAND, "wall.png");
+		WALL_SPRITES.put(EnumTheme.WEEDSTONE, "wall.png");
 	};
 	
 	public static final Map<EnumTheme, String> EMPTY_SPRITES = new HashMap<EnumTheme, String>();
@@ -92,6 +98,8 @@ public class Globals {
 		EMPTY_SPRITES.put(EnumTheme.VOLCANO, "empty.png");
 		EMPTY_SPRITES.put(EnumTheme.DIRT, "empty.png");
 		EMPTY_SPRITES.put(EnumTheme.CYBER, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.SAND, "empty.png");
+		EMPTY_SPRITES.put(EnumTheme.WEEDSTONE, "empty.png");
 	};
 	
 	public static final Map<EnumTheme, String> BREAKABLE_SPRITES = new HashMap<EnumTheme, String>();
@@ -102,6 +110,8 @@ public class Globals {
 		BREAKABLE_SPRITES.put(EnumTheme.VOLCANO, "cracked_wall.png");
 		BREAKABLE_SPRITES.put(EnumTheme.DIRT, "cracked_wall.png");
 		BREAKABLE_SPRITES.put(EnumTheme.CYBER, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.SAND, "cracked_wall.png");
+		BREAKABLE_SPRITES.put(EnumTheme.WEEDSTONE, "cracked_wall.png");
 	};
 	
 	//Colors
@@ -113,23 +123,29 @@ public class Globals {
 		BG_COLORS.put(EnumTheme.VOLCANO, Color.DARK_GRAY);
 		BG_COLORS.put(EnumTheme.DIRT, Color.DARK_GRAY);
 		BG_COLORS.put(EnumTheme.CYBER, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.SAND, Color.DARK_GRAY);
+		BG_COLORS.put(EnumTheme.WEEDSTONE, Color.DARK_GRAY);
 	};
 	
 	//Themes
 	public static final Map<EnumTheme, EnumTheme[]> RELATED_THEMES = new HashMap<EnumTheme, EnumTheme[]>();
 	static {
-		EnumTheme[] caveRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.VOLCANO, EnumTheme.DIRT};
+		EnumTheme[] caveRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.VOLCANO, EnumTheme.DIRT, EnumTheme.SAND, EnumTheme.WEEDSTONE};
 		RELATED_THEMES.put(EnumTheme.CAVE, caveRelated);
-		EnumTheme[] grayBrickRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.DIRT};
+		EnumTheme[] grayBrickRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.DIRT, EnumTheme.WEEDSTONE};
 		RELATED_THEMES.put(EnumTheme.GRAY_BRICK, grayBrickRelated);
 		EnumTheme[] brownBrickRelated = {EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.CYBER};
 		RELATED_THEMES.put(EnumTheme.BROWN_BRICK, brownBrickRelated);
 		EnumTheme[] volcanoRelated = {EnumTheme.CAVE, EnumTheme.VOLCANO, EnumTheme.CYBER};
 		RELATED_THEMES.put(EnumTheme.VOLCANO, volcanoRelated);
-		EnumTheme[] dirtRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.DIRT};
+		EnumTheme[] dirtRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.DIRT, EnumTheme.SAND, EnumTheme.WEEDSTONE};
 		RELATED_THEMES.put(EnumTheme.DIRT, dirtRelated);
 		EnumTheme[] cyberRelated = {EnumTheme.BROWN_BRICK, EnumTheme.VOLCANO, EnumTheme.CYBER};
 		RELATED_THEMES.put(EnumTheme.CYBER, cyberRelated);
+		EnumTheme[] sandRelated = {EnumTheme.CAVE, EnumTheme.DIRT, EnumTheme.SAND, EnumTheme.WEEDSTONE};
+		RELATED_THEMES.put(EnumTheme.SAND, sandRelated);
+		EnumTheme[] weedStoneRelated = {EnumTheme.CAVE, EnumTheme.GRAY_BRICK, EnumTheme.BROWN_BRICK, EnumTheme.SAND, EnumTheme.WEEDSTONE};
+		RELATED_THEMES.put(EnumTheme.WEEDSTONE, weedStoneRelated);
 	};
 	
 	
