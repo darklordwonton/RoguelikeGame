@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="javax.swing.tree.TreeNode"/>
 <fullyQualifiedTypeName name="main.util.TreeNode"/>
@@ -18,4 +17,7 @@
 <fullyQualifiedTypeName name="main.rendering.MessageBarPane"/>
 <fullyQualifiedTypeName name="main.magic.DamageSpell"/>
 <fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="main.dungeon.Floor"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="main.magic.AttackSpellGenerator"/>
 </qualifiedTypeNameHistroy>
