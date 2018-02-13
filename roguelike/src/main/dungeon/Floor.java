@@ -25,10 +25,10 @@ public class Floor {
 		theme = t;
 		tiles = new Tile[h][w];	
 		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * Globals.floorNumber)];
-		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * (int)Math.pow(Globals.floorNumber, 1/2.0) * (int)Math.pow(Globals.floorNumber, 1/2.0))];
+		rooms = new Room[Globals.ROOMS_BASE + (int) ((Globals.ROOMS_MODIFIER + Math.random() * Globals.ROOMS_LEEWAY) * (int)Math.pow(Globals.floorNumber, 1/2.0) * (int)Math.pow(Globals.floorNumber, 1/2.0))];		
 		
-		tiles = new Tile[h][w];
 		
+<<<<<<< Updated upstream
 		
 		
 
@@ -36,6 +36,9 @@ public class Floor {
 
 		/*Maze.generateMaze(h, w, 10, true);
 		
+=======
+		/*Maze.generateMaze(h, w, 10, true);
+>>>>>>> Stashed changes
 		Maze.createRooms(4,6);
 		
 		

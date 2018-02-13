@@ -19,5 +19,9 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1510027595233_16" label="Window Working Set" name="Aggregate for window 1510027595233"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1510190377366_17" label="Window Working Set" name="Aggregate for window 1510190377366"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1510323658078_18" label="Window Working Set" name="Aggregate for window 1510323658078"/>
+<<<<<<< Updated upstream
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1517864056735_19" label="Window Working Set" name="Aggregate for window 1517864056735"/>
+=======
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1517783128217_19" label="Window Working Set" name="Aggregate for window 1517783128217"/>
+>>>>>>> Stashed changes
 </workingSetManager>
