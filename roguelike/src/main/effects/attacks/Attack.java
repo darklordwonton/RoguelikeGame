@@ -1,6 +1,7 @@
 package main.effects.attacks;
 
 import java.awt.image.BufferedImage;
+import java.util.HashSet;
 import java.util.Set;
 
 import main.effects.Effect;
@@ -23,6 +24,9 @@ public class Attack extends Effect {
 		highDamage = du;
 		bellCurve = bc;
 		types = t;
+		if (types == null) {
+			types = new HashSet<EnumAttackType>();
+		}
 		animationFrames = 32;
 	}
 	
