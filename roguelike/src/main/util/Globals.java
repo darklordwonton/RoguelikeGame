@@ -49,7 +49,6 @@ public class Globals {
 	//Image Names
 	public static final String PLAYER_SPRITE_SHEET = "player.png";
 	public static final String GOBLIN_SPRITE = "enemy_goblin_base.png";
-	public static final String FIREBALL = "fireball.jpg";
 	public static int PLAYER_SPRITE_ROW = 0;
 	public static int PLAYER_SPRITE_COLUMN = 0;
 	public static int PLAYER_SPRITE_FRAME_COUNT = 1;
