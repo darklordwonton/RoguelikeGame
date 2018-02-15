@@ -169,6 +169,7 @@ public class Globals {
 	public static EnumTheme currentTheme = EnumTheme.GRAY_BRICK;
 	public static EntityPlayer player = null;
 	public static Floor currentFloor = null;
+	public static int turnsTaken = 0;
 	
 	//Global Arrays
 	

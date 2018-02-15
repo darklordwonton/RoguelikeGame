@@ -90,6 +90,13 @@ public class Entity {
 		return hp;
 	}
 	
+	public void incrementHp(int h){
+		hp -= h;
+		if (hp > this.stats.getHp()){
+			hp = this.stats.getHp();
+		}
+	}
+	
 	public int getMp() {
 		return mp;
 	}

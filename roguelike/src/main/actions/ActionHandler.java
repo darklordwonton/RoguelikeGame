@@ -14,9 +14,12 @@ import main.util.EnumDirection;
 import main.util.Globals;
 
 public class ActionHandler {
-	
 	public static void command(int action, EntityPlayer e){
 		if (e.hasTurns()) {
+			Globals.turnsTaken++;
+			if (Globals.turnsTaken % 4 == 0){
+				Globals.player.incrementHp(-1);
+			}
 			switch(action){
 				case Globals.UP_KEY: e.move(EnumDirection.UP);
 		  			break;
@@ -57,7 +60,7 @@ public class ActionHandler {
 		}
 	}
 	
-	//Put monster turn stuff here, if I find it anywhere else I will find you and befriend you
+	//Put monster turn stuff here, if I find it anywhere else I will find you and unfriend on Facebook you
 	public static void doMonsterTurns() {
 		for (Entity e : Globals.currentFloor.getEntities()) {
 			if (e instanceof EntityMonster && !e.getDead()) {
