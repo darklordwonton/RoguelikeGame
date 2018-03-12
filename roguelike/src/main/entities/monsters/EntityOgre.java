@@ -23,6 +23,7 @@ public class EntityOgre extends EntityMonster {
 		
 		makeStats(3 * Globals.HIGH_STAT + 3 * Globals.LOW_STAT);
 		name = Names.ogreName();
+		
 		int rand = (int)(Math.random() * 10);
 		if (rand <= 3){
 			pronoun = "his";
@@ -31,6 +32,7 @@ public class EntityOgre extends EntityMonster {
 		}else{
 			pronoun = "their";
 		}
+		
 		this.xpValue = 20;
 		this.species = "Ogre";
 		setSprite("enemy_ogre.png", 0, 0, 1);

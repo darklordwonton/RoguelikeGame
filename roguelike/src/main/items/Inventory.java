@@ -1,7 +1,6 @@
 package main.items;
 
 public class Inventory {
-
 	protected Item[] items = null;
 	protected int slots = -1;
 	protected int maxWeight = -1;

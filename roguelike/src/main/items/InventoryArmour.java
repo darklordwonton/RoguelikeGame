@@ -4,26 +4,33 @@ import main.items.armour.*;
 
 public class InventoryArmour extends Inventory {
 
-	protected int bodies = -1;
-	protected int heads = -1;
-	protected int arms = -1;
-	protected int feet = -1;
+	protected int bodies = -1; //Armour
+	protected int heads = -1;  //Helmets
+	protected int arms = -1;   //Boots
+	protected int feet = -1;   //Feet
+	protected int hands = -1;  //Weapons and tools
 
 	protected int bodyStart = -1;
 	protected int headStart = -1;
 	protected int armsStart = -1;
 	protected int feetStart = -1;
+	protected int handStart = -1; 
 	
-	public InventoryArmour(int w, int b, int h, int a, int f) {
-		super(b + h + a + f + 1, w);
+						//weight, body, head, arms, legs, hands
+	public InventoryArmour(int w, int b, int h, int a, int f, int i) {
+		super(b + h + a + f + i + 1, w);
+		
 		bodies = b;
 		heads = h;
 		arms = a;
 		feet = f;
+		hands = i;
+		
 		bodyStart = 1;
 		headStart = bodyStart + b;
-		armsStart = headStart + a;
-		feetStart = armsStart + f;
+		armsStart = headStart + h;
+		feetStart = armsStart + a;
+		handStart = feetStart + f;
 	}
 	
 	@Override
@@ -92,6 +99,26 @@ public class InventoryArmour extends Inventory {
 		}
 	}
 	
+	public boolean addItem(ItemTool item){
+		int i = handStart;
+		while (i < slots && items[i] != null) {
+			i++;
+		}
+		if (i >= slots - item.getHands()) {
+			return false;
+		} else {
+			for (int j = 0; j < item.getHands(); j++){
+				items[i] = item;
+			}
+			return true;
+		}
+	}
+	
+	public ItemTool getItemTool(){
+		return (ItemTool) items[handStart];
+	}
+	
+	
 	@Override
 	public Item addItemToSlot(Item item, int slot) {
 		return item;
@@ -151,7 +178,7 @@ public class InventoryArmour extends Inventory {
 		int ret = damage;
 		for (int i = 1; i < slots; i++) {
 			if (items[i] != null)
-				ret = ((ItemArmour)items[i]).reduceDamage(ret);
+				ret = ((ItemArmour)items[i]).reduceDamage(ret); //ItemArmour reduce damage looks unfinished
 		}
 		if (items[0] != null)
 			ret = ((ItemArmour)items[0]).reduceDamage(ret);

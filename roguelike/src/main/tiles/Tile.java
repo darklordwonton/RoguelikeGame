@@ -6,6 +6,7 @@ import java.util.List;
 import main.effects.Effect;
 import main.effects.attacks.Attack;
 import main.entities.Entity;
+import main.items.Item;
 
 public abstract class Tile {
 	protected String sprite = null;
@@ -15,6 +16,7 @@ public abstract class Tile {
 	protected int spriteSheetRow = 0;
 	protected int spriteSheetColumn = 0;
 	protected Entity entity = null;
+	protected Item item = null;
 	protected List<Effect> effects = null;
 	
 	protected Tile(int x, int y) {
@@ -53,9 +55,17 @@ public abstract class Tile {
 		entity = e;
 	}
 	
+	public void onStep(Item t){
+		item = t;
+	}
+	
 	//When an entity leaves the tile
 	public void onLeave(Entity e) {
 		entity = null;
+	}
+	
+	public void onLeave(Item t){
+		item = null;
 	}
 	
 	//When an entity attacks a wall tile

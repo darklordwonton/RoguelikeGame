@@ -13,11 +13,13 @@
 <fullyQualifiedTypeName name="main.job.JobFighter"/>
 <fullyQualifiedTypeName name="main.magic.shapes.ShapeLine"/>
 <fullyQualifiedTypeName name="main.magic.shapes.ShapeCenteredCircle"/>
-<fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
 <fullyQualifiedTypeName name="main.rendering.MessageBarPane"/>
 <fullyQualifiedTypeName name="main.magic.DamageSpell"/>
-<fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="main.dungeon.Floor"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="main.magic.AttackSpellGenerator"/>
+<fullyQualifiedTypeName name="main.effects.attacks.Attack"/>
+<fullyQualifiedTypeName name="main.items.ItemTool"/>
+<fullyQualifiedTypeName name="main.items.Item"/>
+<fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>

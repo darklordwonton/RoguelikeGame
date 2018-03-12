@@ -18,6 +18,16 @@ public class Attack extends Effect {
 	
 	protected Set<EnumAttackType> types = null; //Types of damage
 	
+	public Attack(int dl, int du, int bc, EnumAttackType t, Entity e) {
+		super(e);
+		lowDamage = dl;
+		highDamage = du;
+		bellCurve = bc;
+		types = null;
+		types.add(t);
+		animationFrames = 32;
+	}
+	
 	public Attack(int dl, int du, int bc, Set<EnumAttackType> t, Entity e) {
 		super(e);
 		lowDamage = dl;

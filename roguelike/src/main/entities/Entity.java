@@ -33,7 +33,7 @@ public class Entity {
 	protected int turns = 0;
 	protected int maxTurns = 1;
 	protected boolean dead = false;
-	protected InventoryArmour armour = new InventoryArmour(0,0,0,0,0);
+	protected InventoryArmour armour = new InventoryArmour(0, 0, 0, 0, 0, 0);
 	//protected Spell spell = null;
 	
 	public Entity(int sx, int sy){
@@ -157,8 +157,13 @@ public class Entity {
 	}
 	
 	public Attack getMeleeAttack() {
-		basicAttack.setBuf(this.stats.getBuf());
-		return basicAttack;
+		if (this.armour.getItemTool() != null){
+			this.armour.getItemTool().getAttack().setBuf(this.stats.getBuf());
+			return this.armour.getItemTool().getAttack();
+		} else {
+			this.basicAttack.setBuf(this.stats.getBuf());
+			return this.basicAttack;
+		}
 	}
 	
 	public boolean getTangible(){

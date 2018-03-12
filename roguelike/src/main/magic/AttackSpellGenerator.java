@@ -14,7 +14,7 @@ public class AttackSpellGenerator {
 		value = v;
 
 		Shape s = determineShape(e);
-		Attack ef = new Attack(1, 8, 1, null, e);
+		Attack ef = new Attack(1, 8, 1, EnumAttackType.FIRE, null);
 		ef.addType(EnumAttackType.FIRE);
 		
 		return new Spell(ef, s, "boo", e, 3);

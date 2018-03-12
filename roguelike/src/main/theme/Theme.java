@@ -1,6 +1,6 @@
-package main.dungeon;
+package main.theme;
 
-public class Theme {
+public class Theme { //Abandoning this project for now. Unsure how to generate next themes
 	protected String floorSpriteSheet = "";
 	protected int tileSpriteSheetLength = 0;
 	protected String wallSprite = "";
