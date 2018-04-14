@@ -115,7 +115,10 @@ public class InventoryArmour extends Inventory {
 	}
 	
 	public ItemTool getItemTool(){
-		return (ItemTool) items[handStart];
+		if (slots > handStart)
+			return (ItemTool) items[handStart];
+		else 
+			return null;
 	}
 	
 	
