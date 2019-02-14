@@ -22,4 +22,6 @@
 <fullyQualifiedTypeName name="main.items.Item"/>
 <fullyQualifiedTypeName name="main.effects.attacks.EnumAttackType"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="main.entities.monsters.EntitySkeleton"/>
 </qualifiedTypeNameHistroy>

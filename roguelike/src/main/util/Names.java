@@ -53,6 +53,13 @@ public class Names {
 		return firstHard[a] + vowel1[b]+ endHard[c];
 	}
 
+	public static String undeadName() {
+		int a = (int)(Math.random() * firstHard.length);		
+		int b = (int)(Math.random() * vowel1.length);
+		int c = (int)(Math.random() * endPrim.length);
+		return firstHard[a] + vowel1[b]+ endPrim[c];
+	}
+	
 	public static String materialName(){
 		int syl = 1 + (int)(Math.random() * 1.85);
 		String ret = firstMat[(int)(Math.random() * firstMat.length)];
@@ -72,10 +79,23 @@ public class Names {
 	public static String fighterName() {
 		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + fightJobNames[(int)(Math.random() * fightJobNames.length)];
 	}
+	
 	public static String mageName() {
 		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + mageJobNames[(int)(Math.random() * mageJobNames.length)];
 	}
+	
 	public static String sneakName() {
 		return jobDescriptors[(int)(Math.random() * jobDescriptors.length)] + " " + sneakJobNames[(int)(Math.random() * sneakJobNames.length)];
+	}
+	
+	public static String pronoun (){
+		int rand = (int)(Math.random() * 10);
+		if (rand <= 3){
+			return "his";
+		}else if(rand <= 7){
+			return "her";
+		}else {
+			return "their";
+		}
 	}
 }

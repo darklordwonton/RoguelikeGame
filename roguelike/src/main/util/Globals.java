@@ -174,6 +174,7 @@ public class Globals {
 	//Global Arrays
 	
 	//Mob stat constants
+	public static final int USELESS_STAT = 0;
 	public static final int PATHETIC_STAT = 2;
 	public static final int VERY_LOW_STAT = 5;
 	public static final int LOW_STAT = 10;

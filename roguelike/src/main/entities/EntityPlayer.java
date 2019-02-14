@@ -26,16 +26,12 @@ public class EntityPlayer extends Entity {
 		
 		this.setSprite(Globals.PLAYER_SPRITE_SHEET, Globals.PLAYER_SPRITE_COLUMN, Globals.PLAYER_SPRITE_ROW, Globals.PLAYER_SPRITE_FRAME_COUNT);
 		tangible = !Globals.NO_CLIP;
-		stats = new Stats(100,Globals.floorNumber);
-		stats.Statsp(100, Globals.floorNumber);
-		stats.Statsp(100, Globals.floorNumber);
-		stats.Statsp(100, Globals.floorNumber);
+		stats = new Stats(100, 1);
 		hp = stats.getHp();
 		mp = stats.getMp();
 		xp = 0;
 		
 		armour = new InventoryArmour(10, 1, 1, 2, 2, 2);
-		armour.addItem(new ItemTool(5, 15, 2, new HashSet<EnumAttackType>(), 1));
 		
 		//spell = new Spell();
 		//spell.generateSpell(0);

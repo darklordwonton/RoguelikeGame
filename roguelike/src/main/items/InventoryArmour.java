@@ -115,6 +115,7 @@ public class InventoryArmour extends Inventory {
 	}
 	
 	public ItemTool getItemTool(){
+		System.out.println(handStart);
 		return (ItemTool) items[handStart];
 	}
 	

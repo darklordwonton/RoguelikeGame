@@ -6,6 +6,7 @@ import java.util.List;
 import main.entities.Entity;
 import main.entities.monsters.EntityGoblin;
 import main.entities.monsters.EntityOgre;
+import main.entities.monsters.EntitySkeleton;
 import main.entities.monsters.SlimeVariants.*;
 import main.util.Globals;
 
@@ -52,9 +53,9 @@ public class Room {
 		while (ECount > 0){
 			Entity e = null;
 			int rand = (int)(Math.random() * 3);
-			switch(rand) { //I think we should write a non instantiating spawn class.
+			switch(rand) { 
 				case 0 :
-					e = new EntityOgre(x, y);
+					e = new EntitySkeleton(x, y);
 					break;
 				case 1 :
 					e = new EntityGoblin(x, y);

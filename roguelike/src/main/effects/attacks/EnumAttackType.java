@@ -5,5 +5,4 @@ public enum EnumAttackType {
 	SHARP, SMASH, RANGED, MAGIC,	//Base 
 	FIRE, ICE, ELECTRIC, WATER, 	//Elemental
 	MENTAL, HEAL, DEATH, EXPLOSION,	//Other
-	
 }
