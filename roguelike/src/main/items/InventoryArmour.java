@@ -115,15 +115,12 @@ public class InventoryArmour extends Inventory {
 	}
 	
 	public ItemTool getItemTool(){
-<<<<<<< HEAD
 		System.out.println(handStart);
-		return (ItemTool) items[handStart];
-=======
+//		return (ItemTool) items[handStart];
 		if (slots > handStart)
 			return (ItemTool) items[handStart];
 		else 
 			return null;
->>>>>>> 65de8285fa02af825f82cea7622e4976d275cb6b
 	}
 	
 	
